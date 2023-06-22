@@ -1,0 +1,271 @@
+---
+title: "SS2858 Course Syllabus Summer 2023"
+author: "Holly Steeves"
+format: 
+  html: 
+    number-sections: true
+    toc: true
+    theme: 
+      light: flatly
+      dark: darkly
+editor: visual
+bibliography: references.bib
+---
+
+# Course Information
+
+## Class Information
+
+Term: Summer 2023
+
+Location: Virtual
+
+Lectures: TWThF 9:00-11:00 AM
+
+## List of Prerequisites
+
+A minimum mark of 60% in [Statistical Science 2857A/B.](https://www.westerncalendar.uwo.ca/Courses.cfm?CourseAcadCalendarID=MAIN_022437_1&SelectedCalendar=Live&ArchiveID=)
+
+## List of Antirequisites
+
+All other courses in Introductory Statistics (except [Statistical Sciences 1023A/B](https://www.westerncalendar.uwo.ca/Courses.cfm?CourseAcadCalendarID=MAIN_013831_1&SelectedCalendar=Live&ArchiveID=) and [Data Science 1000A/B](https://www.westerncalendar.uwo.ca/Courses.cfm?CourseAcadCalendarID=MAIN_029871_1&SelectedCalendar=Live&ArchiveID=) or the former [Statistical Sciences 1024A/B](https://www.westerncalendar.uwo.ca/Courses.cfm?CourseAcadCalendarID=KINGS_013832_3&SelectedCalendar=Live&ArchiveID=)): [Biology 2244A/B,](https://www.westerncalendar.uwo.ca/Courses.cfm?CourseAcadCalendarID=MAIN_009143_1&SelectedCalendar=Live&ArchiveID=) [Economics 2122A/B,](https://www.westerncalendar.uwo.ca/Courses.cfm?CourseAcadCalendarID=MAIN_003422_1&SelectedCalendar=Live&ArchiveID=) [Economics 2222A/B,](https://www.westerncalendar.uwo.ca/Courses.cfm?CourseAcadCalendarID=MAIN_005888_1&SelectedCalendar=Live&ArchiveID=) [Geography 2210A/B,](https://www.westerncalendar.uwo.ca/Courses.cfm?CourseAcadCalendarID=MAIN_008749_1&SelectedCalendar=Live&ArchiveID=) [Health Sciences 3801A/B,](https://www.westerncalendar.uwo.ca/Courses.cfm?CourseAcadCalendarID=MAIN_021634_1&SelectedCalendar=Live&ArchiveID=) [MOS 2242A/B,](https://www.westerncalendar.uwo.ca/Courses.cfm?CourseAcadCalendarID=MAIN_019884_1&SelectedCalendar=Live&ArchiveID=) [Psychology 2811A/B](https://www.westerncalendar.uwo.ca/Courses.cfm?CourseAcadCalendarID=MAIN_030147_1&SelectedCalendar=Live&ArchiveID=) or the former Psychology 2810, [Psychology 2801F/G](https://www.westerncalendar.uwo.ca/Courses.cfm?CourseAcadCalendarID=MAIN_030145_1&SelectedCalendar=Live&ArchiveID=) or the former Psychology 2820E, [Psychology 2830A/B,](https://www.westerncalendar.uwo.ca/Courses.cfm?CourseAcadCalendarID=HURON_010533_3&SelectedCalendar=Live&ArchiveID=) [Psychology 2850A/B,](https://www.westerncalendar.uwo.ca/Courses.cfm?CourseAcadCalendarID=BRESC_023713_1&SelectedCalendar=Live&ArchiveID=) [Psychology 2851A/B,](https://www.westerncalendar.uwo.ca/Courses.cfm?CourseAcadCalendarID=BRESC_023714_1&SelectedCalendar=Live&ArchiveID=) Social Work 2207A/B, [Sociology 2205A/B,](https://www.westerncalendar.uwo.ca/Courses.cfm?CourseAcadCalendarID=MAIN_019309_1&SelectedCalendar=Live&ArchiveID=) [Statistical Sciences 2035,](https://www.westerncalendar.uwo.ca/Courses.cfm?CourseAcadCalendarID=MAIN_008164_1&SelectedCalendar=Live&ArchiveID=) [Statistical Sciences 2141A/B,](https://www.westerncalendar.uwo.ca/Courses.cfm?CourseAcadCalendarID=MAIN_004826_1&SelectedCalendar=Live&ArchiveID=) [Statistical Sciences 2143A/B,](https://www.westerncalendar.uwo.ca/Courses.cfm?CourseAcadCalendarID=MAIN_017214_1&SelectedCalendar=Live&ArchiveID=) [Statistical Sciences 2244A/B](https://www.westerncalendar.uwo.ca/Courses.cfm?CourseAcadCalendarID=MAIN_023253_1&SelectedCalendar=Live&ArchiveID=).
+
+Unless you have either the requisites for this course or written special permission from your Dean to enroll in it, you may be removed from this course and it will be deleted from your record. This decision may not be appealed. You will receive no adjustment to your fees in the event that you are dropped from a course for failing to have the necessary prerequisites.
+
+# Instructor Information
+
+| Position   | Name                 | Email                                     | Office  | Phone               | Office Hours     |
+|------------|------------|------------|------------|------------|------------|
+| Instructor | Dr. Holly Steeves    | USE OWL MESSAGES                          | WSC 233 | 519-661-2111 x86426 | Virtual TTh 12-1 |
+| TA         | Ana Carolina Da Cruz | [adacruz\@uwo.ca](mailto:adacruz@uwo.ca)  |         |                     |                  |
+| TA         | Chengqian Xian       | [cxian3\@uwo.ca](mailto:cxian3@uwo.ca)    |         |                     |                  |
+
+<!-- [Students must use OWL messages to contact Dr. Holly Steeves. Emails will not be answered.]{style="color:red;"} -->
+
+::: callout-warning
+Students must use OWL messages to contact Dr. Holly Steeves. Emails will not be answered.
+:::
+
+## Personal Teaching Approach
+
+I believe that students learn best in an inclusive, welcoming environment that sparks questions, discussions and respect from all sides. For this reason, a typical class will involve a lecture period discussing and explaining the material, broken up with non-graded check ins (through the use of Mentimeter) to assess student understanding. Examples will be used both as part of the lectures, and part of active learning, where the students get time to practice the problems themselves. In cases where feedback from the assessment is immediate (such as with Mentimeter), the lecture may be tailored to sections that were most misunderstood. I welcome relevant disruptions to this lecture period such as with questions or discussion topics. I encourage participation and discussions throughout the lectures, and the active learning components. Throughout all of these components, I strive to be respectful to all learners and their individual learning needs, and I expect you to do the same.
+
+## Instructor Policies
+
+As mentioned above, I expect respect and inclusivity in our classroom. To promote this, I have several policies that you should follow:
+
+-   Please leave your zoom on mute unless called upon.
+
+```{=html}
+<!-- -->
+```
+-   Please have Mentimeter links open and ready to go.
+
+-    Treat others as you would like to be treated. When speaking for the first time in a new group, introduce yourself with your name, and pronouns if you feel comfortable. Do not judge others for their work in this class, their questions, or anything they choose to share.
+
+-    When others are speaking, whether it be instructor or student, listen and do not speak over them.
+
+-   Please allow 1 business day for a response via messages. I will not be answering messages in the evenings, weekends, or holidays, but I will get back to you as soon as possible. The same should be expected of your peers.
+
+# Course Syllabus, Schedule, Delivery Mode
+
+## Course Description
+
+An introduction to the theory of statistics with strong links to data as well as its probabilistic underpinnings. Topics covered include estimation and hypothesis testing, sampling distributions, linear regression, experimental design, law of large numbers and central limit theorem.
+
+## Learning Outcomes
+
+By the end of this course, students will be able to
+
+-    Obtain point estimators for population parameters, determine the properties associated with the estimator and calculate the information.
+
+-    Calculate and interpret confidence for a population parameter by theory or through the use of bootstraps.
+
+-    Perform a hypothesis test for a population parameter, interpret the types of errors that could be made and calculate the power of the test.
+
+-    Perform a hypothesis tests and confidence intervals about two population parameters, interpret, and calculate the power from theory, bootstraps, or permutations.
+
+## Tentative Schedule
+
+| Week | Dates    | Hour           | Section                 | Assignment                |
+|-------|--------|-------------|-----------------------|-----------------------|
+| 1    | July 4   | 9:00 - 10:00   | Syllabus/Outline        |                           |
+|      |          | 10:00 - 11:00  | 7.1                     |                           |
+|      | July 5   | 9:00 - 10:00   | 7.1                     |                           |
+|      |          | 10:00 - 11:00  | 7.1                     |                           |
+|      | July 6   | 9:00 - 10:00   | 7.2                     |                           |
+|      |          | 10:00 - 11:00  | 7.2                     |                           |
+|      | July 7   | 9:00 - 10:00   | 7.3                     |                           |
+|      |          | 10:00 - 11:00  | 7.4                     |                           |
+| 2    | July 11  | 9:00 - 10:00   | 7.4                     |                           |
+|      |          | 10:00 - 11:00  | 8.1                     |                           |
+|      | July 12  | 9:00 - 10:00   | 8.2                     |                           |
+|      |          | 10:00 - 11:00  | Tutorial 1 - Chapter 7  |                           |
+|      | July 13  | 9:00 - 10:00   | 8.2                     |                           |
+|      |          | 10:00 - 11:00  | Quiz 1 - Chapter 7      | Assignment 1 - Chapter 7  |
+|      | July 14  | 9:00 - 10:00   | 8.2                     |                           |
+|      |          | 10:00 - 11:00  | 8.3                     |                           |
+| 3    | July 18  | 9:00 - 10:00   | 8.4                     |                           |
+|      |          | 10:00 - 11:00  | 8.5                     |                           |
+|      | July 19  | 9:00 - 10:00   | 9.1                     |                           |
+|      |          | 10:00 - 11:00  | Tutorial 2 - Chapter 8  |                           |
+|      | July 20  | 9:00 - 10:00   | 9.2                     |                           |
+|      |          | 10:00 - 11:00  | Quiz 2 - Chapter 8      | Assignment 2 - Chapter 8  |
+|      | July 21  | 9:00 - 10:00   | 9.2                     |                           |
+|      |          | 10:00 - 11:00  | 9.2                     |                           |
+| 4    | July 25  | 9:00 - 10:00   | MIDTERM                 |                           |
+|      |          | 10:00 - 11:00  | MIDTERM                 |                           |
+|      | July 26  | 9:00 - 10:00   | 9.3                     |                           |
+|      |          | 10:00 - 11:00  | 9.3                     |                           |
+|      | July 27  | 9:00  - 10:00  | 9.4                     |                           |
+|      |          | 10:00 - 11:00  | 9.4                     |                           |
+|      | July 28  | 9:00 - 10:00   | 9.5                     |                           |
+|      |          | 10:00 - 11:00  | 9.5                     |                           |
+| 5    | Aug 1    | 9:00 - 10:00   | 10.1                    |                           |
+|      |          | 10:00 - 11:00  | Tutorial 3 - Chapter 9  |                           |
+|      | Aug 2    | 9:00 - 10:00   | 10.2                    |                           |
+|      |          | 10:00 - 11:00  | Quiz 3 - Chapter 9      | Assignment 3 - Chapter 9  |
+|      | Aug 3    | 9:00 - 10:00   | 10.2                    |                           |
+|      |          | 10:00 - 11:00  | 10.3                    |                           |
+|      | Aug 4    | 9:00 - 10:00   | 10.4                    |                           |
+|      |          | 10:00 - 11:00  | 10.4                    |                           |
+| 6    | Aug 8    | 9:00 - 10:00   | 10.5                    |                           |
+|      |          | 10:00 - 11:00  | 10.6                    |                           |
+|      | Aug 9    | 9:00 - 10:00   | 10.6                    |                           |
+|      |          | 10:00 - 11:00  | Tutorial 4 - Chapter 10 |                           |
+|      | Aug 10   | 9:00 - 10:00   | Quiz 4 - Chapter 10     | Assignment 4 - Chapter 10 |
+|      | Aug 11   | 9:00 - 11:00   | Review                  |                           |
+
+# Course Materials
+
+The required text for this course is:
+
+[@devore2012]
+
+You may access a free electronic copy of this book in PDF or EPUB format through Western Libraries by following this link to [Springer Link](https://link-springer-com.proxy1.lib.uwo.ca/book/10.1007%2F978-1-4614-0391-3). From there you can also purchase a softcover copy of the book if you prefer.
+
+\
+We will cover most of Chapters 1 through 6 in the text.
+
+Students are responsible for checking the course OWL site (http://owl.uwo.ca) on a regular basis for news and updates. This is the primary method by which information will be disseminated to all students in the class.
+
+All course material will be posted to OWL: http://owl.uwo.ca.
+
+If students need assistance with the course OWL site, they can seek support on the OWL Help page. Alternatively, they can contact the Western Technology Services Helpdesk. They can be contacted by phone at 519-661-3800 or ext. 83800.
+
+# Methods of Evaluation 
+
+The overall course grade will be calculated as listed below:
+
+|                 |     |
+|-----------------|-----|
+| Assignments (4) | 20% |
+| Quizzes (4)     | 15% |
+| Midterm Test    | 25% |
+| Final Exam      | 40% |
+
+## Assessment Descriptions
+
+-   **Assignments will be available on the course OWL site. However, you will not submit your solutions to OWL. Instead, [assignments must be submitted through Gradescope]{.underline}** ([https://www.gradescope.ca/](#0)) an online collaborative grading system. It is your responsibility to make sure that your assignment is successfully uploaded and legible. Submissions that cannot be read by the grader will receive a grade of zero. Assignment questions must be assigned properly to each page or the submission will not be graded.
+
+-   After receiving the grades from an assignment, **students will have seven days to submit any regrade requests on that assignment, with the exception of the final assignment**. After this seven-day period, regrade requests will NOT be accepted. Regrade requests must be made using the Gradescope tool \"Regrade Request\".
+
+-   **Assignment submissions are due 11:55 pm (Eastern Time) on the due date**. Assignments that are up to 24 hours late will receive a deduction of 15% on their mark unless late coupons are used. Late assignments up to 48 hours will receive a deduction of 30% on their mark, unless late coupons are used. No credit will be given for submissions beyond 48 hours of the deadline time unless a valid academic accommodation is obtained.
+
+-   Each student will have **2 late coupons** worth 24 hours each that they can use at their own discretion for whatever reason (Note: I do not need to know the reason) towards their assignments. You can use them together on one assignment for a 48 hour extension, or on separate assignments for 24 hour extension. **No extensions will be given for any reason beyond the use of the late coupons, therefore I suggest saving them until you absolutely need them.**
+
+-   Solutions to assignments [**will not**]{.underline} be posted; however, TAs will provide comments on incorrect answers using Gradescope, which will allow students to find out the correct solutions. In addition, students can ask the instructor and TAs for more details on solutions via the Regrade Request tool on Gradescope and during office hours.
+
+-   **Quizzes** will be held during class time. See schedule for specifics. You will be graded on your best 3 out of 4 quizzes. **This is to account for any absences of any reason. No excuses will be given for missed quizzes as the lowest mark gets dropped.** Quizzes are not held on Proctortrack and therefore can be open book. However, a caution, if you spend your whole time looking things up, you will not have enough time to finish.
+
+-   **Final Exam** will be booked by the registrar\'s office, so date and time is to be determined. The midterm is scheduled for July 25 during class time. Both will be closed book. For the midterm you will be allowed **one single sided, letter sized, handwritten cheat sheet.** For the final, you will be allowed **one double sided, handwritten, letter sized cheat sheet. Handwritten means pen to paper, no printing from a computer or any kind.** Both will be done using Proctortrack. You will be given the assignment on OWL and then complete the tests on paper (except the multiple choice). You will then have 15 minutes after the test closes (during which you will keep Proctortrack open) for you to scan your assignment into Gradescope.
+
+# Student Absences
+
+If you are unable to meet a course requirement due to illness or other serious circumstances, please follow the procedures below.
+
+**Assessments worth less than 10% of the overall course grade:**
+
+The assignments have late coupons to account for any extensions needed, for any reason. No extensions will be given beyond this. For quizzes, the lowest mark gets dropped, so no quizzes will be excused. If you miss a quiz for any reason, that quiz will count as your dropped quiz.
+
+**Assessments worth 10% or more of the overall course grade:**
+
+For work totalling 10% or more of the final course grade, you must provide valid medical or supporting documentation to the Academic Counselling Office of your Faculty of Registration as soon as possible. For further information, please consult the University\'s medical illness policy at
+
+[https://www.uwo.ca/univsec/pdf/academic_policies/appeals/accommodation_medical.pdf](https://www.uwo.ca/univsec/pdf/academic_policies/appeals/accommodation_medical.pdf.).
+
+The Student Medical Certificate is available at
+
+[https://www.uwo.ca/univsec/pdf/academic_policies/appeals/medicalform.pdf](https://www.uwo.ca/univsec/pdf/academic_policies/appeals/medicalform.pdf.).
+
+If the midterm exam is missed, the weight will be shifted towards the final exam.
+
+## Absences from Final Examinations
+
+If you miss the Final Exam, please contact the Academic Counselling office of your Faculty of Registration as soon as you are able to do so.  They will assess your eligibility to write the Special Examination (the name given by the University to a makeup Final Exam).
+
+You may also be eligible to write the Special Exam if you are in a \"Multiple Exam Situation\" (e.g., more than 2 exams in 23-hour period, more than 3 exams in a 47-hour period).
+
+::: callout-caution
+Missed work can *only* be excused through one of the mechanisms above.  Being asked not to attend an in-person course requirement due to potential COVID-19 symptoms is **not** sufficient on its own.
+:::
+
+# Accommodation and Accessibility
+
+## **Religious Accommodation**
+
+When a course requirement conflicts with a religious holiday that requires an absence from the University or prohibits certain activities, students should request accommodation for their absence in writing at least two weeks prior to the holiday to the course instructor and/or the Academic Counselling office of their Faculty of Registration.  Please consult University's list of recognized religious holidays (updated annually) at
+
+<https://multiculturalcalendar.com/ecal/index.php?s=c-univwo>.
+
+## **Accommodation Policies**
+
+Students with disabilities are encouraged to contact Accessible Education, which provides recommendations for accommodation based on medical documentation or psychological and cognitive testing. The policy on Academic Accommodation for Students with Disabilities can be found at:
+
+[https://www.uwo.ca/univsec/pdf/academic_policies/appeals/Academic Accommodation_disabilities.pdf](https://www.uwo.ca/univsec/pdf/academic_policies/appeals/Academic Accommodation_disabilities.pdf).
+
+# Academic Policies
+
+The website for Registrarial Services is <http://www.registrar.uwo.ca>.
+
+In accordance with policy,
+
+<https://www.uwo.ca/univsec/pdf/policies_procedures/section1/mapp113.pdf>,
+
+the centrally administered e-mail account provided to students will be considered the individual\'s official university e-mail address.  It is the responsibility of the account holder to ensure that e-mail received from the University at their official university address is attended to in a timely manner.
+
+Participants in this course are not permitted to record lectures and/or labs, except where recording is an approved accommodation, and the participant has the prior written permission of the instructor.
+
+Online services such as Chegg are actively monitored. Any questions that are coming out from assignments and are posted to an online service will be searched. Such an activity will be considered as a scholastic offence and will result in an academic penalty.
+
+A scientific calculator will be allowed on the midterm and final exam. A graphics calculator will not be allowed.
+
+**Scholastic offences** are taken seriously and students are directed to read the appropriate policy, specifically, the definition of what constitutes a Scholastic Offence, at the following Web site:
+
+<http://www.uwo.ca/univsec/pdf/academic_policies/appeals/scholastic_discipline_undergrad.pdf>.
+
+Clickers, specifically Mentimeter will be used in this class for instant feedback and non-graded assessments. Clickers will not be used for any marks towards the course.
+
+# Support Services
+
+Please visit the Science & Basic Medical Sciences Academic Counselling webpage for information on adding/dropping courses, academic considerations for absences, appeals, exam conflicts, and many other academic related matters: <https://www.uwo.ca/sci/counselling/>.
+
+Students who are in emotional/mental distress should refer to Mental Health\@Western (<https://uwo.ca/health/>) for a complete list of options about how to obtain help.
+
+Western is committed to reducing incidents of gender-based and sexual violence and providing compassionate support to anyone who has gone through these traumatic events. If you have experienced sexual or gender-based violence (either recently or in the past), you will find information about support services for survivors, including emergency contacts at
+
+<https://www.uwo.ca/health/student_support/survivor_support/get-help.html>.
+
+To connect with a case manager or set up an appointment, please contact support\@uwo.ca.
+
+Please contact the course instructor if you require lecture or printed material in an alternate format or if any other arrangements can make this course more accessible to you.  You may also wish to contact Accessible Education at
+
+<http://academicsupport.uwo.ca/accessible_education/index.html>
+
+if you have any questions regarding accommodations.
+
+Learning-skills counsellors at the Student Development Centre (<https://learning.uwo.ca>) are ready to help you improve your learning skills. They offer presentations on strategies for improving time management, multiple-choice exam preparation/writing, textbook reading, and more. Individual support is offered throughout the Fall/Winter terms in the drop-in Learning Help Centre, and year-round through individual counselling.
+
+Western University is committed to a thriving campus as we deliver our courses in the mixed model of both virtual and face-to-face formats.  We encourage you to check out the Digital Student Experience website to manage your academics and well-being: <https://www.uwo.ca/se/digital/>.
+
+Additional student-run support services are offered by the USC, <https://westernusc.ca/services/>.
