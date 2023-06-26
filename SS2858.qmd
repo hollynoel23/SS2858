@@ -35,7 +35,7 @@ Unless you have either the requisites for this course or written special permiss
 # Instructor Information
 
 | Position   | Name                 | Email                                     | Office  | Phone               | Office Hours     |
-|------------|------------|------------|------------|------------|------------|
+|------------|----------------------|-------------------------------------------|---------|---------------------|------------------|
 | Instructor | Dr. Holly Steeves    | USE OWL MESSAGES                          | WSC 233 | 519-661-2111 x86426 | Virtual TTh 12-1 |
 | TA         | Ana Carolina Da Cruz | [adacruz\@uwo.ca](mailto:adacruz@uwo.ca)  |         |                     |                  |
 | TA         | Chengqian Xian       | [cxian3\@uwo.ca](mailto:cxian3@uwo.ca)    |         |                     |                  |
@@ -56,14 +56,13 @@ As mentioned above, I expect respect and inclusivity in our classroom. To promot
 
 -   Please leave your zoom on mute unless called upon.
 
-```{=html}
 <!-- -->
-```
+
 -   Please have Mentimeter links open and ready to go.
 
--    Treat others as you would like to be treated. When speaking for the first time in a new group, introduce yourself with your name, and pronouns if you feel comfortable. Do not judge others for their work in this class, their questions, or anything they choose to share.
+-   Treat others as you would like to be treated. When speaking for the first time in a new group, introduce yourself with your name, and pronouns if you feel comfortable. Do not judge others for their work in this class, their questions, or anything they choose to share.
 
--    When others are speaking, whether it be instructor or student, listen and do not speak over them.
+-   When others are speaking, whether it be instructor or student, listen and do not speak over them.
 
 -   Please allow 1 business day for a response via messages. I will not be answering messages in the evenings, weekends, or holidays, but I will get back to you as soon as possible. The same should be expected of your peers.
 
@@ -77,64 +76,64 @@ An introduction to the theory of statistics with strong links to data as well as
 
 By the end of this course, students will be able to
 
--    Obtain point estimators for population parameters, determine the properties associated with the estimator and calculate the information.
+-   Obtain point estimators for population parameters, determine the properties associated with the estimator and calculate the information.
 
--    Calculate and interpret confidence for a population parameter by theory or through the use of bootstraps.
+-   Calculate and interpret confidence for a population parameter by theory or through the use of bootstraps.
 
--    Perform a hypothesis test for a population parameter, interpret the types of errors that could be made and calculate the power of the test.
+-   Perform a hypothesis test for a population parameter, interpret the types of errors that could be made and calculate the power of the test.
 
--    Perform a hypothesis tests and confidence intervals about two population parameters, interpret, and calculate the power from theory, bootstraps, or permutations.
+-   Perform a hypothesis tests and confidence intervals about two population parameters, interpret, and calculate the power from theory, bootstraps, or permutations.
 
 ## Tentative Schedule
 
-| Week | Dates    | Hour           | Section                 | Assignment                |
-|-------|--------|-------------|-----------------------|-----------------------|
-| 1    | July 4   | 9:00 - 10:00   | Syllabus/Outline        |                           |
-|      |          | 10:00 - 11:00  | 7.1                     |                           |
-|      | July 5   | 9:00 - 10:00   | 7.1                     |                           |
-|      |          | 10:00 - 11:00  | 7.1                     |                           |
-|      | July 6   | 9:00 - 10:00   | 7.2                     |                           |
-|      |          | 10:00 - 11:00  | 7.2                     |                           |
-|      | July 7   | 9:00 - 10:00   | 7.3                     |                           |
-|      |          | 10:00 - 11:00  | 7.4                     |                           |
-| 2    | July 11  | 9:00 - 10:00   | 7.4                     |                           |
-|      |          | 10:00 - 11:00  | 8.1                     |                           |
-|      | July 12  | 9:00 - 10:00   | 8.2                     |                           |
-|      |          | 10:00 - 11:00  | Tutorial 1 - Chapter 7  |                           |
-|      | July 13  | 9:00 - 10:00   | 8.2                     |                           |
-|      |          | 10:00 - 11:00  | Quiz 1 - Chapter 7      | Assignment 1 - Chapter 7  |
-|      | July 14  | 9:00 - 10:00   | 8.2                     |                           |
-|      |          | 10:00 - 11:00  | 8.3                     |                           |
-| 3    | July 18  | 9:00 - 10:00   | 8.4                     |                           |
-|      |          | 10:00 - 11:00  | 8.5                     |                           |
-|      | July 19  | 9:00 - 10:00   | 9.1                     |                           |
-|      |          | 10:00 - 11:00  | Tutorial 2 - Chapter 8  |                           |
-|      | July 20  | 9:00 - 10:00   | 9.2                     |                           |
-|      |          | 10:00 - 11:00  | Quiz 2 - Chapter 8      | Assignment 2 - Chapter 8  |
-|      | July 21  | 9:00 - 10:00   | 9.2                     |                           |
-|      |          | 10:00 - 11:00  | 9.2                     |                           |
-| 4    | July 25  | 9:00 - 10:00   | MIDTERM                 |                           |
-|      |          | 10:00 - 11:00  | MIDTERM                 |                           |
-|      | July 26  | 9:00 - 10:00   | 9.3                     |                           |
-|      |          | 10:00 - 11:00  | 9.3                     |                           |
-|      | July 27  | 9:00  - 10:00  | 9.4                     |                           |
-|      |          | 10:00 - 11:00  | 9.4                     |                           |
-|      | July 28  | 9:00 - 10:00   | 9.5                     |                           |
-|      |          | 10:00 - 11:00  | 9.5                     |                           |
-| 5    | Aug 1    | 9:00 - 10:00   | 10.1                    |                           |
-|      |          | 10:00 - 11:00  | Tutorial 3 - Chapter 9  |                           |
-|      | Aug 2    | 9:00 - 10:00   | 10.2                    |                           |
-|      |          | 10:00 - 11:00  | Quiz 3 - Chapter 9      | Assignment 3 - Chapter 9  |
-|      | Aug 3    | 9:00 - 10:00   | 10.2                    |                           |
-|      |          | 10:00 - 11:00  | 10.3                    |                           |
-|      | Aug 4    | 9:00 - 10:00   | 10.4                    |                           |
-|      |          | 10:00 - 11:00  | 10.4                    |                           |
-| 6    | Aug 8    | 9:00 - 10:00   | 10.5                    |                           |
-|      |          | 10:00 - 11:00  | 10.6                    |                           |
-|      | Aug 9    | 9:00 - 10:00   | 10.6                    |                           |
-|      |          | 10:00 - 11:00  | Tutorial 4 - Chapter 10 |                           |
-|      | Aug 10   | 9:00 - 10:00   | Quiz 4 - Chapter 10     | Assignment 4 - Chapter 10 |
-|      | Aug 11   | 9:00 - 11:00   | Review                  |                           |
+| Week | Dates   | Hour          | Section                 | Assignment                |
+|------|---------|---------------|-------------------------|---------------------------|
+| 1    | July 4  | 9:00 - 10:00  | Syllabus/Outline        |                           |
+|      |         | 10:00 - 11:00 | 7.1                     |                           |
+|      | July 5  | 9:00 - 10:00  | 7.1                     |                           |
+|      |         | 10:00 - 11:00 | 7.1                     |                           |
+|      | July 6  | 9:00 - 10:00  | 7.2                     |                           |
+|      |         | 10:00 - 11:00 | 7.2                     |                           |
+|      | July 7  | 9:00 - 10:00  | 7.3                     |                           |
+|      |         | 10:00 - 11:00 | 7.4                     |                           |
+| 2    | July 11 | 9:00 - 10:00  | 7.4                     |                           |
+|      |         | 10:00 - 11:00 | 8.1                     |                           |
+|      | July 12 | 9:00 - 10:00  | 8.2                     |                           |
+|      |         | 10:00 - 11:00 | Tutorial 1 - Chapter 7  |                           |
+|      | July 13 | 9:00 - 10:00  | 8.2                     |                           |
+|      |         | 10:00 - 11:00 | Quiz 1 - Chapter 7      | Assignment 1 - Chapter 7  |
+|      | July 14 | 9:00 - 10:00  | 8.2                     |                           |
+|      |         | 10:00 - 11:00 | 8.3                     |                           |
+| 3    | July 18 | 9:00 - 10:00  | 8.4                     |                           |
+|      |         | 10:00 - 11:00 | 8.5                     |                           |
+|      | July 19 | 9:00 - 10:00  | 9.1                     |                           |
+|      |         | 10:00 - 11:00 | Tutorial 2 - Chapter 8  |                           |
+|      | July 20 | 9:00 - 10:00  | 9.2                     |                           |
+|      |         | 10:00 - 11:00 | Quiz 2 - Chapter 8      | Assignment 2 - Chapter 8  |
+|      | July 21 | 9:00 - 10:00  | 9.2                     |                           |
+|      |         | 10:00 - 11:00 | 9.2                     |                           |
+| 4    | July 25 | 9:00 - 10:00  | MIDTERM                 |                           |
+|      |         | 10:00 - 11:00 | MIDTERM                 |                           |
+|      | July 26 | 9:00 - 10:00  | 9.3                     |                           |
+|      |         | 10:00 - 11:00 | 9.3                     |                           |
+|      | July 27 | 9:00 - 10:00  | 9.4                     |                           |
+|      |         | 10:00 - 11:00 | 9.4                     |                           |
+|      | July 28 | 9:00 - 10:00  | 9.5                     |                           |
+|      |         | 10:00 - 11:00 | 9.5                     |                           |
+| 5    | Aug 1   | 9:00 - 10:00  | 10.1                    |                           |
+|      |         | 10:00 - 11:00 | Tutorial 3 - Chapter 9  |                           |
+|      | Aug 2   | 9:00 - 10:00  | 10.2                    |                           |
+|      |         | 10:00 - 11:00 | Quiz 3 - Chapter 9      | Assignment 3 - Chapter 9  |
+|      | Aug 3   | 9:00 - 10:00  | 10.2                    |                           |
+|      |         | 10:00 - 11:00 | 10.3                    |                           |
+|      | Aug 4   | 9:00 - 10:00  | 10.4                    |                           |
+|      |         | 10:00 - 11:00 | 10.4                    |                           |
+| 6    | Aug 8   | 9:00 - 10:00  | 10.5                    |                           |
+|      |         | 10:00 - 11:00 | 10.6                    |                           |
+|      | Aug 9   | 9:00 - 10:00  | 10.6                    |                           |
+|      |         | 10:00 - 11:00 | Tutorial 4 - Chapter 10 |                           |
+|      | Aug 10  | 9:00 - 10:00  | Quiz 4 - Chapter 10     | Assignment 4 - Chapter 10 |
+|      | Aug 11  | 9:00 - 11:00  | Review                  |                           |
 
 # Course Materials
 
@@ -153,7 +152,7 @@ All course material will be posted to OWL: http://owl.uwo.ca.
 
 If students need assistance with the course OWL site, they can seek support on the OWL Help page. Alternatively, they can contact the Western Technology Services Helpdesk. They can be contacted by phone at 519-661-3800 or ext. 83800.
 
-# Methods of Evaluation 
+# Methods of Evaluation
 
 The overall course grade will be calculated as listed below:
 
@@ -168,7 +167,7 @@ The overall course grade will be calculated as listed below:
 
 -   **Assignments will be available on the course OWL site. However, you will not submit your solutions to OWL. Instead, [assignments must be submitted through Gradescope]{.underline}** ([https://www.gradescope.ca/](#0)) an online collaborative grading system. It is your responsibility to make sure that your assignment is successfully uploaded and legible. Submissions that cannot be read by the grader will receive a grade of zero. Assignment questions must be assigned properly to each page or the submission will not be graded.
 
--   After receiving the grades from an assignment, **students will have seven days to submit any regrade requests on that assignment, with the exception of the final assignment**. After this seven-day period, regrade requests will NOT be accepted. Regrade requests must be made using the Gradescope tool \"Regrade Request\".
+-   After receiving the grades from an assignment, **students will have seven days to submit any regrade requests on that assignment, with the exception of the final assignment**. After this seven-day period, regrade requests will NOT be accepted. Regrade requests must be made using the Gradescope tool "Regrade Request".
 
 -   **Assignment submissions are due 11:55 pm (Eastern Time) on the due date**. Assignments that are up to 24 hours late will receive a deduction of 15% on their mark unless late coupons are used. Late assignments up to 48 hours will receive a deduction of 30% on their mark, unless late coupons are used. No credit will be given for submissions beyond 48 hours of the deadline time unless a valid academic accommodation is obtained.
 
@@ -178,7 +177,7 @@ The overall course grade will be calculated as listed below:
 
 -   **Quizzes** will be held during class time. See schedule for specifics. You will be graded on your best 3 out of 4 quizzes. **This is to account for any absences of any reason. No excuses will be given for missed quizzes as the lowest mark gets dropped.** Quizzes are not held on Proctortrack and therefore can be open book. However, a caution, if you spend your whole time looking things up, you will not have enough time to finish.
 
--   **Final Exam** will be booked by the registrar\'s office, so date and time is to be determined. The midterm is scheduled for July 25 during class time. Both will be closed book. For the midterm you will be allowed **one single sided, letter sized, handwritten cheat sheet.** For the final, you will be allowed **one double sided, handwritten, letter sized cheat sheet. Handwritten means pen to paper, no printing from a computer or any kind.** Both will be done using Proctortrack. You will be given the assignment on OWL and then complete the tests on paper (except the multiple choice). You will then have 15 minutes after the test closes (during which you will keep Proctortrack open) for you to scan your assignment into Gradescope.
+-   **Final Exam** will be booked by the registrar's office, so date and time is to be determined. The midterm is scheduled for July 25 during class time. Both will be closed book. For the midterm you will be allowed **one single sided, letter sized, handwritten cheat sheet.** For the final, you will be allowed **one double sided, handwritten, letter sized cheat sheet. Handwritten means pen to paper, no printing from a computer or any kind.** Both will be done using Proctortrack. You will be given the assignment on OWL and then complete the tests on paper (except the multiple choice). You will then have 15 minutes after the test closes (during which you will keep Proctortrack open) for you to scan your assignment into Gradescope.
 
 # Student Absences
 
@@ -190,7 +189,7 @@ The assignments have late coupons to account for any extensions needed, for any 
 
 **Assessments worth 10% or more of the overall course grade:**
 
-For work totalling 10% or more of the final course grade, you must provide valid medical or supporting documentation to the Academic Counselling Office of your Faculty of Registration as soon as possible. For further information, please consult the University\'s medical illness policy at
+For work totalling 10% or more of the final course grade, you must provide valid medical or supporting documentation to the Academic Counselling Office of your Faculty of Registration as soon as possible. For further information, please consult the University's medical illness policy at
 
 [https://www.uwo.ca/univsec/pdf/academic_policies/appeals/accommodation_medical.pdf](https://www.uwo.ca/univsec/pdf/academic_policies/appeals/accommodation_medical.pdf.).
 
@@ -204,7 +203,7 @@ If the midterm exam is missed, the weight will be shifted towards the final exam
 
 If you miss the Final Exam, please contact the Academic Counselling office of your Faculty of Registration as soon as you are able to do so.  They will assess your eligibility to write the Special Examination (the name given by the University to a makeup Final Exam).
 
-You may also be eligible to write the Special Exam if you are in a \"Multiple Exam Situation\" (e.g., more than 2 exams in 23-hour period, more than 3 exams in a 47-hour period).
+You may also be eligible to write the Special Exam if you are in a "Multiple Exam Situation" (e.g., more than 2 exams in 23-hour period, more than 3 exams in a 47-hour period).
 
 ::: callout-caution
 Missed work can *only* be excused through one of the mechanisms above.  Being asked not to attend an in-person course requirement due to potential COVID-19 symptoms is **not** sufficient on its own.
@@ -222,7 +221,7 @@ When a course requirement conflicts with a religious holiday that requires an ab
 
 Students with disabilities are encouraged to contact Accessible Education, which provides recommendations for accommodation based on medical documentation or psychological and cognitive testing. The policy on Academic Accommodation for Students with Disabilities can be found at:
 
-[https://www.uwo.ca/univsec/pdf/academic_policies/appeals/Academic Accommodation_disabilities.pdf](https://www.uwo.ca/univsec/pdf/academic_policies/appeals/Academic Accommodation_disabilities.pdf).
+[https://www.uwo.ca/univsec/pdf/academic_policies/appeals/Academic Accommodation_disabilities.pdf](https://www.uwo.ca/univsec/pdf/academic_policies/appeals/Academic%20Accommodation_disabilities.pdf).
 
 # Academic Policies
 
@@ -232,7 +231,7 @@ In accordance with policy,
 
 <https://www.uwo.ca/univsec/pdf/policies_procedures/section1/mapp113.pdf>,
 
-the centrally administered e-mail account provided to students will be considered the individual\'s official university e-mail address.  It is the responsibility of the account holder to ensure that e-mail received from the University at their official university address is attended to in a timely manner.
+the centrally administered e-mail account provided to students will be considered the individual's official university e-mail address.  It is the responsibility of the account holder to ensure that e-mail received from the University at their official university address is attended to in a timely manner.
 
 Participants in this course are not permitted to record lectures and/or labs, except where recording is an approved accommodation, and the participant has the prior written permission of the instructor.
 
