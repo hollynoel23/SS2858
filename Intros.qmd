@@ -1,0 +1,32 @@
+---
+title: "Introduction"
+format: 
+  revealjs: 
+    toc: true
+    theme: [default, /Users/hollysteeves/Library/CloudStorage/OneDrive-TheUniversityofWesternOntario/Western.scss]
+    incremental: true
+editor: visual
+author: "Holly Steeves"
+---
+
+# Who Am I?
+
+-   Dr. Holly Steeves
+
+-   Assistant Professor in Data Science
+
+-   Finished PhD in Statistics in 2020
+
+-   Yoga Teacher
+
+-   Knitter/Crocheter
+
+-   Roller Derby Player and Referee
+
+# **Land Acknowedgement.** {.smaller}
+
+I acknowledge that Western University is located on the traditional lands of the Anishinaabek, Haudenosaunee, Lu ̄naapéewak and Chonnonton Nations, on lands connected with the London Township and Sombra Treaties of 1796 and the Dish with One Spoon Covenant Wampum.
+
+With this, I respect the longstanding relationships that Indigenous Nations have to this land, as they are the original caretakers. We acknowledge historical and ongoing injustices that Indigenous Peoples (First Nations, Métis and Inuit) endure in Canada, and we accept responsibility as a public institution to contribute toward revealing and correcting miseducation as well as renewing respectful relationships with Indigenous communities through our teaching, research and community service.
+
+I encourage you to consider and research the role your ancestors have played in colonization, and to think about what part you can play in decolonization.
