@@ -1,0 +1,155 @@
+---
+title: "Chapter 7"
+format: 
+  revealjs: 
+    toc: true
+    theme: [default, /Users/hollysteeves/Library/CloudStorage/OneDrive-TheUniversityofWesternOntario/Western.scss]
+    incremental: true
+editor: visual
+author: "Holly Steeves"
+---
+
+# 7.1 General Concepts and Criteria
+
+## Objectives
+
+By the end of this section, you will be able to:
+
+-   Define and distinguish between a point estimate and a point estimator.
+
+-   Define and calculate the mean squared error.
+
+-   Define and unbiased estimator and be able to determine if an estimator is unbiased.
+
+-   Define and calculate bias.
+
+-   Define a minimum variance unbiased estimator and be able to determine if an estimator is the MVUE.
+
+-   Define and calculate the standard error of an estimator.
+
+-   Describe the process of performing bootstrapping.
+
+-   Calculate the bootstrap estimate of the standard error of an estimator.
+
+## The Branches
+
+There are 3 branches of probability and statistics:
+
+::: columns
+::: {.column width="40%"}
+-   Descriptive Statistics: Methods to summarize and describe features of the data.
+-   Probability: Methods for using known properties of a population to draw conclusions about a sample.
+-   Inferential Statistics: Methods for using a sample to draw conclusions about a population.
+:::
+
+::: {.column width="60%"}
+![](/Users/hollysteeves/Library/CloudStorage/OneDrive-TheUniversityofWesternOntario/SS2858/Branches.png){fig-alt="Graphic showing population and sample, with an arrow from sample to population labeled as inferential statistics, an arrow from population to sample labeled as probability, and arrows from population and sample to themselves labeled as descriptive statistics."}
+:::
+:::
+
+## Inferential Statistics
+
+-   If the population is small, we can calculate $\mu$ by collecting by measuring all individuals in the population.
+
+-   Generally speaking, populations are large and this is not feasible, so we collect samples to get **estimates** of the **parameters** instead.
+
+## Recall from Chapter 6
+
+-   Prior to obtaining data, there is uncertainty in what value the resulting statistic will be.
+
+-   Note: Upper case letter: a statistic is also a random variable.
+
+-   Lower case letter: The calculated or observed value of the statistic
+
+-   A **parameter**, generally denoted by $\theta$, is a descriptive measure of an unknown probability distribution.
+
+-   A **statistic** is a descriptive measure of a sample.
+
+## Point Estimates and Estimators
+
+::: callout-important
+## Definition
+
+A **point estimate** of a parameter $\theta$ is a single number that can be regarded as a sensible value for $\theta$. A point estimate is obtained by selected a suitable statistic and computing its value from the given sample data. The selected statistic is called the **point estimator** of $\theta$.
+:::
+
+## Point Estimates and Estimators
+
+Example: Consider 20 observations on a dielectric breakdown voltage for pieces of epoxy resin. The line on the normal probability plot appears quite straight, so now we assume that the data is normal with mean $\mu$. Because normal distributions are symmetric, $\mu$ is also the median. The given observations are then assumed to be the result of a random sample from this normal distribution. Consider the following estimators and estimates for $\mu$.
+
+a.  Estimator = $\bar{X}$, estimate = $\bar{x}$ = 27.793
+b.  Estimator = $\tilde{X}$, estimate = $\tilde{x}$ = 27.960
+c.  Estimator = $\bar{X}_{e} = \frac{(max(X_{i}) - min(X_{i}))}{2}$ = the midrange, estimate = $\bar{x}_{e}$ = 27.670
+d.  Estimator = $\bar{X}_{tr(10)}$, estimate = $\bar{x}_{tr(10)}$ = 27.838
+
+## Point Estimates and Estimators
+
+-   Since the data comes from a symmetric distribution, each of these is an estimate of the center of the distribution.
+-   Which of these estimates is closest to the true value? - We cannot answer this without knowing the true value.
+-   A question that can be answered is "Which estimator, when used on other samples of $X_{i}$s, will tend to produce estimates closest to the true value?"
+
+## Check in
+
+Say whether each of the following is (a) a parameter or (b) an estimate.
+
+1.  A study of survival in 1225 newly diagnosed breast cancer cases finds that survival varies greatly by stage of diagnosis. The average seven-year survival rates for Stage I breast cancer was 92%; the Stage II survival rate was 71%; the stage III survival rate was 39%; and the stage IV survival rate was 11%.
+2.  A review of divorce records for a county in Connecticut indicates that the marriages that end in divorce last an average of 72 months.
+3.  For U.S. men, the average life expectancy is 76. For women, it's 81. \[Life expectancy is based on data from the National Death Index; deaths are uniformly recorded in the U.S.\]
+
+## Mean Squared Error
+
+How do we compare estimators? How do we know how close to the real value it is?
+
+A popular way to quantify the idea of $\hat{\theta}$ being closed to $\theta$ is to consider the squared error $(\hat{\theta} - \theta)^{2}$. Another possibility is the absolute error $|\hat{\theta} - \theta|$, but this is more difficult to work with mathematically. This value depends on the sample, so a common measure of accuracy is the mean squared error (expected squared error), which entails averaging the squared error over all possible samples and resulting estimates.
+
+::: callout-important
+## Definition
+
+The **mean squared error** of an estimate $\hat{\theta}$ is $E[(\hat{\theta} - \theta)^{2}]$
+:::
+
+## Mean Squared Error
+
+A useful result when evaluating mean squared error is shown below:
+
+$$
+MSE = V(\hat{\theta}) + [E(\hat{\theta}) - \theta]^{2} = \text{ variance of estimator + (bias)}^{2}
+$$
+
+where \textbf{bias} is defined as the difference between the expected value of the estimator and the parameter.
+
+## Bias
+
+![](/Users/hollysteeves/Library/CloudStorage/OneDrive-TheUniversityofWesternOntario/SS2858/bias.png){fig-alt="On the left: two symmetric densities, one of theta 1 hat, and one of theta two hat. Theta two hat is unbiased as it's centre is located at theta. The distance between the centre of theta 1 hat and theta is the bias of theta 1 hat. On the right: two right skewed densities, one of theta 2 hat and one of theta 1 hat. Theta 2 hat is unbiased as the location of the mean is at theta, whereas the distance between the mean of theta 1 hat and theta is the bias of theta 1 hat."}
+
+## Example 20
+
+Return to the problem of estimator the population proportion $p$ and consider another adjusted estimator, namely
+
+$$
+\hat{p} = \frac{X + \sqrt{n/4}}{n + \sqrt{n}}
+$$
+
+The justification for this estimator comes from the Bayesian approach to point estimator. a. Determine the mean squared error of this estimator. What do you find interesting about this MSE? b. Compare the MSE of this estimator to the MSE of the usual estimator (the sample proportion).
+
+## Unbiased Estimators
+
+::: callout-important
+## Definition
+
+A point estimator $\hat{\theta}$ is said to be an **unbiased estimator** of $\theta$ if $E(\hat{\theta}) = \theta$ for every possible value of $\theta$. If $\hat{\theta}$ is not unbiased, the difference $E(\hat{\theta}) - \theta$ is called the \textbf{bias} of $\hat{\theta}$.
+:::
+
+## Unbiased Estimators
+
+That is, $\hat{\theta}$ is unbiased if its probability distribution is always "centered" at the true value of the parameter. Note that centered here means that the expected value, not the median, of the distribution of $\hat{\theta}$ = $\theta$.
+
+## Unbiased Estimators
+
+::: callout-important
+## Proposition
+
+When $X$ is a binomial RV with parameters $n$ and $p$, the sample proportion $\hat{p} = X/n$ is an unbiased estimator of $p$.
+:::
+
+Let's prove it!
