@@ -23,7 +23,7 @@ author: "Holly Steeves"
 
 -   Roller Derby Player and Referee
 
-# **Land Acknowedgement.** {.smaller}
+# Land Acknowedgement. {.smaller}
 
 I acknowledge that Western University is located on the traditional lands of the Anishinaabek, Haudenosaunee, Lu ̄naapéewak and Chonnonton Nations, on lands connected with the London Township and Sombra Treaties of 1796 and the Dish with One Spoon Covenant Wampum.
 
