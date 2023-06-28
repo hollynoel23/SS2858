@@ -2,7 +2,7 @@
 title: "Chapter 7"
 format: 
   revealjs: 
-    toc: true
+    toc: false
     theme: [default, /Users/hollysteeves/Library/CloudStorage/OneDrive-TheUniversityofWesternOntario/Western.scss]
     incremental: true
 editor: visual
@@ -27,11 +27,7 @@ By the end of this section, you will be able to:
 
 -   Define and calculate the standard error of an estimator.
 
--   Describe the process of performing bootstrapping.
-
--   Calculate the bootstrap estimate of the standard error of an estimator.
-
-## The Branches
+## The Branches {.smaller}
 
 There are 3 branches of probability and statistics:
 
@@ -73,7 +69,7 @@ There are 3 branches of probability and statistics:
 A **point estimate** of a parameter $\theta$ is a single number that can be regarded as a sensible value for $\theta$. A point estimate is obtained by selected a suitable statistic and computing its value from the given sample data. The selected statistic is called the **point estimator** of $\theta$.
 :::
 
-## Point Estimates and Estimators
+## Point Estimates and Estimators {.smaller}
 
 Example: Consider 20 observations on a dielectric breakdown voltage for pieces of epoxy resin. The line on the normal probability plot appears quite straight, so now we assume that the data is normal with mean $\mu$. Because normal distributions are symmetric, $\mu$ is also the median. The given observations are then assumed to be the result of a random sample from this normal distribution. Consider the following estimators and estimates for $\mu$.
 
@@ -88,7 +84,7 @@ d.  Estimator = $\bar{X}_{tr(10)}$, estimate = $\bar{x}_{tr(10)}$ = 27.838
 -   Which of these estimates is closest to the true value? - We cannot answer this without knowing the true value.
 -   A question that can be answered is "Which estimator, when used on other samples of $X_{i}$s, will tend to produce estimates closest to the true value?"
 
-## Check in
+## Check in {.smaller}
 
 Say whether each of the following is (a) a parameter or (b) an estimate.
 
@@ -96,7 +92,7 @@ Say whether each of the following is (a) a parameter or (b) an estimate.
 2.  A review of divorce records for a county in Connecticut indicates that the marriages that end in divorce last an average of 72 months.
 3.  For U.S. men, the average life expectancy is 76. For women, it's 81. \[Life expectancy is based on data from the National Death Index; deaths are uniformly recorded in the U.S.\]
 
-## Mean Squared Error
+## Mean Squared Error {.smaller}
 
 How do we compare estimators? How do we know how close to the real value it is?
 
@@ -130,7 +126,10 @@ $$
 \hat{p} = \frac{X + \sqrt{n/4}}{n + \sqrt{n}}
 $$
 
-The justification for this estimator comes from the Bayesian approach to point estimator. a. Determine the mean squared error of this estimator. What do you find interesting about this MSE? b. Compare the MSE of this estimator to the MSE of the usual estimator (the sample proportion).
+The justification for this estimator comes from the Bayesian approach to point estimator. 
+
+a. Determine the mean squared error of this estimator. What do you find interesting about this MSE? 
+b. Compare the MSE of this estimator to the MSE of the usual estimator (the sample proportion).
 
 ## Unbiased Estimators
 
@@ -153,3 +152,593 @@ When $X$ is a binomial RV with parameters $n$ and $p$, the sample proportion $\h
 :::
 
 Let's prove it!
+
+## Standard Deviation
+
+Recall:
+
+$$
+\sigma^{2} = \frac{\sum_{i=1}^{N}(X_{i} - \mu)^{2}}{N}
+$$
+
+$$
+S^{2} = \frac{\sum_{i=1}^{n}(X_{i} - \bar{X})^{2}}{n-1}
+$$
+
+Ever wonder why we divide the population standard deviation by $N$, but the sample standard deviation by $n-1$? It's so that the sample standard deviation is unbiased!!
+
+Let's prove it!
+
+## Unbiased Estimators
+
+::: callout-important
+## Proposition
+
+If $X_{1}$, $X_{2}$, ..., $X_{n}$ is a random sample from a distribution with mean $\mu$, then $\bar{X}$ is an unbiased estimator of $\mu$. If in addition the distribution is continuous and symmetric, then $\tilde{X}$ and any trimmed mean are also unbiased estimators of $\mu$.
+:::
+
+According to this proposition, the principle of unbiasedness by itself does not always allow us to select a single estimator. When the underlying population is normal, even the third estimator described above is unbiased, and there are many other unbiased estimates. What we now need is a way of selecting among unbiased estimators.
+
+## Example 10
+
+Using a long rod that has length $\mu$, you are going to lay out a square plot in which the length of each side is $\mu$. Thus the area of the plot will be $\mu^{2}$. However, you do not know the value of $\mu$, so you decided to make $n$ independent measurements $X_{1}$, $X_{2}$,...,$X_{n}$ of the length. Assume that each $X_{i}$ has mean $\mu$ (unbiased measurements) and variance $\sigma^{2}$.
+
+a.  Show that $\bar{X}^{2}$ is not an unbiased estimate for $\mu^{2}$. (Hint: for any RV $Y$, $E(Y^{2}) = V(Y) + E(Y)^{2}$. Apply this with $Y=\bar{X}$.
+b.  For what value of $k$ is the estimator $\bar{X}^{2} - kS^{2}$ unbiased for $\mu^{2}$? (Hint: Compute $E(\bar{X}^{2} - kS^{2})$)
+
+## Estimators with Minimum Variance
+
+Suppose $\hat{\theta}_{1}$ and $\hat{\theta}_{2}$ are two estimators of $\theta$ that are both unbiased. Then, although the distribution of each estimator is centered at the true value of $\theta$, the spreads of the distributions about the true value may be different.
+
+::: callout-important
+## Principle of Minimum Variance Unbiased Estimation
+
+Among all estimators of $\theta$ that are unbiased, choose the one that has minimum variance. The resulting $\hat{\theta}$ is called the **minimum variance unbiased estimator (MVUE)** of $\theta$. Since MSE = variance + (bias)$^{2}$, seeking an unbiased estimator with minimum variance is the same as seeking an unbiased estimator that has minimum mean squared error.
+:::
+
+## MVUE
+
+::: callout-important
+## Theorem
+
+Let $X_{1}$,...,$X_{n}$ be a random sample from a normal distribution with parameters $\mu$ and $\sigma$. Then the estimator $\hat{\mu} = \bar{X}$ is the MVUE for $\mu$.
+:::
+
+## Cautions {.smaller}
+
+The MVUE is not necessarily always "the best" estimator to use. The best estimator for $\mu$ depends crucially on which distribution is being sampled. In particular,
+
+1.  ::: callout-caution
+    If the random sample comes from a normal distribution, then $\bar{X}$ is the best of the four estimators, since it has minimum variance among all unbiased estimators.
+    :::
+
+2.  ::: callout-caution
+    If the underlying distribution is the particular uniform distribution in 7.3, then the best estimator is $\bar{X}_{e}$; in general, this estimator is greatly influenced by outlying observations, but here the lack of tails makes such observations impossible.
+    :::
+
+3.  ::: callout-caution
+    The trimmed mean is best in none of the situations above, but works reasonably well in them. That is, $\bar{X}_{tr(10)}$ does not suffer too much in comparison with the best procedure in any of the situations described above.
+    :::
+
+## Reporting a Point Estimate: The Standard Error
+
+::: callout-important
+## Definition
+
+The \textbf{standard error} of an estimator $\hat{\theta}$ is its standard deviation $\sigma_{\hat{\theta}} = \sqrt{V(\hat{\theta})}$. If the standard error itself involves unknown parameters whose values can be estimated, substitution of these estimates into $\sigma_{\hat{\theta}}$ yields the \textbf{estimated standard error} (estimated standard deviation) of the estimator. The estimated standard error can be denoted by either $\hat{\sigma}_{\hat{\theta}}$ (the $\hat{}$ over $\sigma$ emphasizes that $\sigma_{\hat{\theta}}$ is being estimated) or by $s_{\hat{\theta}}$.
+:::
+
+## Example 4 {.smaller}
+
+Consider these third grade verbal IQ observations for males:
+
+| 117 | 103 | 121 | 112 | 120 | 132 | 113 | 117 | 132 |
+|-----|-----|-----|-----|-----|-----|-----|-----|-----|
+| 149 | 125 | 131 | 136 | 107 | 108 | 113 | 136 | 114 |
+
+and females:
+
+| 114 | 102 | 113 | 131 | 124 | 117 | 120 | 90  |
+|-----|-----|-----|-----|-----|-----|-----|-----|
+| 114 | 109 | 102 | 114 | 127 | 127 | 103 |     |
+
+Prior to obtaining the data, denote the male values by $X_{1}$, $X_{2}$,...,$X_{m}$, and the female values by $Y_{1}$, $Y_{2}$,...,$Y_{n}$. Suppose that $X_{i}$s constitute a random sample from a distribution with mean $\mu_{1}$ and standard deviation $\sigma_{1}$, and that the $Y_{i}$s form a random sample (independent of the $X_{i}$s) from another distribution with mean $\mu_{2}$ and standard deviation $\sigma_{2}$.
+
+## Example 4 {.smaller}
+
+a.  Use the rules of expected value to show that $\bar{X} - \bar{Y}$ is an unbiased estimator of $\mu_{1} - \mu_{2}$. Calculate the estimate for the given data. \pause
+b.  Use rules of variance from Chapter 6 to obtain an expression for the variance and standard deviation (standard error) of the estimator in part (a), and then compute the estimated standard error. \pause
+c.  Calculate a point estimate of the ratio $\sigma_{1}/\sigma_{2}$ of the two standard deviations. \pause
+d.  Suppose one male third-grader and one female third-grader are randomly selected. Calculate a point estimate of the variance of the difference $X - Y$ between male and female IQ.
+
+## Summary
+
+-   A **point estimate** of a parameter $\theta$ is a single number that can be regarded as a sensible value for $\theta$ that is calculated from the given sample data.\
+-   The selected statistic used to calculate a point estimate is called the **point estimator** of $\theta$.
+-   The **mean squared error** of an estimate $\hat{\theta}$ is $E[(\hat{\theta} - \theta)^{2}]$
+-   A point estimator $\hat{\theta}$ is said to be an **unbiased estimator** of $\theta$ if $E(\hat{\theta}) = \theta$ for every possible value of $\theta$.
+
+## Summary
+
+-   If $\hat{\theta}$ is not unbiased, the difference $E(\hat{\theta}) - \theta$ is called the **bias** of $\hat{\theta}$.
+-   Among all estimators of $\theta$ that are unbiased, choose the one that has minimum variance. The resulting $\hat{\theta}$ is called the **minimum variance unbiased estimator (MVUE)** of $\theta$.
+-   The **standard error** of an estimator $\hat{\theta}$ is its standard deviation $\sigma_{\hat{\theta}} = \sqrt{V(\hat{\theta})}$.
+
+## Practice Problems
+
+-   Odd problems 1 - 17
+
+# 7.2 Methods of Estimation
+
+## Outcomes
+
+By the end of this section, you will be able to:
+
+-   Describe and solve for the method of moments estimator.
+-   Describe and solve for the maximum likelihood estimator.
+-   Solve for the MLE of a function of an unknown parameter.
+
+## The Method of Moments
+
+The basic idea of this method is to equate certain sample characteristics, such as the mean, to the corresponding population expected values. Then solving these equations for unknown parameters yields the estimators.
+
+::: callout-important
+## Definition
+
+Let $X_{1}$,...,$X_{n}$ be a random sample from a pmf or pdf $f(x)$. For $k = 1,2,3,...$, the **k**$^{th}$ **population moment** or **k**$^{th}$ **moment of the distribution** $f(x)$, is $E(X^{k})$. The **k**$^{th}$ **sample moment** is $\frac{1}{n}\sum_{i=1}^{n}X_{i}^{k}$.
+:::
+
+## The Method of Moments
+
+::: callout-important
+## Definition
+
+Let $X_{1}$,$X_{2}$,...,$X_{n}$ be a random sample from a distribution with pmf or pdf $f(x;\theta_{1},...,\theta_{m})$ where $\theta_{1}$,...,$\theta_{m}$ are parameters whose values are unknown. Then the **moment estimators** $\hat{\theta}_{1}$,...,$\hat{\theta}_{m}$ are obtained by equating the first $m$ sample moments to the corresponding first $m$ population moments and solving for $\theta_{1}$,...,$\theta_{m}$.
+:::
+
+## Example 7.13
+
+Let $X_{1}$, ..., $X_{n}$ represent a random sample of service times of $n$ customers at a certain facility, where the underlying distribution is assumed exponential with parameter $\lambda$.
+
+Since there is only one parameter to be estimated, the estimator is obtained by equating $E(X)$ to $\bar{X}$. Since $E(X) = 1/\lambda$ for an exponential distribution, this gives
+
+$$
+1/\lambda = \bar{X} \text{ or } \lambda = 1/\bar{X}
+$$
+
+Therefore, the method of moments estimator is $\hat{\lambda} = 1/\bar{X}$
+
+## Example 7.14
+
+Let $X_{1}$,...,$X_{n}$ be a random sample from a gamma distribution with parameters $\alpha$ and $\beta$. Find the method of moments estimators for $\alpha$ and $\beta$.
+
+## Example 10
+
+Suppose we have the following observations from a uniform distribution ranging from 0 to $\theta$ and we wish to estimate $\theta$ using the method of moments given that $\bar{x} = 4.5375$.
+
+## Maximum Likelihood Estimation
+
+The method of maximum likelihood estimation was first introduced by R. A. Fisher, a geneticist and statistician in the 1920s. Most statisticians recommend this method at least when the sample size is large, since the resulting estimators have certain desirable efficiency properties.
+
+## Maximum Likelihood Estimation
+
+::: callout-important
+## Definition
+
+Let $X_{1}$,...,$X_{n}$ have joint pmf or pdf $f(x_{1},x_{2},...,x_{n};\theta_{1},...,\theta_{m})$ where the parameters $\theta_{1}$,...,$\theta_{m}$ have unknown values. When $x_{1},...,x_{n}$ are the observed sample values and the joint pmf or pdf above is regarded as a function of $\theta_{1}$,...,$\theta_{m}$, it is called the **likelihood function**. The maximum likelihood estimates $\hat{\theta}_{1}$,...,$\hat{\theta}_{m}$ are those values of the $\theta_{i}$s that maximize the likelihood function, so that
+
+$$
+f(x_{1}, x_{2},...,x_{n}; \hat{\theta}_{1},...,\hat{\theta}_{1}) \geq f(x_{1},x_{2},...,x_{n};\theta_{1},...,\theta_{m})
+$$ for all $\theta_{1}$,...,$\theta_{m}$.
+
+When the $X_{i}$s are substituted in place of the $x_{i}$s, the **maximum likelihood estimators** (mles) result.
+:::
+
+## MLE Example {.smaller}
+
+Suppose $X_{1}$,...,$X_{n}$ is a random sample from an exponential distribution with parameter $\lambda$. Because of independence, the likelihood function is a product of the individual pdf's.
+
+$$
+f(x_{1},...,x_{n}; \lambda) = (\lambda e^{\lambda x_{1}})(\lambda e^{\lambda x_{2}})\cdots (\lambda e^{\lambda x_{n}}) \ \lambda^{n} e^{-\lambda\sum x_{i}}
+$$
+
+The ln(likelihood) is
+
+$$
+\ln[f(x_{1},...,x_{n}; \lambda)] = n\ln(\lambda) - \lambda\sum x_{i}
+$$
+
+Equating $(d/d\lambda)$(ln\[likelihood\]) to zero results in $n/\lambda - \sum x_{i} = 0$ or $\lambda = n/\sum x_{i} = 1/\bar{x}$; it is identical to the method of moments estimator but it is not an unbiased estimator, since $E(1/\bar{X}) \neq 1/E(\bar{X})$.
+
+## Example 30 {.smaller}
+
+Consider a random sample $X_{1}$,...,$X_{n}$ from the shifted exponential pdf
+
+$$
+f(x; \lambda, \theta) = \begin{cases}
+\lambda e^{-\lambda(x-\theta)} & x\geq \theta \\
+0 & \text{otherwise}
+\end{cases}
+$$
+
+Taking $\lambda = 0$ gives the pdf of the exponential distribution considered previously. An example of the shifted exponential distribution appeared in Example 4.5 in which the variable of interest was time headway in traffic flow and $\theta = 0.5$ was the minimum possible time headway.
+
+a.  Obtain the maximum likelihood estimators of $\lambda$ and $\theta$.
+b.  If $n=10$ time headway observations are made, resulting in the values 3.11, 0.64, 2.55, 2.20, 5.44, 3.42, 10.39, 8.93, 17.82, and 1.30, calculate the estimates of $\lambda$ and $\theta$.
+
+## Some Properties of MLEs
+
+::: callout-important
+## The Invariance Principle
+
+Let $\hat{\theta}_{1}$,...,$\hat{\theta}_{m}$ be the MLEs of the parameters $\theta_{1}$,...,$\theta_{m}$. Then the MLE of any function $h(\theta_{1},...,\theta_{m})$ of these parameters is the function $h(\hat{\theta}_{1},...,\hat{\theta}_{m})$, of the MLEs.
+:::
+
+## Example: The Invariance Principle
+
+It can be shown that in the case of a normal distribution, the MLE of $\mu$ is $\bar{X}$. Now, what is the MLE of $\sigma = h(\mu) = \sqrt{\frac{1}{n}\sum (X_{i} - \mu)^{2}}$? From the invariance principle,
+
+$$
+\hat{\sigma} = h(\bar{X}) = \sqrt{\frac{1}{n}\sum (X_{i} - \bar{X})^{2}}
+$$
+
+Note: This is not the sample standard deviation $S$, although they are close unless $n$ is quite small.
+
+## Large-Sample Behaviour of the MLE
+
+::: callout-important
+## Proposition
+
+Under very general conditions on the joint distribution of the sample, when the sample size is large, the maximum likelihood estimator of ay parameter $\theta$ is close to $\theta$ (consistency), is approximately unbiased ($E[\hat{\theta}] \approx \theta$), and has variance that is nearly as small as can be achieved by any unbiased estimator. Stated another way, the mle $\hat{\theta}$ is approximately the MVUE of $\theta$.
+:::
+
+## Large-Sample Behaviour of the MLE
+
+Because of this result and the fact that calculus-based techniques can usually be used to derive the MLEs (although often numerical methods, such as Newton's method, are necessary), maximum likelihood estimator is the most widely used estimation technique among statisticians. Many of the estimators used in the remainder of the book are MLEs. Obtaining an MLE, however, does require that the underlying distribution be specified.
+
+## Summary
+
+-   Method of Moments estimators are found by equating the population and sample moments, and solving for the unknown parameters.
+-   Maximum likelihood estimators are found by defining the likelihood (the density written as a function of the parameters) and finding the value of the parameter at which the likelihood is a maximum.
+-   The MLE of any function of parameters is the function evaluated at the MLEs of the parameters.
+-   The MLE is approximately the MVUE.
+
+## Practice Problems
+
+-   Odd problems 21 - 29
+
+# 7.3 Sufficiency
+
+## Outcomes
+
+By the end of this section, you will be able to
+
+-   Define a sufficient statistic and determine if a given statistic is sufficient.
+-   Define jointly sufficient statistics and determine if given statistics are jointly sufficient.
+-   Define a minimal sufficient statistic and determine if a given statistic is minimally sufficient.
+
+## Motivation
+
+An investigation of major defects on new vehicles of a certain type involved selected a random sample of $n=3$ vehicles and determining for each one the value of $X$ = the number of major defects. This resulted in observations $x_{1} = 1$, $x_{2} = 0$, and $x_{3} = 3$. You, as a consulting statistician have been provided with a description of the experiment, from which it is reasonable to assume that $X$ has a poisson distribution, and told only that the total number of defects for the three sampled vehicles was four.
+
+## Motivation {.smaller}
+
+Knowing that $T = \sum X_{i} = 4$, would there be any additional advantage in having the observed values of the individual $X_{i}$s when making an inference about the Poisson parameter $\lambda$? Or rather is it the case that the statistic $T$ contains all relevant information about $\lambda$ in the data? To address this issue, consider the conditional distribution of $X_{1}$, $X_{2}$, $X_{3}$ given that $\sum X_{i} = 4$. Fist of all, there are a few possible $(x_{1}, x_{2}, x_{3})$ triples for which $x_{1} + x_{2} + x_{3} = 4$. For example, $(0, 4, 0)$ is a possibility, as are $(2, 2, 0)$ and $(1, 0, 3)$, but not $(1, 2, 3)$ or $(5, 0, 2)$. That is:
+
+$$
+P(X_{1} = x_{1}, X_{2} = x_{2}, X_{3} = x_{3}| \sum_{i=1}^{3}X_{i} = 4) = 0
+$$ unless $x_{1} + x_{2} + x_{3} = 4$.
+
+## Motivation {.smaller}
+
+Now consider the triple $(2, 1, 1)$, which is consistent with $\sum X_{i} = 4$. If we let $A$ denote the event that $X_{1} = 2$, $X_{2} = 1$, and $X_{3} = 1$, and $B$ denote the event that $\sum X_{i} = 4$, then the event $A$ implies the event $B$, so the intersection of the two events is just the smaller event $A$. Thus:
+
+$$
+\begin{aligned}
+P(X_{1} = 2, X_{2} = 1, X_{3} = 1)|\sum_{i=1}^{3}X_{i} = 4) &= P(A|B) \\
+&= \frac{P(A\cap B)}{P(B)}\\
+&= \frac{P(X_{1} = 2, X_{2}= 1, X_{3} =)}{P(\sum X_{i} = 4)}
+\end{aligned}
+$$
+
+## Motivation {.smaller}
+
+A moment generating function argument shows that $\sum X_{i}$ has a Poisson distribution with parameter $3\lambda$. Thus, the desired conditional probability is:
+
+$$
+\frac{\frac{e^{-\lambda}\lambda^{2}}{2!}\frac{e^{-\lambda}\lambda^{1}}{1!}\frac{e^{-\lambda}\lambda^{1}}{1!}}{\frac{e^{-3\lambda}(3\lambda)^{4}}{4!}} = \frac{4!}{3^{4}\cdot 2!} = 4/27
+$$ Similarly, this can be done for all possible values of $X_{1}$, $X_{2}$, and $X_{3}$ satisfying $X_{1} + X_{2} + X_{3} = 4$. Neither this conditional probability, nor any of the other conditional probabilities involve $\lambda$. Thus, once the value of the statistic $\sum X_{i}$ has been provided, there is no additional information about $\lambda$ in the individual observations.
+
+## Sufficiency
+
+::: callout-important
+## Definition
+
+A statistic $T = t(X_{1},X_{2},...,X_{n})$ is said to be **sufficient** for making inferences about a parameter $\theta$ if the joint distribution of $X_{1}$,...,$X_{n}$ given that $T = t$ does not depend upon $\theta$ for every possible value $t$ of the statistic $T$.
+:::
+
+## Sufficiency
+
+How can a sufficient statistic be identified? It may seem as though one would have to select a statistic and determine the conditional distribution of the $X_{i}$s given any particular value of the statistic. This would be terribly time-consuming, and when the $X_{i}$s are continuous there are additional technical difficulties in obtaining the relevant conditional distribution. Fortunately, the next result provides a relatively straightforward way of proceeding.
+
+## Sufficiency
+
+::: callout-important
+## The Neyman Factorization Theorem
+
+Let $f(x_{1}, x_{2}, ..., x_{n}; \theta)$ denote the joint pmf or pdf of $X_{1}$, $X_{2}$, ..., $X_{n}$. Then $T = t(X_{1}, ..., X_{n})$ is a sufficient statistic for $\theta$ if and only if the joint pmf or pdf can be represented as a product of two factors in which the first factor involves $\theta$ and the data only through $t(x_{1}, ..., x_{n})$ whereas the second factor involves $x_{1}$, ..., $x_{n}$ but does not depend on $\theta$:
+
+$$
+f(x_{1}, x_{2}, ..., x_{n}; \theta) = g(t(x_{1}, ..., x_{n}); \theta)\cdot h(x_{1}, ..., x_{n})
+$$
+:::
+
+## Sufficiency Example
+
+Let's generalize the previous example by considering a random sample $X_{1}$, $X_{2}$, ..., $X_{n}$ from a Poisson distribution with parameter $\lambda$, for example, the numbers of blemishes on $n$ independently selected DVD's or the numbers of errors in $n$ batches of invoices where each batch consists of 200 invoices. The joint pmf of these variables is
+
+## Sufficiency Example
+
+$$
+\begin{aligned}
+f(x_{1},...,x_{n};\lambda) = \frac{e^{-\lambda}\lambda^{x_{1}}}{x_{1}!}\cdot \frac{e^{-\lambda}\lambda^{x_{2}}}{x_{2}!}\cdots \frac{e^{-\lambda}\lambda^{x_{n}}}{x_{n}!} &= \frac{e^{-n\lambda}\lambda^{x_{1}+x_{2}+\cdots + x_{n}}}{x_{1}!x_{2}!\cdots x_{n}!} \\
+&= (e^{-n\lambda}\lambda^{\sum x_{i}})\left(\frac{1}{x_{1}!x_{2}!\cdots x_{n}!}\right)
+\end{aligned}
+$$
+
+The factor inside the first set of parentheses involves the parameter $\lambda$ and the data only through $\sum x_{i}$, whereas the factor inside the second set of parentheses involves the data but not $\lambda$. So we have the desired factorization, and the sufficient statistic $T = \sum X_{i}$, as we previously ascertained directly from the definition of sufficiency.
+
+## Sufficiency
+
+Note: A sufficient statistic is not unique; any one-to-one function of a sufficient statistic is itself sufficient. In the Poisson example, the sample mean $\bar{X} = \frac{1}{n}\sum X_{i}$ is a one-to-one function of $\sum X_{i}$ (knowing the value of the sum of the $n$ observations is equivalent to knowing their mean), so the sample mean is also a sufficient statistic.
+
+## Example 34
+
+Let $X_{1}$, ..., $X_{n}$ be a random sample of component lifetimes from an exponential distribution with parameter $\lambda$. Use the factorization theorem to show that $\sum X_{i}$ is a sufficient statistic for $\lambda$.
+
+## Jointly Sufficient Statistics
+
+When the joint pmf or pdf of the data involves a single unknown parameter $\theta$, there is frequently a single statistic (single function of the data) that is sufficient. However, when there are several unknown parameters---for example, the mean $\mu$ and standard deviation $\sigma$ of a normal distribution, or the shape parameter $\alpha$ and scale parameter $\beta$ of a gamma distribution---we must expand our notion of sufficiency.
+
+## Jointly Sufficient
+
+::: callout-important
+## Definition
+
+Suppose the joint pmf or pdf of the data involves $k$ unknown parameters $\theta_{1}$, $\theta_{2}$, ..., $\theta_{k}$. The $m$ statistics $T_{1} = t_{1}(X_{1}, ..., X_{n})$, $T_{2} = t_{2}(X_{1}, ..., X_{n})$, ..., $T_{m} = t_{m}(X_{1}, ..., X_{n})$ are said to be jointly sufficient for the parameters if the conditional distribution of the $X_{i}$s given that $T_{1} = t_{1}$, $T_{2} = t_{2}$, ..., $T_{m} = t_{m}$ does not depend on any of the unknown parameters, and this is true for all possible values $t_{1}$, $t_{2}$, . . ., $t_{m}$ of the statistics.
+:::
+
+## Example 36
+
+Suppose waiting time for delivery of an item is uniform on the interval from $\theta_{1}$ to $\theta_{2}$ (so $f(x; \theta_{1}, \theta_{2}) = 1/(\theta_{2} - \theta_{1})$ for $\theta_{1} < x < \theta_{2}$ and is $0$ otherwise). Consider a random sample of $n$ waiting times, and use the factorization theorem to show that $min(X_{i})$, $max(X_{i})$ is a pair of jointly sufficient statistics for $\theta_{1}$ and $\theta_{2}$. \[Hint: Introduce an appropriate indicator function.\]
+
+## Minimal Sufficiency {.smaller}
+
+When $X_{1}$, ..., $X_{n}$ constitute a random sample from a normal distribution, the $n$ order statistics $Y_{1}$, ..., $Y_{n}$ are jointly sufficient for $\mu$ and $\sigma^{2}$, and the sample mean and sample variance are also jointly sufficient. Both the order statistics and the pair $(\bar{X}; S^{2})$ reduce the data without any information loss, but the sample mean and variance represent a greater reduction. In general, we would like the greatest possible reduction without information loss. A minimal (possibly jointly) sufficient statistic is a function of every other sufficient statistic. That is, given the value(s) of any other sufficient statistic(s), the value(s) of the minimal sufficient statistic(s) can be calculated. The minimal sufficient statistic is the sufficient statistic having the smallest dimensionality, and thus represents the greatest possible reduction of the data without any information loss.
+
+## Improving an Estimator
+
+Because a sufficient statistic contains all the information the data has to offer about the value of $\theta$, it is reasonable that an estimator of $\theta$ or any function of $\theta$ should depend on the data only through the sufficient statistic. A general result due to Rao and Blackwell shows how to start with an unbiased statistic that is not a function of sufficient statistics and create an improved estimator that is sufficient.
+
+## Improving an Estimator
+
+::: callout-important
+## Theorem
+
+Suppose that the joint distribution of $X_{1}$, ..., $X_{n}$ depends on some unknown parameter $\theta$ and that $T$ is sufficient for $\theta$. Consider estimating $h(\theta)$, a specified function of $\theta$. If $U$ is an unbiased statistic for estimating $h(\theta)$ that does not involve $T$, then the estimator $U^{*} = E(U | T)$ is also unbiased for $h(\theta)$ and has variance no greater than the original unbiased estimator $U$.
+:::
+
+## Example 39 {.smaller}
+
+The probability that any particular component of a certain type works in a satisfactory manner is $p$. If $n$ of these components are independently selected, then the statistic $X$, the number among the selected components that perform in a satisfactory manner, is sufficient for $p$. You must purchase two of these components for a particular system. Obtain an unbiased statistic for the probability that exactly one of your purchased components will perform in a satisfactory manner.
+
+\[Hint: Start with the statistic U, the indicator function of the event that exactly one of the first two components in the sample of size $n$ performs as desired, and improve on it by conditioning on the sufficient statistic.\]
+
+## Another Bonus to MLE
+
+If $T_{1}$, ..., $T_{m}$ are jointly sufficient statistics for parameters $\theta_{1}$, ..., $y_{k}$, then the joint pmf or pdf factors as follows:
+
+$$
+f(x_{1}, ..., x_{n}; \theta_{1}, ..., \theta_{k}) = g(t_{1}, ..., t_{m}; \theta_{1}; ...; \theta_{k})\cdot h(x_{1}, ..., x_{n})
+$$
+
+The maximum likelihood estimates result from maximizing $f(\cdot)$ with respect to the $\theta_{i}$s. Because the $h(\cdot)$ factor does not involve the parameters, this is equivalent to maximizing the $g(\cdot)$ factor with respect to the $\theta_{i}$s. The resulting $\hat{\theta}_{i}$s will involve the data only through the $t_{i}$s. Thus it is always possible to find a maximum likelihood estimator that is a function of just the sufficient statistic(s).
+
+## Summary
+
+-   A statistic is \textbf{sufficient} for making inferences about a parameter if the joint distribution of $X_{1}$,...,$X_{n}$ given that $T = t$ does not depend upon $\theta$ for every possible value $t$ of the statistic $T$.
+-   Any one-to-one function of a sufficient statistic is itself sufficient.
+-   The $m$ statistics $T_{1} = t_{1}(X_{1}, ..., X_{n})$, $T_{2} = t_{2}(X_{1}, ..., X_{n})$, ..., $T_{m} = t_{m}(X_{1}, ..., X_{n})$ are said to be jointly sufficient for the parameters if the conditional distribution of the $X_{i}$s given that $T_{1} = t_{1}$, $T_{2} = t_{2}$, ..., $T_{m} = t_{m}$ does not depend on any of the unknown parameters, and this is true for all possible values $t_{1}$, $t_{2}$, . . ., $t_{m}$ of the statistics.
+
+## Summary
+
+-   The minimal sufficient statistic is the sufficient statistic having the smallest dimensionality, and thus represents the greatest possible reduction of the data without any information loss.
+-   If $U$ is an unbiased statistic for estimating $h(\theta)$ that does not involve $T$, then the estimator $U^{*} = E(U | T)$ is also unbiased for $h(\theta)$ and has variance no greater than the original unbiased estimator $U$.
+-   It is always possible to find a maximum likelihood estimator that is a function of just the sufficient statistic(s).
+
+## Practice Problems
+
+-   Odd Problems 33 - 39
+
+## Outcomes
+
+By the end of this section, you will be able to:
+
+-   Define and calculate Fisher's Information.
+-   Define and calculate the Score Function.
+-   Calculate Fisher's Information for a random sample
+-   Calculate the Cramer-Rao lower bound for a statistic.
+-   Define and calculate efficiency.
+-   Define and determine if a statistic is an efficient statistic.\
+-   Understand the limiting properties of a maximum likelihood estimator.
+
+# 7.4 Information and Efficiency
+
+## Information {.smaller}
+
+In this section we introduce the idea of Fisher information and two of its applications. The first application is to find the minimum possible variance for an unbiased estimator. The second appliation is to show that the maximum likelihood estimator is asymptotically unbiased and normal (that is, for large $n$ it has expected value approximately $\theta$ and it has approximately a normal distribution) with the minimum possible variance.
+
+::: callout-important
+## Definition
+
+The **Fisher information** $I(\theta)$ **in a single observation from a pmf or pdf** $f(x;\theta)$ is the variance of the random variable $U = \partial[\ln[f(X;\theta)]]/\partial\theta$:
+
+$$
+I(\theta) = V\left[ \frac{\partial}{\partial\theta}\ln(f(X;\theta))\right]
+$$
+:::
+
+## Fisher's Information
+
+There is an alternative expression for $I(\theta)$ that is sometimes easier to compute than the variance in the definition:
+
+$$
+I(\theta) = -E\left[ \frac{\partial^{2}}{\partial\theta^{2}}\ln f(X;\theta)\right]
+$$
+
+## Example {.smaller}
+
+Let $X$ be a Bernoulli rv, so $f(x; p) = p^{x}(1-p)^{1-x}$ $x = 0,1$ , $x = 0, 1$. Then
+
+$$
+\frac{\partial}{\partial p}\ln(f(X;p)) = \frac{\partial}{\partial p}[X\ln p + (1-X)\ln(1-p)] = \frac{X}{p} - \frac{1-X}{1-p} = \frac{X-p}{p(1-p)}
+$$
+
+This has mean $0$ because $E(X) = p$. Computing the variance of the partial derivative, we get the Fisher information:
+
+$$
+\begin{aligned}
+I(p) &= V\left[\frac{\partial}{\partial p} \ln(f(X;p))\right] \\
+&= \frac{V(X-p)}{[p(1-p)]^{2}} = \frac{V(X)}{[p(1-p)]^{2}} \\
+&= \frac{p(1-p)}{[p(1-p)]^{2}} = \frac{1}{p(1-p)}
+\end{aligned}
+$$
+
+## Fisher Information Example
+
+The alternative method is as follows:
+
+$$
+\begin{aligned}
+\frac{\partial^{2}}{\partial p^{2}}\ln(f(X;p)) = \frac{\partial}{\partial p} \left(\frac{X-p}{p(1-p)}\right) &= \frac{-1(p(1-p)) - (X-p)(1-2p)}{[p(1-p)]^{2}} \\
+&= \frac{-p + p^{2} - X + 2Xp + p - 2p^{2}}{[p(1-p)]^{2}}\\
+&= \frac{-X + 2pX -p^{2}}{p^{2}(1-p)^{2}}
+\end{aligned}
+$$
+
+## Fisher's Information Example
+
+Taking the negative of the expected value gives the information in an observation:
+
+$$
+\begin{aligned}
+I(p) = -E\left[ \frac{\partial{2}}{\partial p^{2}} \ln(f(X;p))\right] &= \frac{-1}{p^{2}(1-p)^{2}}(-E(X) + 2pE(X) - p^{2}) \\
+&= \frac{-1}{p^{2}(1-p)^{2}} (-p + 2p^{2} - p^{2}) \\
+&= \frac{-1}{p^{2}(1-p)^{2}}(-p(1-p)) \\
+&= \frac{1}{p(1-p)}
+\end{aligned}
+$$
+
+## Example 42
+
+Assume that the number of defects in a car has a Poisson distribution with parameter $\lambda$. To estimate $\lambda$ we obtain the random sample $X_{1}$, $X_{2}$, ..., $X_{n}$.
+
+a.  Find the Fisher information in a single observation using two methods.
+
+## Information in a Random Sample
+
+Now assume a random sample $X_{1}$, $X_{2}$, ..., $X_{n}$ from a distribution with pmf or pdf $f(x; \theta)$. Let $f(X_{1}, X_{2}, ..., X_{n}; \theta) = f(X_{1}; \theta) \cdot f(X_{2}; \theta) \cdots f(X_{n}; \theta)$ be the likelihood function. The Fisher information $I_{n}(\theta)$ for the random sample is the variance of the **score function**.
+
+$$
+\frac{\partial}{\partial\theta}\ln f(X_{1}, X_{2},...,X_{n};\theta) = \frac{\partial}{\partial\theta}\ln[f(X_{1};\theta)\cdot f(X_{2};\theta)\cdots f(X_{n};\theta)]
+$$
+
+## Information in a Random Sample
+
+Using properties of logs and expected values, we find that:
+
+$$
+I_{n}(\theta) = V\left[\frac{\partial}{\partial\theta}\ln(f(X_{1}, X_{2},...,X_{n};\theta))\right] = nV\left[\frac{\partial}{\partial\theta}\ln f(X_{1};\theta) \right] = nI(\theta)
+$$
+
+Therefore, the Fisher information in a random sample is just $n$ times the information in a single observation. This should make sense intuitively, because it says that twice as many observations yield twice as much information.
+
+## The Cramer-Rao Inequality
+
+::: callout-important
+## Theorem
+
+Assume a random sample $X_{1}$,...,$X_{n}$ from the distribution with pmf or pdf $f(x;\theta)$ such that the set of possible values does not depend on $\theta$. If the statistic $T = t(X_{1},...,X_{n})$ is an unbiased estimator for the parameter $\theta$, then
+
+$$
+V(T) \geq \frac{1}{V\{\frac{\partial}{\partial\theta}[\ln f(X_{1},...,X_{n};\theta)]\}} = \frac{1}{nI(\theta)} = \frac{1}{I_{n}(\theta)} 
+$$
+:::
+
+## Example 42
+
+Assume that the number of defects in a car has a Poisson distribution with parameter $\lambda$. To estimate $\lambda$ we obtain the random sample $X_{1}$, $X_{2}$, ..., $X_{n}$.
+
+b.  Find the Cramer--Rao lower bound for the variance of an unbiased estimator of $\lambda$.
+
+## Efficiency
+
+Because the variance of $T$ must be at least $1/(nI(\theta))$, it is natural to call $T$ an efficient estimator of $\theta$ if $V(T) = 1/[nI(\theta)]$.
+
+::: callout-important
+## Definition
+
+Let $T$ be an unbiased estimator of $\theta$. The ratio of the lower bound to the variance of $T$ is its **efficiency**. Then $T$ is said to be an **efficient** estimator if $T$ achieves the Cramer-Rao lower bound (the efficiency is 1). An efficient estimator is a minimum variance unbiased estimator (MVUE) as discussed in section 7.1.
+:::
+
+## Example 42
+
+Assume that the number of defects in a car has a Poisson distribution with parameter $\lambda$. To estimate $\lambda$ we obtain the random sample $X_{1}$, $X_{2}$, ..., $X_{n}$.
+
+c.  Use the score function to find the mle of $\lambda$ and show that the mle is an efficient estimator.
+
+## Limiting Properties
+
+::: callout-important
+## Theorem
+
+Given a random sample $X_{1}$, $X_{2}$, ..., $X_{n}$ from a distribution with pmf or pdf $f(x; \theta)$, assume that the set of possible $x$ values does not depend on $\theta$. Then for large $n$ the maximum likelihood estimator $\hat{\theta}$ has approximately a normal distribution with mean $\theta$ and variance $1/[nI(\theta)]$. More precisely, the limiting distribution of $\sqrt{n}(\hat{\theta}-\theta)$ is normal with mean $0$ and variance $1/I(\theta)$.
+:::
+
+## Example 42
+
+Assume that the number of defects in a car has a Poisson distribution with parameter $\lambda$. To estimate $\lambda$ we obtain the random sample $X_{1}$, $X_{2}$, ..., $X_{n}$.
+
+d.  Is the asymptotic distribution of the mle in accord with the second theorem? Explain.
+
+## Example 44
+
+Survival times have the exponential distribution with pdf $f(x; \lambda) = \lambda e^{- \lambda x}$, $x \geq 0$, and $f(x;\lambda) = 0$ otherwise, where $\lambda > 0$. However, we wish to estimate the mean $\mu = 1/\lambda$ based on the random sample $X_{1}$, $X_{2}$, ..., $X_{n}$, so let's re-express the pdf in the form $(1/\mu)e^{-x/\mu}$.
+
+a.  Find the information in a single observation and the Cramer--Rao lower bound.
+b.  Use the score function to find the mle of $\mu$.
+c.  Find the mean and variance of the mle.
+d.  Is the mle an efficient estimator? Explain.
+
+## Summary
+
+-   Fisher's Information is defined as $I(\theta) = V\left[ \frac{\partial}{\partial\theta}\ln(f(X;\theta))\right]$.
+-   It is often easier to calculate $I(\theta) = -E\left[ \frac{\partial^{2}}{\partial\theta^{2}}\ln f(X;\theta)\right]$ for Fisher's Information.
+-   The score function is defined as $\frac{\partial}{\partial\theta}\ln f(X_{1}, X_{2},...,X_{n};\theta) = \frac{\partial}{\partial\theta}\ln[f(X_{1};\theta)\cdot f(X_{2};\theta)\cdots f(X_{n};\theta)]$.
+-   The Fisher information $I_{n}(theta)$ for the random sample is the variance of the **score function**. This gives us that $I_{n}(\theta) - nI(\theta)$ for a random sample.
+
+## Summary {.smaller}
+
+-   Cramer-Rao: If a random sample is collected from a distribution such that the possible value do not depend on $\theta$, and the statistic $T$ is an unbiased estimator, then $V(T) \geq \frac{1}{nI(\theta)} = \frac{1}{I_{n}(\theta)}$.
+-   The ratio of the lower bound to the variance of $T$ is its **efficiency**.
+-   Then $T$ is said to be an **efficient** estimator if $T$ achieves the Cramer-Rao lower bound (the efficiency is 1). An efficient estimator is a minimum variance unbiased estimator (MVUE) as discussed in section 7.1.
+-   Assume that the set of possible $x$ values does not depend on $\theta$. Then for large $n$ the maximum likelihood estimator $\hat{\theta}$ has approximately a normal distribution with mean $\theta$ and variance $1/[nI(\theta)]$.
+
+## Practice Problems
+
+-   Odd problems 43 - 47
+
+## Supplementary Exercises
+
+-   49
+-   Odd problems 53 - 57
