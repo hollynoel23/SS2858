@@ -440,7 +440,7 @@ Holly Steeves
 <p><strong>Definition</strong></p>
 </div>
 <div class="callout-content">
-<p>The <strong>mean squared error</strong> of an estimate <span class="math inline">\(\hat{\theta}\)</span> is <span class="math inline">\(E[(\hat{\theta} - \theta)^{2}]\)</span></p>
+<p>The <strong>mean squared error</strong> of an estimator <span class="math inline">\(\hat{\theta}\)</span> is <span class="math inline">\(E[(\hat{\theta} - \theta)^{2}]\)</span></p>
 </div>
 </div>
 </div>
@@ -451,7 +451,7 @@ Holly Steeves
 <p><span class="math display">\[
 MSE = V(\hat{\theta}) + [E(\hat{\theta}) - \theta]^{2} = \text{ variance of estimator + (bias)}^{2}
 \]</span></p>
-<p>where is defined as the difference between the expected value of the estimator and the parameter.</p>
+<p>where <strong>bias</strong> is defined as the difference between the expected value of the estimator and the parameter.</p>
 </section>
 <section id="bias" class="slide level2">
 <h2>Bias</h2>
@@ -480,7 +480,7 @@ MSE = V(\hat{\theta}) + [E(\hat{\theta}) - \theta]^{2} = \text{ variance of esti
 <p><strong>Definition</strong></p>
 </div>
 <div class="callout-content">
-<p>A point estimator <span class="math inline">\(\hat{\theta}\)</span> is said to be an <strong>unbiased estimator</strong> of <span class="math inline">\(\theta\)</span> if <span class="math inline">\(E(\hat{\theta}) = \theta\)</span> for every possible value of <span class="math inline">\(\theta\)</span>. If <span class="math inline">\(\hat{\theta}\)</span> is not unbiased, the difference <span class="math inline">\(E(\hat{\theta}) - \theta\)</span> is called the of <span class="math inline">\(\hat{\theta}\)</span>.</p>
+<p>A point estimator <span class="math inline">\(\hat{\theta}\)</span> is said to be an <strong>unbiased estimator</strong> of <span class="math inline">\(\theta\)</span> if <span class="math inline">\(E(\hat{\theta}) = \theta\)</span> for every possible value of <span class="math inline">\(\theta\)</span>. If <span class="math inline">\(\hat{\theta}\)</span> is not unbiased, the difference <span class="math inline">\(E(\hat{\theta}) - \theta\)</span> is called the <strong>bias</strong> of <span class="math inline">\(\hat{\theta}\)</span>.</p>
 </div>
 </div>
 </div>
@@ -632,7 +632,7 @@ S^{2} = \frac{\sum_{i=1}^{n}(X_{i} - \bar{X})^{2}}{n-1}
 <p><strong>Definition</strong></p>
 </div>
 <div class="callout-content">
-<p>The of an estimator <span class="math inline">\(\hat{\theta}\)</span> is its standard deviation <span class="math inline">\(\sigma_{\hat{\theta}} = \sqrt{V(\hat{\theta})}\)</span>. If the standard error itself involves unknown parameters whose values can be estimated, substitution of these estimates into <span class="math inline">\(\sigma_{\hat{\theta}}\)</span> yields the (estimated standard deviation) of the estimator. The estimated standard error can be denoted by either <span class="math inline">\(\hat{\sigma}_{\hat{\theta}}\)</span> (the <span class="math inline">\(\hat{}\)</span> over <span class="math inline">\(\sigma\)</span> emphasizes that <span class="math inline">\(\sigma_{\hat{\theta}}\)</span> is being estimated) or by <span class="math inline">\(s_{\hat{\theta}}\)</span>.</p>
+<p>The <strong>standard error</strong> of an estimator <span class="math inline">\(\hat{\theta}\)</span> is its standard deviation <span class="math inline">\(\sigma_{\hat{\theta}} = \sqrt{V(\hat{\theta})}\)</span>. If the standard error itself involves unknown parameters whose values can be estimated, substitution of these estimates into <span class="math inline">\(\sigma_{\hat{\theta}}\)</span> yields the <strong>estimated standard error</strong> (estimated standard deviation) of the estimator. The estimated standard error can be denoted by either <span class="math inline">\(\hat{\sigma}_{\hat{\theta}}\)</span> (the <span class="math inline">\(\hat{}\)</span> over <span class="math inline">\(\sigma\)</span> emphasizes that <span class="math inline">\(\sigma_{\hat{\theta}}\)</span> is being estimated) or by <span class="math inline">\(s_{\hat{\theta}}\)</span>.</p>
 </div>
 </div>
 </div>
@@ -700,9 +700,9 @@ S^{2} = \frac{\sum_{i=1}^{n}(X_{i} - \bar{X})^{2}}{n-1}
 <section id="example-4-1" class="slide level2 smaller">
 <h2>Example 4</h2>
 <ol type="a">
-<li class="fragment">Use the rules of expected value to show that <span class="math inline">\(\bar{X} - \bar{Y}\)</span> is an unbiased estimator of <span class="math inline">\(\mu_{1} - \mu_{2}\)</span>. Calculate the estimate for the given data. </li>
-<li class="fragment">Use rules of variance from Chapter 6 to obtain an expression for the variance and standard deviation (standard error) of the estimator in part (a), and then compute the estimated standard error. </li>
-<li class="fragment">Calculate a point estimate of the ratio <span class="math inline">\(\sigma_{1}/\sigma_{2}\)</span> of the two standard deviations. </li>
+<li class="fragment">Use the rules of expected value to show that <span class="math inline">\(\bar{X} - \bar{Y}\)</span> is an unbiased estimator of <span class="math inline">\(\mu_{1} - \mu_{2}\)</span>. Calculate the estimate for the given data.</li>
+<li class="fragment">Use rules of variance from Chapter 6 to obtain an expression for the variance and standard deviation (standard error) of the estimator in part (a), and then compute the estimated standard error.</li>
+<li class="fragment">Calculate a point estimate of the ratio <span class="math inline">\(\sigma_{1}/\sigma_{2}\)</span> of the two standard deviations.</li>
 <li class="fragment">Suppose one male third-grader and one female third-grader are randomly selected. Calculate a point estimate of the variance of the difference <span class="math inline">\(X - Y\)</span> between male and female IQ.</li>
 </ol>
 </section>
@@ -712,7 +712,7 @@ S^{2} = \frac{\sum_{i=1}^{n}(X_{i} - \bar{X})^{2}}{n-1}
 <li class="fragment">A <strong>point estimate</strong> of a parameter <span class="math inline">\(\theta\)</span> is a single number that can be regarded as a sensible value for <span class="math inline">\(\theta\)</span> that is calculated from the given sample data.<br>
 </li>
 <li class="fragment">The selected statistic used to calculate a point estimate is called the <strong>point estimator</strong> of <span class="math inline">\(\theta\)</span>.</li>
-<li class="fragment">The <strong>mean squared error</strong> of an estimate <span class="math inline">\(\hat{\theta}\)</span> is <span class="math inline">\(E[(\hat{\theta} - \theta)^{2}]\)</span></li>
+<li class="fragment">The <strong>mean squared error</strong> of an estimator <span class="math inline">\(\hat{\theta}\)</span> is <span class="math inline">\(E[(\hat{\theta} - \theta)^{2}]\)</span></li>
 <li class="fragment">A point estimator <span class="math inline">\(\hat{\theta}\)</span> is said to be an <strong>unbiased estimator</strong> of <span class="math inline">\(\theta\)</span> if <span class="math inline">\(E(\hat{\theta}) = \theta\)</span> for every possible value of <span class="math inline">\(\theta\)</span>.</li>
 </ul>
 </section>
@@ -822,7 +822,7 @@ f(x_{1}, x_{2},...,x_{n}; \hat{\theta}_{1},...,\hat{\theta}_{1}) \geq f(x_{1},x_
 <h2>MLE Example</h2>
 <p>Suppose <span class="math inline">\(X_{1}\)</span>,…,<span class="math inline">\(X_{n}\)</span> is a random sample from an exponential distribution with parameter <span class="math inline">\(\lambda\)</span>. Because of independence, the likelihood function is a product of the individual pdf’s.</p>
 <p><span class="math display">\[
-f(x_{1},...,x_{n}; \lambda) = (\lambda e^{\lambda x_{1}})(\lambda e^{\lambda x_{2}})\cdots (\lambda e^{\lambda x_{n}}) \ \lambda^{n} e^{-\lambda\sum x_{i}}
+f(x_{1},...,x_{n}; \lambda) = (\lambda e^{-\lambda x_{1}})(\lambda e^{-\lambda x_{2}})\cdots (\lambda e^{-\lambda x_{n}}) = \lambda^{n} e^{-\lambda\sum x_{i}}
 \]</span></p>
 <p>The ln(likelihood) is</p>
 <p><span class="math display">\[
@@ -880,7 +880,7 @@ f(x; \lambda, \theta) = \begin{cases}
 <p><strong>Proposition</strong></p>
 </div>
 <div class="callout-content">
-<p>Under very general conditions on the joint distribution of the sample, when the sample size is large, the maximum likelihood estimator of ay parameter <span class="math inline">\(\theta\)</span> is close to <span class="math inline">\(\theta\)</span> (consistency), is approximately unbiased (<span class="math inline">\(E[\hat{\theta}] \approx \theta\)</span>), and has variance that is nearly as small as can be achieved by any unbiased estimator. Stated another way, the mle <span class="math inline">\(\hat{\theta}\)</span> is approximately the MVUE of <span class="math inline">\(\theta\)</span>.</p>
+<p>Under very general conditions on the joint distribution of the sample, when the sample size is large, the maximum likelihood estimator of any parameter <span class="math inline">\(\theta\)</span> is close to <span class="math inline">\(\theta\)</span> (consistency), is approximately unbiased (<span class="math inline">\(E[\hat{\theta}] \approx \theta\)</span>), and has variance that is nearly as small as can be achieved by any unbiased estimator. Stated another way, the mle <span class="math inline">\(\hat{\theta}\)</span> is approximately the MVUE of <span class="math inline">\(\theta\)</span>.</p>
 </div>
 </div>
 </div>
@@ -936,7 +936,7 @@ P(X_{1} = x_{1}, X_{2} = x_{2}, X_{3} = x_{3}| \sum_{i=1}^{3}X_{i} = 4) = 0
 \begin{aligned}
 P(X_{1} = 2, X_{2} = 1, X_{3} = 1)|\sum_{i=1}^{3}X_{i} = 4) &amp;= P(A|B) \\
 &amp;= \frac{P(A\cap B)}{P(B)}\\
-&amp;= \frac{P(X_{1} = 2, X_{2}= 1, X_{3} =)}{P(\sum X_{i} = 4)}
+&amp;= \frac{P(X_{1} = 2, X_{2}= 1, X_{3} =1)}{P(\sum X_{i} = 4)}
 \end{aligned}
 \]</span></p>
 </section>
@@ -1072,7 +1072,7 @@ f(x_{1}, ..., x_{n}; \theta_{1}, ..., \theta_{k}) = g(t_{1}, ..., t_{m}; \theta_
 <section id="summary-3" class="slide level2">
 <h2>Summary</h2>
 <ul>
-<li class="fragment">A statistic is for making inferences about a parameter if the joint distribution of <span class="math inline">\(X_{1}\)</span>,…,<span class="math inline">\(X_{n}\)</span> given that <span class="math inline">\(T = t\)</span> does not depend upon <span class="math inline">\(\theta\)</span> for every possible value <span class="math inline">\(t\)</span> of the statistic <span class="math inline">\(T\)</span>.</li>
+<li class="fragment">A statistic is <strong>sufficient</strong> for making inferences about a parameter if the joint distribution of <span class="math inline">\(X_{1}\)</span>,…,<span class="math inline">\(X_{n}\)</span> given that <span class="math inline">\(T = t\)</span> does not depend upon <span class="math inline">\(\theta\)</span> for every possible value <span class="math inline">\(t\)</span> of the statistic <span class="math inline">\(T\)</span>.</li>
 <li class="fragment">Any one-to-one function of a sufficient statistic is itself sufficient.</li>
 <li class="fragment">The <span class="math inline">\(m\)</span> statistics <span class="math inline">\(T_{1} = t_{1}(X_{1}, ..., X_{n})\)</span>, <span class="math inline">\(T_{2} = t_{2}(X_{1}, ..., X_{n})\)</span>, …, <span class="math inline">\(T_{m} = t_{m}(X_{1}, ..., X_{n})\)</span> are said to be jointly sufficient for the parameters if the conditional distribution of the <span class="math inline">\(X_{i}\)</span>s given that <span class="math inline">\(T_{1} = t_{1}\)</span>, <span class="math inline">\(T_{2} = t_{2}\)</span>, …, <span class="math inline">\(T_{m} = t_{m}\)</span> does not depend on any of the unknown parameters, and this is true for all possible values <span class="math inline">\(t_{1}\)</span>, <span class="math inline">\(t_{2}\)</span>, . . ., <span class="math inline">\(t_{m}\)</span> of the statistics.</li>
 </ul>

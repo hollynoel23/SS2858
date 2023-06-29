@@ -101,7 +101,7 @@ A popular way to quantify the idea of $\hat{\theta}$ being closed to $\theta$ is
 ::: callout-important
 ## Definition
 
-The **mean squared error** of an estimate $\hat{\theta}$ is $E[(\hat{\theta} - \theta)^{2}]$
+The **mean squared error** of an estimator $\hat{\theta}$ is $E[(\hat{\theta} - \theta)^{2}]$
 :::
 
 ## Mean Squared Error
@@ -112,7 +112,7 @@ $$
 MSE = V(\hat{\theta}) + [E(\hat{\theta}) - \theta]^{2} = \text{ variance of estimator + (bias)}^{2}
 $$
 
-where \textbf{bias} is defined as the difference between the expected value of the estimator and the parameter.
+where **bias** is defined as the difference between the expected value of the estimator and the parameter.
 
 ## Bias
 
@@ -126,17 +126,17 @@ $$
 \hat{p} = \frac{X + \sqrt{n/4}}{n + \sqrt{n}}
 $$
 
-The justification for this estimator comes from the Bayesian approach to point estimator. 
+The justification for this estimator comes from the Bayesian approach to point estimator.
 
-a. Determine the mean squared error of this estimator. What do you find interesting about this MSE? 
-b. Compare the MSE of this estimator to the MSE of the usual estimator (the sample proportion).
+a.  Determine the mean squared error of this estimator. What do you find interesting about this MSE?
+b.  Compare the MSE of this estimator to the MSE of the usual estimator (the sample proportion).
 
 ## Unbiased Estimators
 
 ::: callout-important
 ## Definition
 
-A point estimator $\hat{\theta}$ is said to be an **unbiased estimator** of $\theta$ if $E(\hat{\theta}) = \theta$ for every possible value of $\theta$. If $\hat{\theta}$ is not unbiased, the difference $E(\hat{\theta}) - \theta$ is called the \textbf{bias} of $\hat{\theta}$.
+A point estimator $\hat{\theta}$ is said to be an **unbiased estimator** of $\theta$ if $E(\hat{\theta}) = \theta$ for every possible value of $\theta$. If $\hat{\theta}$ is not unbiased, the difference $E(\hat{\theta}) - \theta$ is called the **bias** of $\hat{\theta}$.
 :::
 
 ## Unbiased Estimators
@@ -225,7 +225,7 @@ The MVUE is not necessarily always "the best" estimator to use. The best estimat
 ::: callout-important
 ## Definition
 
-The \textbf{standard error} of an estimator $\hat{\theta}$ is its standard deviation $\sigma_{\hat{\theta}} = \sqrt{V(\hat{\theta})}$. If the standard error itself involves unknown parameters whose values can be estimated, substitution of these estimates into $\sigma_{\hat{\theta}}$ yields the \textbf{estimated standard error} (estimated standard deviation) of the estimator. The estimated standard error can be denoted by either $\hat{\sigma}_{\hat{\theta}}$ (the $\hat{}$ over $\sigma$ emphasizes that $\sigma_{\hat{\theta}}$ is being estimated) or by $s_{\hat{\theta}}$.
+The **standard error** of an estimator $\hat{\theta}$ is its standard deviation $\sigma_{\hat{\theta}} = \sqrt{V(\hat{\theta})}$. If the standard error itself involves unknown parameters whose values can be estimated, substitution of these estimates into $\sigma_{\hat{\theta}}$ yields the **estimated standard error** (estimated standard deviation) of the estimator. The estimated standard error can be denoted by either $\hat{\sigma}_{\hat{\theta}}$ (the $\hat{}$ over $\sigma$ emphasizes that $\sigma_{\hat{\theta}}$ is being estimated) or by $s_{\hat{\theta}}$.
 :::
 
 ## Example 4 {.smaller}
@@ -246,16 +246,16 @@ Prior to obtaining the data, denote the male values by $X_{1}$, $X_{2}$,...,$X_{
 
 ## Example 4 {.smaller}
 
-a.  Use the rules of expected value to show that $\bar{X} - \bar{Y}$ is an unbiased estimator of $\mu_{1} - \mu_{2}$. Calculate the estimate for the given data. \pause
-b.  Use rules of variance from Chapter 6 to obtain an expression for the variance and standard deviation (standard error) of the estimator in part (a), and then compute the estimated standard error. \pause
-c.  Calculate a point estimate of the ratio $\sigma_{1}/\sigma_{2}$ of the two standard deviations. \pause
+a.  Use the rules of expected value to show that $\bar{X} - \bar{Y}$ is an unbiased estimator of $\mu_{1} - \mu_{2}$. Calculate the estimate for the given data.
+b.  Use rules of variance from Chapter 6 to obtain an expression for the variance and standard deviation (standard error) of the estimator in part (a), and then compute the estimated standard error.
+c.  Calculate a point estimate of the ratio $\sigma_{1}/\sigma_{2}$ of the two standard deviations.
 d.  Suppose one male third-grader and one female third-grader are randomly selected. Calculate a point estimate of the variance of the difference $X - Y$ between male and female IQ.
 
 ## Summary
 
 -   A **point estimate** of a parameter $\theta$ is a single number that can be regarded as a sensible value for $\theta$ that is calculated from the given sample data.\
 -   The selected statistic used to calculate a point estimate is called the **point estimator** of $\theta$.
--   The **mean squared error** of an estimate $\hat{\theta}$ is $E[(\hat{\theta} - \theta)^{2}]$
+-   The **mean squared error** of an estimator $\hat{\theta}$ is $E[(\hat{\theta} - \theta)^{2}]$
 -   A point estimator $\hat{\theta}$ is said to be an **unbiased estimator** of $\theta$ if $E(\hat{\theta}) = \theta$ for every possible value of $\theta$.
 
 ## Summary
@@ -339,7 +339,7 @@ When the $X_{i}$s are substituted in place of the $x_{i}$s, the **maximum likeli
 Suppose $X_{1}$,...,$X_{n}$ is a random sample from an exponential distribution with parameter $\lambda$. Because of independence, the likelihood function is a product of the individual pdf's.
 
 $$
-f(x_{1},...,x_{n}; \lambda) = (\lambda e^{\lambda x_{1}})(\lambda e^{\lambda x_{2}})\cdots (\lambda e^{\lambda x_{n}}) \ \lambda^{n} e^{-\lambda\sum x_{i}}
+f(x_{1},...,x_{n}; \lambda) = (\lambda e^{-\lambda x_{1}})(\lambda e^{-\lambda x_{2}})\cdots (\lambda e^{-\lambda x_{n}}) = \lambda^{n} e^{-\lambda\sum x_{i}}
 $$
 
 The ln(likelihood) is
@@ -389,7 +389,7 @@ Note: This is not the sample standard deviation $S$, although they are close unl
 ::: callout-important
 ## Proposition
 
-Under very general conditions on the joint distribution of the sample, when the sample size is large, the maximum likelihood estimator of ay parameter $\theta$ is close to $\theta$ (consistency), is approximately unbiased ($E[\hat{\theta}] \approx \theta$), and has variance that is nearly as small as can be achieved by any unbiased estimator. Stated another way, the mle $\hat{\theta}$ is approximately the MVUE of $\theta$.
+Under very general conditions on the joint distribution of the sample, when the sample size is large, the maximum likelihood estimator of any parameter $\theta$ is close to $\theta$ (consistency), is approximately unbiased ($E[\hat{\theta}] \approx \theta$), and has variance that is nearly as small as can be achieved by any unbiased estimator. Stated another way, the mle $\hat{\theta}$ is approximately the MVUE of $\theta$.
 :::
 
 ## Large-Sample Behaviour of the MLE
@@ -437,7 +437,7 @@ $$
 \begin{aligned}
 P(X_{1} = 2, X_{2} = 1, X_{3} = 1)|\sum_{i=1}^{3}X_{i} = 4) &= P(A|B) \\
 &= \frac{P(A\cap B)}{P(B)}\\
-&= \frac{P(X_{1} = 2, X_{2}= 1, X_{3} =)}{P(\sum X_{i} = 4)}
+&= \frac{P(X_{1} = 2, X_{2}= 1, X_{3} =1)}{P(\sum X_{i} = 4)}
 \end{aligned}
 $$
 
@@ -546,7 +546,7 @@ The maximum likelihood estimates result from maximizing $f(\cdot)$ with respect 
 
 ## Summary
 
--   A statistic is \textbf{sufficient} for making inferences about a parameter if the joint distribution of $X_{1}$,...,$X_{n}$ given that $T = t$ does not depend upon $\theta$ for every possible value $t$ of the statistic $T$.
+-   A statistic is **sufficient** for making inferences about a parameter if the joint distribution of $X_{1}$,...,$X_{n}$ given that $T = t$ does not depend upon $\theta$ for every possible value $t$ of the statistic $T$.
 -   Any one-to-one function of a sufficient statistic is itself sufficient.
 -   The $m$ statistics $T_{1} = t_{1}(X_{1}, ..., X_{n})$, $T_{2} = t_{2}(X_{1}, ..., X_{n})$, ..., $T_{m} = t_{m}(X_{1}, ..., X_{n})$ are said to be jointly sufficient for the parameters if the conditional distribution of the $X_{i}$s given that $T_{1} = t_{1}$, $T_{2} = t_{2}$, ..., $T_{m} = t_{m}$ does not depend on any of the unknown parameters, and this is true for all possible values $t_{1}$, $t_{2}$, . . ., $t_{m}$ of the statistics.
 
