@@ -1,0 +1,748 @@
+---
+title: "Chapter 8"
+format: 
+  revealjs: 
+    toc: false
+    theme: [default, /Users/hollysteeves/Library/CloudStorage/OneDrive-TheUniversityofWesternOntario/Western.scss]
+    incremental: true
+editor: visual
+author: "Holly Steeves"
+---
+
+# 8.1 Basic Properties of Confidence Intervals
+
+## Outcomes
+
+By the end of this section, you will be able to
+
+-   Define a confidence interval and confidence level for a parameter of interest.
+-   Interpret a confidence interval for a parameter.
+-   Find the critical values of a normal distribution.
+-   Calculate a confidence interval for $\mu$ when $\sigma$ is known, and the random sample comes from a Normal distribution.
+-   Determine the sample size needed to obtain a CI with desired width $w$.
+
+<!-- ## Exercise 10 -->
+
+## Introduction
+
+-   A point estimate, by itself, provides no information about the precision and reliability of estimation since it is a single number.
+-   Because of sampling variability, it is virtually never the case that $\bar{x} = \mu$.
+-   The point estimate says nothing about how close it might be to $\mu$.
+-   An alternative to reporting a single sensible value for the parameter being estimated is to calculate and report an entire interval of plausible values - an interval estimate or **confidence interval (CI)**.
+
+## Introduction
+
+-   A confidence interval is always calculated by first selecting a **confidence level**, which is a measure of the degree of reliability of the interval.
+-   A confidence level of 95% implies that 95% of all samples would give an interval that includes $\mu$, or whatever other parameter is being estimated, and only 5% of all samples would yield an erroneous interval.
+-   The higher the confidence level, the more strongly we believe that the value of the parameter being estimated lies within the interval (an interpretation of any particular confidence level will be given shortly).
+
+## Introduction
+
+-   Information about the precision of an interval estimate is conveyed by the width of the interval.
+-   If the confidence level is high and the resulting interval is quite narrow, our knowledge of the value of the parameter is reasonably precise.
+-   A very wide confidence interval, however, gives the message that there is a great deal of uncertainty concerning the value of what we are estimating.
+
+## Basic Properties of Confidence Intervals
+
+-   The basic concepts and properties of confidence intervals (CIs) are most easily introduced by first focusing on a simple, albeit somewhat unrealistic, problem situation.
+-   Suppose the parameter of interest is a population mean $\mu$ and that
+
+1.  The population distribution is normal.
+2.  The value of the population standard deviation $\sigma$ is known.
+
+-   Normality of the population distribution is often a reasonable assumption. However, if the value of $\mu$ is unknown, it is unlikely that the value of $\sigma$ would be available.
+-   In later sections, we will develop methods based on less restrictive assumptions.
+
+## Example 8.1
+
+Industrial engineers who specialize in ergonomics are concerned with designing workspace and devices operated by workers so as to achieve high productivity and comfort. An article reports on a study of preferred height for an experimental keyboard with large forearm-wrist support. A sample of $n=31$ trained typists were selected, and the preferred keyboard height was determined for each typist. The resulting sample average preferred height was $\bar{x} = 80$ cm. Assuming that the preferred height is normally distributed with $\sigma = 2.0$ cm, obtain a CI for $\mu$, the true average preferred height for the population of all experienced typists.
+
+## Example 8.1
+
+The actual sample observations $x_{1}$, $x_{2}$, ..., $x_{n}$ are assumed to be the result of a random sample $X_{1}$, $X_{2}$,...,$X_{n}$ from a normal distribution with mean $\mu$ and standard deviation $\sigma$. The resuts from Chapter 6 then imply that irrespective of the sample size $n$, the sample mean $\bar{X}$ is normally distributed with expected value $\mu$ and standard deviation $\sigma/\sqrt{n}$. Standardizing $\bar{X}$ by first subtracting its expected value and then dividing by its standard deviation yields the variable:
+
+$$
+Z = \frac{\bar{X} - \mu}{\sigma/\sqrt{n}}
+$$ which has a standard normal distribution. Because the area under the standard normal curve between -1.96 and 1.96 is 0.95,
+
+$$
+P\left(-1.96 < \frac{\bar{X} - \mu}{\sigma/\sqrt{n}} < 1.96\right) = 0.95
+$$
+
+## Example 8.1
+
+Next, we need to manipulate what is inside the brackets so that we get something in the form $l < \mu < u$. Let's do this step by step:
+
+1.  Multiply through by $\sigma/\sqrt{n}$ to obtain
+
+$$
+-1.96 \cdot \frac{\sigma}{\sqrt{n}} < \bar{X} - \mu < 1.96 \cdot \frac{\sigma}{\sqrt{n}}
+$$
+
+2.  Subtract $\bar{X}$ from each term to obtain
+
+$$
+-\bar{X} -1.96 \cdot \frac{\sigma}{\sqrt{n}} < - \mu < -\bar{X} + 1.96 \cdot \frac{\sigma}{\sqrt{n}}
+$$
+
+## Example 8.1
+
+3.  Multiply through by -1 to eliminate the minus sign in front of $\mu$ (which reverses the direction of each inequality) to obtain
+
+$$
+\bar{X} + 1.96 \cdot \frac{\sigma}{\sqrt{n}} >  \mu > \bar{X} - 1.96 \cdot \frac{\sigma}{\sqrt{n}}
+$$
+
+That is:
+
+$$
+\bar{X} - 1.96 \cdot \frac{\sigma}{\sqrt{n}} <  \mu < \bar{X} + 1.96 \cdot \frac{\sigma}{\sqrt{n}}
+$$
+
+## Confidence Interval
+
+::: callout-important
+## Definition
+
+If after observing \$X\_{1} = x\_{1}\$, \$X\_{2} = x\_{2}\$, \..., \$X\_{n} = x\_{n}\$, we compute the observed sample mean \$\\bar{x}\$ and then substitute \$\\bar{x}\$ into the interval described earlier in place of \$\\bar{X}\$, the resulting fixed interval is called a \\textbf{95\\% confidence interval for} \$\\boldsymbol\\mu\$. This CI can be expressed either as
+
+$$
+\left(\bar{x} - 1.96 \cdot \sigma/\sqrt{n}, \bar{x} + 1.96 \cdot \sigma/\sqrt{n} \right) \text{ is a 95\\% confidence interval for } \mu
+$$
+
+or as
+
+$$
+\bar{x} - 1.96 \cdot \sigma/\sqrt{n} < \mu < \bar{x} + 1.96 \cdot \sigma/\sqrt{n} \text{ with 95% confidence} 
+$$
+:::
+
+## Example 8.1
+
+Since all the statements earlier were equivalent, we get that:
+
+$$
+P\left(\bar{X} - 1.96 \cdot \frac{\sigma}{\sqrt{n}} <  \mu < \bar{X} + 1.96 \cdot \frac{\sigma}{\sqrt{n}}\right) = 0.95
+$$
+
+To interpret this, think of a **random interval** having left endpoint $\bar{X} - 1.96 \cdot \sigma/\sqrt{n}$ and right endpoint $\bar{X} + 1.96 \cdot \sigma/\sqrt{n}$, which in interval notation is:
+
+$$
+\left(\bar{X} - 1.96 \cdot \sigma/\sqrt{n},  \bar{X} + 1.96 \cdot \sigma/\sqrt{n} \right)
+$$
+
+The interval is random because the two endpoints of the interval involve a random variable ($\bar{X}$). Therefore, the above probability statement can be interpreted as \`\`the probability is 0.95 that the random interval includes or covers the true value of $\mu$."
+
+## Example 8.1
+
+Below is a visual of the random interval described.
+
+![](images/randominterval.png){fig-alt="Number line with X bar in the center, and the two limits of the confidence intervals on either side, showing that in each direction we are travelling 1.96 times sigma over root n."}
+
+## Interpreting a Confidence Interval
+
+The confidence interval defined was inherited from the probability for the random interval. How can this 95% confidence interval be interpreted?
+
+## Interpreting a Confidence Interval
+
+We started with the probability that the random interval would capture the true value of $\mu$ being 0.95, but then we used data to compute a fixed interval. Be careful, it is tempting to conclude that $\mu$ is within this fixed interval with probability 0.95, but by substituting $\bar{x}$ for $\bar{X}$, all randomness disappears. Therefore, our calculated interval is not random, and it is thus incorrect to say the probability $\mu$ lies in the interval is 0.95.
+
+## Interpreting a Confidence Interval
+
+A correct interpretation of "95% confidence" relies on the long-run relative frequency interpretation of probability: To say that an event A has probability 0.95 is to say that if the experiment on which A is defined is performed over and over again, in the long run A will occur 95% of the time.
+
+## Interpreting a Confidence Interval
+
+Let A be the event that $\bar{X} - 1.96\cdot \sigma/\sqrt{n} < \mu < \bar{X} + 1.96\cdot \sigma/\sqrt{n}$ . Since P(A) = 0.95, in the long run 95% of our computed CIs will contain $\mu$. This is illustrated below where the vertical line cuts the measurement axis at the true (but unknown) value of $\mu$. Notice that of the 11 intervals pictured, only intervals 3 and 11 fail to contain $\mu$. In the long run, only 5% of the intervals so constructed would fail to contain $\mu$.
+
+## Interpreting a Confidence Interval
+
+![](images/CIinterpretation.png){fig-alt="A vertical line where mu lies, with 11 bars representing confidence intervals. All of the bars cover mu except two."}
+
+## Exercise 4
+
+A CI is desired for the true average stray-load loss $\mu$ (watts) for a certain type of induction motor when the line current is held at 10 amps for a speed of 1,500 rpm. Assume that stray-load loss is normally distributed with $\sigma = 3.0$.
+
+a.  Compute a 95% CI for $\mu$ when $n = 25$% and $\bar{x} = 58.3$.
+
+$$
+\begin{aligned}
+\bar{x} -  1.96\cdot \sigma/\sqrt{n} < &\mu < \bar{x} + 1.96\cdot \sigma/\sqrt{n} \\
+58.3 -  1.96\cdot 3.0/\sqrt{25} < &\mu < 58.3 1.96\cdot 3.0/\sqrt{25} \\
+57.124 < \mu < 59.476
+\end{aligned}
+$$
+
+Therefore, we are 95% confident that the true mean stray load loss is between 57.124 and 59.476 watts.
+
+## Exercise 4
+
+b.  Compute a 95% CI for $\mu$ when n=100 and $\bar{x} = 58.3$.
+
+## Other Levels of Confidence
+
+The confidence level of 95% was inherited from the probability 0.95 for the initial inequalities. If a confidence level of 99% was desired instead,the initial probability of 0.95 must be replaced by 0.99, which necessitates changing the $z$ critical value from 1.96 to 2.58. A 99% CI then results from using 2.58 in place of 1.96 in the formula for the 95% CI.
+
+## Other Levels of Confidence
+
+We can do this for any desired level of confidence. That is, replace 1.96 or 2.58 with the appropriate standard normal critical value. As the figure below shows, a probability of $1-\alpha$ is achieved by using $z_{\alpha/2}$ in place of 1.96.
+
+![](images/confidencelevel.png){fig-alt="A bell curve (normal curve) with 1 - alpha in the center, and alpha/2 in either tail."}
+
+## CIs with Other Levels of Confidence
+
+::: callout-important
+## Definition
+
+A **100(1-**$\alpha$)% confidence interval for the mean $\mu$ of a normal population when the value of $\sigma$ is known is given by
+
+$$
+\left(\bar{x} - z_{\alpha/2}\cdot\frac{\sigma}{\sqrt{n}}, \bar{x} + z_{\alpha/2}\cdot\frac{\sigma}{\sqrt{n}}\right)
+$$
+
+or equivalently, by $\bar{x} \pm z_{\alpha/2}\cdot\frac{\sigma}{\sqrt{n}}$.
+:::
+
+## Exercise 4
+
+A CI is desired for the true average stray-load loss $\mu$ (watts) for a certain type of induction motor when the line current is held at 10 amps for a speed of 1,500 rpm. Assume that stray-load loss is normally distributed with $\sigma = 3.0$.
+
+c.  Compute a 99% confidence CI for $\mu$ when $n=100$ and $\bar{x} = 58.3$.
+
+$$ 
+\begin{aligned}
+(\bar{x} - z_{\alpha/2} \cdot \frac{\sigma}{\sqrt{n}} &, \bar{x} + z_{\alpha/2} \cdot \frac{\sigma}{\sqrt{n}}) \\
+(58.3 - z_{0.005} \cdot \frac{3.0}{\sqrt{100}} &, 58.3 + z_{0.005} \cdot \frac{3.0}{\sqrt{100}})  \\
+(58.3 - 2.58 \cdot \frac{3.0}{\sqrt{100}} &, 58.3 + 2.58 \cdot \frac{3.0}{\sqrt{100}} ) \\
+(57.526 &, 59.074) \\
+\end{aligned}
+$$
+
+## Exercise 4
+
+d.  Compute an 82% CI for $\mu$ when $n=100$, and $\bar{x} = 58.3$.
+
+## Confidence Level, Precision, and Choice of Sample Size
+
+Why settle for a 95% confidence level when 99% is achievable?
+
+-   Because the price paid for a higher confidence level is a wider interval!
+-   As confidence level goes up, so does the width of the interval.
+-   In fact, the only 100% CI is $(-\infty,\infty)$.
+-   If we consider the width of the interval as its precision or accuracy, then the confidence level (or reliability) is inversely related to precision.
+-   Thus, a gain in reliability entails a loss in precision.
+-   How do we handle this?
+
+## Confidence Level, Precision, and Choice of Sample Size
+
+An appealing strategy is to specify both the desired confidence level and interval width and then determine the necessary sample size.
+
+Since the width of an interval is $w = 2\cdot z_{\alpha/2}\cdot \sigma/\sqrt{n}$, we can rearrange to solve for $n$, the sample size.
+
+::: callout-important
+## Formula
+
+$$
+n \geq \left(2z_{\alpha/2}\cdot \frac{\sigma}{w} \right)^{2} 
+$$
+:::
+
+## Confidence Level, Precision, and Choice of Sample Size
+
+-   The smaller the desired width, the large $n$ must be.
+-   $n$ is also an increasing function of $\sigma$, and of the confidence level 100(1-$\alpha$).
+-   The halfwidth of the interval is sometimes called the **bound on the error of estimation** or the **margin of error**.
+
+## Example 4
+
+A CI is desired for the true average stray-load loss $\mu$ (watts) for a certain type of induction motor when the line current is held at 10 amps for a speed of 1,500 rpm. Assume that stray-load loss is normally distributed with $\sigma = 3.0$.
+
+e.  How large must $n$ be if the width of the 99% interval for $\mu$ is to be 1.0?
+
+$$
+\begin{aligned}
+n &\geq \left(2z_{\alpha/2}\cdot \frac{\sigma}{w} \right)^{2} \\
+&= \left(2\cdot 2.58\cdot \frac{3.0}{1.0} \right)^{2} \\
+&= 239.63 \\
+\end{aligned} 
+$$
+
+Therefore a sample size of 240 is needed to obtain a width of 1.0 at 99% confidence.
+
+## Exercise 5
+
+Assume that the helium porosity (in percentage) of coal samples taken from any particular seam is normally distributed with true standard deviation 0.75.
+
+e.  What sample size is necessary to estimate true average porosity to within 0.2 with 99% confidence?
+
+## Deriving a Confidence Interval
+
+Let $X_{1}$, $X_{2}$,...,$X_{n}$ denote the sample on which the CI for a parameter $\theta$ is to be based. Suppose a random variable satisfying the following two properties can be found.
+
+1.  The variable depends functionally on both $X_{1}$, ..., $X_{n}$ and $\theta$.
+2.  The probability distribution of the variable does not depend on $\theta$ or on any other unknown parameters.
+
+## Deriving a Confidence Interval
+
+Let $h(X_{1}, X_{2}, ... , X_{n}; y)$ denote this random variable. For example, if the population distribution is normal with known $\sigma$ and $\theta = \mu$, the variable $h(X_{1}; ... ; X_{n}; \theta) = (X - \mu)/(\sigma/\sqrt{n})$ satisfies both properties; it clearly depends functionally on $\mu$, yet has the standard normal probability distribution, which does not depend on $\mu$. In general, the form of the $h$ function is usually suggested by examining the distribution of an appropriate estimator $\hat{\theta}$.
+
+## Deriving a Confidence Interval
+
+For any $\alpha$ between $0$ and $1$, constants $a$ and $b$ can be found to satisfy
+
+$$
+P[a < h(X_{1}; ... ; X_{n}; \theta) < b] = 1  - \alpha
+$$
+
+Because of the second property, $a$ and $b$ do not depend on $\theta$. In the normal example $a = -z_{\alpha/2}$ and $b = z_{\alpha/2}$. Now suppose that the inequalities above can be manipulated to isolate $\theta$, giving the equivalent probability statement
+
+$$
+P[l(X_{1},...,X_{n}) < \theta < u(X_{1},...,x_{n})] = 1 - \alpha
+$$
+
+Then $l(x_{1}, x_{2}, ... , x_{n})$ and $u(x_{1}, ... , x_{n})$ are the lower and upper confidence limits, respectively, for a $100(1 - \alpha)\%$ CI. In the normal example, we saw that $l(X_{1}, ..., X_{n}) = \bar{X} - z_{\alpha/2} \cdot \sigma/ \sqrt{n}$ and $u(X_{1}, ..., X_{n}) = \bar{X} + z_{\alpha/2} \cdot \sigma/ \sqrt{n}$.
+
+## Summary
+
+-   A **confidence interval** is an interval of plausible values for parameter of interest, or an interval estimate of the parameter.
+-   The **confidence level** is a measure of the degree of reliability of the interval.
+-   The interpretation of a confidence interval is that if we collect many samples of size $n$ and for each, calculate a (1-$\alpha$)100% CI for each, then we expect (1-$\alpha$)100% of these intervals to capture $\mu$.
+-   $z_{\alpha/2}$ is the value on the standard normal distribution that has upper area $\alpha/2$.
+
+## Summary
+
+-   A (1-$\alpha$)100% CI for the mean $\mu$ of a normal population when the value of $\sigma$ is known is given by
+
+$$
+\bar{x} \pm z_{\alpha/2}\cdot \frac{\sigma}{\sqrt{n}}
+$$
+
+-   To obtain a interval with width $w$ at a given confidence level ($1-\alpha$)100% when we know $\sigma$, we need
+
+$$
+n \geq \left( 2\cdot z_{\alpha/2}\cdot \frac{\sigma}{w}\right)^{2}
+$$
+
+-   The half width of an interval is called the **margin of error**. <!-- ## Exercise 10 -->
+
+<!-- A random sample of $n = 15$ heat pumps of a certain type yielded the following observations on lifetime (in years): -->
+
+<!-- |     |     |     |     |     |     |     |     | -->
+
+<!-- |-----|-----|-----|-----|-----|-----|-----|-----| -->
+
+<!-- | 2.0 | 1.3 | 6.0 | 1.9 | 5.1 | 0.4 | 1.0 | 5.3 | -->
+
+<!-- | 15.7 | 0.7 | 4.8 | 0.9 | 12.2 | 5.3 | 0.6 |   | -->
+
+<!-- a. Assume that the lifetime distribution is exponential and use an argument parallel to that of Example 8.5 to obtain a 95% CI for expected(true average) lifetime. -->
+
+<!-- b. How should the interval of part (a) be altered to achieve a confidence level of 99%? -->
+
+<!-- c. What is a 95% CI for the standard deviation of the lifetime distribution? [Hint: What is the standard deviation of an exponential random variable?] -->
+
+## Practice Problems
+
+-   Odd problems 1 - 11
+
+# 8.2 Large-Sample Confidence Intervals for a Population Mean and Proportion
+
+## Outcomes
+
+-   Know how and when to calculate a large-sample interval for $\mu$.
+-   Know how and when to calculate a general large-sample confidence interval.
+-   Know how and when to calculate a confidence interval for a population proportion using the score CI or the traditional CI, and know the benefits of using either.
+-   Know how and when to use one-sided confidence intervals.
+
+## Introduction
+
+The CI for $\mu$ presented in the previous section assumed that the population distribution is normal and that the value of $\sigma$ is known. We now present a large-sample CI whose validity does not require these assumptions.
+
+## A Large-Sample Interval for Mean
+
+Let $X_{1}$, $X_{2}$,..., $X_{n}$ be a random sample from a population having a mean $\mu$ and standard deviation $\sigma$. Provided that $n$ is large, the Central Limit Theorem (CLT) implies that $\bar{X}$ has approximately a normal distribution whatever the nature of the population distribution. It then follows that $Z = \frac{\bar{X}-\mu}{\sigma/\sqrt{n}}$ has approximately a standard normal distribution, so that:
+
+$$
+P\left(-z_{\alpha/2} < \frac{\bar{X} - \mu}{\sigma/\sqrt{n}} < z_{\alpha/2}\right) \approx 1 - \alpha
+$$
+
+## A Large-Sample Interval for Mean
+
+But this still requires $\sigma$, which will almost never be known. Consider the standardized variable
+
+$$
+Z = \frac{\bar{X} - \mu}{S/\sqrt{n}}
+$$
+
+where $\sigma$, is replaced by the sample standard deviation $S$. Previously there was randomness only in the number of $Z$, but now there is randomness in the numerator and the denominator - the values of both $\bar{X}$ and $S$ vary from sample to sample. However, when $n$ is large, the use of $S$ rather than $\sigma$ adds very little extra variability to $Z$. More specifically, in this case the new $Z$ also has approximately a standard normal distribution.
+
+## A Large-Sample Confidence Interval for Mean
+
+::: callout-important
+## Proposition
+
+If $n$ is sufficiently large, the standardized variable
+
+$$
+Z = \frac{\bar{X} - \mu}{S/\sqrt{n}}
+$$
+
+has approximately a standard normal distribution. This implies that
+
+$$
+\bar{x} \pm z_{\alpha/2}\cdot \frac{s}{\sqrt{n}}
+$$
+
+is a **large-sample confidence interval for** $\mu$ with confidence level approximately 100($1-\alpha$)%. This formula is valid regardless of the shape of the population distribution.
+:::
+
+## A Large-Sample Confidence Interval for Mean
+
+Speaking generally, $n>40$ will be sufficient to justify the use of this interval. This is somewhat more conservative than the rule of thumb for the CLT because of the additional variability introduced by using $S$ in place of $\sigma$.
+
+## Exercise 12
+
+A random sample of 110 lightning flashes in a region resulted in a sample average radar echo duration of 0.81s and a sample standard deviation of 0.34 s. Calculate a 99% confidence interval for the true average echo duration $\mu$ and interpret the resulting interval.
+
+## Exercise 12 Solutions
+
+$n = 110$\
+$\bar{x} = 0.81$\
+$s = 0.34$\
+$\alpha = 0.01$
+
+$$ 
+\begin{aligned}
+\bar{x} &\pm z_{\alpha/2}\cdot \frac{s}{\sqrt{n}} \\
+0.81 &\pm z_{0.005}\cdot \frac{0.34}{\sqrt{110}} \\
+0.81 &\pm 2.575 \cdot \frac{0.34}{\sqrt{110}} \\
+0.81 &\pm 0.083 \\
+(0.727&, 0.893)
+\end{aligned}
+$$
+
+We are 99% confident that the true average radar echo duration of lightning flashes in a region is between 0.727 and 0.893 MPa.
+
+## Exercise 14
+
+An article gave the following summary information for fracture strengths (MPa) of $n = 169$ ceramic bars fired in a particular kiln: $\bar{x} = 89.10, s = 3.73$.
+
+a.  Calculate a (two-sided) confidence interval for true average fracture strength using a confidence level of 95%. Does it appear that true average fracture strength has been precisely estimated?
+b.  Suppose the investigators had believed a priori that the population standard deviation was about 4 MPa. Based on this supposition, how large a sample would have been required to estimate $\mu$ to within 0.5 MPa with 95% confidence?
+
+## A General Large-Sample Confidence Interval
+
+Suppose that $\hat{\theta}$ is an estimator satisfying the following properties:
+
+1.  It has approximately a normal distribution.
+2.  It is (at least approximately) unbiased.
+3.  An expression for $\sigma_{\hat{\theta}}$, the standard deviation of $\hat{\theta}$ is available.
+
+For example, in the case of $\theta = \mu$, $\hat{\mu} = \bar{X}$ is an unbiased estimator whose distribution is approximately normal when $n$ is large and $\sigma_{\hat{\mu}} = \sigma_{\bar{X}} = \sigma/\sqrt{n}$. Standardizing $\hat{\theta}$ yields the rv $Z = (\hat{\theta} - \theta)/\sigma_{\hat{\theta}}$, which has approximately a standard normal distribution. This justifies the probability statement
+
+$$
+P\left(-z_{\alpha/2} < \frac{\hat{\theta} - \theta}{\sigma_{\hat{\theta}}} < z_{\alpha/2}\right) \approx 1 - \alpha
+$$
+
+## A General Large-Sample Confidence Interval
+
+Finally, suppose that $\sigma_{\hat{\theta}}$ does involve the unknown $\sigma$. This is the case, for example, when $\theta=p$, a population proportion. Then $(\hat{\theta} - \theta)/\sigma_{\hat{\theta}} = z_{\alpha/2}$ can be difficult to solve. An approximate solution can often be obtained by replacing $\theta$ in $\sigma_{\hat{\theta}}$ by its estimate $\hat{\theta}$. This results in an estimated standard deviation $s_{\hat{\theta}}$, and the corresponding interval is again $\hat{\theta} \pm z_{\alpha/2}\cdot s_{\hat{\theta}}$
+
+## Exercise 26
+
+The superintendent of a large school district, having once had a course in probability and statistics, believes that the number of teachers absent on any given day has a Poisson distribution with parameter $\lambda$. Use the accompanying data on absences for 50 days to derive a large-sample CI for $\lambda$. \[Hint: The mean and variance of a Poisson variable both equal $\lambda$\], so
+
+$$
+Z = \frac{\bar{X} - \lambda}{\sqrt{\lambda/n}}
+$$
+
+has approximately a standard normal distribution. Make a probability statement (with probability 1 - $\alpha$) and solve the resulting inequalities for $\lambda$.
+
+| Number of absences | 0   | 1   | 2   | 3   | 4   | 5   | 6   | 7   | 8   | 9   | 10  |
+|--------------------|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
+| Frequency          | 1   | 4   | 8   | 10  | 8   | 7   | 5   | 3   | 2   | 1   | 1   |
+
+## Exercise 26 Solutions
+
+$$
+P(-z_{\alpha/2} < \frac{\bar{X} - \lambda}{\sqrt{\lambda/n}} < z_{\alpha/2} ) \approx 1 - \alpha 
+$$
+
+Now we need to rearrange the inequality in the probability statement to solve for $\lambda$. Let's consider it as an equality statement first for simplicity.
+
+$$
+\begin{aligned}
+\frac{\bar{X} - \lambda}{\sqrt{\lambda/n}} &= \pm z_{\alpha/2}\\
+\bar{X} - \lambda &= \pm z_{\alpha/2}\sqrt{\lambda/n} \\
+(\bar{X} - \lambda)^{2} &= (\pm z_{\alpha/2}\sqrt{\lambda/n})^{2} \\
+\bar{X}^{2} -2\bar{X}\lambda + \lambda^{2} &= z_{\alpha/2}^{2}\lambda/n \\
+\bar{X}^{2} -(2\bar{X} + z^{2}_{\alpha/2}/n)\lambda + \lambda^{2} &= 0 
+\end{aligned}
+$$
+
+## Exercise 26 Solutions
+
+From the quadratic equation, letting $a = 1$, $b = -(2\bar{X} + z^{2}_{\alpha/2}/n)$ and $c = \bar{X}^{2}$.
+
+$$
+\begin{aligned}
+\frac{-b \pm \sqrt{b^{2} - 4ac}}{2a} \\
+\frac{-(-(2\bar{X} + z^{2}_{\alpha/2}/n)) \pm \sqrt{[-(2\bar{X} + z^{2}_{\alpha/2}/n)]^{2} - 4\bar{X}^{2}}}{2} \\
+\bar{X} + \frac{z^{2}_{\alpha/2}}{2n} \pm \frac{\sqrt{4\bar{X}^{2} + 4\bar{X}z_{\alpha/2}^{2}/n + z_{\alpha/2}^{4}/n^{2} - 4\bar{X}^{2}}}{2} \\
+\bar{X} + \frac{z^{2}_{\alpha/2}}{2n} \pm \frac{\sqrt{4\bar{X}z_{\alpha/2}^{2}/n + z_{\alpha/2}^{4}/n^{2}}}{2} \\
+\bar{X} + \frac{z^{2}_{\alpha/2}}{2n} \pm z_{\alpha/2}\frac{\sqrt{4n\bar{X} + z_{\alpha/2}^{2}}}{2n} 
+\end{aligned}
+$$
+
+## Exercise 26 Solutions
+
+Therefore, we can plug into the final statement to obtain our confidence bounds for $\lambda$.
+
+From the data, we get that $\bar{X} = 203/50 = 4.06$, $n=50$ and for 95% confidence, $z_{0.025} = 1.96$.
+
+## Exercise 26 Solutions
+
+$$
+\begin{aligned}
+\bar{X} + \frac{z^{2}_{\alpha/2}}{2n} &\pm z_{\alpha/2}\frac{\sqrt{4n\bar{X} + z_{\alpha/2}^{2}}}{2n} \\
+4.06 + \frac{1.96^{2}}{2(50)} &\pm 1.96\frac{\sqrt{4(50)(4.06) + 1.96^{2}}}{2(50)} \\
+4.0984 &\pm 1.96\frac{\sqrt{815.8416}}{100} \\
+4.0984 &\pm 0.5598\\
+(3.5386&, 4.6582)
+\end{aligned}
+$$
+
+## Exercise 26 Solution
+
+Note that for large $n$, this is approximately equivalent to $\bar{X} \pm z_{\alpha/2}\frac{\sqrt{\bar{X}}}{\sqrt{n}} = \hat{\mu} \pm z_{\alpha/2}\frac{\hat{\sigma}}{\sqrt{n}}$ (since $\mu= \sigma^{2} = \lambda$ for the Poisson distribution).
+
+## A Confidence Interval for a Population Proportion
+
+-   Let $p$ denote the proportion of "successes" in a population, where success identifies an individual of object that has a specified property.
+-   A random sample of $n$ individuals is to be selected, and $X$ is the number of successes in the sample.
+-   Provided that $n$ is small compared to the population size, $X$ can be regarded as a binomial random variable with $E(X) = np$ and $\sigma_{X} = \sqrt{np(1-p)}$.
+-   Furthermore, if $n$ is large, ($np \geq 10$ and $nq \geq 10$), $X$ has approximately a normal distribution.
+
+## A Confidence Interval for a Population Proportion
+
+-   The natural estimator of $p$ is $\hat{p} = X/n$, the sample fraction of successes.
+-   Since $\hat{p}$ is just $X$ multiplied by a constant, $\hat{p}$ also has approximately a normal distribution.
+-   As shown in Section 7.1, $E(\hat{p}) = p$ (unbiasedness) and $\sigma_{\hat{p}} = \sqrt{p(1-p)/n}$.
+-   The standard deviation $\sigma_{\hat{p}}$ involves the unknown parameter $p$. Standardizing $\hat{p}$ by subtracting $p$ and dividing by $\sigma_{\hat{p}}$ then implies that:
+
+$$
+P(-z_{\alpha/2} < \frac{\hat{p} - p}{\sqrt{p(1-p)/n}} < z_{\alpha/2}) \approx 1-\alpha
+$$
+
+**Show derivation on board**
+
+## A Confidence Interval for a Population Proportion
+
+::: callout-important
+## Proposition
+
+Let $\tilde{p} = \frac{\hat{p} + z_{\alpha/2}^{2}/2n}{1 + z^{2}_{\alpha/2}/n}$. Then a **confidence interval for a population proportion p** with confidence level approximately 100(1-$\alpha$)% is
+
+$$
+\tilde{p} \pm z_{\alpha/2}\frac{\sqrt{\hat{p}\hat{q}/n + z_{\alpha/2}^{2}/4n^{2}}}{1+z^{2}_{\alpha/2}/n}
+$$
+
+where $\hat{q} = 1 - \hat{p}$. This is often referred to the "score CI" for $p$.
+:::
+
+## Exercise 20
+
+The Associated Press (October 9, 2002) reported that in a survey of 4722 American youngsters aged 6-19, 15% were seriously overweight (a body mass index of at least 30; this index is a measure of weight relative to height). Calculate and interpret a confidence interval using a 99% confidence level for the proportion of all American youngsters who are seriously overweight.
+
+## Exercise 20 Solutions
+
+$\hat{p} = 0.15$\
+$n = 4722$\
+$z_{\alpha/2} = z_{0.005} = 2.575$.
+
+$$ 
+\begin{aligned}
+\tilde{p} &= \frac{\hat{p} + z_{\alpha/2}^{2}/2n}{1 + z^{2}_{\alpha/2}/n} \\
+&= \frac{0.15 + 2.575^{2}/2(4722)}{1 + 2.575^{2}/4722} \\
+&= 0.1505
+\end{aligned}
+$$
+
+## Exercise 20 Solutions
+
+$$
+\begin{aligned}
+\tilde{p} &\pm z_{\alpha/2}\frac{\sqrt{\hat{p}\hat{q}/n + z_{\alpha/2}^{2}/4n^{2}}}{1+z^{2}_{\alpha/2}/n} \\
+0.1505 &\pm 2.575\frac{\sqrt{0.15(0.85)/4722 + 2.575^{2}/4(4722)^{2}}}{1+2.575^{2}/4722} \\
+0.1505 &\pm 0.0134 \\
+(0.1371&, 0.1639)
+\end{aligned}
+$$
+
+## Example 1
+
+An insurance company checks police records on 582 accidents selected at random and notes that teenagers were at the wheel in 91 of them.
+
+a.  Create a 95% confidence interval for the percentage of all auto accidents that involve teenage drivers.
+b.  Explain what your interval means.
+c.  Explain what \`\`95% confidence" means.
+d.  A politician urging tight restrictions on drivers' licenses issued to teens says, \`\`In one of every five auto accidents, a teenager is behind the wheel." Does your confidence interval support or contradict this statement?
+
+## Large n
+
+-   If the sample size $n$ is very large, then $z_{\alpha/2}^{2}/2n$ is generally quite small compared to $\hat{p}$, and $z_{\alpha/2}^{2}/n$ is quite small compared to 1. Therefore, $\tilde{p} \approx \hat{p}$.
+
+-   Similarly, $z_{\alpha/2}^{2}/4n^{2}$ is small compared to $\hat{p}\hat{q}/n$ and so the dominant term in the $\pm$ expression is $z_{\alpha/2}\sqrt{\hat{p}\hat{q}/n}$ and the score interval is approximately
+
+$$ 
+\hat{p} \pm z_{\alpha/2}\sqrt{\hat{p}\hat{q}/n}
+$$
+
+-   Note, this has the general form $\hat{\theta} \pm z_{\alpha/2}\hat{\sigma}_{\theta}$ of a large-sample interval suggested in the last subsection.
+
+## How large is large?
+
+-   So how large of an $n$ do we need?
+-   To use this traditional interval, we need to check that:
+
+$$
+n\hat{p} \geq 10 \& n(1-\hat{p}) \geq 10
+$$
+
+## So Why Bother?
+
+First, let's introduce two terms:
+
+-   **nominal confidence level**: the one we think that we have by using the z critical value.
+-   **coverage probability**: the probability that a random interval includes the actual value of $p$.
+
+The actual coverage probability can differ greatly from the nominal probability, particularly when $p$ is not close to 0.5.
+
+## Nominal level vs Coverage Probability
+
+![](images/nominal.png){fig-alt="A plot showing how the actual coverage probability changes as p changes. For p values close to 0 and 1, the actual coverage probability is much lower than the nominal."}
+
+## Score Interval vs Traditional Interval
+
+With the traditional interval, the nominal probability (0.95 in the graph) can differ greatly from the actual coverage probability, even for reasonably large sample sizes. The score interval rectifies this behaviour. That is, it's actual coverage probability will be quite close to the nominal level specified by $z_{\alpha/2}$.
+
+Additionally, the score interval can be used with nearly all sample sizes and parameter values. Therefore, we do not have to check that $n\hat{p} \geq 10$ and $n(1-\hat{p}) \geq 10$, which is required when the traditional interval is used.
+
+## Exercise 20
+
+Use the traditional interval.
+
+The Associated Press (October 9, 2002) reported that in a survey of 4722 American youngsters aged 6-19, 15% were seriously overweight (a body mass index of at least 30; this index is a measure of weight relative to height). Calculate and interpret a confidence interval using a 99% confidence level for the proportion of all American youngsters who are seriously overweight.
+
+## Exercise 20 Solutions
+
+$\hat{p} = 0.15$\
+$n = 4722$\
+$z_{\alpha/2} = z_{0.005} = 2.575$.
+
+First, check!
+
+$$
+\begin{aligned}
+n\hat{p} &= 4722(0.15) \\
+&= 708.3 \geq 10
+\end{aligned}
+$$
+
+$$
+\begin{aligned}
+n(1-\hat{p}) &= 4722(1-0.15) \\
+&= 4013.7 \geq 10
+\end{aligned}
+$$
+
+## Exercise 20 Solutions
+
+$$ 
+\begin{aligned}
+\hat{p} &\pm z_{\alpha/2}\sqrt{\hat{p}\hat{q}/n} \\
+0.15 &\pm 2.575\sqrt{(0.15)(0.85)/4722}\\
+0.15 &\pm 0.0134 \\
+(0.1355&, 0.1634)
+\end{aligned}
+$$
+
+Therefore, we are 99% confidence that the proportion of all American youngsters who are seriously overweight is between 0.1355 and 0.1634.
+
+## Example 2
+
+An insurance company checks police records on 582 accidents selected at random and notes that teenagers were at the wheel in 91 of them.
+
+Use 95% confidence and the traditional interval and compare to the score interval found earlier.
+
+## One-Sided Confidence Intervals (Confidence Bounds)
+
+-   So far, we have discussed ways of calculating confidence bounds where there is both an upper and a lower bound.
+-   Sometimes, an investigator will only want one of these two bounds.
+-   For example, a psychologist may wish to calculate a 95% upper confidence bound for true average reaction time to a particular stimulus, or a surgeon may want only a lower confidence bound for the true average remission time after colon cancer surgery.
+
+$$
+P\left( \frac{\bar{X} - \mu}{S/\sqrt{n}} < z_{\alpha}\right) 1 - \alpha
+$$
+
+Manipulating the inequality, we get the results on the following slide.
+
+## One-Sided Confidence Intervals (Confidence Bounds)
+
+::: callout-important
+## Proposition
+
+A **large-sample upper confidence bound for** $\boldsymbol\mu$ is
+
+$$
+\mu < \bar{x} + z_{\alpha} \frac{s}{\sqrt{n}}
+$$
+
+and a **large-sample lower confidence bound for** $\boldsymbol\mu$ is
+
+$$
+\mu > \bar{x} - z_{\alpha} \frac{s}{\sqrt{n}}
+$$
+
+A **one-sided confidence bound for p** results from replacing $z_{\alpha/2}$ by $z_{\alpha}$ and $\pm$ by either $+$ or $-$ in the CI formula for $p$. In all cases, the confidence level is approximately $100(1-\alpha)$%.
+:::
+
+## Exercise 16
+
+A sample of 66 obese adults as put on a low-carbohydrate diet for a year. The average weight loss was 11 lb and the standard deviation was 19 lb. Calculate a 99% lower confidence bound for the true average weight loss. What does this bound say about confidence that that the mean weight loss is positive?
+
+## Exercise 16 Solutions
+
+$n = 66$\
+$\bar{x} = 11$\
+$s = 19$\
+$z_{0.01} = 2.33$
+
+$$
+\begin{aligned}
+\mu &> \bar{x} - z_{\alpha}\frac{s}{\sqrt{n}} \\ 
+&> 11 - 2.33 \frac{19}{\sqrt{66}} \\ 
+&> 5.55
+\end{aligned}
+$$
+
+Therefore, we are 99% confident that the true average weight loss of all adults put on a low-carbohydrate diet for a year is larger than 5.55 lbs. So, we are very certain that $\mu$ is positive.
+
+## Exercise 22
+
+In a sample of 1000 randomly selected consumers who had opportunities to send in a rebate claim form after purchasing a product, 250 of these people said they never did so. Reasons cited for their behaviour included too many steps in the process, amount too small, missed deadline, fear of being placed on a mailing list, lost receipt, and doubts about receiving the money. Calculate an upper confidence bound at the 95% level for the true proportion of such consumers who never apply for a rebate. Based on this bound, is there compelling evidence that the true proportion of such consumers is smaller than 1/3?. Explain your reasoning.
+
+## Summary
+
+-   A large-sample CI for $\mu$ is calculated by $\bar{x} \pm z_{\alpha/2}\cdot \frac{s}{\sqrt{n}}$ for $100(1-\alpha)$% confidence when $n$ is sufficiently large ($n>40$).
+-   If the estimator is approximately normally distributed and approximately unbiased, and n is sufficiently large, then $\hat{\theta} \pm z_{\alpha/2}\cdot s_{\hat{\theta}}$ is a general large-sample confidence interval with confidence $100(1-\alpha)$%.
+-   The score CI for $p$ is given by $\tilde{p} \pm z_{\alpha/2}\frac{\sqrt{\hat{p}\hat{q}/n + z_{\alpha/2}^{2}/4n^{2}}}{1+z^{2}_{\alpha/2}/n}$ where $\hat{q} = 1 - \hat{p}$ and $\tilde{p} = \frac{\hat{p} + z_{\alpha/2}^{2}/2n}{1 + z^{2}_{\alpha/2}/n}$.
+
+## Summary
+
+-   The traditional CI for $p$ is given by $\hat{p} \pm z_{\alpha/2}\sqrt{\hat{p}\hat{q}/n}$. When $p$ is close to 0.5, the traditional CI is okay to use, however, when $p$ is close to 0 or 1, the score CI is preferred.
+-   One sided confidence bounds can be found by replacing $z_{\alpha/2}$ with $z_{\alpha}$ and using either $+$ or $-$ in place of $\pm$ depending on if we want the upper or lower confidence bound.
+
+## Practice Problems
+
+-   Odd problems 13 - 25

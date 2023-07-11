@@ -15,20 +15,25 @@ bibliography: references.bib
 
 # Assignment 1
 
-1.  Consider the Pareto distribution shown below. 
+1.  Consider the Pareto distribution shown below.
 
 $$
 f(x;\beta) = \frac{\beta}{x^{\beta+ 1}}, x > 1
 $$
 
-a. Find marginpar{(2)} the mean of the distribution. Suppose $\beta > 1$
-b. Find \marginpar{(2)} the method of moments estimator. 
-c. Find \marginpar{(3)} the maximum likelihood estimator.
-d. Find \marginpar{(5)} the asymptotic distribution of the mle. 
+a.  Find marginpar{(2)} the mean of the distribution. Suppose $\beta > 1$
+b.  Find \marginpar{(2)} the method of moments estimator.
+c.  Find \marginpar{(3)} the maximum likelihood estimator.
+d.  Find \marginpar{(5)} the asymptotic distribution of the mle.
 
-2. Consider the uniform distribution on the interval (0,$\theta$). Consider the estimator $\hat{\theta} = 2\bar{X}$. 
+```{=html}
+<!-- -->
+```
+2.  Consider the uniform distribution on the interval (0,$\theta$). Consider the estimator $\hat{\theta} = 2\bar{X}$.
 
-a. Is \marginpar{(2)} the estimator unbiased? Prove. If not, what is the bias? 
-b. What \marginpar{(2)} is the mean squared error of the estimator? 
-c. Is \marginpar{(2)} this estimator sufficient? Prove. 
-
+```{=html}
+<!-- -->
+```
+a.  Is \marginpar{(2)} the estimator unbiased? Prove. If not, what is the bias?
+b.  What \marginpar{(2)} is the mean squared error of the estimator?
+c.  Is \marginpar{(2)} this estimator sufficient? Prove.
