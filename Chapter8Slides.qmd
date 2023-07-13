@@ -42,7 +42,7 @@ By the end of this section, you will be able to
 -   If the confidence level is high and the resulting interval is quite narrow, our knowledge of the value of the parameter is reasonably precise.
 -   A very wide confidence interval, however, gives the message that there is a great deal of uncertainty concerning the value of what we are estimating.
 
-## Basic Properties of Confidence Intervals
+## Basic Properties of Confidence Intervals {.smaller}
 
 -   The basic concepts and properties of confidence intervals (CIs) are most easily introduced by first focusing on a simple, albeit somewhat unrealistic, problem situation.
 -   Suppose the parameter of interest is a population mean $\mu$ and that
@@ -57,7 +57,7 @@ By the end of this section, you will be able to
 
 Industrial engineers who specialize in ergonomics are concerned with designing workspace and devices operated by workers so as to achieve high productivity and comfort. An article reports on a study of preferred height for an experimental keyboard with large forearm-wrist support. A sample of $n=31$ trained typists were selected, and the preferred keyboard height was determined for each typist. The resulting sample average preferred height was $\bar{x} = 80$ cm. Assuming that the preferred height is normally distributed with $\sigma = 2.0$ cm, obtain a CI for $\mu$, the true average preferred height for the population of all experienced typists.
 
-## Example 8.1
+## Example 8.1 {.smaller}
 
 The actual sample observations $x_{1}$, $x_{2}$, ..., $x_{n}$ are assumed to be the result of a random sample $X_{1}$, $X_{2}$,...,$X_{n}$ from a normal distribution with mean $\mu$ and standard deviation $\sigma$. The resuts from Chapter 6 then imply that irrespective of the sample size $n$, the sample mean $\bar{X}$ is normally distributed with expected value $\mu$ and standard deviation $\sigma/\sqrt{n}$. Standardizing $\bar{X}$ by first subtracting its expected value and then dividing by its standard deviation yields the variable:
 
@@ -69,7 +69,7 @@ $$
 P\left(-1.96 < \frac{\bar{X} - \mu}{\sigma/\sqrt{n}} < 1.96\right) = 0.95
 $$
 
-## Example 8.1
+## Example 8.1 {.smaller}
 
 Next, we need to manipulate what is inside the brackets so that we get something in the form $l < \mu < u$. Let's do this step by step:
 
@@ -104,7 +104,7 @@ $$
 ::: callout-important
 ## Definition
 
-If after observing \$X\_{1} = x\_{1}\$, \$X\_{2} = x\_{2}\$, \..., \$X\_{n} = x\_{n}\$, we compute the observed sample mean \$\\bar{x}\$ and then substitute \$\\bar{x}\$ into the interval described earlier in place of \$\\bar{X}\$, the resulting fixed interval is called a \\textbf{95\\% confidence interval for} \$\\boldsymbol\\mu\$. This CI can be expressed either as
+If after observing $X_{1} = x_{1}$, $X_{2} = x_{2}$, ..., $X_{n} = x_{n}$, we compute the observed sample mean $\bar{x}$ and then substitute $\bar{x}$ into the interval described earlier in place of $\bar{X}$, the resulting fixed interval is called a **95% confidence interval** for $\boldsymbol\mu$. This CI can be expressed either as
 
 $$
 \left(\bar{x} - 1.96 \cdot \sigma/\sqrt{n}, \bar{x} + 1.96 \cdot \sigma/\sqrt{n} \right) \text{ is a 95\\% confidence interval for } \mu
@@ -117,7 +117,7 @@ $$
 $$
 :::
 
-## Example 8.1
+## Example 8.1 {.smaller}
 
 Since all the statements earlier were equivalent, we get that:
 
@@ -159,7 +159,7 @@ Let A be the event that $\bar{X} - 1.96\cdot \sigma/\sqrt{n} < \mu < \bar{X} + 1
 
 ![](images/CIinterpretation.png){fig-alt="A vertical line where mu lies, with 11 bars representing confidence intervals. All of the bars cover mu except two."}
 
-## Exercise 4
+## Exercise 4 {.smaller}
 
 A CI is desired for the true average stray-load loss $\mu$ (watts) for a certain type of induction motor when the line current is held at 10 amps for a speed of 1,500 rpm. Assume that stray-load loss is normally distributed with $\sigma = 3.0$.
 
@@ -203,7 +203,7 @@ $$
 or equivalently, by $\bar{x} \pm z_{\alpha/2}\cdot\frac{\sigma}{\sqrt{n}}$.
 :::
 
-## Exercise 4
+## Exercise 4 {.smaller}
 
 A CI is desired for the true average stray-load loss $\mu$ (watts) for a certain type of induction motor when the line current is held at 10 amps for a speed of 1,500 rpm. Assume that stray-load loss is normally distributed with $\sigma = 3.0$.
 
@@ -222,7 +222,7 @@ $$
 
 d.  Compute an 82% CI for $\mu$ when $n=100$, and $\bar{x} = 58.3$.
 
-## Confidence Level, Precision, and Choice of Sample Size
+## Confidence Level, Precision, and Choice of Sample Size {.smaller}
 
 Why settle for a 95% confidence level when 99% is achievable?
 
@@ -253,7 +253,7 @@ $$
 -   $n$ is also an increasing function of $\sigma$, and of the confidence level 100(1-$\alpha$).
 -   The halfwidth of the interval is sometimes called the **bound on the error of estimation** or the **margin of error**.
 
-## Example 4
+## Example 4 {.smaller}
 
 A CI is desired for the true average stray-load loss $\mu$ (watts) for a certain type of induction motor when the line current is held at 10 amps for a speed of 1,500 rpm. Assume that stray-load loss is normally distributed with $\sigma = 3.0$.
 
@@ -275,7 +275,7 @@ Assume that the helium porosity (in percentage) of coal samples taken from any p
 
 e.  What sample size is necessary to estimate true average porosity to within 0.2 with 99% confidence?
 
-## Deriving a Confidence Interval
+## Deriving a Confidence Interval {.smaller}
 
 Let $X_{1}$, $X_{2}$,...,$X_{n}$ denote the sample on which the CI for a parameter $\theta$ is to be based. Suppose a random variable satisfying the following two properties can be found.
 
@@ -286,7 +286,7 @@ Let $X_{1}$, $X_{2}$,...,$X_{n}$ denote the sample on which the CI for a paramet
 
 Let $h(X_{1}, X_{2}, ... , X_{n}; y)$ denote this random variable. For example, if the population distribution is normal with known $\sigma$ and $\theta = \mu$, the variable $h(X_{1}; ... ; X_{n}; \theta) = (X - \mu)/(\sigma/\sqrt{n})$ satisfies both properties; it clearly depends functionally on $\mu$, yet has the standard normal probability distribution, which does not depend on $\mu$. In general, the form of the $h$ function is usually suggested by examining the distribution of an appropriate estimator $\hat{\theta}$.
 
-## Deriving a Confidence Interval
+## Deriving a Confidence Interval {.smaller}
 
 For any $\alpha$ between $0$ and $1$, constants $a$ and $b$ can be found to satisfy
 
@@ -309,7 +309,7 @@ Then $l(x_{1}, x_{2}, ... , x_{n})$ and $u(x_{1}, ... , x_{n})$ are the lower an
 -   The interpretation of a confidence interval is that if we collect many samples of size $n$ and for each, calculate a (1-$\alpha$)100% CI for each, then we expect (1-$\alpha$)100% of these intervals to capture $\mu$.
 -   $z_{\alpha/2}$ is the value on the standard normal distribution that has upper area $\alpha/2$.
 
-## Summary
+## Summary {.smaller}
 
 -   A (1-$\alpha$)100% CI for the mean $\mu$ of a normal population when the value of $\sigma$ is known is given by
 
@@ -358,7 +358,7 @@ $$
 
 The CI for $\mu$ presented in the previous section assumed that the population distribution is normal and that the value of $\sigma$ is known. We now present a large-sample CI whose validity does not require these assumptions.
 
-## A Large-Sample Interval for Mean
+## A Large-Sample Interval for Mean {.smaller}
 
 Let $X_{1}$, $X_{2}$,..., $X_{n}$ be a random sample from a population having a mean $\mu$ and standard deviation $\sigma$. Provided that $n$ is large, the Central Limit Theorem (CLT) implies that $\bar{X}$ has approximately a normal distribution whatever the nature of the population distribution. It then follows that $Z = \frac{\bar{X}-\mu}{\sigma/\sqrt{n}}$ has approximately a standard normal distribution, so that:
 
@@ -366,7 +366,7 @@ $$
 P\left(-z_{\alpha/2} < \frac{\bar{X} - \mu}{\sigma/\sqrt{n}} < z_{\alpha/2}\right) \approx 1 - \alpha
 $$
 
-## A Large-Sample Interval for Mean
+## A Large-Sample Interval for Mean {.smaller}
 
 But this still requires $\sigma$, which will almost never be known. Consider the standardized variable
 
@@ -404,7 +404,7 @@ Speaking generally, $n>40$ will be sufficient to justify the use of this interva
 
 A random sample of 110 lightning flashes in a region resulted in a sample average radar echo duration of 0.81s and a sample standard deviation of 0.34 s. Calculate a 99% confidence interval for the true average echo duration $\mu$ and interpret the resulting interval.
 
-## Exercise 12 Solutions
+## Exercise 12 Solutions {.smaller}
 
 $n = 110$\
 $\bar{x} = 0.81$\
@@ -423,14 +423,14 @@ $$
 
 We are 99% confident that the true average radar echo duration of lightning flashes in a region is between 0.727 and 0.893 MPa.
 
-## Exercise 14
+## Exercise 14 {.smaller}
 
 An article gave the following summary information for fracture strengths (MPa) of $n = 169$ ceramic bars fired in a particular kiln: $\bar{x} = 89.10, s = 3.73$.
 
 a.  Calculate a (two-sided) confidence interval for true average fracture strength using a confidence level of 95%. Does it appear that true average fracture strength has been precisely estimated?
 b.  Suppose the investigators had believed a priori that the population standard deviation was about 4 MPa. Based on this supposition, how large a sample would have been required to estimate $\mu$ to within 0.5 MPa with 95% confidence?
 
-## A General Large-Sample Confidence Interval
+## A General Large-Sample Confidence Interval {.smaller}
 
 Suppose that $\hat{\theta}$ is an estimator satisfying the following properties:
 
@@ -448,7 +448,7 @@ $$
 
 Finally, suppose that $\sigma_{\hat{\theta}}$ does involve the unknown $\sigma$. This is the case, for example, when $\theta=p$, a population proportion. Then $(\hat{\theta} - \theta)/\sigma_{\hat{\theta}} = z_{\alpha/2}$ can be difficult to solve. An approximate solution can often be obtained by replacing $\theta$ in $\sigma_{\hat{\theta}}$ by its estimate $\hat{\theta}$. This results in an estimated standard deviation $s_{\hat{\theta}}$, and the corresponding interval is again $\hat{\theta} \pm z_{\alpha/2}\cdot s_{\hat{\theta}}$
 
-## Exercise 26
+## Exercise 26 {.smaller}
 
 The superintendent of a large school district, having once had a course in probability and statistics, believes that the number of teachers absent on any given day has a Poisson distribution with parameter $\lambda$. Use the accompanying data on absences for 50 days to derive a large-sample CI for $\lambda$. \[Hint: The mean and variance of a Poisson variable both equal $\lambda$\], so
 
@@ -462,7 +462,7 @@ has approximately a standard normal distribution. Make a probability statement (
 |--------------------|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
 | Frequency          | 1   | 4   | 8   | 10  | 8   | 7   | 5   | 3   | 2   | 1   | 1   |
 
-## Exercise 26 Solutions
+## Exercise 26 Solutions {.smaller}
 
 $$
 P(-z_{\alpha/2} < \frac{\bar{X} - \lambda}{\sqrt{\lambda/n}} < z_{\alpha/2} ) \approx 1 - \alpha 
@@ -480,7 +480,7 @@ $$
 \end{aligned}
 $$
 
-## Exercise 26 Solutions
+## Exercise 26 Solutions {.smaller}
 
 From the quadratic equation, letting $a = 1$, $b = -(2\bar{X} + z^{2}_{\alpha/2}/n)$ and $c = \bar{X}^{2}$.
 
@@ -516,14 +516,14 @@ $$
 
 Note that for large $n$, this is approximately equivalent to $\bar{X} \pm z_{\alpha/2}\frac{\sqrt{\bar{X}}}{\sqrt{n}} = \hat{\mu} \pm z_{\alpha/2}\frac{\hat{\sigma}}{\sqrt{n}}$ (since $\mu= \sigma^{2} = \lambda$ for the Poisson distribution).
 
-## A Confidence Interval for a Population Proportion
+## A Confidence Interval for a Population Proportion {.smaller}
 
 -   Let $p$ denote the proportion of "successes" in a population, where success identifies an individual of object that has a specified property.
 -   A random sample of $n$ individuals is to be selected, and $X$ is the number of successes in the sample.
 -   Provided that $n$ is small compared to the population size, $X$ can be regarded as a binomial random variable with $E(X) = np$ and $\sigma_{X} = \sqrt{np(1-p)}$.
 -   Furthermore, if $n$ is large, ($np \geq 10$ and $nq \geq 10$), $X$ has approximately a normal distribution.
 
-## A Confidence Interval for a Population Proportion
+## A Confidence Interval for a Population Proportion {.smaller}
 
 -   The natural estimator of $p$ is $\hat{p} = X/n$, the sample fraction of successes.
 -   Since $\hat{p}$ is just $X$ multiplied by a constant, $\hat{p}$ also has approximately a normal distribution.
@@ -579,16 +579,16 @@ $$
 \end{aligned}
 $$
 
-## Example 1
+## Example 1 {.smaller}
 
 An insurance company checks police records on 582 accidents selected at random and notes that teenagers were at the wheel in 91 of them.
 
 a.  Create a 95% confidence interval for the percentage of all auto accidents that involve teenage drivers.
 b.  Explain what your interval means.
-c.  Explain what \`\`95% confidence" means.
-d.  A politician urging tight restrictions on drivers' licenses issued to teens says, \`\`In one of every five auto accidents, a teenager is behind the wheel." Does your confidence interval support or contradict this statement?
+c.  Explain what "95% confidence" means.
+d.  A politician urging tight restrictions on drivers' licenses issued to teens says, "In one of every five auto accidents, a teenager is behind the wheel." Does your confidence interval support or contradict this statement?
 
-## Large n
+## Large n {.smaller}
 
 -   If the sample size $n$ is very large, then $z_{\alpha/2}^{2}/2n$ is generally quite small compared to $\hat{p}$, and $z_{\alpha/2}^{2}/n$ is quite small compared to 1. Therefore, $\tilde{p} \approx \hat{p}$.
 
@@ -711,7 +711,7 @@ A **one-sided confidence bound for p** results from replacing $z_{\alpha/2}$ by 
 
 A sample of 66 obese adults as put on a low-carbohydrate diet for a year. The average weight loss was 11 lb and the standard deviation was 19 lb. Calculate a 99% lower confidence bound for the true average weight loss. What does this bound say about confidence that that the mean weight loss is positive?
 
-## Exercise 16 Solutions
+## Exercise 16 Solutions {.smaller}
 
 $n = 66$\
 $\bar{x} = 11$\
@@ -746,3 +746,512 @@ In a sample of 1000 randomly selected consumers who had opportunities to send in
 ## Practice Problems
 
 -   Odd problems 13 - 25
+
+# 8.3 Intervals based on a Normal population distribution
+
+## Outcomes
+
+By the end of this section, you will be able to:
+
+-   Understand and use the properties of the t-distribution.
+-   Know when to use the t distribution and in what situations it arises.
+-   Calculate a one sample $t$ interval for $\mu$ and interpret.
+-   Calculate a prediction interval for a single future observation and interpret.
+
+## Introduction {.smaller}
+
+In the previous chapter, we learned how to calculate a CI for $\mu$, no matter what the underlying distribution, when $n$ is large. But what about when $n$ is small?
+
+One way to tackle this problem is to make specific assumptions about the underlying population distribution. For example, we could derive intervals if the population follows a gamma distribution, or an exponential, etc. But the most common one to occur is the normal distribution. So let's consider this case.
+
+::: callout-important
+## Assumption
+
+The population of interest is normal, so that $X_{1}$, ... , $X_{n}$ constitutes a random sample from a normal distribution with both $\mu$ and $\sigma$ unknown.
+:::
+
+## Introduction
+
+For large $n$, the rv $Z = \frac{\bar{X} - \mu}{S / \sqrt{n}}$ has approximately a standard normal distribution. When $n$ is small, $S$ is no longer likely to be close to $\sigma$, so the variability in he distribution of Z arises from both the numerator and the denominator. This implies that the distribution of $Z$ will be more spread out than the standard normal distribution. This is where the family of $t$ distributions comes into play.
+
+## T-distribution
+
+::: callout-important
+## Theorem
+
+When $\bar{X}$ is the mean of a random sample of size $n$ from a normal distribution with mean $\mu$, the rv
+
+$$ 
+T = \frac{\bar{X} - \mu}{S/\sqrt{n}} 
+$$
+
+has the $t$ distribution with $n-1$ degrees of freedom (df).
+:::
+
+## Properties of t-distributions
+
+A t-distribution is governed by only one parameter - **the degrees of freedom**, denoted by $\nu$, which must be a positive integer.
+
+The density is quite complicated but we will rely on tables to help us.
+
+::: callout-important
+## Properties
+
+-   Each $t_{\nu}$ curve is bell-shaped and centered at 0.
+-   Each $t_{\nu}$ curve is more spread out than the standard normal (z) curve.
+-   As $\nu$ increases, the spread of the $t_{\nu}$ curve decreases.
+-   As $\nu \rightarrow \infty$, the sequence of $t_{\nu}$ curves approaches the standard normal curve (so the z curve is often called the t curve with $\nu = \infty$.)
+:::
+
+## Notation
+
+Let $t_{\alpha,\nu}$ = the number on the measurement axis for which the area under the t curve with $\nu$ degrees of freedom to the right of $t_{\alpha, \nu}$ is $\alpha$. $t_{\alpha,\nu}$ is called a **t critical value**.
+
+![](images/criticalt.png)
+
+Appendix A.5 shows the table with specific values of the t-distribution.
+
+## Exercise 30
+
+Determine the $t$ critical value that will capture the desired $t$ curve area in each of the following cases:
+
+a.  Central area = 0.95, df = 10
+b.  Central area = 0.95, df = 20
+c.  Central area = 0.99, df = 20
+d.  Central area = 0.99, df = 50
+e.  Upper-tail area = 0.01, df = 25
+f.  Lower-tail area = 0.025, df = 5
+
+## Exercise 30 Solutions
+
+a.  
+
+![](images/central95.png){fig-alt="A t curve with 95% in the middle, and 2.5% on the outer tails"}
+
+df = 10
+
+From t-table, $t = 2.228$
+
+## Exercise 30 Solutions
+
+b.  
+
+![](images/central95.png){fig-alt="A t curve with 95% in the middle, and 2.5% on the outer tails"}
+
+df = 20
+
+From t-table, $t = 2.086$
+
+## Exercise 30 Solutions
+
+c.  
+
+![](images/central99-01.png){fig-alt="A t-curve with 99% in the center and 0.5% on the outer tails"}
+
+df = 20
+
+From t-table, $t = 2.845$
+
+## The one-sample t confidence interval
+
+The standardized variable $T$ has a $t$ distribution with $n-1$ df, and the area under the corresponding $t$ density curve between $-t_{\alpha/2,n-1}$ and $t_{\alpha/2,n-1}$ is $1-\alpha$ (area $\alpha/2$ lies in each tail), so
+
+$$
+P(-t_{\alpha/2;n-1} < T < t_{\alpha/2;n-1}) = 1 - \alpha
+$$
+
+This expression differs from expressions in previous sections in that $T$ and $t_{\alpha/2,n-1}$ are used in place of $Z$ and $z_{\alpha/2}$, but it can be manipulated in the same manner to obtain a confidence interval for $\mu$.
+
+## The one-sample t confidence interval
+
+::: callout-important
+## Proposition
+
+Let $\bar{x}$ and $s$ be the sample mean and sample standard deviation computed from the results of a random sample from a normal distribution with mean $\mu$. Then a **100(1-**$\alpha$**)% confidence interval for** $\mu$, the **one sample t CI** is:
+
+$$
+\left( \bar{x} - t_{\alpha/2,n-1}\frac{s}{\sqrt{n}},  \bar{x} + t_{\alpha/2,n-1}\frac{s}{\sqrt{n}}\right)
+$$
+
+or more compactly, $\bar{x} \pm t_{\alpha/2,n-1}\frac{s}{\sqrt{n}}$.
+
+An **upper confidence bound for** $\mu$ is
+
+$$
+ \bar{x} + t_{\alpha,n-1}\frac{s}{\sqrt{n}}
+$$
+
+and by replacing $+$ with $-$ in this latter expression gives a **lower confidence bound for** $\mu$}. Both have confidence level 100(1-$\alpha$)%.
+:::
+
+## Exercise 34
+
+Here is a sample of ACT scores (average of the Math, English, Social Science, and Natural Science scores) for students taking college freshman calculus:
+
+| 24.00 | 28.00 | 27.75 | 27.00 | 24.25 | 23.50 | 26.25 |
+|-------|-------|-------|-------|-------|-------|-------|
+| 24.00 | 25.00 | 30.00 | 23.25 | 26.25 | 21.50 | 26.00 |
+| 28.00 | 24.50 | 22.50 | 28.25 | 21.25 | 19.75 |       |
+
+a.  Using an appropriate graph, see if it is plausible that the observations were selected from a normal distribution.
+
+## Exercise 34
+
+```{r, echo=FALSE, out.width="50%"}
+x = c(24.00, 28.00, 27.75, 27.00, 24.25, 23.50, 26.25, 24.00, 25.00, 30.00, 23.25, 26.25, 21.50, 26.00, 28.00, 24.50, 22.50, 28.25, 21.25, 19.75)
+
+qqnorm(x, pch = 1, frame = FALSE)
+qqline(x, col = "steelblue", lwd = 2)
+
+a = mean(x)
+b = sd(x)
+c = length(x)
+print(paste("mean = " ,  a))
+print(paste("std = ", b))
+print(paste("n = ", c))
+
+```
+
+## Exercise 34 {.smaller}
+
+b.  Calculate a two-sided 95% confidence interval for the population mean.
+
+$$
+\begin{aligned}
+\bar{x} &\pm t_{\alpha/2,n-1}\frac{s}{\sqrt{n}} \\
+25.05 &\pm 2.093 \frac{2.690}{\sqrt{20}} \\
+25.05 &\pm 1.259 \\
+(23.791&, 26.309)
+\end{aligned}
+$$
+
+Therefore, we are 95% confident that the true mean ACT score for students taking college freshman calculus is between 23.791 and 26.309.
+
+## Exercise 36
+
+Even as traditional markets for sweetgum lumber have declined, large section solid timbers traditionally used for construction bridges and mats have become increasingly scarce. Below is data on the modulus of rapture (psi).
+
+$\bar{x} = 7203.2$\
+$n = 30$\
+$s = 543.5$
+
+b.  Estimate the true average modulus of rapture in a way that conveys information about precision and reliability.
+
+## Prediction Intervals
+
+-   In many applications, an investigator wishes to *predict* a single value of a variable to be observed at some future time, rather than to *estimate* the mean value of that variable.
+-   A *point prediction* is analogous to a *point estimate*, so for this situation, it is just $\bar{x}$.
+-   We have a random sample $X_{1}$, $X_{2}$,...,$X_{n}$ from a normal population distribution, and we wish to predict the value of $X_{n+1}$, a single future observation.
+-   A point predictor is $\bar{X}$, and the resulting prediction error is $\bar{X} - X_{n+1}$.
+
+## Prediction Intervals
+
+-   The expected value of the prediction error is:
+
+$$
+E(\bar{X} - X_{n+1}) = E(\bar{X}) - E(X_{n+1}) = \mu - \mu = 0
+$$
+
+-   Since $X_{n+1}$ is independent of $X_{1}$,...,$X_{n}$, it is independent of $\bar{X}$, so the variance of the prediction error is
+
+$$
+V(\bar{X} - X_{n+1}) = V(\bar{X}) + V(X_{n+1}) = \frac{\sigma^{2}}{n} + \sigma^{2} = \sigma^{2}\left(1 + \frac{1}{n}\right)
+$$
+
+## Prediction Interval {.smaller}
+
+-   The prediction error is a linear combination of independent normally distributed rv's, so itself is normally distributed. Thus
+
+$$
+Z = \frac{(\bar{X} - X_{n+1}) - 0}{\sqrt{\sigma^{2}\left(1 + \frac{1}{n}\right)}} = \frac{\bar{X} - X_{n+1}}{\sqrt{\sigma^{2}\left(1 + \frac{1}{n}\right)}}
+$$
+
+has a standard normal distribution.
+
+-   As in the derivation of the distribution of $(\bar{X} - \mu)/(S/\sqrt{n})$, it can be shown that replacing $\sigma$ by the sample standard deviation $S$ (of $X_{1}$,....,$X_{n}$) results in
+
+$$
+T = \frac{\bar{X} - X_{n+1}}{S\sqrt{1 + \frac{1}{n}}} \sim t \text{ distribution with } n - 1 \text{ df }
+$$
+
+-   Manipulating this $T$ variable gives the following results.
+
+## Prediction Interval for a Single Future Value
+
+::: callout-important
+## Proposition
+
+A **prediction interval (PI)** for a single observation to be selected from a normal population distribution is
+
+$$
+\bar{x} \pm t_{\alpha/2,n-1}\cdot s\sqrt{1 + \frac{1}{n}}
+$$
+
+The **prediction level** is 100(1-$\alpha$)%.
+:::
+
+Interpretation: if the interval is calculated sample after sample, in the long run, 95% of these intervals will include the corresponding future values of $X$.
+
+## Exercise 34 {.smaller}
+
+Consider the ACT scores for students taking college freshman calculus again.
+
+Predict the ACT score for a single student taking college freshman calculus in a way that conveys information about precision and reliability. How does the resulting prediction compare to the estimate we found before?
+
+$$
+\begin{aligned}
+\bar{x} &\pm t_{\alpha/2,n-1}\cdot s\sqrt{1 + \frac{1}{n}} \\
+25.05 &\pm 2.093 \cdot 2.690\sqrt{1 + \frac{1}{20}} \\
+25.05 &\pm 5.769\\
+(19.281&, 30.819)
+\end{aligned}
+$$
+
+## Exercise 34 Solutions
+
+-   I predict with 95% confidence that the next student taking college freshman calculus will have an ACT score between 19.281 and 30.819.
+-   This interval is wider than the confidence interval for $\mu$ to account for the higher variability of an individual compared to a mean.
+
+## Exercise 36
+
+Even as traditional markets for sweetgum lumber have declined, large section solid timbers traditionally used for construction bridges and mats have become increasingly scarce. Below is data on the modulus of rapture (psi).
+
+$\bar{x} = 7203.2$\
+$n = 30$\
+$s = 543.5$
+
+c.  Predict the modulus for a single beam in a way that conveys information about precision and reliability. How does the resulting prediction compare to the estimate in (b).
+
+## Intervals Based on Nonnormal Population Distributions
+
+-   The one sample $t$ CI for $\mu$ is robust to small or even moderate departures from normality unless $n$ is quite small.
+-   That is, unless $n$ is quite small and the departures from normality are extreme, the one sample $t$ interval should yield coverage probabilities close to the nominal confidence level.
+-   However, the prediction intervals are closely tied to the normality assumption. These intervals should not be used in the absence of compelling evidence for normality.
+
+## Summary {.smaller}
+
+-   When $\bar{X}$ is the mean of a random sample of size $n$ from a normal population with mean $\mu$, then
+
+$$
+T = \frac{\bar{X} - \mu}{S/\sqrt{n}}
+$$
+
+has the $t$ distribution with $n-1$ degrees of freedom.
+
+-   Each $t_{\nu}$ curve is bell-shaped and centered at 0.
+-   Each $t_{\nu}$ curve is more spread out than the standard normal (z) curve.
+-   As $\nu$ increases, the spread of the $t_{\nu}$ curve decreases.
+-   As $\nu \rightarrow \infty$, the sequence of $t_{\nu}$ curves approach the standard normal curve.
+
+## Summary {.smaller}
+
+-   $t_{\alpha,\nu}$ = the number on the measurement axis for which the area under the $t$ curve with $\nu$ degrees of freedom to the right of $t_{\alpha,\nu}$ is $\alpha$. This is called a **t critical value**.
+-   A 100(1-$\alpha$)% CI for $\mu$, the one sample $t$ CI, is
+
+$$
+\bar{x} \pm t_{\alpha/2,n-1}\cdot \frac{s}{\sqrt{n}}
+$$
+
+-   A 100(1-$\alpha$)% prediction interval (PI) for a single observation to be selected from a normal population distribution is
+
+$$
+\bar{x} \pm t_{\alpha/2,n-1}\cdot s\sqrt{1 + \frac{1}{n}}
+$$
+
+## Practice Problems
+
+-   Odd problems 8.29 - 8.43
+
+# 8.4 Confidence Intervals for the Variance and Standard Deviation of a Normal Population
+
+## Outcomes
+
+By the end of this section, you will be able to
+
+-   Be familiar with the chi-squared distribution, it's properties and know how to look up appropriate values using the table.
+-   Know what random variable involving sample variance follows the chi-squared distribution.
+-   Calculate a confidence interval for the population variance of a normal distribution and interpret.
+-   Calculate a confidence interval for the population standard deviation of a normal distribution and interpret.
+
+## Chi-Squared ($\chi^{2}$) Distribution
+
+::: callout-important
+## Definition
+
+Let $\nu$ be a positive integer. Then a random variable $X$ is said to have a **chi-squared distribution** with parameter $\nu$ if the pdf of $X$ is the gamma density with $\alpha = \nu/2$ and $\beta=2$. The pdf of a chi-squared rv is thus
+
+$$ 
+f(x;\nu) = \begin{cases}
+\frac{1}{2^{\nu/2}\Gamma(\nu/2)}x^{(\nu/2)-1}e^{-x/2} & x \geq 0 \\
+0 & x < 0 
+\end{cases}
+$$
+
+The parameter $\nu$ is called the **number of degrees of freedom (df)** of X. The symbol $\chi^{2}$ is often used in place of \`\`chi-squared".
+:::
+
+## Chi-Squared ($\chi^{2}$) Distribution
+
+::: callout-important
+## Proposition
+
+If Z has a standard normal distribution and $X = Z^{2}$, then the pdf of X is
+
+$$
+f(x;\nu) = \begin{cases}
+\frac{1}{2^{1/2}\Gamma(1/2)}x^{(1/2)-1}e^{-x/2} & x \geq 0 \\
+0 & x < 0 
+\end{cases}
+$$
+
+That is, X is chi-squared with 1 df, $X \sim \chi^{2}_{1}$.
+:::
+
+## Chi-Squared ($\chi^{2}$) Distribution  {.smaller}
+
+::: callout-important
+## Proposition
+
+If $X_{1} \sim \chi^{2}_{\nu_{1}}$, $X_{2} \sim \chi^{2}_{\nu_{2}}$ and they are independent, then $X_{1} + X_{2} \sim \chi^{2}_{\nu_{1} + \nu_{2}}$
+:::
+
+::: callout-important
+## Proposition
+
+If $Z_{1}$, $Z_{2}$,...,$z_{n}$ are independent and each has the standard normal distribution, then $Z_{1}^{2} + Z_{2}^{2} + \cdots + Z_{n}^{2} \sim \chi^{2}_{n}$
+:::
+
+::: callout-important
+## Proposition
+
+If $X_{1}$,...,$X_{n}$ are a random sample from a normal distribution, then $\bar{X}$ and $S^{2}$ are independent.
+:::
+
+::: callout-important
+## Proposition
+
+If $X_{3} = X_{1} + X_{2}$, and $X_{1} \sim \chi^{2}_{\nu_{1}}$, $X_{3} \sim \chi^{2}_{\nu_{3}}$, and $X_{1}$, and $X_{2}$ are independent, then $X_{2} \sim \chi^{2}_{\nu_{3} - \nu_{1}}$
+:::
+
+## Distribution of Sample Variance
+
+::: callout-important
+## Theorem
+
+If $X_{1}$, $X_{2}$,...,$X_{n}$ are a random sample from a normal distribution with parameters $\mu$ and $\sigma^{2}$. Then the rv
+
+$$
+\frac{(n-1)S^{2}}{\sigma^{2}} = \frac{\sum(X_{i}-\bar{X})^{2}}{\sigma^{2}}
+$$
+
+has a chi-squared ($\chi^{2}_{n-1}$) distribution with $n-1$ df.
+:::
+
+Let's prove it!
+
+## Chi-Squared Critical Value
+
+::: callout-important
+## Notation
+
+Let $\chi^{2}_{\alpha,\nu}$, called a **chi-squared critical value**, denote the number on the measurement axis such that $\alpha$ of the area under the chi-squared curve with $\nu$ df lies to the right of $\chi^{2}_{\alpha,\nu}$.
+:::
+
+![](images/notation.png)
+
+## Exercise 44  {.smaller}
+
+Determine the values of the following quantities
+
+a.  $\chi^{2}_{0.1,15}$
+
+Looking up in the $\chi^{2}$ table for $\alpha = 0.1$ and $\nu = 15$, we find $\chi^{2}_{0.1,15} = 22.307$.
+
+b.  $\chi^{2}_{0.1, 25}$
+
+Looking up in the $\chi^{2}$ table for $\alpha = 0.1$ and $\nu = 25$, we find $\chi^{2}_{0.1,25} = 34.381$.
+
+c.  $\chi^{2}_{0.01,25}$
+
+Looking up in the $\chi^{2}$ table for $\alpha = 0.01$ and $\nu = 25$, we find $\chi^{2}_{0.01,25} = 44.313$.
+
+## Exercise 44
+
+d.  $\chi^{2}_{0.005, 25}$
+e.  $\chi^{2}_{0.99, 25}$
+f.  $\chi^{2}_{0.995, 25}$
+
+## Confidence intervals for $\sigma^{2}$  {.smaller}
+
+-   The rv $(n-1)S^{2}/\sigma^{2}$ satisfies the two properties on which the general method for obtaining a CI is based: it is a function of the parameter of interest $\sigma^{2}$, yet its probability distribution (chi-squared) does not depend on this parameter.
+-   Therefore, we get:
+
+$$
+P\left( \chi^{2}_{1-\alpha/2,n-1} < \frac{(n-1)S^{2}}{\sigma^{2}} < \chi^{2}_{\alpha/2,n-1}\right) = 1-\alpha
+$$
+
+Rearranging the inequality, we get:
+
+$$
+\frac{(n-1)S^{2}}{\chi^{2}_{\alpha/2,n-1}} < \sigma^{2} < \frac{(n-1)S^{2}}{\chi^{2}_{1-\alpha/2,n-1}}
+$$
+
+## Confidence Interval for $\sigma^{2}$
+
+::: callout-important
+## CI
+
+a **100(1-**$\alpha$)% confidence interval for the variance $\sigma^{2}$ of a normal population has lower limit
+
+$$
+\frac{(n-1)s^{2}}{\chi^{2}_{\alpha/2,n-1}}
+$$
+
+and upper limit
+
+$$
+\frac{(n-1)s^{2}}{\chi^{2}_{1-\alpha/2,n-1}}
+$$
+
+A **confidence interval for** $\sigma$ has lower and upper limits that are the square roots of the corresponding limits in the interval for $\sigma^{2}$.
+:::
+
+## Exercise 46
+
+Exercise 34 gave a random sample of 20 ACT scores from students taking college freshman calculus. Calculate a 99% CI for the standard deviation of the population distribution. Is this interval valid whatever the nature of the distribution? Explain.
+
+$s = 2.690$\
+$n = 20$
+
+## Exercise 46 Solutions {.smaller}
+
+$$
+\begin{aligned}
+\frac{(n-1)s^{2}}{\chi^{2}_{\alpha/2,n-1}} < &\sigma^{2} < \frac{(n-1)s^{2}}{\chi^{2}_{1-\alpha/2,n-1}}\\
+\frac{(20-1)2.690^{2}}{\chi^{2}_{0.01/2,20-1}} < &\sigma^{2} < \frac{(20-1)2.690^{2}}{\chi^{2}_{1-0.01/2,20-1}} \\
+\frac{(19)2.690^{2}}{38.580} < &\sigma^{2} < \frac{(19)2.690^{2}}{6.843} \\
+3.564 < &\sigma^{2} < 20.091
+\end{aligned}
+$$
+
+So the interval for $\sigma$ is $(\sqrt{3.564}, \sqrt{20.091}) = (1.888, 4.482)$.
+
+This interval estimate is only valid for normally distributed data, which was verified earlier with this dataset.
+
+## Exercise 48
+
+Refer to the baseball game times in Exercise 41. Calculate an upper confidence bound with confidence level 95% for the population standard deviation of game time. Interpret your interval.
+
+$s = 19.89$\
+$n = 63$
+
+## Summary {.smaller}
+
+-   $\frac{(n-1)S^{2}}{\sigma^{2}}$ has a chi-squared distribution with $n-1$ degrees of freedom if $X_{1}$, $X_{2}$,...,$X_{n}$ is a random sample from a normal population.
+-   $\chi^{2}_{\alpha,\nu}$ is the **chi-squared critical value** with upper tail area $\alpha$ and $\nu$ degrees of freedom.
+-   A **100(1-**$\alpha$)% confidence interval for the variance $\sigma^{2}$ of a normal population has lower limit $(n-1)s^{2}/\chi^{2}_{\alpha/2,n-1}$ and upper limit $(n-1)s^{2}/\chi^{2}_{1-\alpha/2,n-1}$.
+-   A **confidence interval for** $\sigma$ has lower and upper limits that are the square roots of the corresponding limits in the interval for $\sigma^{2}$.
+
+## Practice Problems
+
+-   Odd problems 8.45 - 8.47
