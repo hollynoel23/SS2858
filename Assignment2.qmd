@@ -1,0 +1,49 @@
+---
+title: "Assignment 2"
+date: "July 19, 2023"
+author: "Holly Steeves"
+format: 
+  html: 
+    number-sections: true
+    toc: true
+    theme: 
+      light: flatly
+      dark: darkly
+editor: visual
+bibliography: references.bib
+---
+
+# Assignment 2
+
+1.  A bank manager wants to know the mean amount of mortgage paid per month by homeowners in an area. A random sample of 120 homeowners selected from this area showed that they pay an average of \$1575 per month for their mortgages. The population standard deviation of all such mortgages is \$215. Assume that the mortgages amounts follow a normal distribution.
+
+    a.  \(3\) Find a 97% confidence interval for the mean amount of mortgage paid per month by all homeowners in this area.
+    b.  \(2\) Suppose that the manager wants to estimate the mean amount of mortgage paid per month to within \$50 at 97% confidence. How many homeowners should they select?
+    c.  \(2\) In another area, the mean amount is \$1650. Based on your answer in a, is there reason to believe the mortgage amounts are different in this area?
+
+2.  A random sample of \$n = 15\$ heat pumps of a certain type yielded the following observations on lifetime (in years):
+
+    |     |     |      |      |     |
+    |-----|-----|------|------|-----|
+    | 2.0 | 1.3 | 6.0  | 1.9  | 5.1 |
+    | 0.4 | 1.0 | 5.3  | 15.7 | 0.7 |
+    | 4.8 | 0.9 | 12.2 | 5.3  | 0.6 |
+
+    a.  \(4\) Assume that the lifetime distribution is exponential and use an argument parallel to that of Example 8.5 to obtain a 95% CI for expected (true average) lifetime. Interpret.
+    b.  \(2\) How should the interval of part (a) be altered to achieve a confidence level of 99%?
+    c.  \(1\) What is a 95% CI for the standard deviation of the lifetime distribution? \[Hint: What is the standard deviation of an exponential random variable?\] Interpret.
+
+3.  \(3\) Derive the formula for calculating sample size $n = \frac{2z^{2}\hat{p}\hat{q} - z^{2}w^{2} \pm \sqrt{4z^{4}\hat{p}\hat{q}(\hat{p}\hat{q}-w^{2})+w^{2}z^{4}}}{w^{2}}$ Show all steps clearly.
+
+4.  A random sample of 34 participants in a Zumba dance class had their heart rates measured before and after a moderate 10-minute Zumba workout. The sample mean and standard deviation of the increase in heart rate are 51.676 and 9.204 respectively.
+
+    a.  \(4\) Calculate a 98% lower bound for the mean increase in heart rate. Interpret.
+    b.  \(2\) Calculate a 95% two sided confidence interval for the mean increase in heart rate.
+    c.  \(4\) Calculate a 95% prediction interval for the increase in heart rate for a randomly selected person who takes a Zumba class in the future. Interpret.
+
+5.  \(4\) It is said that happy and healthy workers are efficient and productive. A company that manufactures exercising machines wanted to know the percentage of large companies that provide on-site health club facilities. A random sample of 240 such companies showed that 96 of them provide such facilities on site. Calculate a 97% confidence interval for the percentage of all such companies that provide such facilities on site. Interpret.
+
+6.  The manufacturer of a certain brand of lightbulbs claims that the variance of the lives of these bulbs is 4200 square hours. A consumer agency took a random sample of 25 such lightbulbs and tested them. The variance of the lives of these bulbs was found to be 5200 square hours. Assume that the lives of all such bulbs are approx
+
+    a.  \(4\) Calculate a 95% confidence interval for the variance. Interpret.
+    b.  \(2\) What does your interval in a say about the manufacturers claim? Explain.
