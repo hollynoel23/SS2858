@@ -1,0 +1,980 @@
+---
+title: "Chapter 9"
+format: 
+  revealjs: 
+    toc: false
+    theme: [default, /Users/hollysteeves/Library/CloudStorage/OneDrive-TheUniversityofWesternOntario/Western.scss]
+    incremental: true
+editor: visual
+author: "Holly Steeves"
+---
+
+# 9.1 Hypotheses and Test Procedures
+
+## Outcomes
+
+By the end of this section, you will be able to:
+
+-   Define, identify, or determine the null and alternate hypotheses of a given problem.
+-   Define, identify and use the test statistic and rejection region of a given test procedure.
+-   Write what a type I error or a type II error mean in the context of a given test of hypotheses.
+-   Determine the probabilities of type I and type II errors.
+
+## Introduction {.smaller}
+
+-   A parameter can be estimated from sample data either by a single number (a point estimate) or an entire interval of plausible values (a confidence interval).
+-   Frequently, however, the objective of an investigation is not to estimate a parameter but to decide which of two contradictory claims about the parameter is correct.
+-   Methods for accomplishing this are the part of inference called **hypothesis testing**.
+-   In this chapter, we first discuss some of the basic concepts and terminology in hypothesis testing and then develop decision procedures for the most frequently encountered testing problems based on a sample from a single population.
+
+## Hypotheses
+
+::: callout-important
+## Definition
+
+A **statistical hypotheses** is a claim either about the value of a single parameter, about the values of several parameters, or about the form of an entire probability distribution.
+:::
+
+## Hypotheses {.smaller}
+
+Examples:
+
+-   $\mu = 311$, where $\mu$ is the true average one--term textbook expenditure for students at a university.
+-   $p < 0.50$, where $p$ is the proportion of adults who approve of the job that the President is doing.
+-   If $\mu_{1}$ and $\mu_{2}$ denote the true average decreases in systolic blood pressure for two different drugs, one hypothesis is the assertion that $\mu_{1} - \mu_{2} = 0$, and another is the statement $\mu_{1} - \mu_{2} > 5$.
+-   Yet another example of a hypothesis is that the stopping distance for a car under particular conditions has a normal distribution.
+
+## Null Hypothesis
+
+::: callout-important
+## Definition
+
+The **null hypothesis**, denoted by $H_{0}$, is the claim that is initially assumed to be true (the "prior belief" claim). The alternative hypothesis, denoted by $H_{a}$, is the assertion that is contradictory to $H_{0}$.
+
+The null hypothesis will be rejected in favor of the alternative hypothesis only if sample evidence suggests that $H_{0}$ is false. If the sample does not strongly contradict $H_{0}$, we will continue to believe in the plausibility of the null hypothesis. The two possible conclusions from a hypothesis
+
+-   reject $H_{0}$
+-   fail to reject $H_{0}$.
+:::
+
+## Tests of Hypotheses
+
+::: callout-important
+## Definition
+
+A **test of hypotheses** is a method for using sample data to decide whether the null hypothesis should be rejected.
+
+Ex: Test $H_{0}: \mu = 750$ versus $H_{a}: \mu \neq 750$.
+
+Only if the sample data suggests that $\mu$ is something other than 750 should the null hypothesis be rejected for the alternative hypothesis.
+:::
+
+## Tests of Hypothesis
+
+The alternative to $H_{0}: \theta = \theta_{0}$ will be one of the following:
+
+1.  $H_{a}: \theta < \theta_{0}$.
+2.  $H_{a}: \theta > \theta_{0}$.
+3.  $H_{a}: \theta \neq \theta_{0}$.
+
+where $\theta_{0}$ is called the *null value*.
+
+## Test Procedures
+
+-   A **test procedure** is a rule, based on sample data, for deciding whether or not to reject $H_{0}$ for $H_{a}$.
+
+::: callout-important
+## Test Procedure
+
+A test procedure is specified by the following:
+
+1.  A **test statistic**, which is a function of the sample data on which the decision is based.
+2.  A **rejection region**, which is the set of all test statistic values for which $H_{0}$ will be rejected.
+
+The null hypothesis will be rejected if and only if the observed test statistic falls in the rejection region.
+:::
+
+## Example {.smaller}
+
+Suppose a cigarette manufacturer claims that the average nicotine content $\mu$ of brand B cigarettes is (at most) 1.5 mg. It would be unwise to reject the manufacturer's claim without strong contradictory evidence, so an appropriate problem formulation is to test $H_{0}: \mu = 1.5$ versus $H_{a}: \mu > 1.5$.
+
+Consider a decision rule based on analyzing a random sample of 32 cigarettes. Let $\bar{X}$ denote the sample average nicotine content. If $H_{0}$ is true, $E[\bar{X}] = \mu = 1.5$, whereas if $H_{0}$ is false, we expect $\bar{X}$ to exceed 1.5.
+
+Strong evidence against $H_{0}$ is provided by a value $\bar{x}$ that considerably exceeds 1.5. Thus we might use $\bar{X}$ as a test statistic along with the rejection region $\bar{x} > 1.60$.
+
+## Errors in Testing {.smaller}
+
+-   We make a decision about the parameter, but what if we make the wrong decision?
+-   We won't always be right! So let's consider the types of errors that we could make.
+
+::: callout-important
+## Errors
+
+**Type I Error**: Reject $H_{0}$ when $H_{0}$ is true.
+
+**Type II Error**: Fail to reject $H_{0}$ when $H_{a}$ is true.
+:::
+
+|                        | $H_{a}$ true | $H_{0}$ true |
+|------------------------|--------------|--------------|
+| Reject $H_{0}$         | :)           | Type I       |
+| Fail to reject $H_{0}$ | Type II      | :)           |
+
+## Example
+
+In the nicotine scenario:
+
+**Type I error** - rejecting $H_{0}: \mu = 1.5$ for $H_{a}: \mu > 1.5$, when in fact $\mu \ngtr 1.5$. That is, we concluded that the mean nicotine content of brand B cigarettes is greater than 1.5mg when in fact it isn't.
+
+**Type II error** - failing to reject $H_{0}: \mu = 1.5$ for $H_{a}: \mu > 1.5$ when in fact it is. That is, we failed to conclude that the mean nicotine content of brand B cigarettes is greater than 1.5mg when in fact it is.
+
+## Exercise 8
+
+A regular type of laminate is currently being used by a manufacturer of circuit boards. A special laminate has been developed to reduce warpage. The regular laminate will be used on one sample of specimens and the special laminate on another sample, and the amount of warpage will then be determined for each specimen. The manufacturer will then switch to the special laminate only if it can be demonstrated that the true average amount of warpage for that laminate is less than for the regular laminate. State the relevant hypotheses, and describe the type I and type II errors in the context of this situation.
+
+## Error Probabilities {.smaller}
+
+-   We cannot ever be 100% sure that our decision was correct, therefore we always have the potential to make an error.
+-   We must look for procedures for which either type of error is unlikely to occur. That is, a good procedure is one for which the probability of making either type of error is small.
+-   The choice of a particular rejection region cutoff value fixes the probabilities of type I and type II errors. These error probabilities are traditionally denoted by $\alpha$ and $\beta$, respectively.
+-   Because $H_{0}$ specifies a unique value of the parameter, there is a single value of $\alpha$. However, there is a different value of $\beta$ for each value of the parameter consistent with $H_{a}$.
+
+## Example
+
+An automobile model is known to sustain no visible damage 25% of the time in 10-mph crash tests. A modified bumper design has been proposed in an effort to increase this percentage. Let $p$ denote the proportion of all 10-mph crashes with this new bumper that result in no visible damage. The hypotheses to be tested are:
+
+$$
+H_{0}: p = 0.25
+$$
+
+(no improvement)
+
+$$
+H_{a}: p > 0.25
+$$
+
+## Example
+
+The test will be based on an experiment involving $n=20$ independent crashes with prototypes of the new design. Intuitively, $H_{0}$ should be rejected if a substantial number of the crashes show no damage. Consider the following test procedure:
+
+Test Statistic: X = the number of crashes with no visible damage\
+Rejection region: $R = \{8, 9, 10, ..., 19, 20 \}$; that is, reject $H_{0}$ if $x \geq 8$, where $x$ is the observed value of the test statistic.
+
+This rejection region is called *upper-tailed* because it consists only of large values of the test statistic.
+
+## Example {.smaller}
+
+When $H_{0}$ is true, $X$ has a binomial probability distribution with $n=20$ and $p=0.25$. Then:
+
+$$
+\begin{aligned}
+\alpha &= P(\text{type I error}) \\
+&= P(H_{0} \text{ is rejected when it is true}) \\
+&= P(X \geq 8 \text{ when } X \sim Bin(20,0.25)) \\
+&= 1 - B(7; 20, 0.25)\\
+&= 1 - 0.898 \\
+&= 0.102 
+\end{aligned}
+$$
+
+That is, when $H_{0}$ is actually true, roughly 10% of all experiments consisting of 20 crashes would result in $H_{0}$ being incorrectly rejected (a type I error).
+
+## Example {.smaller}
+
+In contrast to $\alpha$, there is not a single $\beta$. Instead, there is a different $\beta$ for each different $p$ that exceeds 0.25. Thus there is a value of $\beta$ for $p=0.3$, and another for $p=0.5$ and so on. For example:
+
+$$
+\begin{aligned}
+\beta(0.3) &- P(\text{type II error when } p = 0.3) \\
+&= P(H_{0} \text{ is not rejected when it is false because } p = 0.3) \\
+&= P(X \leq 7 \text{ when } X \sim Bin(20, 0.30)) \\
+&= B(7; 20, 0.3) \\
+&= 0.772
+\end{aligned}
+$$
+
+When $p$ is actually 0.30, roughly 77% of all experiments of this type would result in $H_{0}$ being incorrectly not rejected!
+
+## Example
+
+The proposed test procedure is still reasonable for testing the more realistic null hypothesis that $p \leq 0.25$. In this case, there is no longer a single $\alpha$, but instead there is an $\alpha$ for each $p$ that is at most 0.25: $\alpha(0.25)$, $\alpha(0.23)$, $\alpha(0.20)$, $\alpha(0.15)$, and so on. It is easily verified that $\alpha(p) < \alpha(0.25) = 0.102$ if $p<0.25$. That is, the largest value of $\alpha$ occurs for the boundary value $0.25$ between $H_{0}$ and $H_{a}$. Thus, if $\alpha$ is small for the simplified null hypothesis, it will also be as small as or smaller for the more realistic $H_{0}$.
+
+## Exercise 10 {.smaller}
+
+For healthy individuals the level of prothrombin in the blood is approximately normally distributed with mean 20 mg/100 mL and standard deviation 4 mg/100 mL. Low levels indicate low clotting ability. In studying the effect of gallstones on prothrombin, the level of each patient in a sample is measured to see if there is a deficiency. Let $\mu$ be the true average level of prothrombin for gallstone patients.
+
+a.  What are the appropriate null and alternative hypotheses?
+b.  Let $\bar{X}$ denote the sample average level of prothrombin in a sample of $n=20$ randomly selected gallstone patients. Consider the test procedure with test statistic $\bar{X}$ and rejection region $\bar{x} \leq 17.92$. What is the probability distribution of the test statistic when $H_{0}$ is true? What is the probability of a type I error for the test procedure?
+
+## Exercise 10
+
+c.  What is the probability distribution of the test statistic when $\mu = 16.7$? Using the test procedure of part (b), what is the probability that gallstone patients will be judged not deficient in prothrombin, when in fact $\mu = 16.7$ (a type II error).
+d.  How would you change the test procedure of part (b) to obtain a test with significance level 0.05? What impact would this change have on the error probability of part (c)?
+e.  Consider the standardized test statistic $Z = (\bar{X} - 20)/(\sigma/\sqrt{n}) = (\bar{X} - 20)/0.8944$. What are the values of $Z$ corresponding to the rejection region of part (b)?
+
+## Relationship between $\alpha$ and $\beta$
+
+::: callout-important
+## Proposition
+
+Suppose an experiment and a sample size are fixed and a test statistic is chosen. Then decreasing the size of the rejection region to obtain a smaller value of $\alpha$ results in a larger value of $\beta$ for any particular parameter value consistent with $H_{a}$.
+:::
+
+## Summary
+
+-   A **statistical hypothesis** is a claim either about the value of a single parameter, about the values of several parameters, or about the form of an entire probability distribution.
+-   The **null hypothesis**, $H_{0}$ is the claim that is initially assumed true. This always will follow the form $H_{0}: \theta = \theta_{0}$.
+-   The **alternate hypothesis**, $H_{a}$ is the claim that is contradictory to $H_{0}$. Generally, this what we are trying to conclude. This will always follow the form $H_{a}: \theta < \theta_{0}$, $H_{a}: \theta > \theta_{0}$, or $H_{a}: \theta \neq \theta_{0}$.
+-   A **test of hypotheses** is a method for using sample data to decide whether the null hypothesis should be rejected.
+
+## Summary
+
+-   A **test procedure** is a rule, based on sample data, for deciding whether to reject $H_{0}$. It is specified by a **test statistic**, which is a function of the sample data on which the decision is to be based, and a **rejection region** which is the set of all test statistic values for which $H_{0}$ will be rejected.
+-   A **type I error** is when we reject the null hypothesis when $H_{a}$ is false. The probability of a type I error is denoted by $\alpha$.
+-   A **type II error** is when we fail to reject $H_{0}$ when $H_{a}$ is true. The probability of a type II error is denoted by $\beta$.
+
+## Practice Problems
+
+-   Odd problems 1 - 13
+
+# 9.2 Tests About a Population Mean
+
+## Outcomes
+
+By the end of this section, you will be able to:
+
+-   Know how to perform all 7 steps of a hypothesis test for case 1, case 2, and case 3.
+-   Know how to obtain $\alpha$, $\beta$, and the sample size for case 1.
+-   Know how to use Table A.16 to get the $\beta$ and sample size for case 3.
+
+## Case 1: A Normal Population with Known $\sigma$ {.smaller}
+
+Although this is usually not true in real life, it provides a good starting point for us!
+
+Let $X_{1}$,...,$X_{n}$ represent a random sample of size $n$ from the normal population. Then the sample mean $\bar{X}$ has a normal distribution with expected value $\mu_{\bar{X}} = \mu$ and standard deviation $\sigma_{\bar{X}} = \sigma/\sqrt{n}$. When $H_{0}$ is true, $\mu_{\bar{X}} = \mu_{0}$. Consider now the statistic $Z$ obtained by standardizing $\bar{X}$ under the assumption that $H_{0}$ is true:
+
+$$
+Z = \frac{\bar{X} - \mu_{0}}{\sigma/\sqrt{n}}
+$$
+
+## Case 1
+
+Suppose first that the alternative hypothesis has the form $H_{a}: \mu > \mu_{0}$. Then an $\bar{x}$ value less than $\mu_{0}$ does not provide support for $H_{a}$. Such an $\bar{x}$ corresponds to a negative value of $z$. Similarly, an $\bar{x}$ value that exceeds $\mu_{0}$ by only a small amount does not suggest that $H_{0}$ should be rejected in favour of $H_{a}$. The rejection of $H_{0}$ is appropriate only when $\bar{x}$ considerably exceeds $\mu_{0}$ - that is, when the $z$ value is positive and large.
+
+In summary, the appropriate rejection region, based on the test statistic $Z$ rather than $\bar{X}$ has the form $z \geq c$.
+
+## Case 1 {.smaller}
+
+The cutoff value $c$ should be chosen to control the probability of a type I error at the desired level $\alpha$. This is easily accomplished because the distribution of the test statistic $Z$ when $H_{0}$ is true is the standard normal distribution. The required cut off $c$ is the $z$ critical value that captures upper-tail area $\alpha$ under the standard normal curve.
+
+Example: Let $c$ = 1.645, the value that captures tail area 0.05 ($z_{0.05} = 1.645$). Then,
+
+$$
+\begin{aligned}
+\alpha &= P(\text{ type I error}) \\
+&= P(H_{0} \text{ is rejected when } H_{0} \text{ true}) \\
+&= P(Z \geq 1.645 \text{ when} Z \sim N(0,1)) \\
+&= 1 - \phi(1.645) \\
+&= 0.05
+\end{aligned}
+$$
+
+## Case 1
+
+::: callout-important
+## Testing Procedure for Case 1
+
+Null Hypothesis: $H_{0}: \mu = \mu_{0}$
+
+Test Statistic value: $z = \frac{\bar{x} - \mu_{0}}{\sigma/\sqrt{n}}$
+
+| **Alternative Hypothesis** | **Rejection Region for Level** $\boldsymbol\alpha$ **test**        |
+|------------------------------------|------------------------------------|
+| $H_{a}: \mu > \mu_{0}$     | $z > z_{\alpha}$ (upper-tailed test)                               |
+| $H_{a}: \mu < \mu_{0}$     | $z < -z_{\alpha}$ (lower-tailed test)                              |
+| $H_{a}: \mu \neq \mu_{0}$  | either $z > z_{\alpha/2}$ or $z < -z_{\alpha/2}$ (two-tailed test) |
+:::
+
+## Rejection Region
+
+![](images/rejectionregion.png){fig-alt="Three figures showing normal curves. One with an upper tail rejection region for Z > Z alpha, one with lower tail rejection region for Z < -Z alpha and one with two outer tails for Z > z alpha/2 or Z < -z alpha/2."}
+
+## Steps for Hypothesis Testing {.smaller}
+
+1.  Identify the parameter of interest and describe it in the context of the problem situation.
+2.  Determine the null value and state the null hypothesis.
+3.  State the appropriate alternative hypothesis.
+4.  Give the formula for the computed value of the test statistic (substituting the null value and the known values of any other parameters, but *not* those of any sample-based quantities).
+5.  State the rejection region for the selected significance level $\alpha$.
+6.  Compute any necessary sample quantities, substitute into the formula for the test statistic value, and compute that value.
+7.  Decide whether $H_{0}$ should be rejected and state this conclusion in the problem context.
+
+## Exercise 18
+
+Reconsider the paint-drying situation of Example 9.2, in which drying time for a test specimen is normally distributed with $\sigma = 9$. The hypotheses $H_{0}: \mu = 75$ versus $H_{a}: \mu < 75$ are to be tested using a random sample of $n = 25$ observations.
+
+a.  How many standard deviations (of $\bar{X}$) below the null value is $\bar{x} = 72.3$?
+b.  If $\bar{x} = 72.3$, what is the conclusion using $\alpha = 0.01$?
+c.  What is $\alpha$ for the test procedure that rejects $H_{0}$ when $z \leq 2.88$?
+
+## Exercise 18 Solutions
+
+a.  
+
+$$
+\begin{aligned}
+z &= \frac{\bar{x} - \mu_{0}}{\sigma/\sqrt{n}} \\
+&= \frac{72.3 - 75}{9/\sqrt{25}} \\
+&= -1.5
+\end{aligned}
+$$
+
+Therefore, $\bar{x} = 72.3$ is 1.5 standard deviations of $\bar{X}$ below the null value.
+
+## Exercise 18 Solutions {.smaller}
+
+b.  
+
+<!-- -->
+
+1.  $\mu$ = true mean drying time for a test specimen
+2.  $H_{0}: \mu = 75$
+3.  $H_{a}: \mu < 75$
+4.  $z = \frac{\bar{x} - 75}{9/\sqrt{n}}$
+5.  Using a test with significance level $\alpha = 0.01$, $H_{0}$ will be rejected if $z \leq -z_{0.01} = -2.33$.
+6.  With $n=25$ and $\bar{x} = 72.3$, $z = -1.5$ (calculated in a).
+7.  Since $z = -1.5 \nleq -2.33$, we fail to reject $H_{0}$ for $H_{a}$. There is no statistical evidence to conclude that the true mean drying time for a specimen is less than 75.
+
+## Exercise 18 Solutions
+
+c.  
+
+$\alpha$ = the area under standard normal curve below -2.88 = $\Phi(-2.88) = 0.0020$.
+
+## $\beta$ and Sample Size Determination {.smaller}
+
+The great thing about the simplicity of Case 1: There are simple formulas for $\beta$!
+
+Let's consider the upper tailed test with rejection region $z \geq z_{\alpha}$. This is equivalent to $\bar{x} \geq \mu_{0} + z_{\alpha}\sigma/\sqrt{n}$, so $H_{0}$ will not be rejected if $\bar{x} < \mu_{0} + z_{\alpha}\sigma/\sqrt{n}$.
+
+Now let $\mu^{\prime}$ denote a particular value of $\mu$ that exceeds the null value $\mu_{0}$. Then,
+
+$$
+\begin{aligned}
+\beta(\mu^{\prime}) &= P(H_{0} \text{ is not rejected when } \mu = \mu^{\prime}) \\
+&= P(\bar{X} < \mu_{0} + z_{\alpha}\sigma/\sqrt{n} \text{ when } \mu=\mu^{\prime}) \\
+&= P\left( \frac{\bar{X} - \mu^{\prime}}{\sigma/\sqrt{n}} < z_{\alpha} + \frac{\mu_{0} - \mu^{\prime}}{\sigma/\sqrt{n}} \text{ when } \mu = \mu^{\prime}\right) \\
+&= \Phi\left(z_{\alpha} + \frac{\mu_{0} - \mu^{\prime}}{\sigma/\sqrt{n}} \right)
+\end{aligned}
+$$
+
+## $\beta$ Determination
+
+As $\mu^{\prime}$ increases, $\mu_{0} - \mu^{\prime}$ becomes more negative, so $\beta(\mu^{\prime})$ will be small when $\mu^{\prime}$ greatly exceeds $\mu_{0}$.
+
+We can similarly derive the formulas for lower-tailed tests and two-tailed tests.
+
+Try it out!
+
+## Sample Size Determination
+
+We found that for an upper-tailed test,
+
+$$
+\Phi\left(z_{\alpha} +  \frac{\mu_{0} - \mu^{\prime}}{\sigma/\sqrt{n}} \right) = \beta
+$$
+
+So,
+
+$$
+- z_{\beta} = z_{\alpha} +  \frac{\mu_{0} - \mu^{\prime}}{\sigma/\sqrt{n}}
+$$
+
+Where $-z_{\beta}$ is the z critical value that captures lower tail area $\beta$.
+
+This is easy to rearrange for $n$. Try it out!
+
+## $\beta$ and Sample Size Determination
+
+::: callout-important
+## $\beta$ and Sample Size
+
+| **Alternative Hypothesis** | **Type II Error Probability** $\boldsymbol\beta(\boldsymbol\mu^{\boldsymbol\prime})$ **for a level** $\boldsymbol\alpha$ **test**                                    |
+|------------------------------------|------------------------------------|
+| $H_{a}: \mu > \mu_{0}$     | $\Phi\left(z_{\alpha} + \frac{\mu_{0} - \mu^{\prime}}{\sigma/\sqrt{n}} \right)$                                                                                      |
+| $H_{a}: \mu < \mu_{0}$     | 1 - $\Phi\left(-z_{\alpha} + \frac{\mu_{0} - \mu^{\prime}}{\sigma/\sqrt{n}} \right)$                                                                                 |
+| $H_{a}: \mu \neq \mu_{0}$  | $\Phi\left(z_{\alpha/2} + \frac{\mu_{0} - \mu^{\prime}}{\sigma/\sqrt{n}} \right) - \Phi\left(-z_{\alpha/2} + \frac{\mu_{0} - \mu^{\prime}}{\sigma/\sqrt{n}} \right)$ |
+
+The sample size $n$ for which a level $\alpha$ test also has $\beta(\mu^{\prime}) = \beta$ at the alternative value $\mu^{\prime}$ is
+
+$$
+n = \begin{cases}
+\left[\frac{\sigma(z_{\alpha} + z_{\beta})}{\mu_{0}-\mu^{\prime}}  \right]^{2} & \text{ for a one-tailed test} \\
+\left[\frac{\sigma(z_{\alpha/2} + z_{\beta})}{\mu_{0}-\mu^{\prime}}  \right]^{2} & \text{ for a two-tailed test} 
+\end{cases}
+$$
+:::
+
+## Exercise 18
+
+d.  For the test procedure of part (c), what is $\beta(70)$?
+e.  If the test procedure of part (c) is used, what $n$ is necessary to ensure that $\beta(70) = 0.01$.
+f.  If a level 0.01 test is used with $n=100$, what is the probability of a type I error when $\mu = 76?$.
+
+## Exercise 18 Solutions
+
+d.  
+
+$$
+\begin{aligned}
+\beta(70) &= 1 - \Phi\left(-z_{\alpha} + \frac{\mu_{0} - \mu^{\prime}}{\sigma/\sqrt{n}}\right) \\
+&= 1 - \Phi\left(-z_{0.002} + \frac{75 - 70}{9/\sqrt{25}}\right) \\
+&= 1 - \Phi\left(-2.88 + \frac{75 - 70}{9/\sqrt{25}}\right)\\
+&= 1 - \Phi(-0.10) \\
+&= 1 - 0.4602 \\
+&= 0.5398
+\end{aligned}
+$$
+
+## Exercise 18 Solutions
+
+e.  
+
+$$
+\begin{aligned}
+n &= \left[\frac{\sigma(z_{\alpha} + z_{\beta})}{\mu_{0}-\mu^{\prime}}  \right]^{2} \\
+&= \left[\frac{9(z_{0.0020} + z_{0.01})}{75-70}\right]^{2}\\
+&= \left[\frac{9(2.88 + 2.33)}{75-70}\right]^{2} \\
+&= 87.95
+\end{aligned}
+$$
+
+So, $n = 88$.
+
+## Exercise 18 Solutions
+
+f.  
+
+Trick question! Type I error occurs when $H_{0}$ is true, so if $\mu =76$, $H_{0}$ is not true, so a Type I error is impossible. Therefore the probability of making a type I error in this case is 0.
+
+## Case 2: Large Sample Tests {.smaller}
+
+We will use similar logic to large sample confidence intervals from chapter 8. When the sample size is large, the $z$ tests for Case 1 are easily modified to yield valid test procedures without requiring either a normal population distribution or known $\sigma$.
+
+Recall from Chapter 8, a large $n$ implies that the sample standard deviation $s$ will be close to $\sigma$ for most sampes, so that the standardized variable
+
+$$
+Z = \frac{\bar{X} - \mu}{\sigma/\sqrt{n}}
+$$
+
+has *approximately* a standard normal distribution.
+
+## Large Sample Tests
+
+So! We can use the same procedure for hypothesis testing as for case 1, only substituting in $s$ for $\sigma$ when $n$ is large enough. Our rule of thumb is $n > 40$ is large enough.
+
+Note: Determination of $\beta$ and the necessary sample size for these large sample tests can be based on either specifying a plausible value of $\sigma$ and using the Case 1 formulas (even though $s$ is used in the test) or on using the methods to be introduced shortly in connection with case 3.
+
+## Exercise 20
+
+Lightbulbs of a certain type are advertised as having an average lifetime of 750 h. The price of these bulbs is very favorable, so a potential customer has decided to go ahead with a purchase arrangement unless it can be conclusively demonstrated that the true average lifetime is smaller than what is advertised. A random sample of 50 bulbs was selected, the lifetime of each bulb determined. From this sample, we found that $\bar{x} = 738.44$ and $s = 38.20$. Test the appropriate hypotheses at 0.05 significance level.
+
+## Case 3: A Normal Population Distribution with Unknown $\sigma$ {.smaller}
+
+When $n$ is small, the CLT can no longer be invoked to justify the use of a large-sample test. The same situation happened in Chapter 8 when we were considering confidence intervals. We will take the same approach here too.
+
+The key result on which tests for a normal population mean are based was used in Chapter 8 to derive the one sample t CI. If $X_{1}$,...,$X_{n}$ is a random sample from a normal distribution, the standardized variable
+
+$$
+T = \frac{\bar{X} - \mu}{S/\sqrt{n}}
+$$
+
+has a $t$ distribution with $n-1$ degrees of freedom.
+
+## Case 3
+
+Consider testing $H_{0}: \mu = \mu_{0}$ against $H_{a}: \mu > \mu_{0}$ by using the test statistic $(\bar{X} - \mu_{0})/(S/\sqrt{n})$. That is, the test statistic results from standardizing $\bar{X}$ under the assumption that $H_{0}$ is true. When $H_{0}$ is true, the test statistic has a $t$ distribution with $n-1$ degrees of freedom.
+
+Let's consider using the rejection region $t \geq t_{\alpha,n-1}$. This implies that
+
+$$
+\begin{aligned}
+P(\text{type I error}) &= P(H_{0} \text{ is rejected when it is true}) \\
+&= P(T \geq t_{\alpha,n-1} \text{ when } T \text{ has a } t \text{ distribution with } n-1 \text{ df}) \\ 
+&= \alpha
+\end{aligned}
+$$
+
+## Case 3
+
+::: callout-important
+## The One-Sample t-Test
+
+Null Hypothesis: $H_{0}: \mu = \mu_{0}$ \\ Test statistic value: $t = \frac{\bar{x}\ \mu_{0}}{s/\sqrt{n}}$ \\
+
+| **Alternative Hypothesis** | **Rejection Region for Level** $\boldsymbol\alpha$ **test**                |
+|------------------------------------|------------------------------------|
+| $H_{a}: \mu > \mu_{0}$     | $t > t_{\alpha,n-1}$ (upper-tailed test)                                   |
+| $H_{a}: \mu < \mu_{0}$     | $t < -t_{\alpha,n-1}$ (lower-tailed test)                                  |
+| $H_{a}: \mu \neq \mu_{0}$  | either $t > t_{\alpha/2,n-1}$ or $t < -t_{\alpha/2,n-1}$ (two-tailed test) |
+:::
+
+## Exercise 24
+
+Reconsider the sample observations on stabilized viscosity of asphalt specimens introduced in Exercise 43 in Chapter 1 (2781, 2900, 3013, 2856, and 2888). Suppose that for a particular application, it is required that true average viscosity be 3000. Does this requirement appear to have been satisfied? State and test the appropriate hypotheses.
+
+$\bar{x} = 2887.6$ $s = 84.0256$ $n = 5$
+
+## Exercise 24 Solutions {.smaller}
+
+1.  $\mu$ = the true average viscosity of asphalt
+2.  $H_{0}: \mu = 3000$
+3.  $H_{0}: \mu \neq 3000$
+4.  $t = \frac{\bar{x} - 3000}{s/\sqrt{n}}$
+5.  Using a test with significance level $0.05$, $H_{0}$ will be rejected if $t \geq t_{0.025, 4} = 2.776$ or $t \leq - 2.776$
+6.  $t = \frac{\bar{x} - 3000}{s/\sqrt{n}} = \frac{2887.6 - 3000}{84.0256/\sqrt{5}} = -2.991$
+7.  Reject $H_{0}$ since $t = -2.991 \leq -2.776$. Therefore, we have enough statistical evidence to conclude that the true average viscosity of the asphalt is not 3000. The requirement is not met.
+
+## $\beta$ and Sample Size Determination {.smaller}
+
+The calculation of $\beta(\mu^{\prime})$ is much less straightforward for the $t$ test than it was for Case 1. This is because the distribution of the test statistic is quite complicated when $H_{0}$ is false and $H_{a}$ is true.
+
+So, for an upper tailed test for example, determining
+
+$$ 
+\beta(\mu^{\prime}) = P(T < t_{\alpha,n-1} \text{ when } \mu = \mu^{\prime} \text{ rather than }\mu_{0})
+$$
+
+involves integrating a very unpleasant density function. This must be done numerically (with computer software!) or by looking at the graphs in Appendix Table A.16. There are four graphs corresponding to one-tailed tests at level 0.05 and 0.01, and two-tailed tests at the same levels.
+
+## $\beta$ and Sample Size Determination
+
+The graphs are in terms of $\beta$ on the vertical axis and $d$ on the horizontal axis, where $d = |\mu_{0} - \mu^{\prime}|/\sigma$.
+
+![](images/betacurve.png)
+
+Similarly, we can use the table to help us determine sample size. Let's see it in an example.
+
+## Exercise 32 {.smaller}
+
+A sample of 12 radon detectors of a certain type was selected and each was exposed to 100 pCi/L of radon. The resulting readings were as follows:
+
+|       |       |      |       |       |      |
+|-------|-------|------|-------|-------|------|
+| 105.6 | 90.9  | 91.2 | 96.9  | 96.5  | 91.3 |
+| 100.1 | 105.0 | 99.6 | 107.7 | 103.3 | 92.4 |
+
+a.  Does this data suggest that the population mean reading under these conditions differs from 100? State and test the appropriate hypotheses using $\alpha = 0.05$.
+b.  Suppose that prior to the experiment, a value of $\sigma = 7.5$ had been assumed. How many determinations would then have been appropriate to obtain $\beta = 0.10$ for the alternative $\mu = 95$?
+
+## Summary {.smaller}
+
+-   Case 1:
+
+Null Hypothesis: $H_{0}: \mu = \mu_{0}$\
+Test Statistic value: $z = \frac{\bar{x} - \mu_{0}}{\sigma/\sqrt{n}}$
+
+| **Alternative Hypothesis** | **Rejection Region for Level** $\boldsymbol\alpha$ **test**        |
+|------------------------------------|------------------------------------|
+| $H_{a}: \mu > \mu_{0}$     | $z > z_{\alpha}$ (upper-tailed test)                               |
+| $H_{a}: \mu < \mu_{0}$     | $z < -z_{\alpha}$ (lower-tailed test)                              |
+| $H_{a}: \mu \neq \mu_{0}$  | either $z > z_{\alpha/2}$ or $z < -z_{\alpha/2}$ (two-tailed test) |
+
+-   Case 2: We can use all the same procedures and formulas for case 1, only substituting in $s$ for $\sigma$ when $n$ is large enough. Our rule of thumb is $n > 40$ is large enough.
+
+## Summary {.smaller}
+
+-   Case 3:
+
+Null Hypothesis: $H_{0}: \mu = \mu_{0}$\
+Test statistic value: $t = \frac{\bar{x}\ \mu_{0}}{s/\sqrt{n}}$
+
+| **Alternative Hypothesis** | **Rejection Region for Level** $\boldsymbol\alpha$ **test**                |
+|------------------------------------|------------------------------------|
+| $H_{a}: \mu > \mu_{0}$     | $t > t_{\alpha,n-1}$ (upper-tailed test)                                   |
+| $H_{a}: \mu < \mu_{0}$     | $t < -t_{\alpha,n-1}$ (lower-tailed test)                                  |
+| $H_{a}: \mu \neq \mu_{0}$  | either $t > t_{\alpha/2,n-1}$ or $t < -t_{\alpha/2,n-1}$ (two-tailed test) |
+
+## Practice Problems
+
+-   Odd problems 15 - 31
+-   35
+
+# 9.3 Tests Concerning a Population Proportion
+
+## Outcomes
+
+By the end of this section, you will be able to:
+
+-   Use general large sample tests for parameter $\theta$ following certain conditions.
+-   Perform all steps of a large sample z test for $p$.
+-   Calculate $\beta$ and $n$ from a large sample $z$ test for $p$.
+-   Perform all steps of a small sample test for $p$.
+
+## Large Sample Tests {.smaller}
+
+-   Large-sample tests concerning $p$ are a special case of the more general large-sample procedures for a parameter $\theta$.
+-   Let $\hat{\theta}$ be an estimator of $\theta$ that is approximately unbiased and has approximately a normal distribution.
+-   The null hypothesis has the form $H_{0}: \theta = \theta_{0}$ where $\theta_{0}$ denotes a number (the null value) appropriate to the problem context.
+-   Suppose that when $H_{0}$ is true, the standard deviation of $\hat{\theta}$, $\sigma_{\hat{\theta}}$ involves no unknown parameters.
+-   A large-sample test statistic results from standardizing $\hat{\theta}$ under the assumption that $H_{0}$ is true:
+
+$$
+\text{Test Statistic} = \frac{\hat{\theta} - \theta_{0}}{\sigma_{\hat{\theta}}} 
+$$
+
+## Large Sample Tests
+
+-   If the alternative hypothesis is $H_{a}: \theta > \theta_{0}$, an upper-tailed test whose significance level is approximately $\alpha$ is specified by the rejection region $z \geq z_{\alpha}$.
+-   Similarly, we can work out the rejection regions for the other two alternatives.
+
+## Case of $\theta = p$
+
+-   In the case of $\theta = p$, $\sigma_{\hat{\theta}}$ will not involve any unknown parameters when $H_{0}$ is true, but this is atypical.
+-   When $\sigma_{\hat{\theta}}$ does involve unknown parameters, it is often possible to use an estimated standard deviation $S_{\hat{\theta}}$ in place of $\sigma_{\hat{\theta}}$ and still have $Z$ approximately normally distributed when $H_{0}$ is true (because when $n$ is large, $s_{\hat{\theta}} \approx \sigma_{\hat{\theta}}$ for most samples).
+-   The large-sample test of the previous section furnishes an example of this: Because $\sigma$ is usually unknown, we use $s_{\hat{\theta}} = s_{\bar{x}} = s/\sqrt{n}$ in place of $\sigma/\sqrt{n}$ in the denominator of $z$.
+
+## Case of $\theta = p$ {.smaller}
+
+-   The estimator $\hat{p} = X/n$ is unbiased, has approximately a normal distribution, and it's standard deviation is $\sigma_{\hat{p}} = \sqrt{p(1-p)/n}$.
+-   When $H_{0}$ is true, $E(\hat{p}) = p_{0}$ and $\sigma_{\hat{p}} = \sqrt{p_{0}(1-p_{0})/n}$, so $\sigma_{\hat{p}}$ does not involve any unknown parameters.
+-   It then follows that when $n$ is large and $H_{0}$ is true, the test statistic
+
+$$
+Z = \frac{\hat{p} - p_{0}}{\sqrt{p_{0}(1-p_{0})/n}}
+$$
+
+has approximately a standard normal distribution.
+
+## Case of $\theta = p$
+
+-   If the alternative hypothesis is $H_{a}: p > p_{0}$ and the upper tailed rejection region $z \geq z_{\alpha}$ is used, then
+
+$$
+\begin{aligned}
+P(\text{type I error}) &= P(H_{0} \text{ is rejected when it is true}) \\
+&= P(Z \geq z_{\alpha} \text{ when Z has approximately a standard} \\
+&\text{normal distribution}) \\
+&\approx \alpha
+\end{aligned}
+$$
+
+-   Thus the desired level of significance $\alpha$ is attained by using the critical value that captures area $\alpha$ in the upper tail of the $z$ curve.
+-   Rejection regions for the other two alternative hypotheses are justified in an analogous manner.
+
+## Large sample test for p
+
+::: callout-important
+Null hypothesis: $H_{0}: p = p_{0}$\
+Test statistic value: $z = \frac{\hat{p} - p_{0}}{\sqrt{p_{0}(1-p_{0})/n}}$
+
+| **Alternative Hypothesis** | **Rejection Region**                                                |
+|------------------------------------|------------------------------------|
+| $H_{a}: p > p_{0}$         | $z \geq z_{\alpha}$ (upper-tailed)                                  |
+| $H_{a}: p < p_{0}$         | $z \leq z_{\alpha}$ (lower-tailed)                                  |
+| $H_{a}: p \neq p_{0}$      | either $z \geq z_{\alpha/2}$ or $z \leq -z_{\alpha/2}$ (two-tailed) |
+:::
+
+## Exercise 36
+
+State DMV records indicate that of all vehicles undergoing emissions testing during the previous year, 70% passed on the first try. A random sample of 200 cars tested in a particular county during the current year yields 124 that passed on the initial test. Does this suggest that the true proportion for this county during the current year differs from the previous statewide proportion? Test the relevant hypotheses using $\alpha = 0.05$.
+
+## Exercise 36 Solutions {.smaller}
+
+1.  $p$ = true proportion of vehicles in a particular county during the current year that passed emissions test on the first try.
+2.  $H_{0}: p = 0.70$
+3.  $H_{a}: p \neq 0.70$
+4.  $Z = \frac{\hat{p} - 0.70}{\sqrt{0.7(0.3)/n}}$
+5.  Reject $H_{0}$ if $z \geq z_{0.05/2} = 1.96$ or $z \leq - 1.96$.
+6.  $z = \frac{(124/200) - 0.70}{\sqrt{0.7(0.3)/200}} = -2.47$
+7.  Reject $H_{0}$ for $H_{a}$ since $z = -2.47 \geq -1.96$. Therefore, at 5% significance, we have enough evidence to conclude that the true proportion of vehicles in a particular county during the current year that passe emissions test on the first try differs from that of the previous statewide proportion of 0.70.
+
+## $\beta$ and Sample Size Determination
+
+-   When $H_{0}$ is true, the test statistic $Z$ has approximately a standard normal distribution.
+-   Now suppose that $H_{0}$ is not true, and that $p = p^{\prime}$.
+-   Then $Z$ still has approximately a normal distribution (because it is a linear function of $\hat{p}$) but its mean value and variance are no loner 0 and 1 respectively.
+-   Instead,
+
+$$
+E(Z) = \frac{p^{\prime} - p_{0}}{\sqrt{p_{0}(1-p_{0})/n}} \hspace{2cm} V(Z) = \frac{p^{\prime}(1-p^{\prime})/n}{p_{0}(1-p_{0})/n}
+$$
+
+## $\beta$ and Sample Size Determination
+
+-   The probability of a type II error for an upper-tailed test is $\beta(p^{\prime}) = P(Z < z_{\alpha} \text{ when } p = p^{\prime})$.
+-   This can be computed by using the given mean and variance to standardize and then referring to the standard normal cdf.
+-   In addition, if it is desired that the level $\alpha$ test also have $\beta(p^{\prime}) = \beta$ for a specified value of $\beta$, this equation can be solved for the necessary $n$.
+
+## $\beta$ and Sample Size Determination
+
+::: callout-important
+## $\beta$ and $n$
+
+| **Alternative Hypothesis** | $\boldsymbol\beta(p^{\prime})$                                                                                                                                                                                                           |
+|------------------------------------|------------------------------------|
+| $H_{a}: p > p_{0}$         | $\Phi\left[\frac{p_{0} - p^{\prime}+z_{\alpha}\sqrt{p_{0}(1-p_{0})/n}}{\sqrt{p^{\prime}(1-p^{\prime})/n}} \right]$                                                                                                                       |
+| $H_{a}: p < p_{0}$         | $1 - \Phi\left[\frac{p_{0} - p^{\prime}-z_{\alpha}\sqrt{p_{0}(1-p_{0})/n}}{\sqrt{p^{\prime}(1-p^{\prime})/n}} \right]$                                                                                                                   |
+| $H_{a}: p \neq p_{0}$      | $\Phi\left[\frac{p_{0} - p^{\prime}+z_{\alpha/2}\sqrt{p_{0}(1-p_{0})/n}}{\sqrt{p^{\prime}(1-p^{\prime})/n}} \right] -\Phi\left[\frac{p_{0} - p^{\prime}-z_{\alpha/2}\sqrt{p_{0}(1-p_{0})/n}}{\sqrt{p^{\prime}(1-p^{\prime})/n}} \right]$ |
+
+The sample size $n$ for which the level $\alpha$ test also satisfies $\beta(p^{\prime}) = \beta$ is
+
+$$
+n = \begin{cases}
+\left[\frac{z_{\alpha}\sqrt{p_{0}(1-p_{0})} + z_{\beta}\sqrt{p^{\prime}(1-p^{\prime})}}{p^{\prime} - p_{0}} \right]^{2} & \text{one-tailed test} \\
+\left[\frac{z_{\alpha/2}\sqrt{p_{0}(1-p_{0})} + z_{\beta}\sqrt{p^{\prime}(1-p^{\prime})}}{p^{\prime} - p_{0}} \right]^{2} & \text{two-tailed test approximately} 
+\end{cases}
+$$
+:::
+
+## Exercise 44 {.smaller}
+
+Scientists have recently become concerned about the safety of Teflon cookware and various food containers because perfluorooctanoic acid (PFOA) is used in the manufacturing process. An article reported in the *New York Times* reported that of 600 children tested, 96% had PFOA in their blood. According to the FDA, 90% of all Americans have PFOA in their blood.
+
+a.  Does the data on PFOA incidence among children suggest that the percentage of all children who have PFOA in their blood exceeds the FDA percentage for all Americans. Carry out an appropriate hypothesis test at 1% significance.
+b.  If 95% of all children have PFOA in their blood, how likely is it that the null hypothesis tested in (a) will be rejected when a significance level of 0.01 is employed?
+c.  Referring back to (b), what sample size would be necessary for the relevant probability to be 0.10?
+
+## Small-Sample Tests {.smaller}
+
+-   Test procedures when the sample size $n$ is small are based directly on the binomial distribution rather than the normal approximation.
+-   Consider the alternative hypothesis $H_{a}: p < p_{0}$ and again let $X$ be the number of successes in the sample.
+-   Then $X$ is the test statistic, and the upper-tailed rejection region has the form $x \geq c$.
+-   When $H_{0}$ is true, $X$ has a binomial distribution with parameters $n$ and $p_{0}$, so
+
+$$
+\begin{aligned}
+P(\text{type I error}) &= P(H_{0} \text{ is rejected when it is true}) \\
+&= P(X \geq c \text{ when } X \sim Bin(n,p_{0})) \\
+&= 1 - P(X \leq c - 1 \text{ when } X \sim Bin(n,p_{0})) \\
+&= 1 - B(c-1;n,p_{0})
+\end{aligned}
+$$
+
+## Small-Sample Tests
+
+-   As the critical value $c$ decreases, more $x$ values are included in the rejection region and $P(\text{type I error})$ increases.
+-   Because $X$ has a discrete probability distribution, it is usually not possible to find a value of $c$ for which $P(\text{type I error})$ is exactly the desired significance level $\alpha$.
+-   Instead, the largest rejection region of the form {c, c+1, ..., n} satisfying $1 - B(c-1;n,p_{0}) \leq \alpha$ is used.
+
+## Small-Sample Tests
+
+-   Let $p^{\prime}$ denote the alternative value of $p$ ($p^{\prime} > p_{0}$).
+-   When $p = p^{\prime}$, $X \sim Bin(n,p^{\prime})$, so
+
+$$
+\begin{aligned}
+\beta(p^{\prime}) &= P(\text{ type II error when } p = p^{\prime}) \\
+&= P(X < c \text{ when } X\sim B(n,p^{\prime})) \\
+&= B(c-1;n,p^{\prime})
+\end{aligned}
+$$
+
+-   Similarly, we can construct test procedures for the other two alternatives.
+
+## Exercise 42
+
+Each of a group of 20 intermediate tennis players is given two rackets, one having nylon strings and the other synthetic gut strings. After several weeks of playing with the two rackets, each player will be asked to state a preference for one of the two types of strings. Let $p$ denote the proportion of all such players who would prefer gut to nylon, and let $X$ be the number of players in the sample who prefer gut. Because gut strings are more expensive, consider the null hypothesis that at most 50% of all such players prefer gut. We simplify this to $H_{0}: p = 0.5$, planning to reject $H_{0}$ only if sample evidence strongly favours gut strings.
+
+## Exercise 42
+
+a.  Which of the rejection regions {15, 16, 17, 18, 19, 20 }, {0, 1, 2, 3, 4, 5}, or {0, 1, 2, 3, 17, 18, 19, 20 } is most appropriate and why are the other two nor appropriate?
+b.  What is the probability of a type I error for the chosen region of part (a)? Does the region specify a level 0.05 test? Is it the best level 0.05 test?
+c.  If 60% of all enthusiasts prefer gut, calculate the probability of a type II error using the appropriate region from part (a). Repeat if 80% of all enthusiasts prefer gut.
+d.  If 13 out of the 20 players prefer gut, should $H_{0}$ be rejected using a significance level of 0.10?
+
+## Summary {.smaller}
+
+-   A general large sample test for parameter $\theta$ when $\hat{\theta}$ is approximately unbiased and has approximately a normal distribution and $\sigma_{\hat{\theta}}$ involves no unknown parameters, then the test statistic $Z = \frac{\hat{\theta} - \theta_{0}}{\sigma_{\hat{\theta}}}$ can be used.
+-   A large sample test for $p$ is performed as follows:\
+    Null hypothesis: $H_{0}: p = p_{0}$\
+    Test statistic value: $z = \frac{\hat{p} - p_{0}}{\sqrt{p_{0}(1-p_{0})/n}}$
+
+| **Alternative Hypothesis** | **Rejection Region**                                                |
+|------------------------------------|------------------------------------|
+| $H_{a}: p > p_{0}$         | $z \geq z_{\alpha}$ (upper-tailed)                                  |
+| $H_{a}: p < p_{0}$         | $z \leq z_{\alpha}$ (lower-tailed)                                  |
+| $H_{a}: p \neq p_{0}$      | either $z \geq z_{\alpha/2}$ or $z \leq -z_{\alpha/2}$ (two-tailed) |
+
+## Summary  {.smaller}
+
+-   $\beta$ and $n$ can be calculated from the following for a large sample $z$ test for $p$.
+
+| **Alternative Hypothesis** | $\boldsymbol\beta(p^{\prime})$                                                                                                                                                                                                           |
+|------------------------------------|------------------------------------|
+| $H_{a}: p > p_{0}$         | $\Phi\left[\frac{p_{0} - p^{\prime}+z_{\alpha}\sqrt{p_{0}(1-p_{0})/n}}{\sqrt{p^{\prime}(1-p^{\prime})/n}} \right]$                                                                                                                       |
+| $H_{a}: p < p_{0}$         | $1 -  \Phi\left[\frac{p_{0} - p^{\prime}-z_{\alpha}\sqrt{p_{0}(1-p_{0})/n}}{\sqrt{p^{\prime}(1-p^{\prime})/n}} \right]$                                                                                                                  |
+| $H_{a}: p \neq p_{0}$      | $\Phi\left[\frac{p_{0} - p^{\prime}+z_{\alpha/2}\sqrt{p_{0}(1-p_{0})/n}}{\sqrt{p^{\prime}(1-p^{\prime})/n}} \right] -\Phi\left[\frac{p_{0} - p^{\prime}-z_{\alpha/2}\sqrt{p_{0}(1-p_{0})/n}}{\sqrt{p^{\prime}(1-p^{\prime})/n}} \right]$ |
+
+-   A small sample test for $p$ relies on the binomial distribution instead of the normal approximation.
+
+## Practice Problems
+
+-   Odd problems 37 - 41
+
+# 9.4 P-values
+
+## Outcomes
+
+By the end of this section, you will be able to:
+
+-   Define and interpret the p-value.
+-   Calculate the p-value for all of the tests we have learned so far.
+-   Use the p-value to perform a hypothesis test for all the tests we have seen so far.
+
+## P-value  {.smaller}
+
+-   Using the rejection region method to test hypotheses entails first selecting a significance level $\alpha$.
+-   Then after computing the test statistic, the null hypothesis $H_{0}$ is rejected if the value falls in the rejection region and is otherwise not rejected.
+-   We now consider another way or reaching a conclusion in a hypothesis testing analysis.
+-   This alternative approach is based on calculation of a certain probability called a *p-value*.
+-   One advantage is that the p-value provides an intuitive measure of the strength of evidence in the data against $H_{0}$.
+
+## P-value  {.smaller}
+
+::: callout-important
+## Definition
+
+The **p-value** is the probability, calculated assuming that the null hypothesis is true, of obtaining a value of the test statistic at least as contradictory to $H_{0}$ as the value calculated from the available sample.
+:::
+
+Key points:
+
+-   The p-value is a probability.
+-   This probability is calculated assuming that the null hypothesis is true.
+-   To determine the p-value, we must first decide which values of the test statistic are at least as contradictory to $H_{0}$ as the value obtained from our sample.
+
+## Exercise 48  {.smaller}
+
+Newly purchased tires of a certain type are supposed to be filled to a pressure of 30 lb/in$^{2}$. Let $\mu$ denote the true average pressure. Find the p-value associated with each given $z$ statistic value for testing $H_{0}: mu = 30$ versus $H_{a}: \mu \neq 30$.
+
+a.  2.10
+
+Okay, so we need to think about what is at least as contradictory to $H_{a}$ as our observed test statistic. If our sample observation obtained exactly 30, $z$ would be zero. So we need to be **further away** from 0, in either direction (since we have a two-tailed hypothesis).
+
+Therefore, $$
+\begin{aligned}
+p-value &= P(Z \geq 2.10 \text{ or } Z \leq -2.10 \text{ given } H_{0} \text{ is true}) \\
+&= P(Z \geq 2.10) + P(Z \leq -2.10) \\
+&= 0.0179 + 0.0179 \\
+&= 0.0358
+\end{aligned}
+$$
+
+Therefore, 3.58% of all possible test statistic values are more contradictory to $H_{0}$ as we obtained. Thus, the sample appears to be relatively contradictory to the null hypothesis.
+
+## P-value Decisions
+
+-   The smaller the p-value, the more evidence there is in the sample data against the null hypothesis and for the alternative hypothesis.
+
+::: callout-important
+## Decision Rule based on the p-value
+
+Select a significance level $\alpha$ (as before, the desired type I error probability). Then reject $H_{0}$ if p-value $\leq \alpha$; do not reject $H_{0}$ if p-value $> \alpha$.
+:::
+
+## P-value Versus Rejection Region
+
+![](images/p-value.png)
+
+## P-value
+
+::: callout-important
+## Proposition
+
+The p-value is the smallest significance level $\alpha$ at which the null hypothesis can be rejected. Because of this, the p-value is alternatively referred to as the **observed significance level (OSL)** for the data.
+:::
+
+-   It is customary to call the data *significant* when $H_{0}$ is rejected and *not significant* otherwise.
+
+## Exercise 46
+
+Pairs of p-values and significant levels, $\alpha$, are given. For each pair, state whether the observed p-value would lead to rejection of $H_{0}$ at the given significance level.
+
+a.  p-value = 0.084, $\alpha = 0.05$
+
+No! Fail to reject $H_{0}$ since p-value $\ngeq \alpha$.
+
+b.  p-value = 0.003, $\alpha = 0.001$.
+
+No! Fail to reject $H_{0}$ since p-value $\ngeq \alpha$.
+
+## Check in
+
+Reject $H_{0}$ true or false?
+
+c.  p-value = 0.498, $\alpha$ = 0.05
+
+d.  p-value = 0.084, $\alpha = 0.10$
+
+e.  p-value = 0.039, $\alpha = 0.10$.
+
+## P-value for z tests  {.smaller}
+
+-   Consider an upper-tailed test and let $z$ denote the computed value of the test statistic $Z$.
+-   The null hypothesis is rejected if $z \geq z_{\alpha}$, and the p-value is the smallest $\alpha$ for which this is the case.
+-   Since $z_{\alpha}$ increases as $\alpha$ decreases, the p-value is the value of $\alpha$ for which $z = z_{\alpha}$
+-   That is, the p-value is just the area captured by the computed value $z$ in the upper tail of the standard normal curve.
+-   The corresponding cumulative area is $\Phi(z)$, so in this case, p-value = $1 - \Phi(z)$.
+
+## P-values for z tests
+
+![](images/pvaluecalc.png)
+
+## P-values for z tests
+
+::: callout-important
+## P-values for Z tests
+
+$$ 
+\text{P-value}: \hspace{1cm} P = \begin{cases}
+1-\Phi(z) & \text{ for an upper-tailed test} \\
+\Phi(z) & \text{ for a lower-tailed test}\\
+2[1 - \Phi(|z|)] & \text{ for a two-tailed test} 
+\end{cases}
+$$
+:::
+
+## Exercise 52
+
+An aspirin manufacturer fills bottles by weight rather than by count. Since each bottle should contain 100 tablets, the average weight per tablet should be 5 grains. Each of 100 tablets taken from a very large lot is weighed, resulting in a sample average weight per tablet of 4.87 grains and a sample standard deviation of 0.35 grain. Does this information provide strong evidence for concluding that the company is not filling its bottles as advertised? Test the appropriate hypothesis using $\alpha = 0.01$ by first computing the p-value and then comparing it to the specified significance level.
+
+## P-values for t Tests
+
+-   Just as the p-value for a z test is a z curve area, the p-value for a t test will be a t curve area.
+-   Recall that the degrees of freedom for the one-sample t test is $n-1$.
+-   The table of t critical values used previously for confidence and prediction intervals doesn't contain enough information about any particular $t$ distribution to allow for accurate determination of desired areas.
+-   However, it is enough for us to get **bounds** on the p-value to make a decision.
+
+## P-values for t tests
+
+![](images/pvaluetcalc.png)
+
+## Exercise 58
+
+A spectrophotometer used for measuring CO concentration \[ppm (parts per million) by volume\] is checked for accuracy by taking readings on a manufactured gas (called span gas) in which the CO concentration is very precisely controlled at 70 ppm. If the readings suggest that the spectrophotometer is not working properly, it will have to be recalibrated. Assume that if it is properly calibrated, measured concentration for span gas samples is normally distributed. On the basis of the six readings---85, 77, 82, 68, 72, and 69---is recalibration necessary? Carry out a test of the relevant hypotheses using the p-value approach with $\alpha = 0.05$. ($\bar{x} = 75.5$, $s = 7.0071$)
+
+## Exercise 58 Solutions  {.smaller}
+
+1.  $\mu$ = true average concentration reading of CO for span gas samples
+2.  $H_{0}: \mu = 70$
+3.  $H_{a}: \mu \neq 70$
+4.  $T = \frac{\bar{X} - 70}{S/\sqrt{n}}$
+5.  $t = \frac{\bar{x} - 70}{s/\sqrt{n}} = \frac{75.5 - 70}{7.0071/\sqrt{6}} = 1.92$\
+    $df = n-1 = 5$
+6.  pvalue = $2P(T \geq 1.92) \rightarrow 2(0.05 < p-value < 0.10) \rightarrow 0.10 < pvalue < 0.20$.
+7.  $\alpha = 0.05$, $p-value > 0.10 > 0.05$, therefore, fail to reject $H_{0}$ for $H_{a}$. Therefore, at 5% significance, we do not have enough evidence to say that the true average concentration reading of CO for span gas samples differs from 70ppm, so it does not need to be recalibrated.
+
+## Exercise 54
+
+Many consumers are turning to generics as a way of reducing the cost of prescription medications. The article \`\`Commercial Information on Drugs: Confusing to the Physician?" gives the results of a survey of 102 doctors. Only 47 of those surveyed knew the generic name for the drug methadone. Does this provide strong evidence for concluding that fewer than half of all physicians know the generic name for methadone? Carry out a test of hypotheses with a significance level of $0.01$ using the p-value method.
+
+## Summary
+
+-   The **p-value** is the probability, calculated assuming that the null hypothesis is true, of obtaining a value of the test statistic at least as contradictory to $H_{0}$ as the value calculated from the available sample.
+-   Reject $H_{0}$ for $H_{a}$ if p-value $\leq \alpha$.
+-   The p-value is the smallest significance level $\alpha$ at which the null hypothesis can be rejected and is sometimes referred to as the **observed significance level (OSL)** for the data.
+
+## Practice Problems
+
+-   Odd problems 9.45 - 9.59
