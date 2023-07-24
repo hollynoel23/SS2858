@@ -1,0 +1,229 @@
+---
+title: "Chapter 10"
+format: 
+  revealjs: 
+    toc: false
+    theme: [default, /Users/hollysteeves/Library/CloudStorage/OneDrive-TheUniversityofWesternOntario/Western.scss]
+    incremental: true
+editor: visual
+author: "Holly Steeves"
+---
+
+# 10.1 Z tests and confidence intervals for a difference between two population means
+
+## Outcomes
+
+By the end of this section, you will be able to:
+
+-   Know and understand the assumptions required for the z tests and confidence interval for the difference in means.
+-   Perform a hypothesis tests for the difference in two population means.
+-   Calculate $\beta$ for a given $\Delta^{\prime}$ and significance level.
+-   Know when we can use and how to perform large sample tests.
+-   Calculate and interpret a confidence interval for the difference in population means.
+
+## Introduction
+
+-   In the last chapters, we looked at confidence intervals and hypothesis tests for a single population parameter. But what if we are interested in comparing two parameters?
+-   For example, maybe I think the average GPA at Western University is higher than at Waterloo. I am interested in comparing $\mu_{West}$ and $\mu_{Water}$.
+-   So, we can look at the difference between them, $\mu_{West} - \mu_{Water}$ to look at confidence intervals or test any comparison that we are interested in!
+
+## Basic Assumptions
+
+::: callout-important
+## Basic Assumptions
+
+-   $X_{1}$,...,$X_{m}$ is a random sample from a population with mean $\mu_{1}$ and variance $\sigma_{1}^{2}$.
+-   $Y_{1}$,...,$Y_{m}$ is a random sample from a population with mean $\mu_{2}$ and variance $\sigma_{2}^{2}$.
+-   The $X$ and $Y$ samples are independent of each other.
+:::
+
+## Set up
+
+-   The natural estimator of $\mu_{1} - \mu_{2}$ would be $\bar{X} - \bar{Y}$.
+
+::: callout-important
+## Proposition
+
+The expected value of $\bar{X} - \bar{Y}$ is $\mu_{1} - \mu_{2}$, so $\bar{X} - \bar{Y}$ is an unbiased estimator of $\mu_{1} - \mu_{2}$. The standard deviation of $\bar{X} - \bar{Y}$ is:
+
+$$
+\sigma_{\bar{X} - \bar{Y}} = \sqrt{\frac{\sigma_{1}^{2}}{m} + \frac{\sigma^{2}_{2}}{n}}
+$$
+:::
+
+Proof! Show on board.
+
+## Test procedures for Normal populations with known variances
+
+-   Let's start with the simplest case again!
+
+::: callout-important
+## Test Procedure
+
+Null hypothesis: $H_{0}:\mu_{1} - \mu_{2} = \Delta_{0}$\
+Test statistic value: $z = \frac{\bar{x} - \bar{y} - \Delta_{0}}{\sqrt{\frac{\sigma_{1}^{2}}{m} + \frac{\sigma^{2}_{2}}{n}}}$
+
+| **Alternative Hypothesis**                 | **Rejection Region Level** $\alpha$                    |
+|------------------------------------|------------------------------------|
+| $H_{a}: \mu_{1} - \mu_{2} > \Delta_{0}$    | $z \geq z_{\alpha}$                                    |
+| $H_{a}: \mu_{1} - \mu_{2} < \Delta_{0}$    | $z \leq -z_{\alpha}$                                   |
+| $H_{a}: \mu_{1} - \mu_{2} \neq \Delta_{0}$ | either $z \geq z_{\alpha/2}$ or $z \leq -z_{\alpha/2}$ |
+:::
+
+## Exercise 10.6
+
+An experiment to compare the tension bond strength of polymer latex modified mortar (Portland cement mortar to which polymer latex emulsions have been added during mixing) to that of unmodified mortar resulted in $\bar{x} = 18.12$ kgf/cm$^{2}$ for the modified mortar ($m = 40$) and $\bar{y} = 16.87$ kgf/cm$^{2}$ for the unmodified mortar ($n = 32$). Let $\mu_{1}$ and $\mu_{2}$ be the true average tension bond strengths for the modified and unmodified mortars, respectively. Assume that the bond strength distributions are both normal.
+
+a.  Assuming that $\sigma_{1} = 1.6$ and $\sigma_{2} = 1.4$, test $H_{0}: \mu_{1} - \mu_{2} = 0$ versus $H_{a}: \mu_{1} - \mu_{2} > 0$ at level 0.01.
+
+## $\beta$ and the choice of sample size  {.smaller}
+
+-   Similar to examples we have seen in Chapter 9, we can derive formulas for the probability of making a type II error. Try it out!
+
+::: callout-important
+## Type II Error
+
+| **Alternative Hypothesis**             | $\beta(\Delta^{\prime})$ = P(Type II error)                                                                                                                    |
+|------------------------------------|------------------------------------|
+| $H_{a}: \mu_{1} - \mu_{2} > \Delta_{0}$    | $\Phi\left(z_{\alpha} - \frac{\Delta^{\prime} - \Delta_{0}}{\sigma} \right)$                                                                                   |
+| $H_{a}: \mu_{1} - \mu_{2} < \Delta_{0}$    | 1 - $\Phi\left(-z_{\alpha} - \frac{\Delta^{\prime} - \Delta_{0}}{\sigma} \right)$                                                                              |
+| $H_{a}: \mu_{1} - \mu_{2} \neq \Delta_{0}$ | $\Phi\left(z_{\alpha/2} - \frac{\Delta^{\prime} - \Delta_{0}}{\sigma} \right) - \Phi\left(-z_{\alpha/2} - \frac{\Delta^{\prime} - \Delta_{0}}{\sigma} \right)$ |
+
+where $\sigma = \sqrt{(\sigma^{2}_{1}/m) + (\sigma_{2}^{2}/n)}$
+:::
+
+## Exercise 10.6  {.smaller}
+
+An experiment to compare the tension bond strength of polymer latex modified mortar (Portland cement mortar to which polymer latex emulsions have been added during mixing) to that of unmodified mortar resulted in $\bar{x} = 18.12$ kgf/cm$^{2}$ for the modified mortar ($m = 40$) and $\bar{y} = 16.87$ kgf/cm$^{2}$ for the unmodified mortar ($n = 32$). Let $\mu_{1}$ and $\mu_{2}$ be the true average tension bond strengths for the modified and unmodified mortars, respectively. Assume that the bond strength distributions are both normal.
+
+a.  Assuming that $\sigma_{1} = 1.6$ and $\sigma_{2} = 1.4$, test $H_{0}: \mu_{1} - \mu_{2} = 0$ versus $H_{a}: \mu_{1} - \mu_{2} > 0$ at level 0.01.
+b.  Compute the probability of a type II error for the test of part (a) when $\mu_{1} - \mu_{2} = 1$.
+c.  Suppose the investigator decided to use $\alpha$ level 0.05 test and wished $\beta = 0.10$ when $\mu_{1} - \mu_{2} = 1$. If $m = 40$, what value of $n$ is necessary?
+
+## Large-sample Tests
+
+-   The assumptions of normal population distributions and known values of $\sigma_{1}$ and $\sigma_{2}$ are unnecessary when both sample sizes are large.
+-   The CLT guarantees that $\bar{X} - \bar{Y}$ has approximately a normal distribution regardless of the underlying distributions.
+-   Furthermore, using $S_{1}^{2}$ and $S_{2}^{2}$ in place of $\sigma_{1}^{2}$ and $\sigma_{2}^{2}$ gives a variable whose distribution is approximately normal:
+
+$$
+Z = \frac{\bar{X} - \bar{Y} - (\mu_{1} - \mu_{2})}{\sqrt{(\frac{s_{1}^{2}}{m} + \frac{s_{2}^{2}}{n})}}
+$$
+
+## Large-sample tests
+
+::: callout-important
+## Large Sample Tests
+
+Use of the test statistic value
+
+$$
+z = \frac{\bar{x} - \bar{y} - \Delta_{0}}{\sqrt{\frac{s_{1}^{2}}{m} + \frac{s_{2}^{2}}{n})}}
+$$
+
+along with the previously stated upper, lower, and two-tailed rejection regions based on $z$ critical values gives large-sample tests whose significance levels are approximately $\alpha$. These tests are usually appropriate if both $m > 40$ and $n>40$. A P-value is computed exactly as it was for our earlier $z$ tests.
+:::
+
+## Exercise 10.2
+
+Let $\mu_{1}$ and $\mu_{2}$ denote true average tread lives for two competing brands of size P205/65R15 radial tires. Test $H_{0}: \mu_{1} - \mu_{2} = 0$ versus $H_{a}: \mu_{1} - \mu_{2} \neq 0$ at level 0.05 using the following data: $m = 45$, $\bar{x} = 42,500$, $s_{1} = 2200$, $n = 45$, $\bar{y} = 40,400$, and $s_{2} = 1900$.
+
+## Confidence Intervals for $\mu_{1} - \mu_{2}$
+
+-   When both population distributions are normal, standardizing $\bar{X} - \bar{Y}$ gives a random variable $Z$ with standard normal distribution.
+
+$$
+P\left(-z_{\alpha/2}  < \frac{\bar{X} - \bar{Y} - (\mu_{1} - \mu_{2})}{\sqrt{\frac{\sigma^{2}_{1}}{m} + \frac{\sigma^{2}_{2}}{n}}} < z_{\alpha/2} \right)  = 1 - \alpha 
+$$
+
+-   Manipulating this results in the following large sample confidence interval formula:
+
+## Confidence Intervals for $\mu_{1} - \mu_{2}$
+
+::: callout-important
+## CI for $\mu_{1} - \mu_{2}$
+
+Provided that $m$ and $n$ are both large, a CI for $\mu_{1} - \mu_{2}$ with a confidence level of approximately 100(1-$\alpha$)% is:
+
+$$
+\bar{x} - \bar{y} \pm z_{\alpha/2}\sqrt{\frac{s^{2}_{1}}{m} + \frac{s^{2}_{2}}{n}}
+$$
+
+where $-$ gives the lower limit and $+$ gives the upper limit of the interval. An upper or lower confidence bound can also be calculated by using the appropriate sign, and replacing $z_{\alpha/2}$ by $z_{\alpha}$
+:::
+
+-   Our standard rule of thumb for sample sizes is $m > 40$ and $n > 40$.
+
+## Exercise 10.12
+
+A 3-year study was carried out to see if fluoride toothpaste helps to prevent cavities. The dependent variable was the DMFS, the number of new Decayed, Missing, and Filled Surfaces. The table gives summary data.
+
+| Group    | Sample Size | Sample Mean | Sample SD |
+|----------|-------------|-------------|-----------|
+| Control  | 289         | 12.83       | 8.31      |
+| Fluoride | 260         | 9.78        | 7.51      |
+
+Calculate and interpret a 99% confidence interval for the difference between true means. Is fluoride toothpaste beneficial?
+
+## Sample Size Determination
+
+If the variances $\sigma_{1}^{2}$ and $\sigma_{2}^{2}$ are at least approximately known and the investigator uses equal sample sizes, then the sample size $n$ for each sample that yields at 100(1-$\alpha$)% interval of width $w$ is:
+
+$$
+n = \frac{4z_{\alpha/2}^{2}(\sigma_{1}^{2} + \sigma_{2}^{2})}{w^{2}}
+$$
+
+## Exercise 10.12
+
+If we assume that the population variances are 8 for both the control and the fluoride group, what sample size is needed for each to obtain an interval no wider than 2 DMFS for a 99% CI.
+
+## Summary  {.smaller}
+
+-   In order to use the test shown below, we must assume:
+    1.  $X_{1}$,...,$X_{m}$ is a random sample from a population with mean $\mu_{1}$ and variance $\sigma_{1}^{2}$.
+    2.  $Y_{1}$,...,$Y_{m}$ is a random sample from a population with mean $\mu_{2}$ and variance $\sigma_{2}^{2}$.
+    3.  The $X$ and $Y$ samples are independent of each other.
+-   Null hypothesis: $H_{0}:\mu_{1} - \mu_{2} = \Delta_{0}$\
+    Test statistic value: $z = \frac{\bar{x} - \bar{y} - \Delta_{0}}{\sqrt{\frac{\sigma_{1}^{2}}{m} + \frac{\sigma^{2}_{2}}{n}}}$
+
+| **Alternative Hypothesis**                 | **Rejection Region Level** $\alpha$                    |
+|------------------------------------|------------------------------------|
+| $H_{a}: \mu_{1} - \mu_{2} > \Delta_{0}$    | $z \geq z_{\alpha}$                                    |
+| $H_{a}: \mu_{1} - \mu_{2} < \Delta_{0}$    | $z \leq -z_{\alpha}$                                   |
+| $H_{a}: \mu_{1} - \mu_{2} \neq \Delta_{0}$ | either $z \geq z_{\alpha/2}$ or $z \leq -z_{\alpha/2}$ |
+
+## Summary  {.smaller}
+
+-   For the test shown above, $\beta$ can be calculated as:
+
+| **Alternative Hypothesis**             | $\beta(\Delta^{\prime})$ = P(Type II error)                                                                                                                    |
+|------------------------------------|------------------------------------|
+| $H_{a}: \mu_{1} - \mu_{2} > \Delta_{0}$    | $\Phi\left(z_{\alpha} - \frac{\Delta^{\prime} - \Delta_{0}}{\sigma} \right)$                                                                                   |
+| $H_{a}: \mu_{1} - \mu_{2} < \Delta_{0}$    | 1 - $\Phi\left(-z_{\alpha} - \frac{\Delta^{\prime} - \Delta_{0}}{\sigma} \right)$                                                                              |
+| $H_{a}: \mu_{1} - \mu_{2} \neq \Delta_{0}$ | $\Phi\left(z_{\alpha/2} - \frac{\Delta^{\prime} - \Delta_{0}}{\sigma} \right) - \Phi\left(-z_{\alpha/2} - \frac{\Delta^{\prime} - \Delta_{0}}{\sigma} \right)$ |
+
+-   If $m$ and $n$ are both large, we can use the test statistic:
+
+$$
+z = \frac{\bar{x} - \bar{y} - \Delta_{0}}{\sqrt{\frac{s_{1}^{2}}{m} + \frac{s_{2}^{2}}{n}}}
+$$
+
+in the test procedure shown above.
+
+## Summary  {.smaller}
+
+-   If $m$ and $n$ are both large, a (1-$\alpha$)100% CI for $\mu_{1} - \mu_{2}$ is given by:
+
+$$
+\bar{x} - \bar{y} \pm z_{\alpha/2}\sqrt{\frac{s^{2}_{1}}{m} + \frac{s^{2}_{2}}{n}}
+$$
+
+-   If $\sigma_{1}^{2}$ and $\sigma_{2}^{2}$ are known and we use the same sample size for both samples, then the sample size $n$ for each sample that yields at 100(1-$\alpha$)% interval of width $w$ is:
+
+$$
+n = \frac{4z_{\alpha/2}^{2}(\sigma_{1}^{2} + \sigma_{2}^{2})}{w^{2}}
+$$
+
+## Practice Problems
+
+-   Odd problems 10.1 - 10.11
