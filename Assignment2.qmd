@@ -3,7 +3,7 @@ title: "Assignment 2"
 date: "July 19, 2023"
 author: "Holly Steeves"
 format: 
-  html: 
+  pdf: 
     number-sections: true
     toc: true
     theme: 

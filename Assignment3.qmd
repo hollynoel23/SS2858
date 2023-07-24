@@ -1,0 +1,31 @@
+---
+title: "Assignment 3"
+date: "August 1, 2023"
+author: "Holly Steeves"
+format: 
+  html: 
+    number-sections: true
+    toc: true
+    theme: 
+      light: flatly
+      dark: darkly
+editor: visual
+bibliography: references.bib
+---
+
+1.  Suppose that X has pdf $f(x;\alpha) = \frac{2}{\alpha}xe^{-x^{2}/\alpha}$, where $x >0$ and $\alpha > 0$, and let $X_{1}$,...,$X_{n}$ be a random sample from this distribution.
+    a.  Find the rejection region of the most powerful test for $H_{0}: \alpha = 1$ versus $H_{a}: \alpha = 2$.
+    b.  Is the test of (a) UMP for testing $H_{0}: \alpha = 1$ versus $H_{a}: \alpha > 1$? Explain your reasoning.
+2.  A wedding website states that the average cost of a wedding in 2017 was \$25,764. One concerned bride hopes that the average is less than reported. To see if her hope is correct, she surveys 55 recently married couples and finds that the average cost of weddings in the sample was \$23,015. Assume that the population standard deviation is \$7235.
+    a.  Is there sufficient evidence to support the bride's hope at the 0.10 level of significance? Use the rejection region approach.
+    b.  Suppose that the true average is \$24,000. What is the probability of successfully concluding that the average cost is less than \$25,764?
+    c.  What sample size would be necessary to have a 80% chance of detecting that the true average wedding cost is less than \$25,764 when the true average is actually \$24,000?
+3.  One study claimed that a whopping 95% of college students identify themselves as procrastinators. Since the report also claims that only 20% of the general population claim to be procrastinators, one professor believes that the claim regarding college students is too high. The professor conducts a simple random sample of 275 college students and finds that 251 of them identify themselves as procrastinators.
+    a.  Does this evidence support the professor's claim that fewer than 95% of college students are procrastinators? Use a 0.10 level of significance and the p-value approach.
+    b.  If 90% of college students are procrastinators, what is the probability of incorrectly failing to conclude that less than 95% are procrastinators?
+4.  A parenting magazine reports that the average amount of wireless data used by teenagers each month is 10 GB. For her science fair project, Ella sets out to prove the magazine wrong. She claims that the mean among teenagers in her area is less than reported. Ella collects information from a simple random sample of 25 teenagers at her high school and calculates a mean of 9.8 Gb per month with a standard deviation of 2.7 Gb per month. Test Ella's claim at the 0.01 level of significance using the p-value approach.
+5.  Let $X_{1}$,...,$X_{n}$ be a random sample of size $n$ from a distribution with probability density function
+
+$$
+f(x;\beta) = \frac{1}{2\beta^{3}}x^{2}e^{-x/\beta}, x > 0, \beta > 0
+$$ Find the likelihood ratio test rejection region testing $H_{0}: \beta = 1$ versus $H_{a}: \beta > 1$.
