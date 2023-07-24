@@ -289,7 +289,7 @@ Null Hypothesis: $H_{0}: \mu = \mu_{0}$
 Test Statistic value: $z = \frac{\bar{x} - \mu_{0}}{\sigma/\sqrt{n}}$
 
 | **Alternative Hypothesis** | **Rejection Region for Level** $\boldsymbol\alpha$ **test**        |
-|------------------------------------|------------------------------------|
+|-------------------------|-----------------------------------------------|
 | $H_{a}: \mu > \mu_{0}$     | $z > z_{\alpha}$ (upper-tailed test)                               |
 | $H_{a}: \mu < \mu_{0}$     | $z < -z_{\alpha}$ (lower-tailed test)                              |
 | $H_{a}: \mu \neq \mu_{0}$  | either $z > z_{\alpha/2}$ or $z < -z_{\alpha/2}$ (two-tailed test) |
@@ -337,13 +337,13 @@ b.
 
 <!-- -->
 
-1.  $\mu$ = true mean drying time for a test specimen
+1.  $\mu$ = true mean drying time for a test specimen (minutes)
 2.  $H_{0}: \mu = 75$
 3.  $H_{a}: \mu < 75$
 4.  $z = \frac{\bar{x} - 75}{9/\sqrt{n}}$
 5.  Using a test with significance level $\alpha = 0.01$, $H_{0}$ will be rejected if $z \leq -z_{0.01} = -2.33$.
 6.  With $n=25$ and $\bar{x} = 72.3$, $z = -1.5$ (calculated in a).
-7.  Since $z = -1.5 \nleq -2.33$, we fail to reject $H_{0}$ for $H_{a}$. There is no statistical evidence to conclude that the true mean drying time for a specimen is less than 75.
+7.  Since $z = -1.5 \nleq -2.33$, we fail to reject $H_{0}$ for $H_{a}$. There is no statistical evidence to conclude that the true mean drying time for a specimen is less than 75 minutes.
 
 ## Exercise 18 Solutions
 
@@ -400,7 +400,7 @@ This is easy to rearrange for $n$. Try it out!
 ## $\beta$ and Sample Size
 
 | **Alternative Hypothesis** | **Type II Error Probability** $\boldsymbol\beta(\boldsymbol\mu^{\boldsymbol\prime})$ **for a level** $\boldsymbol\alpha$ **test**                                    |
-|------------------------------------|------------------------------------|
+|-----------------------|------------------------------------------------|
 | $H_{a}: \mu > \mu_{0}$     | $\Phi\left(z_{\alpha} + \frac{\mu_{0} - \mu^{\prime}}{\sigma/\sqrt{n}} \right)$                                                                                      |
 | $H_{a}: \mu < \mu_{0}$     | 1 - $\Phi\left(-z_{\alpha} + \frac{\mu_{0} - \mu^{\prime}}{\sigma/\sqrt{n}} \right)$                                                                                 |
 | $H_{a}: \mu \neq \mu_{0}$  | $\Phi\left(z_{\alpha/2} + \frac{\mu_{0} - \mu^{\prime}}{\sigma/\sqrt{n}} \right) - \Phi\left(-z_{\alpha/2} + \frac{\mu_{0} - \mu^{\prime}}{\sigma/\sqrt{n}} \right)$ |
@@ -461,10 +461,10 @@ Trick question! Type I error occurs when $H_{0}$ is true, so if $\mu =76$, $H_{0
 
 We will use similar logic to large sample confidence intervals from chapter 8. When the sample size is large, the $z$ tests for Case 1 are easily modified to yield valid test procedures without requiring either a normal population distribution or known $\sigma$.
 
-Recall from Chapter 8, a large $n$ implies that the sample standard deviation $s$ will be close to $\sigma$ for most sampes, so that the standardized variable
+Recall from Chapter 8, a large $n$ implies that the sample standard deviation $s$ will be close to $\sigma$ for most samples, so that the standardized variable
 
 $$
-Z = \frac{\bar{X} - \mu}{\sigma/\sqrt{n}}
+Z = \frac{\bar{X} - \mu}{s/\sqrt{n}}
 $$
 
 has *approximately* a standard normal distribution.
@@ -510,10 +510,10 @@ $$
 ::: callout-important
 ## The One-Sample t-Test
 
-Null Hypothesis: $H_{0}: \mu = \mu_{0}$ \\ Test statistic value: $t = \frac{\bar{x}\ \mu_{0}}{s/\sqrt{n}}$ \\
+Null Hypothesis: $H_{0}: \mu = \mu_{0}$ Test statistic value: $t = \frac{\bar{x}\ \mu_{0}}{s/\sqrt{n}}$
 
 | **Alternative Hypothesis** | **Rejection Region for Level** $\boldsymbol\alpha$ **test**                |
-|------------------------------------|------------------------------------|
+|-------------------------|-----------------------------------------------|
 | $H_{a}: \mu > \mu_{0}$     | $t > t_{\alpha,n-1}$ (upper-tailed test)                                   |
 | $H_{a}: \mu < \mu_{0}$     | $t < -t_{\alpha,n-1}$ (lower-tailed test)                                  |
 | $H_{a}: \mu \neq \mu_{0}$  | either $t > t_{\alpha/2,n-1}$ or $t < -t_{\alpha/2,n-1}$ (two-tailed test) |
@@ -529,11 +529,11 @@ $\bar{x} = 2887.6$ $s = 84.0256$ $n = 5$
 
 1.  $\mu$ = the true average viscosity of asphalt
 2.  $H_{0}: \mu = 3000$
-3.  $H_{0}: \mu \neq 3000$
+3.  $H_{a}: \mu \neq 3000$
 4.  $t = \frac{\bar{x} - 3000}{s/\sqrt{n}}$
 5.  Using a test with significance level $0.05$, $H_{0}$ will be rejected if $t \geq t_{0.025, 4} = 2.776$ or $t \leq - 2.776$
 6.  $t = \frac{\bar{x} - 3000}{s/\sqrt{n}} = \frac{2887.6 - 3000}{84.0256/\sqrt{5}} = -2.991$
-7.  Reject $H_{0}$ since $t = -2.991 \leq -2.776$. Therefore, we have enough statistical evidence to conclude that the true average viscosity of the asphalt is not 3000. The requirement is not met.
+7.  Reject $H_{0}$ since $t = -2.991 \leq -2.776$. Therefore, at 5% significance, we have enough statistical evidence to conclude that the true average viscosity of the asphalt is not 3000. The requirement is not met.
 
 ## $\beta$ and Sample Size Determination {.smaller}
 
@@ -575,7 +575,7 @@ Null Hypothesis: $H_{0}: \mu = \mu_{0}$\
 Test Statistic value: $z = \frac{\bar{x} - \mu_{0}}{\sigma/\sqrt{n}}$
 
 | **Alternative Hypothesis** | **Rejection Region for Level** $\boldsymbol\alpha$ **test**        |
-|------------------------------------|------------------------------------|
+|--------------------------|----------------------------------------------|
 | $H_{a}: \mu > \mu_{0}$     | $z > z_{\alpha}$ (upper-tailed test)                               |
 | $H_{a}: \mu < \mu_{0}$     | $z < -z_{\alpha}$ (lower-tailed test)                              |
 | $H_{a}: \mu \neq \mu_{0}$  | either $z > z_{\alpha/2}$ or $z < -z_{\alpha/2}$ (two-tailed test) |
@@ -590,7 +590,7 @@ Null Hypothesis: $H_{0}: \mu = \mu_{0}$\
 Test statistic value: $t = \frac{\bar{x}\ \mu_{0}}{s/\sqrt{n}}$
 
 | **Alternative Hypothesis** | **Rejection Region for Level** $\boldsymbol\alpha$ **test**                |
-|------------------------------------|------------------------------------|
+|--------------------------|----------------------------------------------|
 | $H_{a}: \mu > \mu_{0}$     | $t > t_{\alpha,n-1}$ (upper-tailed test)                                   |
 | $H_{a}: \mu < \mu_{0}$     | $t < -t_{\alpha,n-1}$ (lower-tailed test)                                  |
 | $H_{a}: \mu \neq \mu_{0}$  | either $t > t_{\alpha/2,n-1}$ or $t < -t_{\alpha/2,n-1}$ (two-tailed test) |
@@ -669,7 +669,7 @@ Null hypothesis: $H_{0}: p = p_{0}$\
 Test statistic value: $z = \frac{\hat{p} - p_{0}}{\sqrt{p_{0}(1-p_{0})/n}}$
 
 | **Alternative Hypothesis** | **Rejection Region**                                                |
-|------------------------------------|------------------------------------|
+|-------------------------|-----------------------------------------------|
 | $H_{a}: p > p_{0}$         | $z \geq z_{\alpha}$ (upper-tailed)                                  |
 | $H_{a}: p < p_{0}$         | $z \leq z_{\alpha}$ (lower-tailed)                                  |
 | $H_{a}: p \neq p_{0}$      | either $z \geq z_{\alpha/2}$ or $z \leq -z_{\alpha/2}$ (two-tailed) |
@@ -712,7 +712,7 @@ $$
 ## $\beta$ and $n$
 
 | **Alternative Hypothesis** | $\boldsymbol\beta(p^{\prime})$                                                                                                                                                                                                           |
-|------------------------------------|------------------------------------|
+|-----------------------|------------------------------------------------|
 | $H_{a}: p > p_{0}$         | $\Phi\left[\frac{p_{0} - p^{\prime}+z_{\alpha}\sqrt{p_{0}(1-p_{0})/n}}{\sqrt{p^{\prime}(1-p^{\prime})/n}} \right]$                                                                                                                       |
 | $H_{a}: p < p_{0}$         | $1 - \Phi\left[\frac{p_{0} - p^{\prime}-z_{\alpha}\sqrt{p_{0}(1-p_{0})/n}}{\sqrt{p^{\prime}(1-p^{\prime})/n}} \right]$                                                                                                                   |
 | $H_{a}: p \neq p_{0}$      | $\Phi\left[\frac{p_{0} - p^{\prime}+z_{\alpha/2}\sqrt{p_{0}(1-p_{0})/n}}{\sqrt{p^{\prime}(1-p^{\prime})/n}} \right] -\Phi\left[\frac{p_{0} - p^{\prime}-z_{\alpha/2}\sqrt{p_{0}(1-p_{0})/n}}{\sqrt{p^{\prime}(1-p^{\prime})/n}} \right]$ |
@@ -791,19 +791,19 @@ d.  If 13 out of the 20 players prefer gut, should $H_{0}$ be rejected using a s
     Test statistic value: $z = \frac{\hat{p} - p_{0}}{\sqrt{p_{0}(1-p_{0})/n}}$
 
 | **Alternative Hypothesis** | **Rejection Region**                                                |
-|------------------------------------|------------------------------------|
+|--------------------------|----------------------------------------------|
 | $H_{a}: p > p_{0}$         | $z \geq z_{\alpha}$ (upper-tailed)                                  |
 | $H_{a}: p < p_{0}$         | $z \leq z_{\alpha}$ (lower-tailed)                                  |
 | $H_{a}: p \neq p_{0}$      | either $z \geq z_{\alpha/2}$ or $z \leq -z_{\alpha/2}$ (two-tailed) |
 
-## Summary  {.smaller}
+## Summary {.smaller}
 
 -   $\beta$ and $n$ can be calculated from the following for a large sample $z$ test for $p$.
 
 | **Alternative Hypothesis** | $\boldsymbol\beta(p^{\prime})$                                                                                                                                                                                                           |
-|------------------------------------|------------------------------------|
+|------------------------|------------------------------------------------|
 | $H_{a}: p > p_{0}$         | $\Phi\left[\frac{p_{0} - p^{\prime}+z_{\alpha}\sqrt{p_{0}(1-p_{0})/n}}{\sqrt{p^{\prime}(1-p^{\prime})/n}} \right]$                                                                                                                       |
-| $H_{a}: p < p_{0}$         | $1 -  \Phi\left[\frac{p_{0} - p^{\prime}-z_{\alpha}\sqrt{p_{0}(1-p_{0})/n}}{\sqrt{p^{\prime}(1-p^{\prime})/n}} \right]$                                                                                                                  |
+| $H_{a}: p < p_{0}$         | $1 - \Phi\left[\frac{p_{0} - p^{\prime}-z_{\alpha}\sqrt{p_{0}(1-p_{0})/n}}{\sqrt{p^{\prime}(1-p^{\prime})/n}} \right]$                                                                                                                   |
 | $H_{a}: p \neq p_{0}$      | $\Phi\left[\frac{p_{0} - p^{\prime}+z_{\alpha/2}\sqrt{p_{0}(1-p_{0})/n}}{\sqrt{p^{\prime}(1-p^{\prime})/n}} \right] -\Phi\left[\frac{p_{0} - p^{\prime}-z_{\alpha/2}\sqrt{p_{0}(1-p_{0})/n}}{\sqrt{p^{\prime}(1-p^{\prime})/n}} \right]$ |
 
 -   A small sample test for $p$ relies on the binomial distribution instead of the normal approximation.
@@ -822,7 +822,7 @@ By the end of this section, you will be able to:
 -   Calculate the p-value for all of the tests we have learned so far.
 -   Use the p-value to perform a hypothesis test for all the tests we have seen so far.
 
-## P-value  {.smaller}
+## P-value {.smaller}
 
 -   Using the rejection region method to test hypotheses entails first selecting a significance level $\alpha$.
 -   Then after computing the test statistic, the null hypothesis $H_{0}$ is rejected if the value falls in the rejection region and is otherwise not rejected.
@@ -830,7 +830,7 @@ By the end of this section, you will be able to:
 -   This alternative approach is based on calculation of a certain probability called a *p-value*.
 -   One advantage is that the p-value provides an intuitive measure of the strength of evidence in the data against $H_{0}$.
 
-## P-value  {.smaller}
+## P-value {.smaller}
 
 ::: callout-important
 ## Definition
@@ -844,7 +844,7 @@ Key points:
 -   This probability is calculated assuming that the null hypothesis is true.
 -   To determine the p-value, we must first decide which values of the test statistic are at least as contradictory to $H_{0}$ as the value obtained from our sample.
 
-## Exercise 48  {.smaller}
+## Exercise 48 {.smaller}
 
 Newly purchased tires of a certain type are supposed to be filled to a pressure of 30 lb/in$^{2}$. Let $\mu$ denote the true average pressure. Find the p-value associated with each given $z$ statistic value for testing $H_{0}: mu = 30$ versus $H_{a}: \mu \neq 30$.
 
@@ -852,7 +852,9 @@ a.  2.10
 
 Okay, so we need to think about what is at least as contradictory to $H_{a}$ as our observed test statistic. If our sample observation obtained exactly 30, $z$ would be zero. So we need to be **further away** from 0, in either direction (since we have a two-tailed hypothesis).
 
-Therefore, $$
+Therefore,
+
+$$
 \begin{aligned}
 p-value &= P(Z \geq 2.10 \text{ or } Z \leq -2.10 \text{ given } H_{0} \text{ is true}) \\
 &= P(Z \geq 2.10) + P(Z \leq -2.10) \\
@@ -909,7 +911,7 @@ d.  p-value = 0.084, $\alpha = 0.10$
 
 e.  p-value = 0.039, $\alpha = 0.10$.
 
-## P-value for z tests  {.smaller}
+## P-value for z tests {.smaller}
 
 -   Consider an upper-tailed test and let $z$ denote the computed value of the test statistic $Z$.
 -   The null hypothesis is rejected if $z \geq z_{\alpha}$, and the p-value is the smallest $\alpha$ for which this is the case.
@@ -954,7 +956,7 @@ An aspirin manufacturer fills bottles by weight rather than by count. Since each
 
 A spectrophotometer used for measuring CO concentration \[ppm (parts per million) by volume\] is checked for accuracy by taking readings on a manufactured gas (called span gas) in which the CO concentration is very precisely controlled at 70 ppm. If the readings suggest that the spectrophotometer is not working properly, it will have to be recalibrated. Assume that if it is properly calibrated, measured concentration for span gas samples is normally distributed. On the basis of the six readings---85, 77, 82, 68, 72, and 69---is recalibration necessary? Carry out a test of the relevant hypotheses using the p-value approach with $\alpha = 0.05$. ($\bar{x} = 75.5$, $s = 7.0071$)
 
-## Exercise 58 Solutions  {.smaller}
+## Exercise 58 Solutions {.smaller}
 
 1.  $\mu$ = true average concentration reading of CO for span gas samples
 2.  $H_{0}: \mu = 70$
@@ -978,3 +980,236 @@ Many consumers are turning to generics as a way of reducing the cost of prescrip
 ## Practice Problems
 
 -   Odd problems 9.45 - 9.59
+
+# 9.5 Some Comments on Selecting a Test Procedure
+
+## Outcomes
+
+By the end of this section, you will be able to:
+
+-   Understand the difference between statistical and practical significance.
+-   Know when to, and how to, apply the Neyman-Pearson Theorem.
+-   Know what an UMP test is and how to find it.
+-   Know what an unbiased test is.
+-   Know how to find a likelihood ratio test.
+
+## Comments {.smaller}
+
+-   Once the experimenter has decided on the question of interest and the method for gathering data (the design of the experiment), construction of an appropriate test procedure consists of three distinct steps:
+
+1.  Specify a test statistic (the decision is based on this function of the data).
+2.  Decide on the general form of the rejection region (typically, reject $H_{0}$ for suitably large values of the test statistic, reject for suitably small values, or reject for either small or large values).
+3.  Select the specific numerical critical value or values that will separate the rejection region from the non-rejection region (by obtaining the distribution of the test statistic when $H_{0}$ is true, and then selecting a level of significance).
+
+## Comments {.smaller}
+
+This leads to some issues to be considered while carrying out these steps. Specifically,
+
+1.  What are the practical implications and consequences of choosing a particular level of significance once the other aspects of a test procedure have been determined?
+2.  Does there exist a general principle, not dependent just on intuition, that can be used to obtain best or good test procedures?
+3.  When two or more tests are appropriate in a given situation, how can the tests be compared to decide which should be used?
+4.  If a test is derived under specific assumptions about the distribution or population being sampled, how well will the test procedure work when the assumptions are violated?
+
+## Statistical Versus Practical Significance
+
+-   As we have learned, a small p-value indicates **statistical significance** in that it would strongly suggest rejection of $H_{0}$ in favour of $H_{a}$.
+-   This, however, may be the result of a large sample size in combination with a departure from $H_{0}$ that has little **practical significance**.
+-   In many experimental situations, only departures from $H_{0}$ of large magnitude would be worthy of detection, whereas a small departure from $H_{0}$ would have little practical significance.
+
+## Statistical Versus Practical Significance {.smaller}
+
+Example: A large insurance company mined its data and found a statistically significant (p-value = 0.04) difference between the mean value of policies sold in 2015 and 2016. The difference in the mean values was \$9.83. Even though it was statistically significant, management did not see this as an important difference when a typical policy sold for more than \$1000.
+
+On the other hand, even a clinically important improvement of 10% in the cure rate with a new treatment is not likely to produce statistically significant results in a study of fewer than 225 patients. A small clinic trial would probably not be conclusive.
+
+## Practical Significance
+
+-   For example, let $\mu$ denote the true average IQ score in the very large city of Euphoria.
+-   Consider testing $H_{0}: \mu = 100$ versus $H_{a}: \mu > 100$, assuming a normal IQ distribution with $\sigma = 15$.
+-   But one IQ point is no big deal, so the value $\mu = 100$ certainly does not represent a departure from $H_{0}$ that has practical significance.
+-   The table on the next slide shows the relationship btween the sample size and p-value and $\beta$.
+
+## Practical Significance
+
+| n      | p-value when $\bar{x} = 101$ | $\beta(101)$ for level 0.01 test |
+|--------|------------------------------|----------------------------------|
+| 25     | 0.3707                       | 0.9772                           |
+| 100    | 0.2514                       | 0.9525                           |
+| 400    | 0.0918                       | 0.8413                           |
+| 900    | 0.0228                       | 0.6293                           |
+| 1600   | 0.0038                       | 0.3707                           |
+| 2500   | 0.0004                       | 0.1587                           |
+| 5000   | 0.0000012                    | 0.0087                           |
+| 10,000 | 0.0000000                    | 0.0000075                        |
+
+## Practical Significance {.smaller}
+
+-   Even for moderately large ample sizes, the p-value resulting from $\bar{x} = 101$ argues very strongly for the rejection of $H_{0}$ for $H_{a}$, whereas the observed $\bar{x}$ itself suggests that in practical terms, the true value of $\mu$ differs little from the null value of $\mu_{0} = 100$.
+-   The third column points out that even when there is little practical difference between $\mu$ and the null value, for a fixed level of significance a large sample size will frequently lead to rejection of the null hypothesis at that level.
+-   To summarize, one must be especially careful in interpreting evidence when the sample size is large, since any small departure from $H_{0}$ will almost certainly be detected by a test, yet such a departure may have little practical significance.
+
+## Example 60 {.smaller}
+
+Reconsider the pain-drying problem discussed in Example 9.2, The hypotheses were $H_{0}: \mu = 75$ versus $H_{a}: \mu < 75$ with $\sigma$ assumed to have value 9.0. Consider the alternative value $\mu = 74$, which in the context of the problem would presumably not be practically significant departure from $H_{0}$.
+
+a.  For a level 0.01 test, compute $\beta$ at this alternative for sample sizes $n=100$, $n=900$ and $n=2500$.
+b.  If the observed value of $\bar{X}$ is $\bar{x} = 74$, what can you say about the resulting p-value when $n=2500$? Is the data statistically significant at any of the standard values of $\alpha$?
+c.  Would you really want to use a sample size of $n=2500$ along with a level 0.01 test (disregarding the cost of such an experiment)? Explain.
+
+## Best Tests {.smaller}
+
+-   We've talked about a lot of tests, but haven't discussed whether they are the best way of testing the hypotheses.
+-   That is, we ideally want $\beta$ to be as small as possible while controlling $\alpha$.
+-   Let's first consider **simple hypotheses**, that is, hypotheses that completely specify the distribution of $X_{i}$.
+-   For example, it we know $X_{i}$ follows an exponential distribution with parameter $\lambda$, then $H_{0}: \lambda = 1$ completely specifies the distribution. Similarly, $H_{a}: \lambda = 2$ completely species the distribution. However, $H_{a}: \lambda > 1$ does not completely specify the distribution since $\lambda$ could be 2, or 5, or 300.
+
+## Neyman-Pearson Theorem {.smaller
+
+::: callout-important
+## Theorem
+
+For testing a simple null hypotheses $H_{0}: \theta = \theta_{0}$ versus a simple alternative hypotheses $H_{a}: \theta = \theta_{a}$, let $k$ be a positive fixed number and form the rejection region
+
+$$ 
+R^{*} = \left\{(x_{1},...,x_{n}): \frac{f(x_{1},...,x_{n};\theta_{a})}{f(x_{1},...,x_{n};\theta_{0})} \geq k \right\}
+$$
+
+Thus, $R^{*}$ is the set of all observations for which the likelihood ratio - the ratio of the alternative likelihood to the null likelihood - is at least $k$. The probability of a type I error for the test with this rejection region is $\alpha^{*} = P[(X_{1},...,X_{n}) \in R^{*} \text{ when } \theta = \theta_{0}]$, whereas the type II error probability $\beta^{*}$ is the probability that the $X_{i}$'s lie in the complement of $R^{*}$ when $\theta = \theta_{a}$.
+
+Then for any other test procedure with type I error probability $\alpha$ satisfying $\alpha \leq \alpha^{*}$, the probability of a type II error must satisfy $\beta \geq \beta^{*}$. Thus the test with rejection region $R^{*}$ has the smallest type II error probability among all tests for which the type I error probability is at most $\alpha^{*}$.
+:::
+
+## Example 9.20 {.smaller}
+
+Consider randomly selecting $n=5$ new vehicles of a certain type and determining the number of major defects on each one. Letting $X_{i}$ denote the number of such defects for the $i^{th}$ selected vehicle (i= 1,...,5), suppose that the $X_{i}$'s form a random sample from a Poisson distribution with parameter $\lambda$. Let's find the best test for testing $H_{0}: \lambda = 1$ versus $H_{a}: \lambda = 2$. The poisson likelihood is
+
+$$
+f(x_{1},...,x_{5};\lambda = e^{-5\lambda}\lambda^{\sum x_{i}}/\Pi x_{i}!)
+$$
+
+Substituting first $\lambda = 2$ then $\lambda = 1$ and then taking the ratio of these two likelihoods gives the rejection region:
+
+$$
+R^{*} = \{(x_{1},...,x_{5}):e^{-5}2^{\sum x_{i}} \geq k\}
+$$
+
+## Example 9.20 {.smaller}
+
+Multiplying both sides of the inequality by $e^{5}$ and letting $k^{\prime} = ke^{5}$ gives the rejection region $2^{\sum x_{i}} \geq k^{\prime}$. Now take the natural logarithm of both sides and let $c = ln(k^{\prime})/ln(2)$ to obtain the rejection region $\sum x_{i} \geq c$.
+
+This latter rejection region is completely equivalent to $R^{*}$. $T = \sum X_{i}$ has a Poisson distribution with parameter $5\lambda$, so when $H_{0}$ is true, T has a Poisson distribution with parameter $5$. From Table A.2, the cumulative probabilities for the values 8 and 9 are 0.932 and 0.968, respectively. Thus, if we use $c = 9$ in the rejection region,
+
+$$
+\alpha^{*} = P(\text{Poisson rv with parameter 5 is } \geq 9) = 1 - 0.932 = 0.068
+$$
+
+Choosing instead $c = 10$ gives $\alpha^{*} = 0.032$. If we insist that the significance level be at most 0.05, then the optimal rejection region is $\sum x_{i} \geq 10$.
+
+## Example 9.20
+
+When $H_{a}$ is true, the test statistic has a Poisson distribution with parameter 10. Thus
+
+$$
+\begin{aligned}
+\beta^{*} &= P(H_{0} \text{ is not rejected when } H_{a} \text{ is true}) \\
+&= P(\text{Poisson rv with parameter 10 is } \leq 9) \\
+&= 0.458
+\end{aligned}
+$$
+
+## Power and Uniformly Most Powerful Tests {.smaller}
+
+-   The Neyman-Pearson theorem can be restated in a slightly different way by considering the *power of a test*, $1 - \beta$.
+
+::: callout-important
+## Definition
+
+Let $\Omega_{0}$ and $\Omega_{a}$ be two disjoint sets of possible values of $\theta$, and consider testing $H_{0}: \theta \in \Omega_{0}$ versus $H_{a}: \theta \in \Omega_{a}$ using a test with rejection region $R$. Then the **power function** of the test, denoted by $\pi(\cdot)$ is the probability of rejecting $H_{0}$ considered as a function of $\theta$:
+
+$$ 
+\pi(\theta^{\prime}) = P[(X_{1},...,X_{n}) \in R \text{ when } \theta = \theta^{\prime}]
+$$
+:::
+
+-   Since we don't want to reject the null hypothesis when $\theta \in \Omega_{0}$ and do want to reject it when $\theta \in \Omega_{a}$, we wish a test for the which the power function is close to 0 whenever $\theta^{\prime}$ is in $\Omega_{0}$ and close to 1 whenever $\theta^{\prime}$ is in $\Omega_{a}$.
+
+## Power and Uniformly Most Powerful Tests {.smaller}
+
+-   The power is easily related to the type I and type II error probabilities:
+
+$$
+\pi(\theta^{\prime}) = \begin{cases}
+P(\text{type I error when }\theta = \theta^{\prime}) = \alpha(\theta^{\prime}) & \text{ when } \theta^{\prime} \in \Omega^{0} \\
+1 - P(\text{type II error when }\theta = \theta^{\prime}) = 1 - \beta(\theta^{\prime}) & \text{ when } \theta^{\prime} \in \Omega^{a}
+\end{cases}
+$$
+
+## Example 62
+
+For a random sample of $n$ individuals taking a licensing exam, let $X_{i} = 1$ if the $i^{th}$ individual in the sample passes, and $X_{i} = 0$ otherwise.
+
+a.  With $p$ denoting the proportion of all exam takers who pass, show that the most powerful test of $H_{0}: p = 0.5$ versus $H_{a}: p = 0.75$ rejects $H_{0}$ when $\sum x_{i} \geq c$.
+b.  If $n=20$ and you want $\alpha \leq 0.05$ for the test of (a), would you reject $H_{0}$ if 15 of the 20 individuals in the sample pass the exam?
+c.  What is the power of the test you used in (b) when $p=0.75$.
+
+## Uniformly Most Powerful Tests
+
+::: callout-important
+## Definition
+
+A **uniformly most powerful (UMP) level** $\alpha$ test is one for which $pi(\theta^{\prime})$ is maximized for any $\theta \in \Omega_{a}$ subject to $\pi(\theta^{\prime}) \leq \alpha$ for any $\theta^{\prime} \in \Omega_{0}$.
+
+Note: These are quite rare!
+:::
+
+## Unbiased Tests
+
+::: callout-important
+## Definition
+
+An **unbiased test** is a test for which the smallest value of $\pi(\theta^{\prime})$ for $\theta^{\prime} \in \Omega_{a}$ is at least as large as the largest value of $\pi(\theta^{\prime})$ for $\theta^{\prime} \in \Omega_{0}$. This says that we are at least as likely to reject the null hypothesis when $H_{0}$ is false as we are to reject it when $H_{0}$ is true.
+:::
+
+-   It can be shown that the one-sample t test is UMP unbiased, that is, it is uniformly most powerful among all tests that are unbiased.
+
+## Exercise 62
+
+d.  Is the test derived in (a) UMP for testing the hypotheses $H_{0}: p = 0.5$ versus $H_{a}: p > 0.5$? Explain your reasoning.
+
+## Likelihood Ratio Tests
+
+-   Mostly commonly used method for finding an appropriate test statistic in a new situation.
+-   Recall, the joint pmf or pdf of $X_{1}$,...,$X_{n}$ is denoted by $f(x_{1},...,x_{n};\theta)$, which in the case of a random sample works out to be the product $f(x_{1};\theta)\cdots f(x_{n};\theta)$.
+-   When the $x_{i}$'s are the actual observations and $f(x_{1},...,x_{n};\theta)$ is regarded as a function of $\theta$, then it is called the likelihood function.
+-   Consider testing $H_{0}:\theta \in \Omega_{0}$ versus $H_{a}: \theta \in \Omega_{a}$, where $\Omega_{0}$ and $\Omega_{a}$ are disjoint sets, and let $\Omega = \Omega_{0} \cup \Omega_{a}$.
+
+## Likelihood Ratio Tests {.smaller}
+
+1.  Find the largest value of the likelihood for any $\theta \in \Omega_{0}$ by finding the maximum likelihood testing of $\theta$ within $\Omega_{0}$ and substituting this mle into the likelihood function to obtain $L(\hat\Omega_{0})$.
+2.  Find the largest value of the likelihood for any $\theta \in \Omega$ by finding the maximum likelihood estimate of $\theta$ within $\Omega$ and substituting this mle into the likelihood function to obtain $L(\hat\Omega)$. Because $\theta_{0}$ is a subset of $\Omega$, this likelihood $L(\hat\Omega)$ can't be any smaller than the likelihood $L(\hat\Omega_{0})$ obtained in the first step and will be much larger when the data is much more consistent with $H_{a}$ than with $H_{0}$.
+3.  Form the *likelihood ratio* $L(\hat{\Omega_{0}})/L(\hat\Omega)$ and reject the null hypothesis in favour of the alternative when this ratio is $\leq k$. The critical value $k$ is chosen to give a test with the desired significance level. In practice, the inequality $L(\hat{\Omega_{0}})/L(\hat\Omega) \leq k$ is often re-expressed in terms of a more convenient statistic (such as the sum of the observations) whose distribution is known or can be derived.
+
+## Exercise 68
+
+The error in a measurement is normally distributed with mean $\mu$ and standard deviation 1. Consider a random sample of $n$ errors, and show that the likelihood ratio test for $H_{0}: \mu = 0$ versus $H_{a}: \mu \neq 0$ rejects the null hypothesis when either $\bar{x} \geq c$ or $\bar{x} \leq -c$. What is $c$ for a test with $\alpha = 0.05$? How does the test change if the standard deviation is $\sigma_{0}$ (known) and the relevant hypotheses are $H_{0}: \mu = 0$ versus $H_{a}: \mu \neq mu_{0}$.
+
+## Summary
+
+-   Statistical significance occurs when the test results in a small p-value, however this may have no practical significance, which means that in reality, the difference does not serve any practical use (for example differences of a few cents or dollars).
+-   The Neyman-Pearson Theorem says that for testing a simple null hypotheses $H_{0}: \theta = \theta_{0}$ versus a simple alternative hypotheses $H_{a}: \theta = \theta_{a}$, let $k$ be a positive fixed number and form the rejection region
+
+$$ 
+R^{*} = \left\{(x_{1},...,x_{n}): \frac{f(x_{1},...,x_{n};\theta_{a})}{f(x_{1},...,x_{n};\theta_{0})} \geq k \right\}
+$$
+
+, then the test with rejection region $R^{*}$ has the smallest probability of type II error for any test with probability of type I error at most $\alpha$.
+
+## Summary
+
+-   A **uniformly most powerful (UMP) level** $\alpha$ test is one for which $pi(\theta^{\prime})$ is maximized for any $\theta \in \Omega_{a}$ subject to $\pi(\theta^{\prime}) \leq \alpha$ for any $\theta^{\prime} \in \Omega_{0}$.
+-   An **unbiased test** is a test for which the smallest value of $\pi(\theta^{\prime})$ for $\theta^{\prime} \in \Omega_{a}$ is at least as large as the largest value of $\pi(\theta^{\prime})$ for $\theta^{\prime} \in \Omega_{0}$. This says that we are at least as likely to reject the null hypothesis when $H_{0}$ is false as we are to reject it when $H_{0}$ is true.
+-   Form the *likelihood ratio* $L(\hat{\Omega_{0}})/L(\hat\Omega)$ and reject the null hypothesis in favour of the alternative when this ratio is $\leq k$. The critical value $k$ is chosen to give a test with the desired significance level.
+
+## Practice Problems
+
+-   Odd problems 61-69
