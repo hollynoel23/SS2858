@@ -1026,8 +1026,8 @@ On the other hand, even a clinically important improvement of 10% in the cure ra
 
 -   For example, let $\mu$ denote the true average IQ score in the very large city of Euphoria.
 -   Consider testing $H_{0}: \mu = 100$ versus $H_{a}: \mu > 100$, assuming a normal IQ distribution with $\sigma = 15$.
--   But one IQ point is no big deal, so the value $\mu = 100$ certainly does not represent a departure from $H_{0}$ that has practical significance.
--   The table on the next slide shows the relationship btween the sample size and p-value and $\beta$.
+-   But one IQ point is no big deal, so the value $\mu = 101$ certainly does not represent a departure from $H_{0}$ that has practical significance.
+-   The table on the next slide shows the relationship between the sample size and p-value and $\beta$.
 
 ## Practical Significance
 
@@ -1157,7 +1157,7 @@ c.  What is the power of the test you used in (b) when $p=0.75$.
 ::: callout-important
 ## Definition
 
-A **uniformly most powerful (UMP) level** $\alpha$ test is one for which $pi(\theta^{\prime})$ is maximized for any $\theta \in \Omega_{a}$ subject to $\pi(\theta^{\prime}) \leq \alpha$ for any $\theta^{\prime} \in \Omega_{0}$.
+A **uniformly most powerful (UMP) level** $\alpha$ test is one for which $\pi(\theta^{\prime})$ is maximized for any $\theta \in \Omega_{a}$ subject to $\pi(\theta^{\prime}) \leq \alpha$ for any $\theta^{\prime} \in \Omega_{0}$.
 
 Note: These are quite rare!
 :::
