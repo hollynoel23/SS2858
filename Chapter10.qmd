@@ -76,14 +76,14 @@ An experiment to compare the tension bond strength of polymer latex modified mor
 
 a.  Assuming that $\sigma_{1} = 1.6$ and $\sigma_{2} = 1.4$, test $H_{0}: \mu_{1} - \mu_{2} = 0$ versus $H_{a}: \mu_{1} - \mu_{2} > 0$ at level 0.01.
 
-## $\beta$ and the choice of sample size  {.smaller}
+## $\beta$ and the choice of sample size {.smaller}
 
 -   Similar to examples we have seen in Chapter 9, we can derive formulas for the probability of making a type II error. Try it out!
 
 ::: callout-important
 ## Type II Error
 
-| **Alternative Hypothesis**             | $\beta(\Delta^{\prime})$ = P(Type II error)                                                                                                                    |
+| **Alternative Hypothesis**                 | $\beta(\Delta^{\prime})$ = P(Type II error)                                                                                                                    |
 |------------------------------------|------------------------------------|
 | $H_{a}: \mu_{1} - \mu_{2} > \Delta_{0}$    | $\Phi\left(z_{\alpha} - \frac{\Delta^{\prime} - \Delta_{0}}{\sigma} \right)$                                                                                   |
 | $H_{a}: \mu_{1} - \mu_{2} < \Delta_{0}$    | 1 - $\Phi\left(-z_{\alpha} - \frac{\Delta^{\prime} - \Delta_{0}}{\sigma} \right)$                                                                              |
@@ -92,7 +92,7 @@ a.  Assuming that $\sigma_{1} = 1.6$ and $\sigma_{2} = 1.4$, test $H_{0}: \mu_{1
 where $\sigma = \sqrt{(\sigma^{2}_{1}/m) + (\sigma_{2}^{2}/n)}$
 :::
 
-## Exercise 10.6  {.smaller}
+## Exercise 10.6 {.smaller}
 
 An experiment to compare the tension bond strength of polymer latex modified mortar (Portland cement mortar to which polymer latex emulsions have been added during mixing) to that of unmodified mortar resulted in $\bar{x} = 18.12$ kgf/cm$^{2}$ for the modified mortar ($m = 40$) and $\bar{y} = 16.87$ kgf/cm$^{2}$ for the unmodified mortar ($n = 32$). Let $\mu_{1}$ and $\mu_{2}$ be the true average tension bond strengths for the modified and unmodified mortars, respectively. Assume that the bond strength distributions are both normal.
 
@@ -177,7 +177,7 @@ $$
 
 If we assume that the population variances are 8 for both the control and the fluoride group, what sample size is needed for each to obtain an interval no wider than 2 DMFS for a 99% CI.
 
-## Summary  {.smaller}
+## Summary {.smaller}
 
 -   In order to use the test shown below, we must assume:
     1.  $X_{1}$,...,$X_{m}$ is a random sample from a population with mean $\mu_{1}$ and variance $\sigma_{1}^{2}$.
@@ -192,11 +192,11 @@ If we assume that the population variances are 8 for both the control and the fl
 | $H_{a}: \mu_{1} - \mu_{2} < \Delta_{0}$    | $z \leq -z_{\alpha}$                                   |
 | $H_{a}: \mu_{1} - \mu_{2} \neq \Delta_{0}$ | either $z \geq z_{\alpha/2}$ or $z \leq -z_{\alpha/2}$ |
 
-## Summary  {.smaller}
+## Summary {.smaller}
 
 -   For the test shown above, $\beta$ can be calculated as:
 
-| **Alternative Hypothesis**             | $\beta(\Delta^{\prime})$ = P(Type II error)                                                                                                                    |
+| **Alternative Hypothesis**                 | $\beta(\Delta^{\prime})$ = P(Type II error)                                                                                                                    |
 |------------------------------------|------------------------------------|
 | $H_{a}: \mu_{1} - \mu_{2} > \Delta_{0}$    | $\Phi\left(z_{\alpha} - \frac{\Delta^{\prime} - \Delta_{0}}{\sigma} \right)$                                                                                   |
 | $H_{a}: \mu_{1} - \mu_{2} < \Delta_{0}$    | 1 - $\Phi\left(-z_{\alpha} - \frac{\Delta^{\prime} - \Delta_{0}}{\sigma} \right)$                                                                              |
@@ -210,7 +210,7 @@ $$
 
 in the test procedure shown above.
 
-## Summary  {.smaller}
+## Summary {.smaller}
 
 -   If $m$ and $n$ are both large, a (1-$\alpha$)100% CI for $\mu_{1} - \mu_{2}$ is given by:
 
@@ -227,3 +227,637 @@ $$
 ## Practice Problems
 
 -   Odd problems 10.1 - 10.11
+
+# 10.2 The Two-Sample t Test and Confidence Interval
+
+## Outcomes
+
+By the end of this section, you will be able to:
+
+-   Know the T random variable for two independent samples along with it's degrees of freedom.
+-   Calculate the two-sample t confidence interval for $\mu_{1} - \mu_{2}$.
+-   Perform a hypothesis test for the two sample test of $\mu_{1} - \mu_{2}$.
+-   Know the pooled T random variable, it's associated degrees of freedom, and how to calculate the pooled sample variance.
+
+## Assumptions
+
+-   In practice, it is virtually always the case that the values of the population variances are unknown. We had formulas for if $n$ and $m$ were large in the last section and this was the case, but what about when sample sizes are small?
+
+::: callout-important
+## Assumptions
+
+Both populations are normal, so that $X_{1}$,...,$X_m$ is a random sample from a normal distribution and so is $Y_{1}$,...,$Y_{n}$ (with the $X$s and $Y$s independent of each other). The plausibility of these assumptions can be judged by constructing a normal probability plot of the $x_{i}$'s and another of the $y_{i}$'s.
+:::
+
+## Set up
+
+::: callout-important
+## Theorem
+
+When the population distributions are both normal, the standardized variable
+
+$$
+T = \frac{\bar{X} - \bar{Y} - (\mu_{1} - \mu_{2})}{\sqrt{\frac{S_{1}^{2}}{m} + \frac{S_{2}^{2}}{n}}}
+$$
+
+has approximately a $t$ distribution with df $\nu$ estimated from the data by
+
+$$ 
+\nu = \frac{\left(\frac{s_{1}^{2}}{m} + \frac{s_{2}^{2}}{n} \right)^{2}}{\frac{(s_{1}^{2}/m)^{2}}{m-1} + \frac{(s_{2}^{2}/n)^{2}}{n-1}} = \frac{\left[(se_{1})^{2} + (se_{1})^{2} \right]^{2}}{\frac{(se_{1})^{4}}{m-1} + \frac{(se_{2})^{4}}{n-1}}
+$$
+
+where $se_{1} = s_{1}/\sqrt{m}$ and $se_{2} = s_{2}/\sqrt{n}$.
+
+Note: Round down to the nearest integer
+:::
+
+## Two Sample t Procedures {.smaller}
+
+::: callout-important
+## Two Sample Procedures
+
+The **two-sample t confidence interval for** $\mu_{1} - \mu_{2}$ with confidence level (1-$\alpha$)100% is
+
+$$
+\bar{x} - \bar{y} \pm t_{\alpha/2,\nu}\sqrt{\frac{s_{1}^{2}}{m} + \frac{s_{2}^{2}}{n}}
+$$
+
+A one-sided confidence bound can be calculated as described earlier.
+
+The **two sample t test** for testing $H_{0}: \mu_{1} - \mu_{2} = \Delta_{0}$ is as follows:
+
+Test statistic value: $t = \frac{\bar{x} - \bar{y} - \Delta_{0}}{\sqrt{\frac{s_{1}^{2}}{m} + \frac{s_{2}^{2}}{n}}}$
+
+| **Alternative Hypothesis**                 | **Rejection Region Level** $\alpha$                            |
+|------------------------------------|------------------------------------|
+| $H_{a}: \mu_{1} - \mu_{2} > \Delta_{0}$    | $t \geq t_{\alpha,\nu}$                                        |
+| $H_{a}: \mu_{1} - \mu_{2} < \Delta_{0}$    | $t \leq -t_{\alpha,\nu}$                                       |
+| $H_{a}: \mu_{1} - \mu_{2} \neq \Delta_{0}$ | either $t \geq t_{\alpha/2,\nu}$ or $t \leq -t_{\alpha/2,\nu}$ |
+
+Alternatively, a p-value could be computed as well.
+:::
+
+## Exercise 10.22 {.smaller}
+
+An article reported on an investigation in which participants were randomly assigned either to a supervised exercise program or a control group. Those in the control group were told only that they should take measures to lose weight. After 4 months, the sample mean decrease in body fat for the 17 individuals in the experimental group was 6.2 kg with a sample standard deviation of 4.5 kg, whereas the sample mean and sample standard deviation for the 17 people in the control group were 1.7 kg and 3.1 kg, respectively. Assume normality of the two body fat loss distributions (as did the investigators).
+
+a.  Calculate a 99% lower bound for the difference in true average decrease in body fat between the experimental and control groups. Interpret.
+b.  Does it appear that the true average decrease in body fat is more than 2kg larger for the experimental condition than for the control condition? Carry out a test of appropriate hypotheses using a significance level of 0.01. Does this agree with your answer in a?
+
+## Pooled t Procedures
+
+-   What if in addition to assuming that the two population distributions are normal, we assume that they have equal variances ($\sigma_{1}^{2} = \sigma_{2}^{2}$).
+-   Let $\sigma^{2}$ denote the common population variance. Then standardizing $\bar{X} - \bar{Y}$ gives
+
+$$
+Z = \frac{\bar{X} - \bar{Y} - (\mu_{1}- \mu_{2})}{\sqrt{\frac{\sigma^{2}}{m} + \frac{\sigma^{2}}{n}}} = \frac{\bar{X} - \bar{Y} - (\mu_{1}- \mu_{2})}{\sqrt{\sigma^{2}\left(\frac{1}{m} + \frac{1}{n}\right)}}
+$$
+
+which has a standard normal distribution.
+
+## Pooled t Procedures
+
+-   Consider the following weighted average of the two sample variances, meaning that if one sample size is larger, it will contribute more towards the average.
+-   This is called the **pooled estimator** of $\sigma^{2}$.
+
+$$
+S_{p}^{2} = \frac{m-1}{m + n - 2}S_{1}^{2} + \frac{n-1}{m + n - 2}S_{2}^{2} 
+$$
+
+## Pooled t Procedures
+
+So, with some manipulation (see textbook for details) we get:
+
+$$
+T = \frac{\bar{X} - \bar{X} - (\mu_{1} - \mu_{2})}{s_{p}\sqrt{(\frac{1}{m}+\frac{1}{n})}}
+$$
+
+has a $t$ distribution with $m+n-2$ degrees of freedom.
+
+This can then result in confidence intervals and hypothesis test procedures similar to earlier, but using $s_{p}$.
+
+## When to use? {.smaller}
+
+So when can we make this assumption?
+
+::: columns
+::: {.column width="50%"}
+**Pros to pooled test:**
+
+-   Can be derived from likelihood ratio test, whereas two-sample t-test cannot.
+
+-   Significance level is exact, whereas it is approximated for two-sample t-test
+
+-   Outperforms the two-sample t-test (higher power) when $\sigma_{1}^{2} = \sigma_{2}^{2}$.
+:::
+
+::: {.column width="50%"}
+**Cons to pooled test:**
+
+-   Strict assumption.
+
+-   Can lead to erroneous conclusions if applied when the variances are different.
+
+-   
+:::
+:::
+
+We could use a test for two variances (in section 10.5) first to decide.\
+Or
+
+Conclusion: Use the two-sample t procedures unless there is really compelling evidence for doing otherwise, particularly when the two sample sizes are different.
+
+## Exercise 10.33  {.smaller}
+
+Consider the pooled t variable
+
+$$
+T = \frac{\bar{X} - \bar{X} - (\mu_{1} - \mu_{2})}{s_{p}\sqrt{(\frac{1}{m}+\frac{1}{n})}}
+$$
+
+which has a $t$ distribution with $m + n - 2$ df when both population distributions are normal with $\sigma_{1} = \sigma_{2}$.
+
+a.  Use this $t$ variable to obtain a pooled $t$ confidence interval formula for $\mu_{1} - \mu_{2}$.
+b.  A sample of ultrasonic humidifiers of one particular brand was selected for which the observations on maximum output of moisture (oz) in a controlled chamber were 14.0, 14.3, 12.2, and 15.1. A sample of the second brand gave output values 12.1, 13.6, 11.9, and 11.2. Use the pooled $t$ formula from part (a) to estimate the difference between true average outputs for the two brands with a 95% confidence interval.
+c.  Estimate the difference between the two $\mu$'s using the two-sample $t$ interval discussed in this section, and compare it to the interval of part (b).
+
+## Exercise 34
+
+Refer to Exercise 33. Describe the pooled $t$ test for testing $H_{0}: \mu_{1} - \mu_{2} = 0$ when both population distributions are normal with $\sigma_{1} = \sigma_{2}$. Then use this test procedure to test the hypotheses that the two Brands in the previous question have different average outputs of moisture at 5% significance.
+
+## Type II Error Probabilities
+
+There does not appear to be any simple way to calculate this. We need software! Since we don't learn coding, but we all have access to the internet, we can use a power calculator at \url{https://www.stat.ubc.ca/~rollin/stats/ssize/n2.html} for a pooled situation or at \url{https://www.statskingdom.com/32test_power_t_z.html} for both situations.
+
+## Summary  {.smaller}
+
+-   When the population distributions are both normal, the standardized variable
+
+$$
+T = \frac{\bar{X} - \bar{Y} - (\mu_{1} - \mu_{2})}{\sqrt{\frac{S_{1}^{2}}{m} + \frac{S_{2}^{2}}{n}}}
+$$
+
+has approximately a $t$ distribution with df $\nu$ estimated from the data by
+
+$$
+\nu = \frac{\left(\frac{s_{1}^{2}}{m} + \frac{s_{2}^{2}}{n} \right)^{2}}{\frac{(s_{1}^{2}/m)^{2}}{m-1} + \frac{(s_{2}^{2}/n)^{2}}{n-1}} = \frac{\left[(se_{1})^{2} + (se_{1})^{2} \right]^{2}}{\frac{(se_{1})^{4}}{m-1} + \frac{(se_{2})^{4}}{n-1}}
+$$
+
+## Summary  {.smaller}
+
+-   The **two-sample t confidence interval for** $\mu_{1} - \mu_{2}$ with confidence level (1-$\alpha$)100% is
+
+$$
+\bar{x} - \bar{y} \pm t_{\alpha/2,\nu}\sqrt{\frac{s_{1}^{2}}{m} + \frac{s_{2}^{2}}{n}}
+$$
+
+-   The **two sample t test** for testing $H_{0}: \mu_{1} - \mu_{2} = \Delta_{0}$ is as follows:
+
+Test statistic value: $t = \frac{\bar{x} - \bar{y} - \Delta_{0}}{\sqrt{\frac{s_{1}^{2}}{m} + \frac{s_{2}^{2}}{n}}}$
+
+| **Alternative Hypothesis**                 | **Rejection Region Level** $\alpha$                            |
+|------------------------------------|------------------------------------|
+| $H_{a}: \mu_{1} - \mu_{2} > \Delta_{0}$    | $t \geq t_{\alpha,\nu}$                                        |
+| $H_{a}: \mu_{1} - \mu_{2} < \Delta_{0}$    | $t \leq -t_{\alpha,\nu}$                                       |
+| $H_{a}: \mu_{1} - \mu_{2} \neq \Delta_{0}$ | either $t \geq t_{\alpha/2,\nu}$ or $t \leq -t_{\alpha/2,\nu}$ |
+
+## Summary
+
+-   
+
+$$
+T = \frac{\bar{X} - \bar{X} - (\mu_{1} - \mu_{2})}{s_{p}\sqrt{(\frac{1}{m}+\frac{1}{n})}}
+$$
+
+has a $t$ distribution with $m+n-2$ degrees of freedom, where
+
+$$
+S_{p}^{2} = \frac{m-1}{m + n - 2}S_{1}^{2} + \frac{n-1}{m + n - 2}S_{2}^{2} 
+$$
+
+## Practice Problems
+
+-   Odd problems 10.21 - 10.31
+-   Odd problems 10.35 - 10.37
+
+# 10.3 Analysis of Paired Data 
+
+## Outcomes 
+
+By the end of this section, you will know how to: 
+
+* Understand when paired data arises and why it is beneficial.
+* Perform a paired hypothesis test for $\mu_{D}$. 
+* Calculate and interpret a paired CI for $\mu_{D}$.
+
+## Introduction 
+
+* In the previous two sections, we looked at tests for comparing means of two populations when we had two samples collected independently of one another. 
+* But what if our samples aren't independent? 
+* Often, in experimental data in particular, we look at data called matched pairs data. This consists of pairs of connected data, where each one gets a particular treatment. 
+* Examples: couples, siblings, before/after on the same person, different treatments by the same person. 
+
+## Assumptions 
+
+::: callout-important
+## Assumptions
+
+The data consists of $n$ independently selected pairs $(X_{1},Y_{1})$, $(X_{2},Y_{2})$, ..., $(X_{n},Y_{n})$, with $E(X_{i}) = \mu_{1}$ and $E(Y_{i}) = \mu_{2}$. Let $D_{1} = X_{1} - Y_{1}$, $D_{2} = X_{2} - Y_{2}$, ..., $D_{n} = X_{n} - Y_{n}$, so the $D_{i}$'s are the differences within pairs. Then the $D_{i}$'s are assumed to be normally distributed with mean value $\mu_{D}$ and variance $\sigma_{D}^{2}$. 
+:::
+
+## The Paired t Test
+
+* Because different pairs are independent, the $D_{i}$'s are independent of each other. So, 
+
+$$
+\mu_{D} = E(X - Y) = E(X) - E(Y) = \mu_{1} - \mu_{2}
+$$
+
+* Since $D_{i}$'s constitute a normal random sample with mean $\mu_{D}$, hypotheses about $\mu_{D}$ can be tested using a one-sample t-test. 
+
+## The Paired t Test
+
+::: callout-important
+## The Paired t Test {.smaller}
+
+| Null Hypothesis: $H_{0}: \mu_{D} = \Delta_{0}$ | (where $D = X - Y$ is the difference | 
+|---|---|
+|  | between the first and second observations \\ 
+|  | within a pair and $\mu_{D} = \mu_{1} - \mu_{2}$)  |
+| Test Statistic value: $t = \frac{\bar{d} - \Delta_{0}}{s_{D}/\sqrt{n}}$ | (where $\bar{d}$ and $s_{D}$ are the sample mean |
+|  |  and standard deviation, respectively |
+|  |  of the $d_{i}$'s) |
+| \textbf{Alternative Hypothesis} | \textbf{Rejection Region for Level } $\boldsymbol\alpha$ \textbf{ Test} |
+| $H_{a}: \mu_{D} > \Delta_{0}$ | $t \geq t_{\alpha, n-1}$ |
+| $H_{a}: \mu_{D} < \Delta_{0}$ | $t \leq -t_{\alpha, n-1}$ |
+| $H_{a}: \mu_{D} \neq \Delta_{0}$ | either $t \geq t_{\alpha/2, n-1}$ or $t \leq -t_{\alpha/2,n-1}$ |
+
+:::
+
+Or a p-value can be calculated as was done for earlier t-tests. 
+
+## Exercise 10.42 {.smaller}
+
+Scientists and engineers frequently wish to compare two different techniques for measuring or determining the value of a variable. In such situations, it is useful to test whether the mean difference in measurements is zero. An article reports the accompanying data on measuring the amount of milk ingested by each of 14 randomly selected infants. 
+
+| Method/Infant | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
+|---------------|---|---|---|---|---|---|---|
+| Isotopic | 1509 | 1418 | 1561 | 1556 | 2169 | 1760 | 1098 | 
+| Test | 1498 | 1254 | 1336 | 1565 | 2000 | 1318 | 1410 |
+| Difference | 11 | 164 | 225 | -9 | 169 | 442 | -312 |
+
+| Method/Infant | 8 | 9 | 10 | 11 | 12 | 13 | 14 |
+|---------------|---|---|---|---|---|---|---|
+| Isotopic | 1198 | 1479 | 1281 | 1414 | 1954 | 2174 | 2058 | 
+| Test | 1129 | 1342 | 1124 | 1468 | 1604 | 1722 | 1518 | 
+| Difference | 69 | 137 | 157 | -54 | 350 | 452 | 540 | 
+
+## Exercise 10.42 
+
+
+a. Is it plausible that the population distribution of differences is normal? 
+b. Does it appear that the true average difference between intake values measured by the two methods is something other than zero? Determine the p-value of the test and use it to reach a conclusion at significance level 0.05. 
+
+## Exercise 10.42 
+
+```{r, out.width = "70%"}
+x <- c(11 , 164 , 225 , -9 , 169 , 442 , -312, 69 , 137 , 157 , -54 , 350 ,452 , 540 )
+qqnorm(x)
+
+paste("Mean:", mean(x))
+paste("SD:", sd(x))
+```
+
+## A Confidence Interval for $\mu_{D}$ {.smaller}
+
+* Our t-interval is based on the fact that: 
+
+$$
+T = \frac{\bar{D} - \mu_{D}}{S_{D}/\sqrt{n}}
+$$
+
+has a $t$ distribution with $n-1$ degrees of freedom. Manipulation in the usual way results in the paired $t$ CI below. 
+
+::: callout-important
+## Paired t CI
+The **paired t CI for** $\mu_{D}$ is: 
+
+$$
+\bar{d} \pm t_{\alpha/2,n-1}s_{D}/\sqrt{n}
+$$
+
+A one-sided confidence bound results from retaining the relevant sign and replacing $t_{\alpha/2}$ by $t_{\alpha}$. 
+:::
+
+## Exercise 10.40 {.smaller}
+
+Hexavalent chromium has been identified as an inhalation carcinogen and an air toxin of concern in a number of different locales. An article gave the accompanying data on both indoor and outdoor concentration (nanograms/m$^{3}$) for a sample of houses selected form a certain region.    
+$\bar{d} = -0.424$   
+$s_{D} = 0.387$   
+$n = 33$  
+
+a. Calculate a confidence interval for the population mean difference between indoor and outdoor concentrations using a confidence level of 95\%, and interpret the resulting interval. 
+b. If a 34$^{th}$ house were to be randomly selected from the population, between what values would you predict the difference in concentration to lie? 
+
+## Paired Data and Two-Sample t Procedures {.smaller}
+
+* Consider the two-sample $t$ test on paired data. 
+* The numerators of the paired $t$ and two-sample $t$ test statistics are identical since $\bar{d} = \sum d_{i} / n = [\sum(x_{i} - y_{i})]/n = (\sum x_{i})/n - (\sum y_{i})/n = \bar{x} - \bar{y}$. 
+* The difference between the two statistics is therefore due to the denominators. 
+* Each test statistic is obtained by standardizing $\bar{X} - \bar{Y} ( = \bar{D})$, but in the presence of dependence, the two sample t standardization is incorrect. 
+* To see this, let's work it out!
+
+## Paired Data and Two-Sample t Procedures
+
+Recall: 
+
+$$
+V( X \pm Y) = V(X) + V(Y) \pm 2Cov(X,Y)
+$$
+
+Since the correlation between $X$ and $Y$ is: 
+
+$$
+\rho = Corr(X,Y) = Cov(X,Y)/\sqrt{V(X)}\sqrt{V(Y)}
+$$
+
+It follows that 
+
+$$
+V(X - Y) = \sigma^{2}_{1} + \sigma^{2}_{2} - 2\rho\sigma_{1}\sigma_{2}
+$$
+
+## Paired Data and Two-Sample t procedures {.smaller}
+
+
+Applying this to $\bar{X} - \bar{Y}$, we get
+
+::: callout-important
+## Dependent Variance
+
+$$
+V(\bar{X} - \bar{Y}) = V\left(\frac{1}{n}\sum D_{i} \right) = \frac{V(D_{i})}{n} = \frac{\sigma_{1}^{2} + \sigma_{2}^{2} -2\rho\sigma_{1}\sigma_{2}}{n}
+$$
+:::
+
+What does this mean? 
+
+* With paired data, we often have positive dependence so that $\rho$ will be positive. 
+* This means that the variance of $\bar{X} - \bar{Y}$ will be smaller than $\sigma_{1}^{2}/n + \sigma_{2}^{2}/n$. 
+* Thus, *whenever there is positive dependence within the pairs, the denominator for the paired t statistic should be smaller than for t of the independent-samples test*. 
+* This tells us that often the two-sample t will be much closer to zero than the paired t, considerably underestimating the significance of the data. 
+
+## Paired Vs Unpaired Experiments {.smaller}
+
+* In our examples, paired data resulted from two observations on the same subject or experimental object. 
+* Even when this cannot be done, paired data with dependence within pairs can be obtained by matching individuals or objects on one or more characteristics thought to influence responses. 
+* For example, in a medical experiment to compare the efficacy of two drugs for lowering blood pressure, the experimenter's budget might allow for the treatment of 20 patients. If 10 patients are randomly selected for treatment with the first drug, and another 10 independently selected for treatment with the second drug, an independent samples experiment results. 
+
+## Paired Vs Unpaired Experiments 
+
+* However, the experimenter, knowing that blood pressure is influence by age and weight, might decide to pair off patients so that within each of the resulting 10 pairs, age and weight were approximately equal. 
+* Without this matching, one drug might appear to outperform the other just because patients in one sample were lighter and younger than in the second sample. 
+* The price? Lower degrees of freedom - so when should we use what? 
+
+## Paired Vs Unpaired Experiments 
+
+1. If there is greater heterogeneity between experimental units and a large correlation within experimental units (large positive $\rho$), then the loss in degrees of freedom will be compensated for by the increased precision associated with pairing, so a paired experiment is preferable to an independent-samples experiment. 
+2. If the experimental units are relatively homogeneous and the correlation within pairs is not large, the gain in precision due to pairing will be outweighed by the decrease in degrees of freedom, so an independent-samples experiment should be used. 
+
+## Summary 
+
+* Paired data occurs when we have two observations on the same experimental unit, or when there is a dependency between two experimental units. 
+* Analysis is then performed on the difference between the two observations for each experimental pair or unit. 
+* A paired (1-$\alpha$)100\% CI for $\mu_{D}$ is: 
+
+$$
+\bar{d} \pm t_{\alpha/2,n-1}s_{D}/\sqrt{n}
+$$
+
+## Summary {.smaller}
+
+* A paired hypothesis test for $\mu_{D}$ is given by: 
+
+| Null Hypothesis: $H_{0}: \mu_{D} = \Delta_{0}$ | (where $D = X - Y$ is the difference | 
+|---|---|
+|  | between the first and second observations | 
+|  | within a pair and $\mu_{D} = \mu_{1} - \mu_{2}$)  |
+| Test Statistic value: $t = \frac{\bar{d} - \Delta_{0}}{s_{D}/\sqrt{n}}$ | (where $\bar{d}$ and $s_{D}$ are the sample mean |
+|  |  and standard deviation, respectively |
+|  |  of the $d_{i}$'s) |
+| \textbf{Alternative Hypothesis} | \textbf{Rejection Region for Level } $\boldsymbol\alpha$ \textbf{ Test} |
+| $H_{a}: \mu_{D} > \Delta_{0}$ | $t \geq t_{\alpha, n-1}$ |
+| $H_{a}: \mu_{D} < \Delta_{0}$ | $t \leq -t_{\alpha, n-1}$ |
+| $H_{a}: \mu_{D} \neq \Delta_{0}$ | either $t \geq t_{\alpha/2, n-1}$ or $t \leq -t_{\alpha/2,n-1}$ |
+
+
+## Practice Problems 
+
+* Odd problems 10.39 - 10.45
+
+# 10.4 Inferences about Two Population Proportions 
+
+## Outcomes
+
+By the end of this section, you will be able to: 
+
+* Use a large sample procedure to test the null hypothesis $p_{1} - p_{2} = 0$. 
+* Find the probability of making a type II error for the test described above. 
+* Determine the sample size required for the test if we specify the probability of type II error and the true proportion values. 
+* Calculate and interpret a large-sample confidence interval for $p_{1} - p_{2}$. 
+
+## Set up 
+
+::: callout-important
+## Proposition
+Let  $X \sim Bin(m,p_{1})$ and $Y \sim Bin(n,p_{2})$ with $X$ and $Y$ independent variables. Then: 
+
+$$
+E(\hat{p_{1}} - \hat{p_{2}}) = p_{1} - p_{2}
+$$
+
+so $\hat{p_{1}} - \hat{p_{2}}$ is an unbiased estimator of $p_{1} - p_{2}$, and 
+
+$$
+V(\hat{p_{1}} - \hat{p_{2}}) = \frac{p_{1}q_{2}}{m} + \frac{p_{2}q_{2}}{n}
+$$
+:::
+
+Let's prove it!
+
+## Set up 
+
+So, standardizing $\hat{p_{1}} - \hat{p_{2}}$ yields a variable $Z$ whose distribution is approximately standard normal: 
+
+$$
+Z = \frac{\hat{p_{1}} - \hat{p_{2}} - (p_{1}-p_{2})}{\sqrt{\frac{p_{1}q_{1}}{m} + \frac{p_{2}q_{2}}{n}}}
+$$
+
+## Large-Sample Test Procedure {.smaller}
+
+* Analogously to the hypotheses for $\mu_{1} - \mu_{2}$, we might consider $H_{0}: p_{1} - p_{2} = \Delta_{0}$.
+* Although this presents no difficulties for means, the cases of $\Delta_{0} = 0$ and $\Delta_{0} \neq 0$  must be considered separately. 
+* When $H_{0}: p_{1} - p_{2} = 0$ is true, let $p$ denote the common value of $p_{1}$ and $p_{2}$ (and similarly for $q$). Then the standardized variable
+
+$$
+Z = \frac{\hat{p_{1}} - \hat{p_{2}} - 0}{\sqrt{pq\left(\frac{1}{m} + \frac{1}{n}\right)}}
+$$
+
+has approximately a standard normal distribution when $H_{0}$ is true.
+
+
+## Large-Sample Test Procedure
+
+* However, this $Z$ cannot serve as a test statistic because the value of $p$ is unknown - $H_{0}$ asserts only that there is a common value of $p$, but does not say what that value is. 
+* To obtain a test statistic having approximately a standard normal distribution when $H_{0}$ is true, $p$ must be estimated from the sample data. 
+* Assuming that $p_{1} = p_{2} = p$, instead of separate samples of size $m$ and $n$ from two different populations, we really have a single sample of size $m+n$ from one population with proportion $p$. So the estimator is: 
+
+$$
+\hat{p} = \frac{X + Y}{m+n} = \frac{m}{m+n}\hat{p_{1}} + \frac{n}{m+n}\hat{p_{2}}
+$$
+
+## Large-Sample Test Procedure
+
+So, we get: 
+
+::: callout-important
+## Test Procedure
+Null hypothesis: $H_{0}: p_{1} - p_{2} = 0$     
+Test statistic value (large samples): $z = \frac{\hat{p_{1}} - \hat{p_{2}}}{\sqrt{\hat{p}\hat{q}\left(\frac{1}{m}+ \frac{1}{n}\right)}}$  
+
+| **Alternative Hypothesis** | **Rejection Region** |
+|---|---|
+| $H_{a}: p_{1} - p_{2} > 0$ | $z \geq z_{\alpha}$ }
+| $H_{a}: p_{1} - p_{2} < 0$ | $z \leq -z_{\alpha}$ |
+| $H_{a}: p_{1} - p_{2} \neq 0$ | either $z \geq z_{\alpha/2}$ or $z \leq -z_{\alpha/2}$ |
+
+
+A p-value is calculated in the same way as for previous $z$ tests. 
+:::
+
+## Exercise 10.48
+
+Is someone who switches brands because of a financial inducement less likely to remain loyal than someone who switches without inducement? Let $p_{1}$ and $p_{2}$ denote the true proportions of switchers to a certain brand with and without inducement, respectively, who subsequently make a repeat purchase. Test $H_{0}: p_{1}- p_{2} = 0$ versus $H_{a}: p_{1}-p_{2} < 0$ using $\alpha = 0.01$ and the following data:
+
+$m = 200$, number of successes = 30   
+$n = 600$, number of successes = 180
+
+## Type II Error Probabilities and Sample Sizes 
+
+* The derivation for Type II error is a bit more annoying here, since if $H_{0}$ is false, the denominator of $Z$ changes. 
+* We must standardize instead using: 
+
+$$
+\sigma_{\hat{p}_{2} - \hat{p_{2}}} = \sqrt{\frac{p_{1}q_{2}}{m} + \frac{p_{2}q_{2}}{n}} 
+$$
+
+## Type II Error Probabilities and Sample Sizes {.smaller}
+
+::: callout-important
+## Probability of Type II errors
+
+| **Alternative Hypothesis** | $\boldsymbol\beta(p_{1},p_{2})$ |
+|---|---|
+| $H_{a}: p_{1} - p_{2} > 0$ | $\phi\left[\frac{z_{\alpha}\sqrt{\bar{p}\bar{q}\left(\frac{1}{m} + \frac{1}{n} \right)} - (p_{1} - p_{2})}{\sigma} \right]$ |
+| $H_{a}: p_{1} - p_{2} < 0$ | $1 - \phi\left[\frac{-z_{\alpha}\sqrt{\bar{p}\bar{q}\left(\frac{1}{m} + \frac{1}{n} \right)} - (p_{1} - p_{2})}{\sigma} \right]$ |
+| $H_{a}: p_{1} - p_{2} \neq 0$ | $\phi\left[\frac{z_{\alpha/2}\sqrt{\bar{p}\bar{q}\left(\frac{1}{m} + \frac{1}{n} \right)} - (p_{1} - p_{2})}{\sigma} \right]$ - |
+|   | $\phi\left[\frac{-z_{\alpha/2}\sqrt{\bar{p}\bar{q}\left(\frac{1}{m} + \frac{1}{n} \right)} - (p_{1} - p_{2})}{\sigma} \right]$ |
+
+where $\bar{p} = \frac{mp_{1} + np_{2}}{m+n}$ and $\bar{q} = \frac{mq_{1} + nq_{2}}{m+n}$ and $\sigma$ is shown above. 
+:::
+
+## Exercise 10.48
+
+Is someone who switches brands because of a financial inducement less likely to remain loyal than someone who switches without inducement? Let $p_{1}$ and $p_{2}$ denote the true proportions of switchers to a certain brand with and without inducement, respectively, who subsequently make a repeat purchase. We want to test $H_{0}: p_{1}- p_{2} = 0$ versus $H_{a}: p_{1}-p_{2} < 0$ with $\alpha = 0.01$ and the following data:
+
+$m = 200$, number of successes = 30   
+$n = 600$, number of successes = 180
+
+a. What is the probability of making a type II error if the true proportions are $p_{1} = 0.20$ and $0.25$ respectively. 
+
+## Sample Size Determination
+
+* Alternatively, for specified $p_{1}$ and $p_{2}$, with $p_{1}-p_{2} = d$, the sample sizes necessary to achieve $\beta(p_{1},p_{2}) = \beta$ can be determined. 
+
+::: callout-important
+## Sample Size Determination
+
+For the case $m=n$, the level $\alpha$ test has Type II error probability $\beta$ at the alternative values $p_{1}$, $p_{2}$, with $p_{1} - p_{2} = d$ when 
+
+$$
+n = \frac{[z_{\alpha}\sqrt{(p_{1} + p_{2})(q_{1} + q_{2})/2} + z_{\beta}\sqrt{p_{1}q_{2} + p_{2}q_{2}}]^{2}}{d^{2}}
+$$
+
+for an upper or lower tailed test, with $\alpha/2$ replacing $\alpha$ for a two-tailed test. 
+:::
+
+## Exercise 10.52 {.smaller}
+
+A random sample of telephone numbers from a certain region was taken in March 2002 to determine how many were unlisted. One  year later, a similar sample was collected. Let $p_{1}$ = the true proportion of unlisted numbers in March 2002 and $p_{2}$ = the true proportion of unlisted numbers in March 2003. We want to test whether there is a difference in the proportion of unlisted numbers from year to year, at 10\$ significance.
+
+b. If $p_{1} = 0.2$ and $p_{2} = 0.18$, what sample sizes ($m=n$) would be necessary to detect such a difference with probability $0.90$?
+
+## Large-Sample Confidence Interval for $p_{1} - p_{2}$
+
+Using the large sample properties we discussed in Chapter 8, we can derive a large sample confidence interval for $p_{1} - p_{2}$. 
+
+::: callout-important
+## CI for $p_{1} - p_{2}$
+
+$$
+\hat{p}_{1} - \hat{p}_{2} \pm z_{\alpha/2}\sqrt{\frac{\hat{p}_{1}\hat{q}_{1}}{m} + \frac{\hat{p}_{2}\hat{q}_{2}}{n}}
+$$
+:::
+
+## Exercise 10.58 {.smaller}
+
+Statin drugs are used to decrease cholesterol levels, and therefore hopefully to decrease the chances of a heart attack. In a British study, 20,536 at-risk adults were assigned randomly to take either a 40-mg statin pill or placebo. The subjects had coronary disease, artery blockage, or diabetes. After 5 years there were 1328 deaths (587 from heart attack) among the 10,269 in the statin group and 1507 deaths (707 from heart attack) among the 10,267 in the placebo group.
+
+a. Give a 95\% confidence interval for the difference in population death proportions.
+b. Give a 95\% confidence interval for the difference in population heart attack death proportions. 
+
+## Summary {.smaller}
+
+* A large-sample test procedure for $p_{1} - p_{2}$ is shown below: 
+
+Null hypothesis: $H_{0}: p_{1} - p_{2} = 0$   
+Test statistic value (large samples): $z = \frac{\hat{p_{1}} - \hat{p_{2}}}{\sqrt{\hat{p}\hat{q}\left(\frac{1}{m}+ \frac{1}{n}\right)}}$   
+
+| **Alternative Hypothesis** | **Rejection Region** |
+|---|---|
+| $H_{a}: p_{1} - p_{2} > 0$ | $z \geq z_{\alpha}$ }
+| $H_{a}: p_{1} - p_{2} < 0$ | $z \leq -z_{\alpha}$ |
+| $H_{a}: p_{1} - p_{2} \neq 0$ | either $z \geq z_{\alpha/2}$ or $z \leq -z_{\alpha/2}$ |
+
+A p-value is calculated in the same way as for previous $z$ tests. 
+
+
+## Summary {.smaller}
+
+* The probability of type II error can be solved for using: 
+
+| **Alternative Hypothesis** | $\boldsymbol\beta(p_{1},p_{2})$ |
+|---|---|
+| $H_{a}: p_{1} - p_{2} > 0$ | $\phi\left[\frac{z_{\alpha}\sqrt{\bar{p}\bar{q}\left(\frac{1}{m} + \frac{1}{n} \right)} - (p_{1} - p_{2})}{\sigma} \right]$ |
+| $H_{a}: p_{1} - p_{2} < 0$ | $1 - \phi\left[\frac{-z_{\alpha}\sqrt{\bar{p}\bar{q}\left(\frac{1}{m} + \frac{1}{n} \right)} - (p_{1} - p_{2})}{\sigma} \right]$ |
+| $H_{a}: p_{1} - p_{2} \neq 0$ | $\phi\left[\frac{z_{\alpha/2}\sqrt{\bar{p}\bar{q}\left(\frac{1}{m} + \frac{1}{n} \right)} - (p_{1} - p_{2})}{\sigma} \right]$ - |
+|   | $\phi\left[\frac{-z_{\alpha/2}\sqrt{\bar{p}\bar{q}\left(\frac{1}{m} + \frac{1}{n} \right)} - (p_{1} - p_{2})}{\sigma} \right]$ |
+
+## Summary 
+
+* The sample size for true proportions $p_{1}$ and $p_{2}$ with probability of type II error $\beta$ can be found from: 
+
+$$
+n = \frac{[z_{\alpha}\sqrt{(p_{1} + p_{2})(q_{1} + q_{2})/2} + z_{\beta}\sqrt{p_{1}q_{2} + p_{2}q_{2}}]^{2}}{d^{2}}
+$$
+
+* A large sample CI for $p_{1} - p_{2}$ is given by: 
+
+$$
+\hat{p}_{1} - \hat{p}_{2} \pm z_{\alpha/2}\sqrt{\frac{\hat{p}_{1}\hat{q}_{1}}{m} + \frac{\hat{p}_{2}\hat{q}_{2}}{n}}
+$$
+
+## Practice Problems 
+
+* Odd problems 10.49 - 10.53
+* 10.59

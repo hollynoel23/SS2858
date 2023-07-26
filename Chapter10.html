@@ -717,6 +717,1021 @@ n = \frac{4z_{\alpha/2}^{2}(\sigma_{1}^{2} + \sigma_{2}^{2})}{w^{2}}
 <ul>
 <li class="fragment">Odd problems 10.1 - 10.11</li>
 </ul>
+</section></section>
+<section>
+<section id="the-two-sample-t-test-and-confidence-interval" class="title-slide slide level1 center">
+<h1>10.2 The Two-Sample t Test and Confidence Interval</h1>
+
+</section>
+<section id="outcomes-1" class="slide level2">
+<h2>Outcomes</h2>
+<p>By the end of this section, you will be able to:</p>
+<ul>
+<li class="fragment">Know the T random variable for two independent samples along with it’s degrees of freedom.</li>
+<li class="fragment">Calculate the two-sample t confidence interval for <span class="math inline">\(\mu_{1} - \mu_{2}\)</span>.</li>
+<li class="fragment">Perform a hypothesis test for the two sample test of <span class="math inline">\(\mu_{1} - \mu_{2}\)</span>.</li>
+<li class="fragment">Know the pooled T random variable, it’s associated degrees of freedom, and how to calculate the pooled sample variance.</li>
+</ul>
+</section>
+<section id="assumptions" class="slide level2">
+<h2>Assumptions</h2>
+<ul>
+<li class="fragment">In practice, it is virtually always the case that the values of the population variances are unknown. We had formulas for if <span class="math inline">\(n\)</span> and <span class="math inline">\(m\)</span> were large in the last section and this was the case, but what about when sample sizes are small?</li>
+</ul>
+<div class="callout callout-important callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Assumptions</strong></p>
+</div>
+<div class="callout-content">
+<p>Both populations are normal, so that <span class="math inline">\(X_{1}\)</span>,…,<span class="math inline">\(X_m\)</span> is a random sample from a normal distribution and so is <span class="math inline">\(Y_{1}\)</span>,…,<span class="math inline">\(Y_{n}\)</span> (with the <span class="math inline">\(X\)</span>s and <span class="math inline">\(Y\)</span>s independent of each other). The plausibility of these assumptions can be judged by constructing a normal probability plot of the <span class="math inline">\(x_{i}\)</span>’s and another of the <span class="math inline">\(y_{i}\)</span>’s.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="set-up-1" class="slide level2">
+<h2>Set up</h2>
+<div class="callout callout-important callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Theorem</strong></p>
+</div>
+<div class="callout-content">
+<p>When the population distributions are both normal, the standardized variable</p>
+<p><span class="math display">\[
+T = \frac{\bar{X} - \bar{Y} - (\mu_{1} - \mu_{2})}{\sqrt{\frac{S_{1}^{2}}{m} + \frac{S_{2}^{2}}{n}}}
+\]</span></p>
+<p>has approximately a <span class="math inline">\(t\)</span> distribution with df <span class="math inline">\(\nu\)</span> estimated from the data by</p>
+<p><span class="math display">\[
+\nu = \frac{\left(\frac{s_{1}^{2}}{m} + \frac{s_{2}^{2}}{n} \right)^{2}}{\frac{(s_{1}^{2}/m)^{2}}{m-1} + \frac{(s_{2}^{2}/n)^{2}}{n-1}} = \frac{\left[(se_{1})^{2} + (se_{1})^{2} \right]^{2}}{\frac{(se_{1})^{4}}{m-1} + \frac{(se_{2})^{4}}{n-1}}
+\]</span></p>
+<p>where <span class="math inline">\(se_{1} = s_{1}/\sqrt{m}\)</span> and <span class="math inline">\(se_{2} = s_{2}/\sqrt{n}\)</span>.</p>
+<p>Note: Round down to the nearest integer</p>
+</div>
+</div>
+</div>
+</section>
+<section id="two-sample-t-procedures" class="slide level2 smaller">
+<h2>Two Sample t Procedures</h2>
+<div class="callout callout-important callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Two Sample Procedures</strong></p>
+</div>
+<div class="callout-content">
+<p>The <strong>two-sample t confidence interval for</strong> <span class="math inline">\(\mu_{1} - \mu_{2}\)</span> with confidence level (1-<span class="math inline">\(\alpha\)</span>)100% is</p>
+<p><span class="math display">\[
+\bar{x} - \bar{y} \pm t_{\alpha/2,\nu}\sqrt{\frac{s_{1}^{2}}{m} + \frac{s_{2}^{2}}{n}}
+\]</span></p>
+<p>A one-sided confidence bound can be calculated as described earlier.</p>
+<p>The <strong>two sample t test</strong> for testing <span class="math inline">\(H_{0}: \mu_{1} - \mu_{2} = \Delta_{0}\)</span> is as follows:</p>
+<p>Test statistic value: <span class="math inline">\(t = \frac{\bar{x} - \bar{y} - \Delta_{0}}{\sqrt{\frac{s_{1}^{2}}{m} + \frac{s_{2}^{2}}{n}}}\)</span></p>
+<table>
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Alternative Hypothesis</strong></th>
+<th><strong>Rejection Region Level</strong> <span class="math inline">\(\alpha\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(H_{a}: \mu_{1} - \mu_{2} &gt; \Delta_{0}\)</span></td>
+<td><span class="math inline">\(t \geq t_{\alpha,\nu}\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(H_{a}: \mu_{1} - \mu_{2} &lt; \Delta_{0}\)</span></td>
+<td><span class="math inline">\(t \leq -t_{\alpha,\nu}\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(H_{a}: \mu_{1} - \mu_{2} \neq \Delta_{0}\)</span></td>
+<td>either <span class="math inline">\(t \geq t_{\alpha/2,\nu}\)</span> or <span class="math inline">\(t \leq -t_{\alpha/2,\nu}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Alternatively, a p-value could be computed as well.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-10.22" class="slide level2 smaller">
+<h2>Exercise 10.22</h2>
+<p>An article reported on an investigation in which participants were randomly assigned either to a supervised exercise program or a control group. Those in the control group were told only that they should take measures to lose weight. After 4 months, the sample mean decrease in body fat for the 17 individuals in the experimental group was 6.2 kg with a sample standard deviation of 4.5 kg, whereas the sample mean and sample standard deviation for the 17 people in the control group were 1.7 kg and 3.1 kg, respectively. Assume normality of the two body fat loss distributions (as did the investigators).</p>
+<ol type="a">
+<li class="fragment">Calculate a 99% lower bound for the difference in true average decrease in body fat between the experimental and control groups. Interpret.</li>
+<li class="fragment">Does it appear that the true average decrease in body fat is more than 2kg larger for the experimental condition than for the control condition? Carry out a test of appropriate hypotheses using a significance level of 0.01. Does this agree with your answer in a?</li>
+</ol>
+</section>
+<section id="pooled-t-procedures" class="slide level2">
+<h2>Pooled t Procedures</h2>
+<ul>
+<li class="fragment">What if in addition to assuming that the two population distributions are normal, we assume that they have equal variances (<span class="math inline">\(\sigma_{1}^{2} = \sigma_{2}^{2}\)</span>).</li>
+<li class="fragment">Let <span class="math inline">\(\sigma^{2}\)</span> denote the common population variance. Then standardizing <span class="math inline">\(\bar{X} - \bar{Y}\)</span> gives</li>
+</ul>
+<p><span class="math display">\[
+Z = \frac{\bar{X} - \bar{Y} - (\mu_{1}- \mu_{2})}{\sqrt{\frac{\sigma^{2}}{m} + \frac{\sigma^{2}}{n}}} = \frac{\bar{X} - \bar{Y} - (\mu_{1}- \mu_{2})}{\sqrt{\sigma^{2}\left(\frac{1}{m} + \frac{1}{n}\right)}}
+\]</span></p>
+<p>which has a standard normal distribution.</p>
+</section>
+<section id="pooled-t-procedures-1" class="slide level2">
+<h2>Pooled t Procedures</h2>
+<ul>
+<li class="fragment">Consider the following weighted average of the two sample variances, meaning that if one sample size is larger, it will contribute more towards the average.</li>
+<li class="fragment">This is called the <strong>pooled estimator</strong> of <span class="math inline">\(\sigma^{2}\)</span>.</li>
+</ul>
+<p><span class="math display">\[
+S_{p}^{2} = \frac{m-1}{m + n - 2}S_{1}^{2} + \frac{n-1}{m + n - 2}S_{2}^{2}
+\]</span></p>
+</section>
+<section id="pooled-t-procedures-2" class="slide level2">
+<h2>Pooled t Procedures</h2>
+<p>So, with some manipulation (see textbook for details) we get:</p>
+<p><span class="math display">\[
+T = \frac{\bar{X} - \bar{X} - (\mu_{1} - \mu_{2})}{s_{p}\sqrt{(\frac{1}{m}+\frac{1}{n})}}
+\]</span></p>
+<p>has a <span class="math inline">\(t\)</span> distribution with <span class="math inline">\(m+n-2\)</span> degrees of freedom.</p>
+<p>This can then result in confidence intervals and hypothesis test procedures similar to earlier, but using <span class="math inline">\(s_{p}\)</span>.</p>
+</section>
+<section id="when-to-use" class="slide level2 smaller">
+<h2>When to use?</h2>
+<p>So when can we make this assumption?</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Pros to pooled test:</strong></p>
+<ul>
+<li class="fragment"><p>Can be derived from likelihood ratio test, whereas two-sample t-test cannot.</p></li>
+<li class="fragment"><p>Significance level is exact, whereas it is approximated for two-sample t-test</p></li>
+<li class="fragment"><p>Outperforms the two-sample t-test (higher power) when <span class="math inline">\(\sigma_{1}^{2} = \sigma_{2}^{2}\)</span>.</p></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>Cons to pooled test:</strong></p>
+<ul>
+<li class="fragment"><p>Strict assumption.</p></li>
+<li class="fragment"><p>Can lead to erroneous conclusions if applied when the variances are different.</p></li>
+<li class="fragment"></li>
+</ul>
+</div>
+</div>
+<p>We could use a test for two variances (in section 10.5) first to decide.<br>
+Or</p>
+<p>Conclusion: Use the two-sample t procedures unless there is really compelling evidence for doing otherwise, particularly when the two sample sizes are different.</p>
+</section>
+<section id="exercise-10.33" class="slide level2 smaller">
+<h2>Exercise 10.33</h2>
+<p>Consider the pooled t variable</p>
+<p><span class="math display">\[
+T = \frac{\bar{X} - \bar{X} - (\mu_{1} - \mu_{2})}{s_{p}\sqrt{(\frac{1}{m}+\frac{1}{n})}}
+\]</span></p>
+<p>which has a <span class="math inline">\(t\)</span> distribution with <span class="math inline">\(m + n - 2\)</span> df when both population distributions are normal with <span class="math inline">\(\sigma_{1} = \sigma_{2}\)</span>.</p>
+<ol type="a">
+<li class="fragment">Use this <span class="math inline">\(t\)</span> variable to obtain a pooled <span class="math inline">\(t\)</span> confidence interval formula for <span class="math inline">\(\mu_{1} - \mu_{2}\)</span>.</li>
+<li class="fragment">A sample of ultrasonic humidifiers of one particular brand was selected for which the observations on maximum output of moisture (oz) in a controlled chamber were 14.0, 14.3, 12.2, and 15.1. A sample of the second brand gave output values 12.1, 13.6, 11.9, and 11.2. Use the pooled <span class="math inline">\(t\)</span> formula from part (a) to estimate the difference between true average outputs for the two brands with a 95% confidence interval.</li>
+<li class="fragment">Estimate the difference between the two <span class="math inline">\(\mu\)</span>’s using the two-sample <span class="math inline">\(t\)</span> interval discussed in this section, and compare it to the interval of part (b).</li>
+</ol>
+</section>
+<section id="exercise-34" class="slide level2">
+<h2>Exercise 34</h2>
+<p>Refer to Exercise 33. Describe the pooled <span class="math inline">\(t\)</span> test for testing <span class="math inline">\(H_{0}: \mu_{1} - \mu_{2} = 0\)</span> when both population distributions are normal with <span class="math inline">\(\sigma_{1} = \sigma_{2}\)</span>. Then use this test procedure to test the hypotheses that the two Brands in the previous question have different average outputs of moisture at 5% significance.</p>
+</section>
+<section id="type-ii-error-probabilities" class="slide level2">
+<h2>Type II Error Probabilities</h2>
+<p>There does not appear to be any simple way to calculate this. We need software! Since we don’t learn coding, but we all have access to the internet, we can use a power calculator at for a pooled situation or at for both situations.</p>
+</section>
+<section id="summary-3" class="slide level2 smaller">
+<h2>Summary</h2>
+<ul>
+<li class="fragment">When the population distributions are both normal, the standardized variable</li>
+</ul>
+<p><span class="math display">\[
+T = \frac{\bar{X} - \bar{Y} - (\mu_{1} - \mu_{2})}{\sqrt{\frac{S_{1}^{2}}{m} + \frac{S_{2}^{2}}{n}}}
+\]</span></p>
+<p>has approximately a <span class="math inline">\(t\)</span> distribution with df <span class="math inline">\(\nu\)</span> estimated from the data by</p>
+<p><span class="math display">\[
+\nu = \frac{\left(\frac{s_{1}^{2}}{m} + \frac{s_{2}^{2}}{n} \right)^{2}}{\frac{(s_{1}^{2}/m)^{2}}{m-1} + \frac{(s_{2}^{2}/n)^{2}}{n-1}} = \frac{\left[(se_{1})^{2} + (se_{1})^{2} \right]^{2}}{\frac{(se_{1})^{4}}{m-1} + \frac{(se_{2})^{4}}{n-1}}
+\]</span></p>
+</section>
+<section id="summary-4" class="slide level2 smaller">
+<h2>Summary</h2>
+<ul>
+<li class="fragment">The <strong>two-sample t confidence interval for</strong> <span class="math inline">\(\mu_{1} - \mu_{2}\)</span> with confidence level (1-<span class="math inline">\(\alpha\)</span>)100% is</li>
+</ul>
+<p><span class="math display">\[
+\bar{x} - \bar{y} \pm t_{\alpha/2,\nu}\sqrt{\frac{s_{1}^{2}}{m} + \frac{s_{2}^{2}}{n}}
+\]</span></p>
+<ul>
+<li class="fragment">The <strong>two sample t test</strong> for testing <span class="math inline">\(H_{0}: \mu_{1} - \mu_{2} = \Delta_{0}\)</span> is as follows:</li>
+</ul>
+<p>Test statistic value: <span class="math inline">\(t = \frac{\bar{x} - \bar{y} - \Delta_{0}}{\sqrt{\frac{s_{1}^{2}}{m} + \frac{s_{2}^{2}}{n}}}\)</span></p>
+<table>
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Alternative Hypothesis</strong></th>
+<th><strong>Rejection Region Level</strong> <span class="math inline">\(\alpha\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(H_{a}: \mu_{1} - \mu_{2} &gt; \Delta_{0}\)</span></td>
+<td><span class="math inline">\(t \geq t_{\alpha,\nu}\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(H_{a}: \mu_{1} - \mu_{2} &lt; \Delta_{0}\)</span></td>
+<td><span class="math inline">\(t \leq -t_{\alpha,\nu}\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(H_{a}: \mu_{1} - \mu_{2} \neq \Delta_{0}\)</span></td>
+<td>either <span class="math inline">\(t \geq t_{\alpha/2,\nu}\)</span> or <span class="math inline">\(t \leq -t_{\alpha/2,\nu}\)</span></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="summary-5" class="slide level2">
+<h2>Summary</h2>
+<ul>
+<li class="fragment"></li>
+</ul>
+<p><span class="math display">\[
+T = \frac{\bar{X} - \bar{X} - (\mu_{1} - \mu_{2})}{s_{p}\sqrt{(\frac{1}{m}+\frac{1}{n})}}
+\]</span></p>
+<p>has a <span class="math inline">\(t\)</span> distribution with <span class="math inline">\(m+n-2\)</span> degrees of freedom, where</p>
+<p><span class="math display">\[
+S_{p}^{2} = \frac{m-1}{m + n - 2}S_{1}^{2} + \frac{n-1}{m + n - 2}S_{2}^{2}
+\]</span></p>
+</section>
+<section id="practice-problems-1" class="slide level2">
+<h2>Practice Problems</h2>
+<ul>
+<li class="fragment">Odd problems 10.21 - 10.31</li>
+<li class="fragment">Odd problems 10.35 - 10.37</li>
+</ul>
+</section></section>
+<section>
+<section id="analysis-of-paired-data" class="title-slide slide level1 center">
+<h1>10.3 Analysis of Paired Data</h1>
+
+</section>
+<section id="outcomes-2" class="slide level2">
+<h2>Outcomes</h2>
+<p>By the end of this section, you will know how to:</p>
+<ul>
+<li class="fragment">Understand when paired data arises and why it is beneficial.</li>
+<li class="fragment">Perform a paired hypothesis test for <span class="math inline">\(\mu_{D}\)</span>.</li>
+<li class="fragment">Calculate and interpret a paired CI for <span class="math inline">\(\mu_{D}\)</span>.</li>
+</ul>
+</section>
+<section id="introduction-1" class="slide level2">
+<h2>Introduction</h2>
+<ul>
+<li class="fragment">In the previous two sections, we looked at tests for comparing means of two populations when we had two samples collected independently of one another.</li>
+<li class="fragment">But what if our samples aren’t independent?</li>
+<li class="fragment">Often, in experimental data in particular, we look at data called matched pairs data. This consists of pairs of connected data, where each one gets a particular treatment.</li>
+<li class="fragment">Examples: couples, siblings, before/after on the same person, different treatments by the same person.</li>
+</ul>
+</section>
+<section id="assumptions-2" class="slide level2">
+<h2>Assumptions</h2>
+<div class="callout callout-important callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Assumptions</strong></p>
+</div>
+<div class="callout-content">
+<p>The data consists of <span class="math inline">\(n\)</span> independently selected pairs <span class="math inline">\((X_{1},Y_{1})\)</span>, <span class="math inline">\((X_{2},Y_{2})\)</span>, …, <span class="math inline">\((X_{n},Y_{n})\)</span>, with <span class="math inline">\(E(X_{i}) = \mu_{1}\)</span> and <span class="math inline">\(E(Y_{i}) = \mu_{2}\)</span>. Let <span class="math inline">\(D_{1} = X_{1} - Y_{1}\)</span>, <span class="math inline">\(D_{2} = X_{2} - Y_{2}\)</span>, …, <span class="math inline">\(D_{n} = X_{n} - Y_{n}\)</span>, so the <span class="math inline">\(D_{i}\)</span>’s are the differences within pairs. Then the <span class="math inline">\(D_{i}\)</span>’s are assumed to be normally distributed with mean value <span class="math inline">\(\mu_{D}\)</span> and variance <span class="math inline">\(\sigma_{D}^{2}\)</span>.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="the-paired-t-test" class="slide level2">
+<h2>The Paired t Test</h2>
+<ul>
+<li class="fragment">Because different pairs are independent, the <span class="math inline">\(D_{i}\)</span>’s are independent of each other. So,</li>
+</ul>
+<p><span class="math display">\[
+\mu_{D} = E(X - Y) = E(X) - E(Y) = \mu_{1} - \mu_{2}
+\]</span></p>
+<ul>
+<li class="fragment">Since <span class="math inline">\(D_{i}\)</span>’s constitute a normal random sample with mean <span class="math inline">\(\mu_{D}\)</span>, hypotheses about <span class="math inline">\(\mu_{D}\)</span> can be tested using a one-sample t-test.</li>
+</ul>
+</section>
+<section id="the-paired-t-test-1" class="slide level2">
+<h2>The Paired t Test</h2>
+<div class="callout callout-important callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>The Paired t Test</strong></p>
+</div>
+<div class="callout-content">
+<table>
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Null Hypothesis: <span class="math inline">\(H_{0}: \mu_{D} = \Delta_{0}\)</span></th>
+<th>(where <span class="math inline">\(D = X - Y\)</span> is the difference</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td></td>
+<td>between the first and second observations \</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>within a pair and <span class="math inline">\(\mu_{D} = \mu_{1} - \mu_{2}\)</span>)</td>
+</tr>
+<tr class="odd">
+<td>Test Statistic value: <span class="math inline">\(t = \frac{\bar{d} - \Delta_{0}}{s_{D}/\sqrt{n}}\)</span></td>
+<td>(where <span class="math inline">\(\bar{d}\)</span> and <span class="math inline">\(s_{D}\)</span> are the sample mean</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>and standard deviation, respectively</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>of the <span class="math inline">\(d_{i}\)</span>’s)</td>
+</tr>
+<tr class="even">
+<td></td>
+<td> <span class="math inline">\(\boldsymbol\alpha\)</span> </td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(H_{a}: \mu_{D} &gt; \Delta_{0}\)</span></td>
+<td><span class="math inline">\(t \geq t_{\alpha, n-1}\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(H_{a}: \mu_{D} &lt; \Delta_{0}\)</span></td>
+<td><span class="math inline">\(t \leq -t_{\alpha, n-1}\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(H_{a}: \mu_{D} \neq \Delta_{0}\)</span></td>
+<td>either <span class="math inline">\(t \geq t_{\alpha/2, n-1}\)</span> or <span class="math inline">\(t \leq -t_{\alpha/2,n-1}\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<p>Or a p-value can be calculated as was done for earlier t-tests.</p>
+</section>
+<section id="exercise-10.42" class="slide level2 smaller">
+<h2>Exercise 10.42</h2>
+<p>Scientists and engineers frequently wish to compare two different techniques for measuring or determining the value of a variable. In such situations, it is useful to test whether the mean difference in measurements is zero. An article reports the accompanying data on measuring the amount of milk ingested by each of 14 randomly selected infants.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Method/Infant</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Isotopic</td>
+<td>1509</td>
+<td>1418</td>
+<td>1561</td>
+<td>1556</td>
+<td>2169</td>
+<td>1760</td>
+<td>1098</td>
+</tr>
+<tr class="even">
+<td>Test</td>
+<td>1498</td>
+<td>1254</td>
+<td>1336</td>
+<td>1565</td>
+<td>2000</td>
+<td>1318</td>
+<td>1410</td>
+</tr>
+<tr class="odd">
+<td>Difference</td>
+<td>11</td>
+<td>164</td>
+<td>225</td>
+<td>-9</td>
+<td>169</td>
+<td>442</td>
+<td>-312</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th>Method/Infant</th>
+<th>8</th>
+<th>9</th>
+<th>10</th>
+<th>11</th>
+<th>12</th>
+<th>13</th>
+<th>14</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Isotopic</td>
+<td>1198</td>
+<td>1479</td>
+<td>1281</td>
+<td>1414</td>
+<td>1954</td>
+<td>2174</td>
+<td>2058</td>
+</tr>
+<tr class="even">
+<td>Test</td>
+<td>1129</td>
+<td>1342</td>
+<td>1124</td>
+<td>1468</td>
+<td>1604</td>
+<td>1722</td>
+<td>1518</td>
+</tr>
+<tr class="odd">
+<td>Difference</td>
+<td>69</td>
+<td>137</td>
+<td>157</td>
+<td>-54</td>
+<td>350</td>
+<td>452</td>
+<td>540</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="exercise-10.42-1" class="slide level2">
+<h2>Exercise 10.42</h2>
+<ol type="a">
+<li class="fragment">Is it plausible that the population distribution of differences is normal?</li>
+<li class="fragment">Does it appear that the true average difference between intake values measured by the two methods is something other than zero? Determine the p-value of the test and use it to reach a conclusion at significance level 0.05.</li>
+</ol>
+</section>
+<section id="exercise-10.42-2" class="slide level2">
+<h2>Exercise 10.42</h2>
+<div class="cell">
+
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Mean: 167.214285714286"</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "SD: 228.210826471229"</code></pre>
+</div>
+</div>
+<img data-src="Chapter10_files/figure-revealjs/unnamed-chunk-1-1.png" style="width:70.0%" class="r-stretch"></section>
+<section id="a-confidence-interval-for-mu_d" class="slide level2 smaller">
+<h2>A Confidence Interval for <span class="math inline">\(\mu_{D}\)</span></h2>
+<ul>
+<li class="fragment">Our t-interval is based on the fact that:</li>
+</ul>
+<p><span class="math display">\[
+T = \frac{\bar{D} - \mu_{D}}{S_{D}/\sqrt{n}}
+\]</span></p>
+<p>has a <span class="math inline">\(t\)</span> distribution with <span class="math inline">\(n-1\)</span> degrees of freedom. Manipulation in the usual way results in the paired <span class="math inline">\(t\)</span> CI below.</p>
+<div class="callout callout-important callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Paired t CI</strong></p>
+</div>
+<div class="callout-content">
+<p>The <strong>paired t CI for</strong> <span class="math inline">\(\mu_{D}\)</span> is:</p>
+<p><span class="math display">\[
+\bar{d} \pm t_{\alpha/2,n-1}s_{D}/\sqrt{n}
+\]</span></p>
+<p>A one-sided confidence bound results from retaining the relevant sign and replacing <span class="math inline">\(t_{\alpha/2}\)</span> by <span class="math inline">\(t_{\alpha}\)</span>.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-10.40" class="slide level2 smaller">
+<h2>Exercise 10.40</h2>
+<p>Hexavalent chromium has been identified as an inhalation carcinogen and an air toxin of concern in a number of different locales. An article gave the accompanying data on both indoor and outdoor concentration (nanograms/m<span class="math inline">\(^{3}\)</span>) for a sample of houses selected form a certain region.<br>
+<span class="math inline">\(\bar{d} = -0.424\)</span><br>
+<span class="math inline">\(s_{D} = 0.387\)</span><br>
+<span class="math inline">\(n = 33\)</span></p>
+<ol type="a">
+<li class="fragment">Calculate a confidence interval for the population mean difference between indoor and outdoor concentrations using a confidence level of 95%, and interpret the resulting interval.</li>
+<li class="fragment">If a 34<span class="math inline">\(^{th}\)</span> house were to be randomly selected from the population, between what values would you predict the difference in concentration to lie?</li>
+</ol>
+</section>
+<section id="paired-data-and-two-sample-t-procedures" class="slide level2 smaller">
+<h2>Paired Data and Two-Sample t Procedures</h2>
+<ul>
+<li class="fragment">Consider the two-sample <span class="math inline">\(t\)</span> test on paired data.</li>
+<li class="fragment">The numerators of the paired <span class="math inline">\(t\)</span> and two-sample <span class="math inline">\(t\)</span> test statistics are identical since <span class="math inline">\(\bar{d} = \sum d_{i} / n = [\sum(x_{i} - y_{i})]/n = (\sum x_{i})/n - (\sum y_{i})/n = \bar{x} - \bar{y}\)</span>.</li>
+<li class="fragment">The difference between the two statistics is therefore due to the denominators.</li>
+<li class="fragment">Each test statistic is obtained by standardizing <span class="math inline">\(\bar{X} - \bar{Y} ( = \bar{D})\)</span>, but in the presence of dependence, the two sample t standardization is incorrect.</li>
+<li class="fragment">To see this, let’s work it out!</li>
+</ul>
+</section>
+<section id="paired-data-and-two-sample-t-procedures-1" class="slide level2">
+<h2>Paired Data and Two-Sample t Procedures</h2>
+<p>Recall:</p>
+<p><span class="math display">\[
+V( X \pm Y) = V(X) + V(Y) \pm 2Cov(X,Y)
+\]</span></p>
+<p>Since the correlation between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> is:</p>
+<p><span class="math display">\[
+\rho = Corr(X,Y) = Cov(X,Y)/\sqrt{V(X)}\sqrt{V(Y)}
+\]</span></p>
+<p>It follows that</p>
+<p><span class="math display">\[
+V(X - Y) = \sigma^{2}_{1} + \sigma^{2}_{2} - 2\rho\sigma_{1}\sigma_{2}
+\]</span></p>
+</section>
+<section id="paired-data-and-two-sample-t-procedures-2" class="slide level2 smaller">
+<h2>Paired Data and Two-Sample t procedures</h2>
+<p>Applying this to <span class="math inline">\(\bar{X} - \bar{Y}\)</span>, we get</p>
+<div class="callout callout-important callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Dependent Variance</strong></p>
+</div>
+<div class="callout-content">
+<p><span class="math display">\[
+V(\bar{X} - \bar{Y}) = V\left(\frac{1}{n}\sum D_{i} \right) = \frac{V(D_{i})}{n} = \frac{\sigma_{1}^{2} + \sigma_{2}^{2} -2\rho\sigma_{1}\sigma_{2}}{n}
+\]</span></p>
+</div>
+</div>
+</div>
+<p>What does this mean?</p>
+<ul>
+<li class="fragment">With paired data, we often have positive dependence so that <span class="math inline">\(\rho\)</span> will be positive.</li>
+<li class="fragment">This means that the variance of <span class="math inline">\(\bar{X} - \bar{Y}\)</span> will be smaller than <span class="math inline">\(\sigma_{1}^{2}/n + \sigma_{2}^{2}/n\)</span>.</li>
+<li class="fragment">Thus, <em>whenever there is positive dependence within the pairs, the denominator for the paired t statistic should be smaller than for t of the independent-samples test</em>.</li>
+<li class="fragment">This tells us that often the two-sample t will be much closer to zero than the paired t, considerably underestimating the significance of the data.</li>
+</ul>
+</section>
+<section id="paired-vs-unpaired-experiments" class="slide level2 smaller">
+<h2>Paired Vs Unpaired Experiments</h2>
+<ul>
+<li class="fragment">In our examples, paired data resulted from two observations on the same subject or experimental object.</li>
+<li class="fragment">Even when this cannot be done, paired data with dependence within pairs can be obtained by matching individuals or objects on one or more characteristics thought to influence responses.</li>
+<li class="fragment">For example, in a medical experiment to compare the efficacy of two drugs for lowering blood pressure, the experimenter’s budget might allow for the treatment of 20 patients. If 10 patients are randomly selected for treatment with the first drug, and another 10 independently selected for treatment with the second drug, an independent samples experiment results.</li>
+</ul>
+</section>
+<section id="paired-vs-unpaired-experiments-1" class="slide level2">
+<h2>Paired Vs Unpaired Experiments</h2>
+<ul>
+<li class="fragment">However, the experimenter, knowing that blood pressure is influence by age and weight, might decide to pair off patients so that within each of the resulting 10 pairs, age and weight were approximately equal.</li>
+<li class="fragment">Without this matching, one drug might appear to outperform the other just because patients in one sample were lighter and younger than in the second sample.</li>
+<li class="fragment">The price? Lower degrees of freedom - so when should we use what?</li>
+</ul>
+</section>
+<section id="paired-vs-unpaired-experiments-2" class="slide level2">
+<h2>Paired Vs Unpaired Experiments</h2>
+<ol type="1">
+<li class="fragment">If there is greater heterogeneity between experimental units and a large correlation within experimental units (large positive <span class="math inline">\(\rho\)</span>), then the loss in degrees of freedom will be compensated for by the increased precision associated with pairing, so a paired experiment is preferable to an independent-samples experiment.</li>
+<li class="fragment">If the experimental units are relatively homogeneous and the correlation within pairs is not large, the gain in precision due to pairing will be outweighed by the decrease in degrees of freedom, so an independent-samples experiment should be used.</li>
+</ol>
+</section>
+<section id="summary-6" class="slide level2">
+<h2>Summary</h2>
+<ul>
+<li class="fragment">Paired data occurs when we have two observations on the same experimental unit, or when there is a dependency between two experimental units.</li>
+<li class="fragment">Analysis is then performed on the difference between the two observations for each experimental pair or unit.</li>
+<li class="fragment">A paired (1-<span class="math inline">\(\alpha\)</span>)100% CI for <span class="math inline">\(\mu_{D}\)</span> is:</li>
+</ul>
+<p><span class="math display">\[
+\bar{d} \pm t_{\alpha/2,n-1}s_{D}/\sqrt{n}
+\]</span></p>
+</section>
+<section id="summary-7" class="slide level2 smaller">
+<h2>Summary</h2>
+<ul>
+<li class="fragment">A paired hypothesis test for <span class="math inline">\(\mu_{D}\)</span> is given by:</li>
+</ul>
+<table>
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Null Hypothesis: <span class="math inline">\(H_{0}: \mu_{D} = \Delta_{0}\)</span></th>
+<th>(where <span class="math inline">\(D = X - Y\)</span> is the difference</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td></td>
+<td>between the first and second observations</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>within a pair and <span class="math inline">\(\mu_{D} = \mu_{1} - \mu_{2}\)</span>)</td>
+</tr>
+<tr class="odd">
+<td>Test Statistic value: <span class="math inline">\(t = \frac{\bar{d} - \Delta_{0}}{s_{D}/\sqrt{n}}\)</span></td>
+<td>(where <span class="math inline">\(\bar{d}\)</span> and <span class="math inline">\(s_{D}\)</span> are the sample mean</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>and standard deviation, respectively</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>of the <span class="math inline">\(d_{i}\)</span>’s)</td>
+</tr>
+<tr class="even">
+<td></td>
+<td> <span class="math inline">\(\boldsymbol\alpha\)</span> </td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(H_{a}: \mu_{D} &gt; \Delta_{0}\)</span></td>
+<td><span class="math inline">\(t \geq t_{\alpha, n-1}\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(H_{a}: \mu_{D} &lt; \Delta_{0}\)</span></td>
+<td><span class="math inline">\(t \leq -t_{\alpha, n-1}\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(H_{a}: \mu_{D} \neq \Delta_{0}\)</span></td>
+<td>either <span class="math inline">\(t \geq t_{\alpha/2, n-1}\)</span> or <span class="math inline">\(t \leq -t_{\alpha/2,n-1}\)</span></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="practice-problems-2" class="slide level2">
+<h2>Practice Problems</h2>
+<ul>
+<li class="fragment">Odd problems 10.39 - 10.45</li>
+</ul>
+</section></section>
+<section>
+<section id="inferences-about-two-population-proportions" class="title-slide slide level1 center">
+<h1>10.4 Inferences about Two Population Proportions</h1>
+
+</section>
+<section id="outcomes-3" class="slide level2">
+<h2>Outcomes</h2>
+<p>By the end of this section, you will be able to:</p>
+<ul>
+<li class="fragment">Use a large sample procedure to test the null hypothesis <span class="math inline">\(p_{1} - p_{2} = 0\)</span>.</li>
+<li class="fragment">Find the probability of making a type II error for the test described above.</li>
+<li class="fragment">Determine the sample size required for the test if we specify the probability of type II error and the true proportion values.</li>
+<li class="fragment">Calculate and interpret a large-sample confidence interval for <span class="math inline">\(p_{1} - p_{2}\)</span>.</li>
+</ul>
+</section>
+<section id="set-up-2" class="slide level2">
+<h2>Set up</h2>
+<div class="callout callout-important callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Proposition</strong></p>
+</div>
+<div class="callout-content">
+<p>Let <span class="math inline">\(X \sim Bin(m,p_{1})\)</span> and <span class="math inline">\(Y \sim Bin(n,p_{2})\)</span> with <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> independent variables. Then:</p>
+<p><span class="math display">\[
+E(\hat{p_{1}} - \hat{p_{2}}) = p_{1} - p_{2}
+\]</span></p>
+<p>so <span class="math inline">\(\hat{p_{1}} - \hat{p_{2}}\)</span> is an unbiased estimator of <span class="math inline">\(p_{1} - p_{2}\)</span>, and</p>
+<p><span class="math display">\[
+V(\hat{p_{1}} - \hat{p_{2}}) = \frac{p_{1}q_{2}}{m} + \frac{p_{2}q_{2}}{n}
+\]</span></p>
+</div>
+</div>
+</div>
+<p>Let’s prove it!</p>
+</section>
+<section id="set-up-3" class="slide level2">
+<h2>Set up</h2>
+<p>So, standardizing <span class="math inline">\(\hat{p_{1}} - \hat{p_{2}}\)</span> yields a variable <span class="math inline">\(Z\)</span> whose distribution is approximately standard normal:</p>
+<p><span class="math display">\[
+Z = \frac{\hat{p_{1}} - \hat{p_{2}} - (p_{1}-p_{2})}{\sqrt{\frac{p_{1}q_{1}}{m} + \frac{p_{2}q_{2}}{n}}}
+\]</span></p>
+</section>
+<section id="large-sample-test-procedure" class="slide level2 smaller">
+<h2>Large-Sample Test Procedure</h2>
+<ul>
+<li class="fragment">Analogously to the hypotheses for <span class="math inline">\(\mu_{1} - \mu_{2}\)</span>, we might consider <span class="math inline">\(H_{0}: p_{1} - p_{2} = \Delta_{0}\)</span>.</li>
+<li class="fragment">Although this presents no difficulties for means, the cases of <span class="math inline">\(\Delta_{0} = 0\)</span> and <span class="math inline">\(\Delta_{0} \neq 0\)</span> must be considered separately.</li>
+<li class="fragment">When <span class="math inline">\(H_{0}: p_{1} - p_{2} = 0\)</span> is true, let <span class="math inline">\(p\)</span> denote the common value of <span class="math inline">\(p_{1}\)</span> and <span class="math inline">\(p_{2}\)</span> (and similarly for <span class="math inline">\(q\)</span>). Then the standardized variable</li>
+</ul>
+<p><span class="math display">\[
+Z = \frac{\hat{p_{1}} - \hat{p_{2}} - 0}{\sqrt{pq\left(\frac{1}{m} + \frac{1}{n}\right)}}
+\]</span></p>
+<p>has approximately a standard normal distribution when <span class="math inline">\(H_{0}\)</span> is true.</p>
+</section>
+<section id="large-sample-test-procedure-1" class="slide level2">
+<h2>Large-Sample Test Procedure</h2>
+<ul>
+<li class="fragment">However, this <span class="math inline">\(Z\)</span> cannot serve as a test statistic because the value of <span class="math inline">\(p\)</span> is unknown - <span class="math inline">\(H_{0}\)</span> asserts only that there is a common value of <span class="math inline">\(p\)</span>, but does not say what that value is.</li>
+<li class="fragment">To obtain a test statistic having approximately a standard normal distribution when <span class="math inline">\(H_{0}\)</span> is true, <span class="math inline">\(p\)</span> must be estimated from the sample data.</li>
+<li class="fragment">Assuming that <span class="math inline">\(p_{1} = p_{2} = p\)</span>, instead of separate samples of size <span class="math inline">\(m\)</span> and <span class="math inline">\(n\)</span> from two different populations, we really have a single sample of size <span class="math inline">\(m+n\)</span> from one population with proportion <span class="math inline">\(p\)</span>. So the estimator is:</li>
+</ul>
+<p><span class="math display">\[
+\hat{p} = \frac{X + Y}{m+n} = \frac{m}{m+n}\hat{p_{1}} + \frac{n}{m+n}\hat{p_{2}}
+\]</span></p>
+</section>
+<section id="large-sample-test-procedure-2" class="slide level2">
+<h2>Large-Sample Test Procedure</h2>
+<p>So, we get:</p>
+<div class="callout callout-important callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Test Procedure</strong></p>
+</div>
+<div class="callout-content">
+<p>Null hypothesis: <span class="math inline">\(H_{0}: p_{1} - p_{2} = 0\)</span><br>
+Test statistic value (large samples): <span class="math inline">\(z = \frac{\hat{p_{1}} - \hat{p_{2}}}{\sqrt{\hat{p}\hat{q}\left(\frac{1}{m}+ \frac{1}{n}\right)}}\)</span></p>
+<table>
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Alternative Hypothesis</strong></th>
+<th><strong>Rejection Region</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(H_{a}: p_{1} - p_{2} &gt; 0\)</span></td>
+<td><span class="math inline">\(z \geq z_{\alpha}\)</span> }</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(H_{a}: p_{1} - p_{2} &lt; 0\)</span></td>
+<td><span class="math inline">\(z \leq -z_{\alpha}\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(H_{a}: p_{1} - p_{2} \neq 0\)</span></td>
+<td>either <span class="math inline">\(z \geq z_{\alpha/2}\)</span> or <span class="math inline">\(z \leq -z_{\alpha/2}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>A p-value is calculated in the same way as for previous <span class="math inline">\(z\)</span> tests.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-10.48" class="slide level2">
+<h2>Exercise 10.48</h2>
+<p>Is someone who switches brands because of a financial inducement less likely to remain loyal than someone who switches without inducement? Let <span class="math inline">\(p_{1}\)</span> and <span class="math inline">\(p_{2}\)</span> denote the true proportions of switchers to a certain brand with and without inducement, respectively, who subsequently make a repeat purchase. Test <span class="math inline">\(H_{0}: p_{1}- p_{2} = 0\)</span> versus <span class="math inline">\(H_{a}: p_{1}-p_{2} &lt; 0\)</span> using <span class="math inline">\(\alpha = 0.01\)</span> and the following data:</p>
+<p><span class="math inline">\(m = 200\)</span>, number of successes = 30<br>
+<span class="math inline">\(n = 600\)</span>, number of successes = 180</p>
+</section>
+<section id="type-ii-error-probabilities-and-sample-sizes" class="slide level2">
+<h2>Type II Error Probabilities and Sample Sizes</h2>
+<ul>
+<li class="fragment">The derivation for Type II error is a bit more annoying here, since if <span class="math inline">\(H_{0}\)</span> is false, the denominator of <span class="math inline">\(Z\)</span> changes.</li>
+<li class="fragment">We must standardize instead using:</li>
+</ul>
+<p><span class="math display">\[
+\sigma_{\hat{p}_{2} - \hat{p_{2}}} = \sqrt{\frac{p_{1}q_{2}}{m} + \frac{p_{2}q_{2}}{n}}
+\]</span></p>
+</section>
+<section id="type-ii-error-probabilities-and-sample-sizes-1" class="slide level2 smaller">
+<h2>Type II Error Probabilities and Sample Sizes</h2>
+<div class="callout callout-important callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Probability of Type II errors</strong></p>
+</div>
+<div class="callout-content">
+<table>
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Alternative Hypothesis</strong></th>
+<th><span class="math inline">\(\boldsymbol\beta(p_{1},p_{2})\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(H_{a}: p_{1} - p_{2} &gt; 0\)</span></td>
+<td><span class="math inline">\(\phi\left[\frac{z_{\alpha}\sqrt{\bar{p}\bar{q}\left(\frac{1}{m} + \frac{1}{n} \right)} - (p_{1} - p_{2})}{\sigma} \right]\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(H_{a}: p_{1} - p_{2} &lt; 0\)</span></td>
+<td><span class="math inline">\(1 - \phi\left[\frac{-z_{\alpha}\sqrt{\bar{p}\bar{q}\left(\frac{1}{m} + \frac{1}{n} \right)} - (p_{1} - p_{2})}{\sigma} \right]\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(H_{a}: p_{1} - p_{2} \neq 0\)</span></td>
+<td><span class="math inline">\(\phi\left[\frac{z_{\alpha/2}\sqrt{\bar{p}\bar{q}\left(\frac{1}{m} + \frac{1}{n} \right)} - (p_{1} - p_{2})}{\sigma} \right]\)</span> -</td>
+</tr>
+<tr class="even">
+<td></td>
+<td><span class="math inline">\(\phi\left[\frac{-z_{\alpha/2}\sqrt{\bar{p}\bar{q}\left(\frac{1}{m} + \frac{1}{n} \right)} - (p_{1} - p_{2})}{\sigma} \right]\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>where <span class="math inline">\(\bar{p} = \frac{mp_{1} + np_{2}}{m+n}\)</span> and <span class="math inline">\(\bar{q} = \frac{mq_{1} + nq_{2}}{m+n}\)</span> and <span class="math inline">\(\sigma\)</span> is shown above.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-10.48-1" class="slide level2">
+<h2>Exercise 10.48</h2>
+<p>Is someone who switches brands because of a financial inducement less likely to remain loyal than someone who switches without inducement? Let <span class="math inline">\(p_{1}\)</span> and <span class="math inline">\(p_{2}\)</span> denote the true proportions of switchers to a certain brand with and without inducement, respectively, who subsequently make a repeat purchase. We want to test <span class="math inline">\(H_{0}: p_{1}- p_{2} = 0\)</span> versus <span class="math inline">\(H_{a}: p_{1}-p_{2} &lt; 0\)</span> with <span class="math inline">\(\alpha = 0.01\)</span> and the following data:</p>
+<p><span class="math inline">\(m = 200\)</span>, number of successes = 30<br>
+<span class="math inline">\(n = 600\)</span>, number of successes = 180</p>
+<ol type="a">
+<li class="fragment">What is the probability of making a type II error if the true proportions are <span class="math inline">\(p_{1} = 0.20\)</span> and <span class="math inline">\(0.25\)</span> respectively.</li>
+</ol>
+</section>
+<section id="sample-size-determination-1" class="slide level2">
+<h2>Sample Size Determination</h2>
+<ul>
+<li class="fragment">Alternatively, for specified <span class="math inline">\(p_{1}\)</span> and <span class="math inline">\(p_{2}\)</span>, with <span class="math inline">\(p_{1}-p_{2} = d\)</span>, the sample sizes necessary to achieve <span class="math inline">\(\beta(p_{1},p_{2}) = \beta\)</span> can be determined.</li>
+</ul>
+<div class="callout callout-important callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Sample Size Determination</strong></p>
+</div>
+<div class="callout-content">
+<p>For the case <span class="math inline">\(m=n\)</span>, the level <span class="math inline">\(\alpha\)</span> test has Type II error probability <span class="math inline">\(\beta\)</span> at the alternative values <span class="math inline">\(p_{1}\)</span>, <span class="math inline">\(p_{2}\)</span>, with <span class="math inline">\(p_{1} - p_{2} = d\)</span> when</p>
+<p><span class="math display">\[
+n = \frac{[z_{\alpha}\sqrt{(p_{1} + p_{2})(q_{1} + q_{2})/2} + z_{\beta}\sqrt{p_{1}q_{2} + p_{2}q_{2}}]^{2}}{d^{2}}
+\]</span></p>
+<p>for an upper or lower tailed test, with <span class="math inline">\(\alpha/2\)</span> replacing <span class="math inline">\(\alpha\)</span> for a two-tailed test.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-10.52" class="slide level2 smaller">
+<h2>Exercise 10.52</h2>
+<p>A random sample of telephone numbers from a certain region was taken in March 2002 to determine how many were unlisted. One year later, a similar sample was collected. Let <span class="math inline">\(p_{1}\)</span> = the true proportion of unlisted numbers in March 2002 and <span class="math inline">\(p_{2}\)</span> = the true proportion of unlisted numbers in March 2003. We want to test whether there is a difference in the proportion of unlisted numbers from year to year, at 10$ significance.</p>
+<ol start="2" type="a">
+<li class="fragment">If <span class="math inline">\(p_{1} = 0.2\)</span> and <span class="math inline">\(p_{2} = 0.18\)</span>, what sample sizes (<span class="math inline">\(m=n\)</span>) would be necessary to detect such a difference with probability <span class="math inline">\(0.90\)</span>?</li>
+</ol>
+</section>
+<section id="large-sample-confidence-interval-for-p_1---p_2" class="slide level2">
+<h2>Large-Sample Confidence Interval for <span class="math inline">\(p_{1} - p_{2}\)</span></h2>
+<p>Using the large sample properties we discussed in Chapter 8, we can derive a large sample confidence interval for <span class="math inline">\(p_{1} - p_{2}\)</span>.</p>
+<div class="callout callout-important callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>CI for <span class="math inline">\(p_{1} - p_{2}\)</span></strong></p>
+</div>
+<div class="callout-content">
+<p><span class="math display">\[
+\hat{p}_{1} - \hat{p}_{2} \pm z_{\alpha/2}\sqrt{\frac{\hat{p}_{1}\hat{q}_{1}}{m} + \frac{\hat{p}_{2}\hat{q}_{2}}{n}}
+\]</span></p>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-10.58" class="slide level2 smaller">
+<h2>Exercise 10.58</h2>
+<p>Statin drugs are used to decrease cholesterol levels, and therefore hopefully to decrease the chances of a heart attack. In a British study, 20,536 at-risk adults were assigned randomly to take either a 40-mg statin pill or placebo. The subjects had coronary disease, artery blockage, or diabetes. After 5 years there were 1328 deaths (587 from heart attack) among the 10,269 in the statin group and 1507 deaths (707 from heart attack) among the 10,267 in the placebo group.</p>
+<ol type="a">
+<li class="fragment">Give a 95% confidence interval for the difference in population death proportions.</li>
+<li class="fragment">Give a 95% confidence interval for the difference in population heart attack death proportions.</li>
+</ol>
+</section>
+<section id="summary-8" class="slide level2 smaller">
+<h2>Summary</h2>
+<ul>
+<li class="fragment">A large-sample test procedure for <span class="math inline">\(p_{1} - p_{2}\)</span> is shown below:</li>
+</ul>
+<p>Null hypothesis: <span class="math inline">\(H_{0}: p_{1} - p_{2} = 0\)</span><br>
+Test statistic value (large samples): <span class="math inline">\(z = \frac{\hat{p_{1}} - \hat{p_{2}}}{\sqrt{\hat{p}\hat{q}\left(\frac{1}{m}+ \frac{1}{n}\right)}}\)</span></p>
+<table>
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Alternative Hypothesis</strong></th>
+<th><strong>Rejection Region</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(H_{a}: p_{1} - p_{2} &gt; 0\)</span></td>
+<td><span class="math inline">\(z \geq z_{\alpha}\)</span> }</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(H_{a}: p_{1} - p_{2} &lt; 0\)</span></td>
+<td><span class="math inline">\(z \leq -z_{\alpha}\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(H_{a}: p_{1} - p_{2} \neq 0\)</span></td>
+<td>either <span class="math inline">\(z \geq z_{\alpha/2}\)</span> or <span class="math inline">\(z \leq -z_{\alpha/2}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>A p-value is calculated in the same way as for previous <span class="math inline">\(z\)</span> tests.</p>
+</section>
+<section id="summary-9" class="slide level2 smaller">
+<h2>Summary</h2>
+<ul>
+<li class="fragment">The probability of type II error can be solved for using:</li>
+</ul>
+<table>
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Alternative Hypothesis</strong></th>
+<th><span class="math inline">\(\boldsymbol\beta(p_{1},p_{2})\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(H_{a}: p_{1} - p_{2} &gt; 0\)</span></td>
+<td><span class="math inline">\(\phi\left[\frac{z_{\alpha}\sqrt{\bar{p}\bar{q}\left(\frac{1}{m} + \frac{1}{n} \right)} - (p_{1} - p_{2})}{\sigma} \right]\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(H_{a}: p_{1} - p_{2} &lt; 0\)</span></td>
+<td><span class="math inline">\(1 - \phi\left[\frac{-z_{\alpha}\sqrt{\bar{p}\bar{q}\left(\frac{1}{m} + \frac{1}{n} \right)} - (p_{1} - p_{2})}{\sigma} \right]\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(H_{a}: p_{1} - p_{2} \neq 0\)</span></td>
+<td><span class="math inline">\(\phi\left[\frac{z_{\alpha/2}\sqrt{\bar{p}\bar{q}\left(\frac{1}{m} + \frac{1}{n} \right)} - (p_{1} - p_{2})}{\sigma} \right]\)</span> -</td>
+</tr>
+<tr class="even">
+<td></td>
+<td><span class="math inline">\(\phi\left[\frac{-z_{\alpha/2}\sqrt{\bar{p}\bar{q}\left(\frac{1}{m} + \frac{1}{n} \right)} - (p_{1} - p_{2})}{\sigma} \right]\)</span></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="summary-10" class="slide level2">
+<h2>Summary</h2>
+<ul>
+<li class="fragment">The sample size for true proportions <span class="math inline">\(p_{1}\)</span> and <span class="math inline">\(p_{2}\)</span> with probability of type II error <span class="math inline">\(\beta\)</span> can be found from:</li>
+</ul>
+<p><span class="math display">\[
+n = \frac{[z_{\alpha}\sqrt{(p_{1} + p_{2})(q_{1} + q_{2})/2} + z_{\beta}\sqrt{p_{1}q_{2} + p_{2}q_{2}}]^{2}}{d^{2}}
+\]</span></p>
+<ul>
+<li class="fragment">A large sample CI for <span class="math inline">\(p_{1} - p_{2}\)</span> is given by:</li>
+</ul>
+<p><span class="math display">\[
+\hat{p}_{1} - \hat{p}_{2} \pm z_{\alpha/2}\sqrt{\frac{\hat{p}_{1}\hat{q}_{1}}{m} + \frac{\hat{p}_{2}\hat{q}_{2}}{n}}
+\]</span></p>
+</section>
+<section id="practice-problems-3" class="slide level2">
+<h2>Practice Problems</h2>
+<ul>
+<li class="fragment">Odd problems 10.49 - 10.53</li>
+<li class="fragment">10.59</li>
+</ul>
 <div class="footer footer-default">
 
 </div>
@@ -932,6 +1947,44 @@ n = \frac{4z_{\alpha/2}^{2}(\sigma_{1}^{2} + \sigma_{2}^{2})}{w^{2}}
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {

@@ -26,14 +26,12 @@ b.  Find \marginpar{(2)} the method of moments estimator.
 c.  Find \marginpar{(3)} the maximum likelihood estimator.
 d.  Find \marginpar{(5)} the asymptotic distribution of the mle.
 
-```{=html}
 <!-- -->
-```
+
 2.  Consider the uniform distribution on the interval (0,$\theta$). Consider the estimator $\hat{\theta} = 2\bar{X}$.
 
-```{=html}
 <!-- -->
-```
+
 a.  Is \marginpar{(2)} the estimator unbiased? Prove. If not, what is the bias?
 b.  What \marginpar{(2)} is the mean squared error of the estimator?
 c.  Is \marginpar{(2)} this estimator sufficient? Prove.

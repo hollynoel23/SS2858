@@ -1107,7 +1107,7 @@ $$
 That is, X is chi-squared with 1 df, $X \sim \chi^{2}_{1}$.
 :::
 
-## Chi-Squared ($\chi^{2}$) Distribution  {.smaller}
+## Chi-Squared ($\chi^{2}$) Distribution {.smaller}
 
 ::: callout-important
 ## Proposition
@@ -1159,7 +1159,7 @@ Let $\chi^{2}_{\alpha,\nu}$, called a **chi-squared critical value**, denote the
 
 ![](images/notation.png)
 
-## Exercise 44  {.smaller}
+## Exercise 44 {.smaller}
 
 Determine the values of the following quantities
 
@@ -1181,7 +1181,7 @@ d.  $\chi^{2}_{0.005, 25}$
 e.  $\chi^{2}_{0.99, 25}$
 f.  $\chi^{2}_{0.995, 25}$
 
-## Confidence intervals for $\sigma^{2}$  {.smaller}
+## Confidence intervals for $\sigma^{2}$ {.smaller}
 
 -   The rv $(n-1)S^{2}/\sigma^{2}$ satisfies the two properties on which the general method for obtaining a CI is based: it is a function of the parameter of interest $\sigma^{2}$, yet its probability distribution (chi-squared) does not depend on this parameter.
 -   Therefore, we get:
