@@ -1456,7 +1456,7 @@ Z = \frac{\hat{p_{1}} - \hat{p_{2}} - 0}{\sqrt{pq\left(\frac{1}{m} + \frac{1}{n}
 \]</span></p>
 <p>has approximately a standard normal distribution when <span class="math inline">\(H_{0}\)</span> is true.</p>
 </section>
-<section id="large-sample-test-procedure-1" class="slide level2">
+<section id="large-sample-test-procedure-1" class="slide level2 smaller">
 <h2>Large-Sample Test Procedure</h2>
 <ul>
 <li class="fragment">However, this <span class="math inline">\(Z\)</span> cannot serve as a test statistic because the value of <span class="math inline">\(p\)</span> is unknown - <span class="math inline">\(H_{0}\)</span> asserts only that there is a common value of <span class="math inline">\(p\)</span>, but does not say what that value is.</li>
@@ -1525,7 +1525,7 @@ Test statistic value (large samples): <span class="math inline">\(z = \frac{\hat
 <li class="fragment">We must standardize instead using:</li>
 </ul>
 <p><span class="math display">\[
-\sigma_{\hat{p}_{2} - \hat{p_{2}}} = \sqrt{\frac{p_{1}q_{2}}{m} + \frac{p_{2}q_{2}}{n}}
+\sigma_{\hat{p}_{1} - \hat{p_{2}}} = \sqrt{\frac{p_{1}q_{1}}{m} + \frac{p_{2}q_{2}}{n}}
 \]</span></p>
 </section>
 <section id="type-ii-error-probabilities-and-sample-sizes-1" class="slide level2 smaller">
@@ -1599,7 +1599,7 @@ Test statistic value (large samples): <span class="math inline">\(z = \frac{\hat
 <div class="callout-content">
 <p>For the case <span class="math inline">\(m=n\)</span>, the level <span class="math inline">\(\alpha\)</span> test has Type II error probability <span class="math inline">\(\beta\)</span> at the alternative values <span class="math inline">\(p_{1}\)</span>, <span class="math inline">\(p_{2}\)</span>, with <span class="math inline">\(p_{1} - p_{2} = d\)</span> when</p>
 <p><span class="math display">\[
-n = \frac{[z_{\alpha}\sqrt{(p_{1} + p_{2})(q_{1} + q_{2})/2} + z_{\beta}\sqrt{p_{1}q_{2} + p_{2}q_{2}}]^{2}}{d^{2}}
+n = \frac{[z_{\alpha}\sqrt{(p_{1} + p_{2})(q_{1} + q_{2})/2} + z_{\beta}\sqrt{p_{1}q_{1} + p_{2}q_{2}}]^{2}}{d^{2}}
 \]</span></p>
 <p>for an upper or lower tailed test, with <span class="math inline">\(\alpha/2\)</span> replacing <span class="math inline">\(\alpha\)</span> for a two-tailed test.</p>
 </div>
@@ -1717,7 +1717,7 @@ Test statistic value (large samples): <span class="math inline">\(z = \frac{\hat
 <li class="fragment">The sample size for true proportions <span class="math inline">\(p_{1}\)</span> and <span class="math inline">\(p_{2}\)</span> with probability of type II error <span class="math inline">\(\beta\)</span> can be found from:</li>
 </ul>
 <p><span class="math display">\[
-n = \frac{[z_{\alpha}\sqrt{(p_{1} + p_{2})(q_{1} + q_{2})/2} + z_{\beta}\sqrt{p_{1}q_{2} + p_{2}q_{2}}]^{2}}{d^{2}}
+n = \frac{[z_{\alpha}\sqrt{(p_{1} + p_{2})(q_{1} + q_{2})/2} + z_{\beta}\sqrt{p_{1}q_{1} + p_{2}q_{2}}]^{2}}{d^{2}}
 \]</span></p>
 <ul>
 <li class="fragment">A large sample CI for <span class="math inline">\(p_{1} - p_{2}\)</span> is given by:</li>
@@ -1731,6 +1731,233 @@ n = \frac{[z_{\alpha}\sqrt{(p_{1} + p_{2})(q_{1} + q_{2})/2} + z_{\beta}\sqrt{p_
 <ul>
 <li class="fragment">Odd problems 10.49 - 10.53</li>
 <li class="fragment">10.59</li>
+</ul>
+</section></section>
+<section>
+<section id="inferences-about-two-population-variances" class="title-slide slide level1 center">
+<h1>10.5 Inferences about Two Population Variances</h1>
+
+</section>
+<section id="outcomes-4" class="slide level2">
+<h2>Outcomes</h2>
+<p>By the end of this section, you will be able to:</p>
+<ul>
+<li class="fragment">Look up values in the F table.</li>
+<li class="fragment">Perform a hypothesis test for the equality of population variances.</li>
+<li class="fragment">Calculate and interpret a confidence interval for the ratio of population variances.</li>
+</ul>
+</section>
+<section id="the-f-distribution" class="slide level2 smaller">
+<h2>The F-Distribution</h2>
+<ul>
+<li class="fragment">In order to test hypotheses about two population variances, we need to talk about a new distribution: <strong>the F distribution</strong>.</li>
+<li class="fragment">Let <span class="math inline">\(X_{1}\)</span> and <span class="math inline">\(X_{2}\)</span> be independent chi-squared random variables with <span class="math inline">\(\nu_{1}\)</span> and <span class="math inline">\(\nu_{2}\)</span> degrees of freedom, respectively. The F distribution with <span class="math inline">\(\nu_{1}\)</span> numerator degrees of freedom and <span class="math inline">\(\nu_{2}\)</span> denominator degrees of freedom is defined to be the distribution of the ratio:</li>
+</ul>
+<p><span class="math display">\[
+F = \frac{X_{1}/\nu_{1}}{X_{2}/\nu_{2}}
+\]</span></p>
+<ul>
+<li class="fragment">Sometimes the degrees of freedom will be listed as: <span class="math inline">\(F_{\nu_{1},\nu_{2}}\)</span>.</li>
+</ul>
+</section>
+<section id="the-f-distribution-1" class="slide level2">
+<h2>The F-Distribution</h2>
+<ul>
+<li class="fragment">From this, we can show that if we collect a random sample of size <span class="math inline">\(m\)</span> from a <span class="math inline">\(N(\mu_{1},\sigma_{1})\)</span> distribution and an independent random sample of size <span class="math inline">\(n\)</span> from a <span class="math inline">\(N(\mu_{2},\sigma_{2})\)</span> distribution, then</li>
+</ul>
+<p><span class="math display">\[
+F_{m-1,n-1} = \frac{S_{1}^{2}/\sigma_{1}^{2}}{S_{2}^{2}/\sigma_{2}^{2}}
+\]</span></p>
+<p>follows a normal distribution with <span class="math inline">\(m-1\)</span> numerator degrees of freedom and <span class="math inline">\(n-1\)</span> denominator degrees of freedom.</p>
+<ul>
+<li class="fragment">Prove it!</li>
+</ul>
+</section>
+<section id="the-f-distribution-2" class="slide level2">
+<h2>The F-Distribution</h2>
+
+<img data-src="images/Fdist.png" class="r-stretch"></section>
+<section id="the-f-distribution-3" class="slide level2">
+<h2>The F-Distribution</h2>
+<ul>
+<li class="fragment">It is a right-skewed distribution that has strictly positive values.</li>
+<li class="fragment">Once again, the density is too difficult to integrate, and therefore a table is required.</li>
+<li class="fragment"><span class="math display">\[
+F_{p,\nu_{1},\nu_{2}} = \frac{1}{F_{1-p,\nu_{2},\nu_{1}}}
+\]</span></li>
+</ul>
+</section>
+<section id="exercise-10.60" class="slide level2 smaller">
+<h2>Exercise 10.60</h2>
+<p>Obtain or compute the following quantities:</p>
+<ol type="a">
+<li class="fragment"><span class="math inline">\(F_{0.05,5,8}\)</span></li>
+<li class="fragment"><span class="math inline">\(F_{0.05,8,5}\)</span></li>
+<li class="fragment"><span class="math inline">\(F_{0.95,5,8}\)</span></li>
+<li class="fragment"><span class="math inline">\(F_{0.95,8,5}\)</span></li>
+<li class="fragment">The 99th percentile of the F distribution with <span class="math inline">\(\nu_{1} = 10\)</span>, <span class="math inline">\(\nu_{2} = 12\)</span>.</li>
+<li class="fragment">The 1st percentile of the F distribution with <span class="math inline">\(\nu_{1} = 10\)</span>, <span class="math inline">\(\nu_{2} = 12\)</span>.</li>
+<li class="fragment"><span class="math inline">\(P(F &lt; 6.16)\)</span> for <span class="math inline">\(\nu_{1} = 6\)</span>, <span class="math inline">\(\nu_{2} = 4\)</span>.</li>
+<li class="fragment"><span class="math inline">\(P(0.177 &lt; F &lt; 4.74)\)</span> for <span class="math inline">\(\nu_{1} = 10\)</span>, <span class="math inline">\(\nu_{2} = 5\)</span>.</li>
+</ol>
+</section>
+<section id="testing-hypotheses" class="slide level2 smaller">
+<h2>Testing Hypotheses</h2>
+<ul>
+<li class="fragment">To formally state what we have shown earlier, the confidence interval and hypotheses tests formed in this section will depend on the following.</li>
+</ul>
+<div class="callout callout-important callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Theorem</strong></p>
+</div>
+<div class="callout-content">
+<p>Let <span class="math inline">\(X_{1}\)</span>, … , <span class="math inline">\(X_{m}\)</span> be a random sample from a normal distribution with variance <span class="math inline">\(\sigma_{1}^{2}\)</span>, let <span class="math inline">\(Y_{1}\)</span>, … , <span class="math inline">\(Y_{n}\)</span> be another random sample (independent of the <span class="math inline">\(X_{i}\)</span>’s) from a normal distribution with variance <span class="math inline">\(\sigma_{2}^{2}\)</span>, and let <span class="math inline">\(S_{1}^{2}\)</span> and <span class="math inline">\(S_{2}^{2}\)</span> denote the two sample variances. Then the rv</p>
+<p><span class="math display">\[
+F = \frac{S_{1}^{2}/\sigma_{1}^{2}}{S_{2}^{2}/\sigma_{2}^{2}}
+\]</span></p>
+<p>has an <span class="math inline">\(F\)</span> distribution with <span class="math inline">\(\nu_{1} = m-1\)</span> and <span class="math inline">\(\nu_{2} = n-1\)</span>.</p>
+</div>
+</div>
+</div>
+<ul>
+<li class="fragment">Under a null hypothesis of equal variances, this reduces to the ratio of sample variances.</li>
+</ul>
+</section>
+<section id="testing-hypotheses-1" class="slide level2">
+<h2>Testing Hypotheses</h2>
+<div class="callout callout-important callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>The F Test for Equal Variances</strong></p>
+</div>
+<div class="callout-content">
+<p>Null Hypothesis: <span class="math inline">\(H_{0}: \sigma_{1}^{2} = \sigma_{2}^{2}\)</span><br>
+Test Statistic Value: <span class="math inline">\(f = s_{1}^{2}/s_{2}^{2}\)</span></p>
+<table>
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Alternative Hypothesis</strong></th>
+<th><strong>Rejection Region For Level</strong> <span class="math inline">\(\alpha\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(H_{a}: \sigma_{1}^{2} &gt; \sigma_{2}^{2}\)</span></td>
+<td><span class="math inline">\(f \geq F_{\alpha, m-1, n-1}\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(H_{a}: \sigma_{1}^{2} &lt; \sigma_{2}^{2}\)</span></td>
+<td><span class="math inline">\(f \leq F_{1-\alpha, m-1, n-1}\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(H_{a}: \sigma_{1}^{2} \neq \sigma_{2}^{2}\)</span></td>
+<td>either <span class="math inline">\(f \geq F_{\alpha/2, m-1, n-1}\)</span> or <span class="math inline">\(f \leq F_{1-\alpha/2, m-1, n-1}\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-10.62" class="slide level2 smaller">
+<h2>Exercise 10.62</h2>
+<p>As the population ages, there is increasing concern about accident-related injuries to the elderly. An article reported on an experiment in which the maximum lean angle — the farthest a subject is able to lean and still recover in one step — was determined for both a sample of younger females (21–29 years) and a sample of older females (67–81 years). The following observations are consistent with summary data given in the article:</p>
+<p>YF: 29, 34, 33, 27, 28, 32, 31, 34, 32, 27<br>
+OF: 18, 15, 23, 13, 12</p>
+<p>Carry out a test at significance level .10 to see whether the population standard deviations for the two age groups are different (normal probability plots support the necessary normality assumption). Carry it out based on rejection region approach, AND p-value approach.</p>
+</section>
+<section id="confidence-intervals" class="slide level2">
+<h2>Confidence Intervals</h2>
+<ul>
+<li class="fragment">A CI for <span class="math inline">\(\sigma_{1}/\sigma_{2}\)</span> is based on repacing F in the probability statement:</li>
+</ul>
+<p><span class="math display">\[
+P(F_{1-\alpha/2,\nu_{1},\nu_{2}} &lt; F &lt; F_{\alpha/2,\nu_{1},\nu_{2}}) = 1-\alpha
+\]</span></p>
+<ul>
+<li class="fragment">A (1-<span class="math inline">\(\alpha\)</span>)100% CI for <span class="math inline">\(\sigma_{1}^{2}/\sigma_{2}^{2}\)</span> is given by:</li>
+</ul>
+<p><span class="math display">\[
+(\frac{s_{1}^{2}}{s_{2}^{2}}\frac{1}{F_{\alpha/2,m-1,n-1}},\frac{s_{1}^{2}}{s_{2}^{2}} F_{\alpha/2,n-1,m-1})
+\]</span></p>
+<ul>
+<li class="fragment">Prove it!</li>
+</ul>
+</section>
+<section id="confidence-interval-for-sigma_12sigma_22" class="slide level2">
+<h2>Confidence Interval for <span class="math inline">\(\sigma_{1}^{2}/\sigma_{2}^{2}\)</span></h2>
+</section>
+<section id="exercise-10.66" class="slide level2">
+<h2>Exercise 10.66</h2>
+<p>An article reports the following data on impregnated compressive modulus (psi <span class="math inline">\(\times\)</span> 106) when two different polymers were used to repair cracks in failed concrete.</p>
+<p>Epoxy 1.75 2.12 2.05 1.97.<br>
+MMA prepolymer 1.77 1.59 1.70 1.69</p>
+<p>Obtain a 90% confidence interval for the ratio of variances.</p>
+</section>
+<section id="summary-11" class="slide level2 smaller">
+<h2>Summary</h2>
+<ul>
+<li class="fragment">The F distribution is a positive, right-skewed distribution with two degrees of freedom called the numerator and denominator degrees of freedom.</li>
+<li class="fragment"><span class="math display">\[
+F_{m-1,n-1} = \frac{S_{1}^{2}/\sigma_{1}^{2}}{S_{2}^{2}/\sigma_{2}^{2}}
+\]</span></li>
+</ul>
+<p>has an F distribution with <span class="math inline">\(m-1\)</span> and <span class="math inline">\(n-1\)</span> degrees of freedom.</p>
+<ul>
+<li class="fragment">Null Hypothesis: <span class="math inline">\(H_{0}: \sigma_{1}^{2} = \sigma_{2}^{2}\)</span><br>
+Test Statistic Value: <span class="math inline">\(f = s_{1}^{2}/s_{2}^{2}\)</span></li>
+</ul>
+<table>
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Alternative Hypothesis</strong></th>
+<th><strong>Rejection Region For Level</strong> <span class="math inline">\(\alpha\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(H_{a}: \sigma_{1}^{2} &gt; \sigma_{2}^{2}\)</span></td>
+<td><span class="math inline">\(f \geq F_{\alpha, m-1, n-1}\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(H_{a}: \sigma_{1}^{2} &lt; \sigma_{2}^{2}\)</span></td>
+<td><span class="math inline">\(f \leq F_{1-\alpha, m-1, n-1}\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(H_{a}: \sigma_{1}^{2} \neq \sigma_{2}^{2}\)</span></td>
+<td>either <span class="math inline">\(f \geq F_{\alpha/2, m-1, n-1}\)</span> or <span class="math inline">\(f \leq F_{1-\alpha/2, m-1, n-1}\)</span></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="summary-12" class="slide level2">
+<h2>Summary</h2>
+<ul>
+<li class="fragment">A (1-<span class="math inline">\(\alpha\)</span>)100% CI for <span class="math inline">\(\sigma_{1}^{2}/\sigma_{2}^{2}\)</span> is given by:</li>
+</ul>
+<p><span class="math display">\[
+(\frac{s_{1}^{2}}{s_{2}^{2}}\frac{1}{F_{\alpha/2,m-1,n-1}},\frac{s_{1}^{2}}{s_{2}^{2}} F_{\alpha/2,m-1,n-1})
+\]</span></p>
+</section>
+<section id="practice-problems-4" class="slide level2">
+<h2>Practice Problems</h2>
+<ul>
+<li class="fragment">Odd problems 10.61 - 10.67</li>
 </ul>
 <div class="footer footer-default">
 
