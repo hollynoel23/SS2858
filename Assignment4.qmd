@@ -1,0 +1,54 @@
+---
+title: "Assignment 4"
+date: "August 10, 2023"
+author: "Holly Steeves"
+format: 
+  pdf: 
+    number-sections: true
+    toc: false
+    theme: 
+      light: flatly
+      dark: darkly
+editor: visual
+bibliography: references.bib
+---
+
+1.  Data on household vehicle miles of travel (VMT) are compiled annually by the Federal Highway Administration and are published in National Household Travel Survey, Summary of Travel Trends. Independent random samples of 15 midwestern households and 14 southern households provided the following data on last year's VMT, in thousands of miles.
+
+    $\bar{x}_{mid} = 16.23$
+
+    $\bar{x}_{s} = 17.69$
+
+    $s_{mid} = 4.06$
+
+    $s_{s} = 4.42$
+
+    At the 5% significance level, does there appear to be a difference in last year's mean VMT for midwestern and southern households? Assume equal population variances and use a p-value approach.
+
+2.  The makers of the MAGNETIZER Engine Energizer System (EES) claim that it improves gas mileage and reduces emissions in automobiles by using magnetic free energy to increase the amount of oxygen in the fuel for greater combustion efficiency. Following are test results, performed under international and U.S. Government agency standards, on a random sample of 14 vehicles. The data give the carbon monoxide (CO) levels, in parts per million, of each vehicle tested, both before installation of EES and after installation.
+
+    | Before | After | Before | After |
+    |--------|-------|--------|-------|
+    | 1.60   | 0.15  | 2.60   | 1.60  |
+    | 0.30   | 0.20  | 0.15   | 0.06  |
+    | 3.80   | 2.80  | 0.06   | 0.16  |
+    | 6.20   | 3.60  | 0.60   | 0.35  |
+    | 3.60   | 1.00  | 0.03   | 0.01  |
+    | 1.50   | 0.50  | 0.10   | 0.00  |
+    | 2.00   | 1.60  | 0.19   | 0.00  |
+
+    Calculate a 95% confidence interval for the mean change in carbon monoxide levels.
+
+3.  One year at Arizona State University, the algebra course director decided to experiment with a new teaching method that might reduce variability in final exam scores by eliminating lower scores. The director randomly divided the algebra students who were registered for class at 9:40 A.M. into two groups. One of the groups, called the control group, was taught the usual algebra course; the other group, called the experimental group, was taught by the new teaching method. Both classes covered the same material, took the same unit quizzes, and took the same final exam at the same time. The summary statistics for the final exam scores (out of 40 possible) for the two groups are shown below.
+
+    $s_{c} = 7.813$
+
+    $s_{e} = 5.286$
+
+    Do the data provide sufficient evidence to conclude that there is less variation among final exam scores when the new teaching method is used? Use a 5% significance level and the rejection region approach.
+
+4.  An issue of Science News (Vol. 163, No. 22, pp. 341--342) reported that the Women's Health Initiative cast doubts on the benefit of hormone-replacement therapy. Researchers randomly divided 4532 healthy women over the age of 65 years into two groups. One group, consisting of 2229 women, received hormone-replacement therapy; the other group, consisting of 2303 women, received placebo. Over 5 years, 40 of the women receiving the hormone-replacement therapy were diagnosed with dementia, compared with 21 of those getting placebo.
+
+    a.  At the 5% significance level, do the data provide sufficient evidence to conclude that healthy women over 65 years old who take hormone-replacement therapy are at greater risk for dementia than those who do not?
+
+    b.  Determine and interpret a 95% confidence interval for the difference in dementia risk rates for healthy women over 65 years old who take hormone-replacement therapy and those who do not.

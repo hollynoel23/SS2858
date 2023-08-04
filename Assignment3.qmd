@@ -3,9 +3,9 @@ title: "Assignment 3"
 date: "August 1, 2023"
 author: "Holly Steeves"
 format: 
-  html: 
+  pdf: 
     number-sections: true
-    toc: true
+    toc: false
     theme: 
       light: flatly
       dark: darkly

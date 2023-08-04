@@ -1,0 +1,211 @@
+---
+title: "Chapter 12"
+format: 
+  revealjs: 
+    toc: false
+    theme: [default, /Users/hollysteeves/Library/CloudStorage/OneDrive-TheUniversityofWesternOntario/Western.scss]
+    incremental: true
+editor: visual
+author: "Holly Steeves"
+---
+
+# The Simple Linear and Logistic Regression Models
+
+## Introduction
+
+-   We will be developing a relationship between two variables: namely a **dependent** or **response** variable, $y$, and an **independent**, **explanatory** or **predictor** variable, $x$.
+
+::: callout-important
+## Definitions
+
+-   A **depenent**, or **response** variable is one which you believe depends, or is affected, by the other variable(s).
+-   An **independent**, **explanatory** or **predictor** variable is one that is not affected by the other variable.
+:::
+
+## Introduction
+
+-   However, even though we believe variable $y$ *depends* on variable $x$, there is still uncertainty in what the resulting $y$ will be.
+-   Think, if we know someones shoe size, we might have information about their height, however we dont know *exactly* what their height will be.
+-   That is, for a fixed value or $x$ we can think of the dependent variable as being random.
+
+## Additive Model Equation
+
+We can now relate the independent and dependent variables by an **additive model equation**:
+
+$$
+Y = f(x) + \epsilon
+$$
+
+where $f(x)$ is some particular deterministic function of $x$ and $\epsilon$ is a random deviation or random "error" which is assumed to have mean value 0.
+
+## Additive Model Equation
+
+![](images/Screenshot%202023-08-01%20at%2012.24.09%20PM-02.png)
+
+## Additive Model Equation
+
+-   How should the deterministic part of the model equation be selected?
+
+-   A plot of the resulting sample data pairs $(x_{1},y_{1})$, $(x_{2},y_{2})$, ..., $(x_{n},y_{n})$, called a **scatterplot**, should be constructed.
+
+-   In this plot, the pattern of points should suggest an appropriate $f(x)$.
+
+## A Linear Probabilistic Model 
+
+-   For a deterministic linear relationship $y = \beta_{0} + \beta_{1}x$, the slope coefficient $\beta_{1}$ is the guaranteed increase in $y$ when $x$ increases by one unit, and the intercept coefficient $\beta_{0}$ is the value of $y$ when $x=0$.
+
+-   A graph of \$y = \\beta\_{0} + \\beta\_{1}x\$ is a straight line.
+
+-   The slope gives the amount by which the line rises or falls when we move one unit to the right, and the intercept is the height at which the line crosses the vertical axis.
+
+## The Simple Linear Regression Model
+
+::: callout-important
+## Definition
+
+There are parameters $\beta_{0}$, $\beta_{1}$, and $\sigma^{2}$ such that for any fixed value of the independent variable $x$, the dependent variable is related to $x$ through the model equation
+
+$$
+Y = \beta_{0} + \beta_{1}x + \epsilon
+$$
+
+The random deviation (random variable) $\epsilon$ is assumed to be normally distributed with mean value $0$ and variance $\sigma^{2}$, and this mean value and variance are the same regardless of the fixed $x$ value.
+
+The $n$ observed pairs $(x_{1},y_{1})$, $(x_{2},y_{2})$, ..., $(x_{n},y_{n})$, are regarded as having been generated independently of each other from the model equation (first fix $x=x_{1}$, and observed \$Y\_{1} = \beta\_{0} + \beta\_{1}x\_{1} + \epsilon\_{1}\$, then fix $x=x_{2}$, and so on; assuming that the $\epsilon$s are independent of each other implying that the $Y$s are also independent of each other.
+:::
+
+## The Simple Linear Regression Model
+
+![](images/Screenshot%202023-08-01%20at%2012.49.24%20PM.png)
+
+## The Simple Linear Regression Model
+
+-   The first two model parameters $\beta_{0}$ and $\beta_{1}$ are the coefficients of the **population** or **true regression line** $\beta_{0} + \beta_{1}x$.
+
+-   The slope parameter $\beta_{1}$ is now interpreted as the *expected* or *true average* increase in $Y$ associated with a 1-unit increase in $x$.
+
+-   The variance parameter $\sigma^{2}$ controls the inherent amount of variability in the data. That is, the larger the value of $\sigma^{2}$, the greater will be the tendency for observed points to deviate from the population line.
+
+## Notation
+
+-   Let $x^{*}$ denote a particular value of the independent variable $x$.
+
+-   Let $\mu_{Y\cdot x^{*}}$ = the expected value of $Y$ when $x = x^{*}$.
+
+-   Let $\sigma{2}_{Y\cdot x{*}}$ = the variance of $Y$ when $x=x^{*}$.
+
+## Expected value and Variance
+
+Then,
+
+$$
+\begin{aligned}
+\mu_{Y\cdot x^{*}} &= E(\beta_{0} + \beta_{1}x^{*} + \epsilon) \\
+&= \beta_{0} + \beta_{1}x^{*} + E(\epsilon) \\ 
+&= \beta_{0} + \beta_{1}x^{*}
+\end{aligned}
+$$
+
+and
+
+$$
+\begin{aligned}
+\sigma^{2}_{Y\cdot x^{*}} &= V(\beta_{0} + \beta_{1}x^{*} + \epsilon) \\
+&= V(\beta_{0} + \beta_{1}x^{*}) + V(\epsilon) \\ 
+&= 0 + \sigma^{2} \\
+\end{aligned}
+$$
+
+## Distributions
+
+![](images/Screenshot%202023-08-01%20at%201.23.29%20PM.png)
+
+## Example 12.4
+
+A study to assess the capability of subsurface flow wetland systems to remove biochemical oxygen demand (BOD) and various other chemical constituents resulted in the accompanying data on $x$ = BOD mass loading (kg/ha/d) and $y$ = BOD mass remoal (kg/ha/d).
+
+a\. Construct boxplots of both mass loading and mass removal, and comment on any interesting features.
+
+b\. Construct a scatter plot of the data and comment on any interesting features.
+
+## Example 12.2 Solutions
+
+::: panel-tabset
+## Boxplot 1
+
+```{r}
+x <- c(3,8,10, 11, 13, 16, 27, 30, 35, 37, 38, 44, 103, 142)
+
+y <- c(4, 7, 8, 8, 10, 11, 16, 26, 21, 9, 31, 30, 75, 90)
+
+boxplot(x, main="BOD mass loading", ylab="kg/ha/d")
+```
+
+## Boxplot 2
+
+```{r}
+boxplot(y, main="BOD mass removal", ylab="kg/ha/d")
+```
+
+## Scatterplot
+
+```{r}
+plot(x,y, xlab="BOD mass loading", ylab="BOD mass removal")
+```
+:::
+
+## The Logistic Regression Model 
+
+-   The simple linear regression model is appropriate for relating a quantitative response variable $y$ to a quantitative predictor $x$.
+
+-   Suppose that $y$ can only take on $1$ or $0$ corresponding to success and failure.
+
+-   Let $p = P(S) = P(y=1)$. Frequently, the value of $p$ will depend on the value of some quantitative variable $x$.
+
+-   Example: the probability that a car needs warranty service of a certain kind might depend on the car's mileage.
+
+## The Logistic Regression Model
+
+-   So, we might consider $p(x)$ instead of just $p$ to emphasize the dependence of this probability on the value of $x$.
+
+-   Instead of letting the mean value of $y$ be a linear function of $x$, we now consider a model in which some function of the mean value of $y$ is a linear function of $x$.
+
+-   Ie, we allow $p(x)$ to be a function of $\beta_{0} + \beta_{1}x$ rather than $\beta_{0} + \beta_{1}x$ itself.
+
+-   This function? The **logit function**:
+
+$$
+p(x) = \frac{e^{\beta_{0} + \beta_{1}x}}{1 + e^{\beta_{0} + \beta_{1}x}}
+$$
+
+## The Logit Function
+
+Below is a graph of $p(x)$ for particular values of $\beta_{0}$ and $\beta_{1}$, with $\beta_{1} > 0$. For $\beta_{1}$ negative, the success probability would be a decreasing function of $x$.
+
+![](images/Screenshot%202023-08-01%20at%201.31.39%20PM.png)
+
+## Logistic Regression 
+
+-   *Logistic regression* means assuming that $p(x)$ is related to $x$ by the logit function.
+
+-   Therefore, we get:
+
+$$
+\frac{p(x)}{1 - p(x)} = e^{\beta_{0} + \beta_{1}x}
+$$
+
+-   The expression on the left is called the *odds ratio*.
+
+-   For example, if $p(60) = 3/4$ then $p(60)/(1-p(60)) = 3/4 /(1-3/4) = 3$ and when $x = 60$, a success is three times as likely as a failure.
+
+## Logistic Regression
+
+-   If we take the natural logarithm of both sides, we see that the logarithm of the odds ratio is a linear function of the predictor:
+
+$$
+\ln\left(\frac{p(x)}{1-p(x)}\right) = \beta_{0} + \beta_{1}x
+$$
+
+-   The slope parameter $\beta_{1}$ is the change in the log odds associated with a 1 unit increase in $x$.
+
+-   This implies that the odds ratio itself changes by the multiplicative factor $e^{\beta_[1}$ when $x$ increases by 1 unit.
